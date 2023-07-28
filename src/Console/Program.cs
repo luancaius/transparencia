@@ -1,2 +1,50 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+namespace ConsoleNS
+{
+    class Program
+    {
+
+        static async Task Main(string[] args)
+        {
+            // Base URL of the API you want to call
+            string apiUrl = "https://pokeapi.co/api/v2/pokemon/ditto";
+
+            // Create an instance of HttpClient to send the HTTP request
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    // Send a GET request to the API and get the response
+                    HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+                    // Check if the response is successful
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // Read the response content as a string
+                        string responseBody = await response.Content.ReadAsStringAsync();
+
+                        // Display the response content
+                        Console.WriteLine("API response:");
+                        Console.WriteLine(responseBody);
+                    }
+                    else
+                    {
+                        // Display an error message if the API call is not successful
+                        Console.WriteLine($"API call failed with status code: {response.StatusCode}");
+                    }
+                }
+                catch (HttpRequestException e)
+                {
+                    // Display an error message if there's an exception during the API call
+                    Console.WriteLine($"API call failed with exception: {e.Message}");
+                }
+            }
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
+        }
+    }
+}
