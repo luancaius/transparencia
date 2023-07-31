@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\Console"
   ],
-  "SelectedNode": "\\LICENSE",
+  "SelectedNode": "\\src\\Console\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

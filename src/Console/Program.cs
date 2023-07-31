@@ -6,9 +6,36 @@ namespace ConsoleNS
 {
     class Program
     {
-
         static async Task Main(string[] args)
         {
+            bool running = true;
+
+            while (running)
+            {
+                Console.Write("Enter a command: ");
+                string command = Console.ReadLine().ToLower();
+
+                switch (command)
+                {
+                    case "p":
+                        await Pokemon();
+                        break;    
+                    case "exit":
+                        running = false;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid command. Please try again.");
+                        break;
+                }
+            }
+
+            Console.WriteLine("Exiting the Command Console App. Goodbye!");
+        }
+
+
+        public static async Task Pokemon()
+        {
+
             // Base URL of the API you want to call
             string apiUrl = "https://pokeapi.co/api/v2/pokemon/ditto";
 
@@ -46,5 +73,6 @@ namespace ConsoleNS
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
+
     }
 }
