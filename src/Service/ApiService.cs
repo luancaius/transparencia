@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Service.Mappers;
 
 namespace Service
 {
@@ -22,15 +23,10 @@ namespace Service
         {
             HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
 
-            if (response.IsSuccessStatusCode)
-            {
-                T data = await response.Content.ReadAsAsync<T>();
-                return data;
-            }
-            else
-            {
-                throw new Exception($"Failed to call the API. Status code: {response.StatusCode}");
-            }
+            ApiResponseMapper responseMapper = new ApiResponseMapper();
+            T mappedData = await responseMapper.MapResponse<T>(response);
+
+            return mappedData;
         }
 
         // Method to make a POST request with data and parse the JSON response

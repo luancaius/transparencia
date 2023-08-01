@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Service;
 
 namespace ConsoleNS
 {
@@ -9,7 +10,8 @@ namespace ConsoleNS
         static async Task Main(string[] args)
         {
             bool running = true;
-
+            DeputadoService deputadoService = new DeputadoService();
+                
             while (running)
             {
                 Console.Write("Enter a command: ");
@@ -18,7 +20,7 @@ namespace ConsoleNS
                 switch (command)
                 {
                     case "p":
-                        await Pokemon();
+                        await deputadoService.GetAll();
                         break;    
                     case "exit":
                         running = false;
