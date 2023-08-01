@@ -1,33 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\luanc\\Source\\Public\\transparencia\\src\\Entity\\Entity.csproj": {}
+    "/Users/luanramos/source/transparencia/src/Entity/Entity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\luanc\\Source\\Public\\transparencia\\src\\Entity\\Entity.csproj": {
+    "/Users/luanramos/source/transparencia/src/Entity/Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\luanc\\Source\\Public\\transparencia\\src\\Entity\\Entity.csproj",
+        "projectUniqueName": "/Users/luanramos/source/transparencia/src/Entity/Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\luanc\\Source\\Public\\transparencia\\src\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\luanc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\luanc\\Source\\Public\\transparencia\\src\\Entity\\obj\\",
+        "projectPath": "/Users/luanramos/source/transparencia/src/Entity/Entity.csproj",
+        "packagesPath": "/Users/luanramos/.nuget/packages/",
+        "outputPath": "/Users/luanramos/source/transparencia/src/Entity/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\luanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/luanramos/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,6 +33,9 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "default"
         }
       },
       "frameworks": {
@@ -56,12 +52,22 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.8, 7.0.8]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.8, 7.0.8]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100-preview.6.23330.14/RuntimeIdentifierGraph.json"
         }
       }
     }

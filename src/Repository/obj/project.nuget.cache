@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "KrbsIYNKCIAfI5sP7iZdkTwC6xa4c9GOCHzWD8tQjVFcJp+tqJLaKSXas1CB7tH4SMCw55EsCo/AX0uk541PIg==",
+  "dgSpecHash": "/Oi3AQ3lGgsCKMLXjVOMxXhUdh2M4wXqm6kAn7u46/ZYAdO8WmgVVQIInF6kU87AUULELMP/974vCY5ieRAStA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\luanc\\Source\\Public\\transparencia\\src\\Repository\\Repository.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/luanramos/source/transparencia/src/Repository/Repository.csproj",
+  "expectedPackageFiles": [
+    "/Users/luanramos/.nuget/packages/microsoft.netcore.app.ref/7.0.8/microsoft.netcore.app.ref.7.0.8.nupkg.sha512",
+    "/Users/luanramos/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.8/microsoft.aspnetcore.app.ref.7.0.8.nupkg.sha512"
+  ],
   "logs": []
 }
