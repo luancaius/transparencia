@@ -19,8 +19,8 @@ namespace ConsoleNS
 
                 switch (command)
                 {
-                    case "p":
-                        await deputadoService.GetAll();
+                    case "d":
+                        await deputadoService.GetLatestDeputados();
                         break;    
                     case "exit":
                         running = false;

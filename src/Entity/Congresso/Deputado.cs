@@ -20,4 +20,9 @@ public class Deputado
     public int LegislaturaId { get; set; }
         
     public Legislatura Legislatura { get; set; }
+
+    public override string ToString()
+    {
+        return $"Nome: {Nome}, Partido: {Partido?.Nome}, Legislatura: {Legislatura?.Numero}";
+    }
 }
