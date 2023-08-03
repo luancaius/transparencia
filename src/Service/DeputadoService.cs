@@ -1,4 +1,6 @@
 using Entity.Congresso;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Service;
 
@@ -9,7 +11,20 @@ public class DeputadoService : ApiService
     {
         String apiUrl = "/deputados";
 
-        Deputado[] deputados = await GetAsync<Deputado[]>(baseUrl+apiUrl);
-        String test = deputados[0].Nome;
+        String deputados_raw = await GetAsync(baseUrl+apiUrl);
+
+        List<Deputado> deputados = DeputadoMapper.map(deputados_raw);
+    }
+}
+
+public static class DeputadoMapper
+{
+    public static List<Deputado> map(string deputadosRaw)
+    {
+        JObject jsonObject = JObject.Parse(deputadosRaw);
+        string dados = jsonObject["dados"].ToString();
+        List<Deputado> response = JsonConvert.DeserializeObject<List<Deputado>>(dados);
+
+        return response;
     }
 }

@@ -28,7 +28,15 @@ namespace Service
 
             return mappedData;
         }
+        
+        public async Task<String> GetAsync(string apiUrl)
+        {
+            HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
 
+            String data = await response.Content.ReadAsStringAsync();
+            
+            return data;
+        }
         // Method to make a POST request with data and parse the JSON response
         public async Task<T> PostAsync<T>(string apiUrl, object data)
         {
