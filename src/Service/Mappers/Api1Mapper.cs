@@ -1,26 +1,36 @@
 using Entity.Congresso;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Service.DTO.API1;
 
 namespace Service;
 
 public static class Api1Mapper
 {
-    public static List<Deputado> map(string deputadosRaw)
+    public static Api1DeputadoList map(string deputadosRaw)
     {
-        JObject jsonObject = JObject.Parse(deputadosRaw);
-        string dados = jsonObject["dados"].ToString();
-        List<Deputado> response = JsonConvert.DeserializeObject<List<Deputado>>(dados);
+        var response = JsonConvert.DeserializeObject<Api1DeputadoList>(deputadosRaw);
 
         return response;
     }
     
-    public static Deputado mapById(string deputadoRaw)
+    public static Api1DeputadoDto mapById(string deputadoRaw)
     {
-        JObject jsonObject = JObject.Parse(deputadoRaw);
-        string dados = jsonObject["dados"].ToString();
-        Deputado response = JsonConvert.DeserializeObject<Deputado>(dados);
+        var response = JsonConvert.DeserializeObject<Api1DeputadoDto>(deputadoRaw);
 
         return response;
+    }
+
+    public static List<Deputado> mapList(Api1DeputadoList source)
+    {
+        var destin = new List<Deputado>();
+        foreach (var item in source.DeputadoList)
+        {
+            var deputado = new Deputado();
+            deputado.Nome = item.Nome;
+            destin.Add(deputado);
+        }
+        
+        return destin;
     }
 }

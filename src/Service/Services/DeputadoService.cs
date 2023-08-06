@@ -23,8 +23,10 @@ public class DeputadoService : ApiService
 
         String deputados_raw = await GetAsync(baseUrl+apiUrl+param);
 
-        List<Deputado> deputados = DeputadoMapper.map(deputados_raw);
+        var deputadosListApi1 = Api1Mapper.map(deputados_raw);
 
+        var deputados = Api1Mapper.mapList(deputadosListApi1);
+        
         return deputados;
     }
     
