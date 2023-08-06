@@ -2,7 +2,7 @@ using Entity.Congresso;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Service;
+namespace Service.Mappers;
 
 public static class DeputadoMapper
 {

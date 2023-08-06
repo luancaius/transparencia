@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Service;
+using Service.Services;
 
 namespace ConsoleNS
 {
@@ -15,7 +16,7 @@ namespace ConsoleNS
             while (running)
             {
                 Console.Write("Enter a command: ");
-                string command = Console.ReadLine().ToLower();
+                string command = "d";//Console.ReadLine().ToLower();
 
                 switch (command)
                 {

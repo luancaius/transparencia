@@ -1,6 +1,7 @@
 using Entity.Congresso;
+using Service.Mappers;
 
-namespace Service;
+namespace Service.Services;
 
 public class DeputadoService : ApiService
 {
@@ -23,9 +24,9 @@ public class DeputadoService : ApiService
 
         String deputados_raw = await GetAsync(baseUrl+apiUrl+param);
 
-        var deputadosListApi1 = Api1Mapper.map(deputados_raw);
+        var deputadosListApi1 = Api1Mapper.mapApi1ListToDto(deputados_raw);
 
-        var deputados = Api1Mapper.mapList(deputadosListApi1);
+        var deputados = Api1Mapper.mapListApi1ToEntity(deputadosListApi1);
         
         return deputados;
     }
@@ -36,7 +37,9 @@ public class DeputadoService : ApiService
 
         String deputado_raw = await GetAsync(baseUrl+apiUrl);
 
-        Deputado deputado = DeputadoMapper.mapById(deputado_raw);
+        var deputadoApi1 = Api1Mapper.mapApi1ToDto(deputado_raw);
+
+        var deputado = Api1Mapper.mapApi1ToEntity(deputadoApi1);
 
         return deputado;
     }

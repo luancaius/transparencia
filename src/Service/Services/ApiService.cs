@@ -1,11 +1,8 @@
-﻿using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 using Service.Mappers;
 
-namespace Service
+namespace Service.Services
 {
     public class ApiService
     {
@@ -37,7 +34,6 @@ namespace Service
             
             return data;
         }
-        // Method to make a POST request with data and parse the JSON response
         public async Task<T> PostAsync<T>(string apiUrl, object data)
         {
             string jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(data);
@@ -50,10 +46,8 @@ namespace Service
                 T responseData = await response.Content.ReadAsAsync<T>();
                 return responseData;
             }
-            else
-            {
-                throw new Exception($"Failed to call the API. Status code: {response.StatusCode}");
-            }
+
+            throw new Exception($"Failed to call the API. Status code: {response.StatusCode}");
         }
     }
 }
