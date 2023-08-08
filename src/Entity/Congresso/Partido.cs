@@ -12,4 +12,6 @@ public class Partido
         
     [MaxLength(10)]
     public string Sigla { get; set; }
+    
+    public List<Deputado> Deputados { get; set; }
 }

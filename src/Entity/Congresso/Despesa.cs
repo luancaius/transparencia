@@ -8,8 +8,6 @@ public class Despesa
     public int Id { get; set; }
         
     [ForeignKey("Deputado")]
-    public int DeputadoId { get; set; }
-        
     public Deputado Deputado { get; set; }
         
     public decimal Valor { get; set; }
