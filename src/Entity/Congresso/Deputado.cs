@@ -4,10 +4,8 @@ using Entity.Geral;
 
 namespace Entity.Congresso;
 
-public class Deputado
-{
-    public int Id { get; set; }
-        
+public class Deputado : BaseEntity
+{        
     [Required]
     [MaxLength(100)]
     public string Nome { get; set; }

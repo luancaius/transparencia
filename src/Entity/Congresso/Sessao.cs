@@ -2,10 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Entity.Congresso;
 
-public class Sessao
-{
-    public int Id { get; set; }
-        
+public class Sessao : BaseEntity
+{        
     public DateTime Data { get; set; }
         
     [MaxLength(200)]

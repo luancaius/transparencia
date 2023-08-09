@@ -2,10 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Entity.Geral;
 
-public class Estado
-{
-    public int Id { get; set; }
-        
+public class Estado : BaseEntity
+{        
     [Required]
     [MaxLength(100)]
     public string Nome { get; set; }

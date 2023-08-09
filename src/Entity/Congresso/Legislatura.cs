@@ -1,9 +1,7 @@
 namespace Entity.Congresso;
 
-public class Legislatura
-{
-    public int Id { get; set; }
-        
+public class Legislatura : BaseEntity
+{        
     public int Numero { get; set; }
         
     public DateTime Inicio { get; set; }

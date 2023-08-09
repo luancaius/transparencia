@@ -3,10 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entity.Congresso;
 
-public class Despesa
-{
-    public int Id { get; set; }
-        
+public class Despesa : BaseEntity
+{        
     [ForeignKey("Deputado")]
     public Deputado Deputado { get; set; }
         

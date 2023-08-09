@@ -2,10 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Entity.Geral;
 
-public class PessoaJuridica
-{
-    public int Id { get; set; }
-        
+public class PessoaJuridica : BaseEntityGuid
+{     
     [Required]
     [MaxLength(100)]
     public string NomeFantasia { get; set; }
