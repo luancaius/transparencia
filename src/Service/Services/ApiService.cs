@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Headers;
 using System.Text;
+using Service.DTO.API1;
 using Service.Mappers;
 
 namespace Service.Services
@@ -13,6 +14,7 @@ namespace Service.Services
             _httpClient = new HttpClient();
             _httpClient.DefaultRequestHeaders.Accept.Clear();
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            
         }
 
         // Method to make a GET request and parse the JSON response
@@ -48,6 +50,11 @@ namespace Service.Services
             }
 
             throw new Exception($"Failed to call the API. Status code: {response.StatusCode}");
+        }
+
+        public async Task Save(Api1DeputadoDto deputado)
+        {
+            
         }
     }
 }

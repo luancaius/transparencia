@@ -7,13 +7,14 @@ public class DeputadoService : ApiService
 {
     private String baseUrl = "https://dadosabertos.camara.leg.br/api/v2";
 
+    
     public async Task GetLatestDeputados()
     {
         var deputados = await GetAll();
         foreach (var deputado_item in deputados)
         {
             var deputado = await GetById(deputado_item.Id);
-            Console.WriteLine(deputado);
+            
         }
     }
     
