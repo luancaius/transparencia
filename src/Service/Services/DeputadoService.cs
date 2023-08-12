@@ -1,4 +1,5 @@
 using Entity.Congresso;
+using Repository;
 using Service.Mappers;
 
 namespace Service.Services;
@@ -7,6 +8,11 @@ public class DeputadoService : ApiService
 {
     private String baseUrl = "https://dadosabertos.camara.leg.br/api/v2";
 
+    private JsonRepository _jsonRepository;
+    public DeputadoService()
+    {
+        _jsonRepository = new JsonRepository("your_connection_string", "your_database_name");
+    }
     
     public async Task GetLatestDeputados()
     {
