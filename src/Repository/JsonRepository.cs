@@ -17,7 +17,7 @@ public class JsonRepository
     
     public IMongoCollection<Api1DeputadoDto> GetEntitiesCollection()
     {
-        return _database.GetCollection<Api1DeputadoDto>("YourCollectionName");
+        return _database.GetCollection<Api1DeputadoDto>($"temp_api1_deputados");
     }
 
     public async Task<Api1DeputadoDto> GetByIdAsync(ObjectId id)

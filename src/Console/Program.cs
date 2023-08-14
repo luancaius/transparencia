@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Repository;
 using Service;
 using Service.Services;
 
@@ -10,8 +12,10 @@ namespace ConsoleNS
     {
         static async Task Main(string[] args)
         {
+             var jsonRepository = new JsonRepository("mongodb://root:root@localhost:27017/mydb", "mydb");
+             
             bool running = true;
-            DeputadoService deputadoService = new DeputadoService();
+            DeputadoService deputadoService = new DeputadoService(jsonRepository);
                 
             while (running)
             {
