@@ -1,12 +1,7 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
-using Repository;
-using Service;
+﻿using Repository;
 using Service.Services;
 
-namespace ConsoleNS
+namespace Console
 {
     class Program
     {
@@ -19,7 +14,7 @@ namespace ConsoleNS
                 
             while (running)
             {
-                Console.Write("Enter a command: ");
+                System.Console.Write("Enter a command: ");
                 string command = "d";//Console.ReadLine().ToLower();
 
                 switch (command)
@@ -31,12 +26,12 @@ namespace ConsoleNS
                         running = false;
                         break;
                     default:
-                        Console.WriteLine("Invalid command. Please try again.");
+                        System.Console.WriteLine("Invalid command. Please try again.");
                         break;
                 }
             }
 
-            Console.WriteLine("Exiting the Command Console App. Goodbye!");
+            System.Console.WriteLine("Exiting the Command Console App. Goodbye!");
         }
 
 
@@ -61,24 +56,24 @@ namespace ConsoleNS
                         string responseBody = await response.Content.ReadAsStringAsync();
 
                         // Display the response content
-                        Console.WriteLine("API response:");
-                        Console.WriteLine(responseBody);
+                        System.Console.WriteLine("API response:");
+                        System.Console.WriteLine(responseBody);
                     }
                     else
                     {
                         // Display an error message if the API call is not successful
-                        Console.WriteLine($"API call failed with status code: {response.StatusCode}");
+                        System.Console.WriteLine($"API call failed with status code: {response.StatusCode}");
                     }
                 }
                 catch (HttpRequestException e)
                 {
                     // Display an error message if there's an exception during the API call
-                    Console.WriteLine($"API call failed with exception: {e.Message}");
+                    System.Console.WriteLine($"API call failed with exception: {e.Message}");
                 }
             }
 
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
+            System.Console.WriteLine("Press any key to exit...");
+            System.Console.ReadKey();
         }
 
     }

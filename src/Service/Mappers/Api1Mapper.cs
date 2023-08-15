@@ -1,6 +1,6 @@
+using Entity.API1;
 using Entity.Congresso;
 using Newtonsoft.Json;
-using Service.DTO.API1;
 
 namespace Service.Mappers;
 

@@ -1,6 +1,6 @@
 using MongoDB.Bson;
 using MongoDB.Driver;
-using Service.DTO.API1;
+using Repository.JsonEntity;
 
 namespace Repository;
 
@@ -15,18 +15,18 @@ public class JsonRepository
         _database = _mongoClient.GetDatabase(databaseName);
     }
     
-    public IMongoCollection<Api1DeputadoDto> GetEntitiesCollection()
+    public IMongoCollection<Api1DeputadoDtoMongo> GetEntitiesCollection()
     {
-        return _database.GetCollection<Api1DeputadoDto>($"temp_api1_deputados");
+        return _database.GetCollection<Api1DeputadoDtoMongo>($"temp_api1_deputados");
     }
 
-    public async Task<Api1DeputadoDto> GetByIdAsync(ObjectId id)
+    public async Task<Api1DeputadoDtoMongo> GetByIdAsync(ObjectId id)
     {
         var collection = GetEntitiesCollection();
-        return await collection.Find(e => e.Id == id).FirstOrDefaultAsync();
+        return await collection.Find(e => e.ObjectId == id).FirstOrDefaultAsync();
     }
 
-    public async Task InsertAsync(Api1DeputadoDto entity)
+    public async Task InsertAsync(Api1DeputadoDtoMongo entity)
     {
         var collection = GetEntitiesCollection();
         await collection.InsertOneAsync(entity);

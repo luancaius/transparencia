@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace Service.DTO.API1;
+namespace Entity.API1;
 
 public class Api1DeputadoList
 {
