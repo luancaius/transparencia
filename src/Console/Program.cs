@@ -7,7 +7,7 @@ namespace Console
     {
         static async Task Main(string[] args)
         {
-             var jsonRepository = new JsonRepository("mongodb://root:root@localhost:27017/mydb", "mydb");
+             var jsonRepository = new JsonRepository("mongodb://root:root@localhost:27017", "mydb");
              
             bool running = true;
             DeputadoService deputadoService = new DeputadoService(jsonRepository);
@@ -20,7 +20,7 @@ namespace Console
                 switch (command)
                 {
                     case "d":
-                        await deputadoService.GetLatestDeputados();
+                        await deputadoService.SaveOnMongoDB();
                         break;    
                     case "exit":
                         running = false;

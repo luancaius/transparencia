@@ -29,11 +29,18 @@ public class DeputadoService : ApiService
     public async Task SaveOnMongoDB()
     {
         var deputados_api1 = await GetAllAPI1();
-        foreach (var deputado_item in deputados_api1.DeputadoList)
+        try
         {
-            var deputado_api1 = await GetDeputadoAPI1(deputado_item.Id);
-            var deputado_api1_mongo = new Api1DeputadoDtoMongo{Api1DeputadoDto = deputado_api1};
-            await _jsonRepository.InsertAsync(deputado_api1_mongo);
+            foreach (var deputado_item in deputados_api1.DeputadoList)
+            {
+                var deputado_api1 = await GetDeputadoAPI1(deputado_item.Id);
+                var deputado_api1_mongo = new Api1DeputadoDtoMongo { Api1DeputadoDto = deputado_api1 };
+                await _jsonRepository.InsertAsync(deputado_api1_mongo);
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
         }
     }
     
