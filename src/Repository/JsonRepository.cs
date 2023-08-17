@@ -23,7 +23,7 @@ public class JsonRepository
     public async Task<Api1DeputadoDtoMongo> GetByIdAsync(ObjectId id)
     {
         var collection = GetEntitiesCollection();
-        return await collection.Find(e => e.ObjectId == id).FirstOrDefaultAsync();
+        return await collection.Find(e => e._id == id).FirstOrDefaultAsync();
     }
 
     public async Task InsertAsync(Api1DeputadoDtoMongo entity)

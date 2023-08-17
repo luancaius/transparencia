@@ -31,11 +31,14 @@ public class DeputadoService : ApiService
         var deputados_api1 = await GetAllAPI1();
         try
         {
+            var total = 0;
             foreach (var deputado_item in deputados_api1.DeputadoList)
             {
                 var deputado_api1 = await GetDeputadoAPI1(deputado_item.Id);
                 var deputado_api1_mongo = new Api1DeputadoDtoMongo { Api1DeputadoDto = deputado_api1 };
+                Console.WriteLine($"{total} - {deputado_api1_mongo.Api1DeputadoDto.NomeCivil}");
                 await _jsonRepository.InsertAsync(deputado_api1_mongo);
+                total++;
             }
         }
         catch (Exception e)
