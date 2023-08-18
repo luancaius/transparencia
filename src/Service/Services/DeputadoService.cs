@@ -1,5 +1,7 @@
 using Entity.API1;
 using Entity.Congresso;
+using MongoDB.Bson;
+using MongoDB.Driver;
 using Repository;
 using Repository.JsonEntity;
 using Service.Mappers;
@@ -35,8 +37,9 @@ public class DeputadoService : ApiService
             foreach (var deputado_item in deputados_api1.DeputadoList)
             {
                 var deputado_api1 = await GetDeputadoAPI1(deputado_item.Id);
-                var deputado_api1_mongo = new Api1DeputadoDtoMongo { Api1DeputadoDto = deputado_api1 };
-                Console.WriteLine($"{total} - {deputado_api1_mongo.Api1DeputadoDto.NomeCivil}");
+                var deputado_api1_mongo = new Api1DeputadoDtoMongo { Dados = deputado_api1, Nome = deputado_api1.NomeCivil};
+                Console.WriteLine($"{total} - {deputado_api1_mongo.Nome}");
+                
                 await _jsonRepository.InsertAsync(deputado_api1_mongo);
                 total++;
             }

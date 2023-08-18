@@ -13,6 +13,13 @@ public class JsonRepository
     {
         _mongoClient = new MongoClient(connectionString);
         _database = _mongoClient.GetDatabase(databaseName);
+        
+        var indexKeys = Builders<Api1DeputadoDtoMongo>.IndexKeys.Ascending("Nome");
+        var indexOptions = new CreateIndexOptions { Unique = true };
+        var indexModel = new CreateIndexModel<Api1DeputadoDtoMongo>(indexKeys, indexOptions);
+        var collection = _database.GetCollection<Api1DeputadoDtoMongo>($"temp_api1_deputados");
+        collection.Indexes.CreateOne(indexModel); // Create the unique index
+
     }
     
     public IMongoCollection<Api1DeputadoDtoMongo> GetEntitiesCollection()
@@ -29,6 +36,13 @@ public class JsonRepository
     public async Task InsertAsync(Api1DeputadoDtoMongo entity)
     {
         var collection = GetEntitiesCollection();
-        await collection.InsertOneAsync(entity);
+        try
+        {
+            await collection.InsertOneAsync(entity);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("JsonRepository - InsertAsync error:"+e.Message);
+        }
     }
 }
