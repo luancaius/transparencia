@@ -7,7 +7,7 @@ namespace Console
     {
         static async Task Main(string[] args)
         {
-             var jsonRepository = new JsonRepository("mongodb://root:root@localhost:27017", "mydb");
+             var jsonRepository = new JsonRepository("mongodb://root:root@localhost:27017", "congresso");
              
             bool running = true;
             DeputadoService deputadoService = new DeputadoService(jsonRepository);

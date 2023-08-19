@@ -10,33 +10,33 @@ namespace Service.Services;
 
 public class DeputadoService : ApiService
 {
-    private String baseUrl = "https://dadosabertos.camara.leg.br/api/v2";
-
+    private Api1RestService _api1RestService;
     private JsonRepository _jsonRepository;
-    public DeputadoService(JsonRepository jsonRepository)
+    public DeputadoService(JsonRepository jsonRepository, Api1RestService api1RestService)
     {
         _jsonRepository = jsonRepository;
+        _api1RestService = api1RestService;
     }
     
     public async Task GetLatestDeputados()
     {
-        var deputados = await GetAll();
+        var deputados = await _api1RestService.GetAll();
         foreach (var deputado_item in deputados)
         {
-            var deputado = await GetById(deputado_item.Id);
+            var deputado = await _api1RestService.GetById(deputado_item.Id);
             
         }
     }
     
     public async Task SaveOnMongoDB()
     {
-        var deputados_api1 = await GetAllAPI1();
+        var deputados_api1 = await _api1RestService.GetAllAPI1();
         try
         {
             var total = 0;
             foreach (var deputado_item in deputados_api1.DeputadoList)
             {
-                var deputado_api1 = await GetDeputadoAPI1(deputado_item.Id);
+                var deputado_api1 = await _api1RestService.GetDeputadoAPI1(deputado_item.Id);
                 var deputado_api1_mongo = new Api1DeputadoDtoMongo { Dados = deputado_api1, Nome = deputado_api1.NomeCivil};
                 Console.WriteLine($"{total} - {deputado_api1_mongo.Nome}");
                 
@@ -50,53 +50,5 @@ public class DeputadoService : ApiService
         }
     }
     
-    private async Task<Api1DeputadoList> GetAllAPI1()
-    {
-        String apiUrl = "/deputados";
-        String param = "?ordem=ASC&ordenarPor=nome";
-
-        String deputados_raw = await GetAsync(baseUrl+apiUrl+param);
-
-        var deputadosListApi1 = Api1Mapper.mapApi1ListToDto(deputados_raw);
-
-        return deputadosListApi1;
-    }
     
-    private async Task<Api1DeputadoDto> GetDeputadoAPI1(int id)
-    {
-        String apiUrl = $"/deputados/{id}";
-
-        String deputado_raw = await GetAsync(baseUrl+apiUrl);
-
-        var api1DeputadoDadosDto = Api1Mapper.mapApi1ToDto(deputado_raw);
-
-        return api1DeputadoDadosDto.DeputadoApi1;
-    }
-    
-    private async Task<List<Deputado>> GetAll()
-    {
-        String apiUrl = "/deputados";
-        String param = "?ordem=ASC&ordenarPor=nome";
-
-        String deputados_raw = await GetAsync(baseUrl+apiUrl+param);
-
-        var deputadosListApi1 = Api1Mapper.mapApi1ListToDto(deputados_raw);
-
-        var deputados = Api1Mapper.mapListApi1ToEntity(deputadosListApi1);
-        
-        return deputados;
-    }
-    
-    private async Task<Deputado> GetById(int Id)
-    {
-        String apiUrl = $"/deputados/{Id}";
-
-        String deputado_raw = await GetAsync(baseUrl+apiUrl);
-
-        var deputadoApi1 = Api1Mapper.mapApi1ToDto(deputado_raw);
-
-        var deputado = Api1Mapper.mapApi1ToEntity(deputadoApi1);
-
-        return deputado;
-    }
 }

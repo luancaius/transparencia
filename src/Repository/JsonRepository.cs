@@ -17,14 +17,14 @@ public class JsonRepository
         var indexKeys = Builders<Api1DeputadoDtoMongo>.IndexKeys.Ascending("Nome");
         var indexOptions = new CreateIndexOptions { Unique = true };
         var indexModel = new CreateIndexModel<Api1DeputadoDtoMongo>(indexKeys, indexOptions);
-        var collection = _database.GetCollection<Api1DeputadoDtoMongo>($"temp_api1_deputados");
+        var collection = _database.GetCollection<Api1DeputadoDtoMongo>($"api1_deputados");
         collection.Indexes.CreateOne(indexModel); // Create the unique index
 
     }
     
     public IMongoCollection<Api1DeputadoDtoMongo> GetEntitiesCollection()
     {
-        return _database.GetCollection<Api1DeputadoDtoMongo>($"temp_api1_deputados");
+        return _database.GetCollection<Api1DeputadoDtoMongo>($"api1_deputados");
     }
 
     public async Task<Api1DeputadoDtoMongo> GetByIdAsync(ObjectId id)
