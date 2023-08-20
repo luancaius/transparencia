@@ -1,4 +1,4 @@
-using Entity.API1;
+using Entity.API1_Rest;
 using Entity.Congresso;
 using Newtonsoft.Json;
 

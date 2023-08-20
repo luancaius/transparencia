@@ -1,10 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using Entity.Congresso;
+using Entity.API2_Soap;
+using Deputado = Entity.Congresso.Deputado;
 
 namespace Service.Services
 {
@@ -19,7 +21,7 @@ namespace Service.Services
 
         public async Task<List<Entity.Congresso.Deputado>> GetAllAPI2()
         {
-            string soapEndpoint = "https://www.camara.leg.br/SitCamaraWS/Deputados.asmx"; // Replace with the actual URL
+            string soapEndpoint = "https://www.camara.gov.br/SitCamaraWS/Deputados.asmx";
 
             string soapRequest = @"
 <soapenv:Envelope xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/"" xmlns:dep=""https://www.camara.gov.br/SitCamaraWS/Deputados"">
@@ -28,40 +30,39 @@ namespace Service.Services
       <dep:ObterDeputados/>
    </soapenv:Body>
 </soapenv:Envelope>";
+            string soapAction = "https://www.camara.gov.br/SitCamaraWS/Deputados/ObterDeputados";
 
             try
             {
-                // Create the SOAP request
-                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, soapEndpoint);
-                request.Content = new StringContent(soapRequest, Encoding.UTF8, "text/xml");
-
-                // Set SOAP action header
-                request.Headers.Add("SOAPAction", "https://www.camara.gov.br/SitCamaraWS/Deputados/ObterDeputados");
-
-                // Send the request and get the response
-                HttpResponseMessage response = await _httpClient.SendAsync(request);
-
-                if (response.IsSuccessStatusCode)
+                using (HttpClient httpClient = new HttpClient())
                 {
-                    string soapResponse = await response.Content.ReadAsStringAsync();
+                    httpClient.DefaultRequestHeaders.Add("Accept-Encoding", "gzip,deflate");
+                    httpClient.DefaultRequestHeaders.Add("SOAPAction", soapAction);
+                    StringContent content = new StringContent(soapRequest, Encoding.UTF8, "text/xml");
 
-                    XmlSerializer serializer = new XmlSerializer(typeof(Entity.API2_Soap.Envelope));
-                    List<Entity.Congresso.Deputado> deputados = new List<Deputado>();
-                    using (StringReader reader = new StringReader(soapResponse))
+                    HttpResponseMessage response = await httpClient.PostAsync(soapEndpoint, content);
+
+                    if (response.IsSuccessStatusCode)
                     {
-                        Entity.API2_Soap.Envelope envelope = (Entity.API2_Soap.Envelope)serializer.Deserialize(reader);
+                        string soapResponse = await response.Content.ReadAsStringAsync();
+                        XmlSerializer serializer = new XmlSerializer(typeof(Envelope));
+                        List<Deputado> deputados = new List<Deputado>();
+                        using (StringReader reader = new StringReader(soapResponse))
+                        {
+                            Envelope envelope = (Envelope)serializer.Deserialize(reader);
 
-                        // Access the parsed data like this:
-                        var deputados2 = envelope?.Body?.ObterDeputadosResponse?.ObterDeputadosResult?.Deputados;
-                        Console.WriteLine(deputados2.Count);
-                        // Now you can work with the list of Deputado objects.
+                            // Access the parsed data like this:
+                            var deputados2 = envelope?.Body?.ObterDeputadosResponse?.ObterDeputadosResult?.Deputados;
+
+
+                            Console.WriteLine(deputados.Count);
+                            // Now you can work with the list of Deputado objects.
+                        }
                     }
-
-                    return deputados;
-                }
-                else
-                {
-                    Console.WriteLine($"SOAP request failed with status code: {response.StatusCode}");
+                    else
+                    {
+                        Console.WriteLine($"Request failed with status code: {response.StatusCode}");
+                    }
                 }
             }
             catch (Exception ex)

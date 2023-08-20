@@ -1,6 +1,5 @@
 ﻿using System.Net.Http.Headers;
 using System.Text;
-using Entity.API1;
 using Service.Mappers;
 
 namespace Service.Services

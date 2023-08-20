@@ -1,5 +1,4 @@
-using Entity.API1;
-using Entity.API2_Soap;
+using Entity.API1_Rest;
 using Entity.Congresso;
 using MongoDB.Bson;
 using MongoDB.Driver;

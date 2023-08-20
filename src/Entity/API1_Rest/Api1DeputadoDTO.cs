@@ -1,4 +1,4 @@
-namespace Entity.API1;
+namespace Entity.API1_Rest;
 
 public class Api1DeputadoDto
 {
