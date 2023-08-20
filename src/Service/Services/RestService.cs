@@ -5,11 +5,11 @@ using Service.Mappers;
 
 namespace Service.Services
 {
-    public class ApiService
+    public class RestService
     {
         private readonly HttpClient _httpClient;
 
-        public ApiService()
+        public RestService()
         {
             _httpClient = new HttpClient();
             _httpClient.DefaultRequestHeaders.Accept.Clear();
@@ -50,11 +50,6 @@ namespace Service.Services
             }
 
             throw new Exception($"Failed to call the API. Status code: {response.StatusCode}");
-        }
-
-        public async Task Save(Api1DeputadoDto deputado)
-        {
-            
         }
     }
 }

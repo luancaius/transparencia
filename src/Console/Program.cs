@@ -7,23 +7,25 @@ namespace Console
     {
         static async Task Main(string[] args)
         {
-             var jsonRepository = new JsonRepository("mongodb://root:root@localhost:27017", "congresso");
-             
+            var jsonRepository = new JsonRepository("mongodb://root:root@localhost:27017", "congresso");
+            var api1Service = new Api1RestService();
+            var api2Service = new Api2SoapService();
+            
             bool running = true;
-            DeputadoService deputadoService = new DeputadoService(jsonRepository);
-                
+            DeputadoService deputadoService = new DeputadoService(jsonRepository, api1Service, api2Service);
+
             while (running)
             {
                 System.Console.Write("Enter a command: ");
-                string command = "d";//Console.ReadLine().ToLower();
+                string command = "b"; //Console.ReadLine().ToLower();
 
                 switch (command)
                 {
-                    case "d":
-                        await deputadoService.SaveOnMongoDB();
-                        break;    
-                    case "exit":
-                        running = false;
+                    case "a":
+                        await deputadoService.Api1_GetAllDeputados_SaveOnMongoDB();
+                        break;
+                    case "b":
+                        await deputadoService.Api2_GetAllDeputados_SaveOnMongoDB();
                         break;
                     default:
                         System.Console.WriteLine("Invalid command. Please try again.");
@@ -37,7 +39,6 @@ namespace Console
 
         public static async Task Pokemon()
         {
-
             // Base URL of the API you want to call
             string apiUrl = "https://pokeapi.co/api/v2/pokemon/ditto";
 
@@ -75,6 +76,5 @@ namespace Console
             System.Console.WriteLine("Press any key to exit...");
             System.Console.ReadKey();
         }
-
     }
 }
