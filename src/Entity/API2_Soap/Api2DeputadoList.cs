@@ -67,7 +67,7 @@ public class Deputado {
 	public Comissoes Comissoes { get; set; } 
 }
 
-[XmlRoot(ElementName = "deputados")]
+[XmlRoot(ElementName = "deputados", Namespace = "")]
 public class Deputados
 {
 	[XmlElement(ElementName = "deputado")]
@@ -81,21 +81,21 @@ public class ObterDeputadosResult {
 	public Deputados Deputados { get; set; } 
 }
 
-[XmlRoot(ElementName="ObterDeputadosResponse")]
+[XmlRoot(ElementName="ObterDeputadosResponse", Namespace = "https://www.camara.gov.br/SitCamaraWS/Deputados")]
 public class ObterDeputadosResponse { 
 
 	[XmlElement(ElementName="ObterDeputadosResult")] 
 	public ObterDeputadosResult ObterDeputadosResult { get; set; }
 }
 
-[XmlRoot(ElementName="Body")]
+[XmlRoot(ElementName="soap:Body")]
 public class Body { 
 
-	[XmlElement(ElementName="ObterDeputadosResponse", Namespace = "https://www.camara.gov.br/SitCamaraWS/Deputados")] 
+	[XmlElement(ElementName="ObterDeputadosResponse")] 
 	public ObterDeputadosResponse ObterDeputadosResponse { get; set; } 
 }
 
-[XmlRoot(Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]
+[XmlRoot(Namespace = "http://schemas.xmlsoap.org/soap/envelope/", ElementName = "soap:Envelope")]
 public class Envelope { 
 
 	[XmlElement(ElementName="Body")] 

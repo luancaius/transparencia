@@ -4,6 +4,7 @@ using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Serialization;
 using Entity.API2_Soap;
 using Deputado = Entity.Congresso.Deputado;
@@ -36,7 +37,6 @@ namespace Service.Services
             {
                 using (HttpClient httpClient = new HttpClient())
                 {
-                    httpClient.DefaultRequestHeaders.Add("Accept-Encoding", "gzip,deflate");
                     httpClient.DefaultRequestHeaders.Add("SOAPAction", soapAction);
                     StringContent content = new StringContent(soapRequest, Encoding.UTF8, "text/xml");
 
@@ -45,19 +45,31 @@ namespace Service.Services
                     if (response.IsSuccessStatusCode)
                     {
                         string soapResponse = await response.Content.ReadAsStringAsync();
-                        XmlSerializer serializer = new XmlSerializer(typeof(Envelope));
-                        List<Deputado> deputados = new List<Deputado>();
-                        using (StringReader reader = new StringReader(soapResponse))
+                        XmlDocument doc = new XmlDocument();
+                        doc.LoadXml(soapResponse);
+
+                        XmlNode node = doc.DocumentElement.SelectSingleNode("soap:Envelope/soap:Body");
+                        XmlSerializer serializerDeputado = new XmlSerializer(typeof(Deputado));
+                        foreach(XmlNode child in node.ChildNodes)
                         {
-                            Envelope envelope = (Envelope)serializer.Deserialize(reader);
 
-                            // Access the parsed data like this:
-                            var deputados2 = envelope?.Body?.ObterDeputadosResponse?.ObterDeputadosResult?.Deputados;
+                            var deputado = child.ChildNodes;
 
-
-                            Console.WriteLine(deputados.Count);
-                            // Now you can work with the list of Deputado objects.
                         }
+                        
+                        // XmlSerializer serializer = new XmlSerializer(typeof(Envelope));
+                        // List<Deputado> deputados = new List<Deputado>();
+                        // using (StringReader reader = new StringReader(soapResponse))
+                        // {
+                        //     Envelope envelope = (Envelope)serializer.Deserialize(reader);
+                        //
+                        //     // Access the parsed data like this:
+                        //     var deputados2 = envelope?.Body?.ObterDeputadosResponse?.ObterDeputadosResult?.Deputados;
+                        //
+                        //
+                        //     Console.WriteLine(deputados.Count);
+                        //     // Now you can work with the list of Deputado objects.
+                        // }
                     }
                     else
                     {

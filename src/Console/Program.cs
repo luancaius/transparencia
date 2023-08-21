@@ -19,6 +19,7 @@ namespace Console
                 System.Console.Write("Enter a command: ");
                 string command = "b"; //Console.ReadLine().ToLower();
 
+                System.Console.WriteLine($"Executing command {command}");
                 switch (command)
                 {
                     case "a":
