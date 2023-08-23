@@ -48,28 +48,15 @@ namespace Service.Services
                         XmlDocument doc = new XmlDocument();
                         doc.LoadXml(soapResponse);
 
-                        XmlNode node = doc.DocumentElement.SelectSingleNode("soap:Envelope/soap:Body");
-                        XmlSerializer serializerDeputado = new XmlSerializer(typeof(Deputado));
-                        foreach(XmlNode child in node.ChildNodes)
-                        {
-
-                            var deputado = child.ChildNodes;
-
+                        XmlNodeList nodes = doc.DocumentElement.SelectNodes("//deputados/deputado");
+                        XmlSerializer serializerDeputado = new XmlSerializer(typeof(DeputadoSoap));
+                        foreach(XmlNode node in nodes){
+                            using (XmlNodeReader reader = new XmlNodeReader(node))
+                            {
+                                DeputadoSoap deputado = (DeputadoSoap)serializerDeputado.Deserialize(reader);
+                                Console.WriteLine(deputado);
+                            }
                         }
-                        
-                        // XmlSerializer serializer = new XmlSerializer(typeof(Envelope));
-                        // List<Deputado> deputados = new List<Deputado>();
-                        // using (StringReader reader = new StringReader(soapResponse))
-                        // {
-                        //     Envelope envelope = (Envelope)serializer.Deserialize(reader);
-                        //
-                        //     // Access the parsed data like this:
-                        //     var deputados2 = envelope?.Body?.ObterDeputadosResponse?.ObterDeputadosResult?.Deputados;
-                        //
-                        //
-                        //     Console.WriteLine(deputados.Count);
-                        //     // Now you can work with the list of Deputado objects.
-                        // }
                     }
                     else
                     {
@@ -83,6 +70,22 @@ namespace Service.Services
             }
 
             return null;
+        }
+        
+        private static T ConvertNode<T>(XmlNode node) where T: class
+        {
+            MemoryStream stm = new MemoryStream();
+
+            StreamWriter stw = new StreamWriter(stm);
+            stw.Write(node.OuterXml);
+            stw.Flush();
+
+            stm.Position = 0;
+
+            XmlSerializer ser = new XmlSerializer(typeof(T));
+            T result = (ser.Deserialize(stm) as T);
+
+            return result;
         }
     }
 }

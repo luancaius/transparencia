@@ -4,7 +4,6 @@ using System.Xml.Serialization;
 
 namespace Entity.API2_Soap;
 
-
 [XmlRoot(ElementName="comissoes")]
 public class Comissoes { 
 
@@ -16,7 +15,7 @@ public class Comissoes {
 }
 
 [XmlRoot(ElementName="deputado")]
-public class Deputado { 
+public class DeputadoSoap { 
 
 	[XmlElement(ElementName="ideCadastro")] 
 	public int IdeCadastro { get; set; } 
@@ -67,39 +66,33 @@ public class Deputado {
 	public Comissoes Comissoes { get; set; } 
 }
 
-[XmlRoot(ElementName = "deputados", Namespace = "")]
-public class Deputados
+[XmlRoot(ElementName = "deputados")]
+public class DeputadosSoap
 {
-	[XmlElement(ElementName = "deputado")]
-	public List<Deputado> Deputado { get; set; }
+	public List<DeputadoSoap> Deputado { get; set; }
 }
 
 [XmlRoot(ElementName="ObterDeputadosResult")]
 public class ObterDeputadosResult { 
 
-	[XmlElement(ElementName="deputados", Namespace = "")] 
-	public Deputados Deputados { get; set; } 
+	public DeputadosSoap Deputados { get; set; } 
 }
 
 [XmlRoot(ElementName="ObterDeputadosResponse", Namespace = "https://www.camara.gov.br/SitCamaraWS/Deputados")]
 public class ObterDeputadosResponse { 
 
-	[XmlElement(ElementName="ObterDeputadosResult")] 
 	public ObterDeputadosResult ObterDeputadosResult { get; set; }
 }
 
 [XmlRoot(ElementName="soap:Body")]
 public class Body { 
 
-	[XmlElement(ElementName="ObterDeputadosResponse")] 
 	public ObterDeputadosResponse ObterDeputadosResponse { get; set; } 
 }
 
 [XmlRoot(Namespace = "http://schemas.xmlsoap.org/soap/envelope/", ElementName = "soap:Envelope")]
 public class Envelope { 
 
-	[XmlElement(ElementName="Body")] 
-	public Body Body { get; set; } 
-    
+	public Body Body { get; set; }
 }
 
