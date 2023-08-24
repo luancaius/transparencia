@@ -1,13 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 using Entity.API2_Soap;
-using Deputado = Entity.Congresso.Deputado;
 
 namespace Service.Services
 {
@@ -33,6 +27,7 @@ namespace Service.Services
 </soapenv:Envelope>";
             string soapAction = "https://www.camara.gov.br/SitCamaraWS/Deputados/ObterDeputados";
 
+            XmlNode currentNode = null;
             try
             {
                 using (HttpClient httpClient = new HttpClient())
@@ -50,11 +45,16 @@ namespace Service.Services
 
                         XmlNodeList nodes = doc.DocumentElement.SelectNodes("//deputados/deputado");
                         XmlSerializer serializerDeputado = new XmlSerializer(typeof(DeputadoSoap));
-                        foreach(XmlNode node in nodes){
+                        int index = 0;
+                        foreach(XmlNode node in nodes)
+                        {
+                            currentNode = node;
                             using (XmlNodeReader reader = new XmlNodeReader(node))
                             {
+                                index++;
+                                Console.WriteLine($"Starting on: {reader.Name}");
                                 DeputadoSoap deputado = (DeputadoSoap)serializerDeputado.Deserialize(reader);
-                                Console.WriteLine(deputado);
+                                Console.WriteLine($"{index} - "+deputado);
                             }
                         }
                     }

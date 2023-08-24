@@ -8,10 +8,10 @@ namespace Entity.API2_Soap;
 public class Comissoes { 
 
 	[XmlElement(ElementName="titular")] 
-	public object Titular { get; set; } 
+	public object? Titular { get; set; } 
 
 	[XmlElement(ElementName="suplente")] 
-	public object Suplente { get; set; } 
+	public object? Suplente { get; set; } 
 }
 
 [XmlRoot(ElementName="deputado")]
@@ -20,8 +20,8 @@ public class DeputadoSoap {
 	[XmlElement(ElementName="ideCadastro")] 
 	public int IdeCadastro { get; set; } 
 
-	[XmlElement(ElementName="codOrcamento")] 
-	public int CodOrcamento { get; set; } 
+	[XmlElement(ElementName="codOrcamento", IsNullable = true)] 
+	public string CodOrcamento { get; set; } 
 
 	[XmlElement(ElementName="condicao")] 
 	public string Condicao { get; set; } 
@@ -63,7 +63,12 @@ public class DeputadoSoap {
 	public string Email { get; set; } 
 
 	[XmlElement(ElementName="comissoes")] 
-	public Comissoes Comissoes { get; set; } 
+	public Comissoes Comissoes { get; set; }
+
+	public override string ToString()
+	{
+		return $"Nome: {Nome} idCadastro:{IdeCadastro} idParlamentar:{IdParlamentar}";
+	}
 }
 
 [XmlRoot(ElementName = "deputados")]

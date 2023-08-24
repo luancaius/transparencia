@@ -1,10 +1,5 @@
-using Entity.API1_Rest;
-using Entity.Congresso;
-using MongoDB.Bson;
-using MongoDB.Driver;
 using Repository;
 using Repository.JsonEntity;
-using Service.Mappers;
 
 namespace Service.Services;
 
