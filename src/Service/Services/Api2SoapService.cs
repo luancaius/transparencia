@@ -42,21 +42,16 @@ namespace Service.Services
                         string soapResponse = await response.Content.ReadAsStringAsync();
                         XmlDocument doc = new XmlDocument();
                         doc.LoadXml(soapResponse);
-
-                        XmlNodeList nodes = doc.DocumentElement.SelectNodes("//deputados/deputado");
-                        XmlSerializer serializerDeputado = new XmlSerializer(typeof(DeputadoSoap));
-                        int index = 0;
-                        foreach(XmlNode node in nodes)
+                        var deputados = new DeputadosSoap();
+                        XmlNode node = doc.DocumentElement.SelectSingleNode("//deputados");
+                        XmlSerializer serializerDeputado = new XmlSerializer(typeof(DeputadosSoap));
+                        using (XmlNodeReader reader = new XmlNodeReader(node))
                         {
-                            currentNode = node;
-                            using (XmlNodeReader reader = new XmlNodeReader(node))
-                            {
-                                index++;
-                                Console.WriteLine($"Starting on: {reader.Name}");
-                                DeputadoSoap deputado = (DeputadoSoap)serializerDeputado.Deserialize(reader);
-                                Console.WriteLine($"{index} - "+deputado);
-                            }
+                            deputados = (DeputadosSoap)serializerDeputado.Deserialize(reader);
+                            Console.WriteLine($"Total deputados: {deputados.Deputado.Count}");
                         }
+
+                        return deputados;
                     }
                     else
                     {
@@ -71,8 +66,8 @@ namespace Service.Services
 
             return null;
         }
-        
-        private static T ConvertNode<T>(XmlNode node) where T: class
+
+        private static T ConvertNode<T>(XmlNode node) where T : class
         {
             MemoryStream stm = new MemoryStream();
 

@@ -45,18 +45,18 @@ public class DeputadoService : RestService
     {
         try
         {
-            var deputados_api1 = await _api2SoapService.GetAllAPI2();
-
-            // var total = 0;
-            // foreach (var deputado_item in deputados_api1.DeputadoList)
-            // {
-            //     var deputado_api1 = await _api1RestService.GetDeputadoAPI1(deputado_item.Id);
-            //     var deputado_api1_mongo = new Api1DeputadoDtoMongo
-            //         { Dados = deputado_api1, Nome = deputado_api1.NomeCivil };
-            //     Console.WriteLine($"{total} - {deputado_api1_mongo.Nome}");
-            //
-            //     await _jsonRepository.InsertAsync(deputado_api1_mongo);
-            //     total++;
+            var deputados_api2 = await _api2SoapService.GetAllAPI2();
+            var total = 0;
+            foreach (var deputado_item in deputados_api2)
+            {
+                // var deputado_api2 = await _api1RestService.GetDeputadoAPI1(deputado_item.Id);
+                // var deputado_api2_mongo = new Api2DeputadoDtoMongo
+                //     { Dados = deputado_api1, Nome = deputado_api1.NomeCivil };
+                // Console.WriteLine($"{total} - {deputado_api1_mongo.Nome}");
+                //
+                // await _jsonRepository.InsertAsync(deputado_api1_mongo);
+                total++;
+            }
         }
         catch (Exception e)
         {
