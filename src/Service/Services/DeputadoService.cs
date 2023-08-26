@@ -49,7 +49,7 @@ public class DeputadoService : RestService
             var total = 0;
             foreach (var deputado_item in deputados_api2)
             {
-                // var deputado_api2 = await _api1RestService.GetDeputadoAPI1(deputado_item.Id);
+                var deputado_api2 = await _api2SoapService.GetDeputadoById(deputado_item.IdeCadastro);
                 // var deputado_api2_mongo = new Api2DeputadoDtoMongo
                 //     { Dados = deputado_api1, Nome = deputado_api1.NomeCivil };
                 // Console.WriteLine($"{total} - {deputado_api1_mongo.Nome}");

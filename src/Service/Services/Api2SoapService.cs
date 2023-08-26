@@ -14,8 +14,10 @@ namespace Service.Services
             _httpClient = new HttpClient();
         }
 
-        public async Task<List<Entity.Congresso.Deputado>> GetAllAPI2()
+        public async Task<List<DeputadoSoap>> GetAllAPI2()
         {
+            var deputados = new List<DeputadoSoap>();
+
             string soapEndpoint = "https://www.camara.gov.br/SitCamaraWS/Deputados.asmx";
 
             string soapRequest = @"
@@ -42,15 +44,17 @@ namespace Service.Services
                         string soapResponse = await response.Content.ReadAsStringAsync();
                         XmlDocument doc = new XmlDocument();
                         doc.LoadXml(soapResponse);
-                        var deputados = new DeputadosSoap();
-                        XmlNode node = doc.DocumentElement.SelectSingleNode("//deputados");
-                        XmlSerializer serializerDeputado = new XmlSerializer(typeof(DeputadosSoap));
-                        using (XmlNodeReader reader = new XmlNodeReader(node))
+                        XmlNodeList nodes = doc.DocumentElement.SelectNodes("//deputados/deputado");
+                        XmlSerializer serializerDeputado = new XmlSerializer(typeof(DeputadoSoap));
+                        foreach (XmlNode node in nodes)
                         {
-                            deputados = (DeputadosSoap)serializerDeputado.Deserialize(reader);
-                            Console.WriteLine($"Total deputados: {deputados.Deputado.Count}");
+                            using (XmlNodeReader reader = new XmlNodeReader(node))
+                            {
+                                var deputado = (DeputadoSoap)serializerDeputado.Deserialize(reader);
+                                deputados.Add(deputado);
+                            }
                         }
-
+                        
                         return deputados;
                     }
                     else
@@ -67,20 +71,9 @@ namespace Service.Services
             return null;
         }
 
-        private static T ConvertNode<T>(XmlNode node) where T : class
+        public async Task<DeputadoSoap> GetDeputadoById(int id)
         {
-            MemoryStream stm = new MemoryStream();
-
-            StreamWriter stw = new StreamWriter(stm);
-            stw.Write(node.OuterXml);
-            stw.Flush();
-
-            stm.Position = 0;
-
-            XmlSerializer ser = new XmlSerializer(typeof(T));
-            T result = (ser.Deserialize(stm) as T);
-
-            return result;
+            return new DeputadoSoap();
         }
     }
 }
