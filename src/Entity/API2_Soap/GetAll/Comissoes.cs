@@ -2,7 +2,7 @@
 
 using System.Xml.Serialization;
 
-namespace Entity.API2_Soap;
+namespace Entity.API2_Soap.GetAll;
 
 [XmlRoot(ElementName="comissoes")]
 public class Comissoes { 

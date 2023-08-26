@@ -1,4 +1,5 @@
 using Entity.API2_Soap;
+using Entity.API2_Soap.GetAll;
 using MongoDB.Bson;
 
 namespace Repository.JsonEntity;
