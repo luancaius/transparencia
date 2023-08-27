@@ -1,4 +1,6 @@
-﻿using Repository;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Repository;
+using Repository.JsonEntity;
 using Service.Services;
 
 namespace Console
@@ -7,13 +9,16 @@ namespace Console
     {
         static async Task Main(string[] args)
         {
-            var jsonRepository = new JsonRepository("mongodb://root:root@localhost:27017", "congresso");
-            var api1Service = new Api1RestService();
-            var api2Service = new Api2SoapService();
-            
+            var serviceCollection = new ServiceCollection();
+            ConfigureServices(serviceCollection);
+
+            // Build the service provider
+            var serviceProvider = serviceCollection.BuildServiceProvider();
+
+            // Get an instance of DeputadoService from DI container
+            var deputadoService = serviceProvider.GetRequiredService<DeputadoService>();
+
             bool running = true;
-            DeputadoService deputadoService = new DeputadoService(jsonRepository, api1Service, api2Service);
-            
             System.Console.Write("Enter a command: ");
             string command = "b"; //Console.ReadLine().ToLower();
 
@@ -32,6 +37,17 @@ namespace Console
             }
             
             System.Console.WriteLine("Exiting the Command Console App. Goodbye!");
+        }
+        
+        private static void ConfigureServices(IServiceCollection services)
+        {
+            services.AddSingleton<IMongoRepository<Api1DeputadoDtoMongo>, Api1MongoRepository>(sp =>
+                new Api1MongoRepository("mongodb://root:root@localhost:27017", "congresso"));
+            services.AddSingleton<IMongoRepository<Api2DeputadoDtoMongo>, Api2MongoRepository>(sp =>
+                new Api2MongoRepository("mongodb://root:root@localhost:27017", "congresso"));
+            services.AddTransient<Api1RestService>();
+            services.AddTransient<Api2SoapService>();
+            services.AddTransient<DeputadoService>();
         }
     }
 }

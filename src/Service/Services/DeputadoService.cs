@@ -8,12 +8,15 @@ public class DeputadoService : RestService
     private Api1RestService _api1RestService;
     private Api2SoapService _api2SoapService;
 
-    private JsonRepository _jsonRepository;
+    private Api1MongoRepository _api1MongoRepository;
+    private Api2MongoRepository _api2MongoRepository;
 
-    public DeputadoService(JsonRepository jsonRepository, Api1RestService api1RestService,
+    public DeputadoService(Api1MongoRepository api1MongoRepository, Api2MongoRepository api2MongoRepository, Api1RestService api1RestService,
         Api2SoapService api2SoapService)
     {
-        _jsonRepository = jsonRepository;
+        _api1MongoRepository = api1MongoRepository;
+        _api2MongoRepository = api2MongoRepository;
+        
         _api1RestService = api1RestService;
         _api2SoapService = api2SoapService;
     }
@@ -31,7 +34,7 @@ public class DeputadoService : RestService
                     { Dados = deputado_api1, Nome = deputado_api1.NomeCivil };
                 Console.WriteLine($"{total} - {deputado_api1_mongo.Nome}");
 
-                await _jsonRepository.InsertAsync(deputado_api1_mongo);
+                await _api1MongoRepository.InsertAsync(deputado_api1_mongo);
                 total++;
             }
         }
@@ -50,11 +53,11 @@ public class DeputadoService : RestService
             foreach (var deputado_item in deputados_api2)
             {
                 var deputado_api2 = await _api2SoapService.GetDeputadoById(deputado_item.IdeCadastro, 57);
-                // var deputado_api2_mongo = new Api2DeputadoDtoMongo
-                //     { Dados = deputado_api1, Nome = deputado_api1.NomeCivil };
-                // Console.WriteLine($"{total} - {deputado_api1_mongo.Nome}");
-                //
-                // await _jsonRepository.InsertAsync(deputado_api1_mongo);
+                var deputado_api2_mongo = new Api2DeputadoDtoMongo
+                    { Dados = deputado_api2, Nome = deputado_api2.nomeCivil };
+                Console.WriteLine($"{total} - {deputado_api2_mongo.Nome}");
+                
+                await _api2MongoRepository.InsertAsync(deputado_api2_mongo);
                 total++;
             }
         }

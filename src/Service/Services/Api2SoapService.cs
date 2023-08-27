@@ -102,13 +102,10 @@ namespace Service.Services
                                 Console.WriteLine(deputado);
                             }
                         
-                        
                         return deputado;
                     }
-                    else
-                    {
-                        Console.WriteLine($"Request failed with status code: {response.StatusCode}");
-                    }
+
+                    Console.WriteLine($"Request failed with status code: {response.StatusCode}");
                 }
             }
             catch (Exception ex)
