@@ -41,10 +41,16 @@ namespace Console
         
         private static void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IMongoRepository<Api1DeputadoDtoMongo>, Api1MongoRepository>(sp =>
-                new Api1MongoRepository("mongodb://root:root@localhost:27017", "congresso"));
-            services.AddSingleton<IMongoRepository<Api2DeputadoDtoMongo>, Api2MongoRepository>(sp =>
-                new Api2MongoRepository("mongodb://root:root@localhost:27017", "congresso"));
+            // MongoDB Configuration
+            string mongoConnectionString = "mongodb://root:root@localhost:27017";
+            string mongoDatabaseName = "congresso";
+
+            string tableNameApi1 = "api1_deputados";
+            string tableNameApi2 = "api2_deputados";
+            services.AddSingleton<MongoDbContext>(sp => new MongoDbContext(mongoConnectionString, mongoDatabaseName));
+            services.AddTransient<Api1MongoRepository>(sp => new Api1MongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi1));
+            services.AddTransient<Api2MongoRepository>(sp => new Api2MongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi2));
+
             services.AddTransient<Api1RestService>();
             services.AddTransient<Api2SoapService>();
             services.AddTransient<DeputadoService>();

@@ -10,11 +10,11 @@ public class Api2MongoRepository : IMongoRepository<Api2DeputadoDtoMongo>
     private readonly IMongoDatabase _database;
     private string _tableName;
 
-    public Api2MongoRepository(string connectionString, string databaseName, string tableName)
+    public Api2MongoRepository(MongoDbContext mongoContext, string tableName)
     {
-        _mongoClient = new MongoClient(connectionString);
-        _database = _mongoClient.GetDatabase(databaseName);
+        _database = mongoContext.Database;
         _tableName = tableName;
+        
         var indexKeys = Builders<Api1DeputadoDtoMongo>.IndexKeys.Ascending("Nome");
         var indexOptions = new CreateIndexOptions { Unique = true };
         var indexModel = new CreateIndexModel<Api1DeputadoDtoMongo>(indexKeys, indexOptions);

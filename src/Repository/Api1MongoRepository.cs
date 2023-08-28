@@ -6,14 +6,12 @@ namespace Repository;
 
 public class Api1MongoRepository : IMongoRepository<Api1DeputadoDtoMongo>
 {
-    private readonly IMongoClient _mongoClient;
     private readonly IMongoDatabase _database;
     private string _tableName;
 
-    public Api1MongoRepository(string connectionString, string databaseName, string tableName)
+    public Api1MongoRepository(MongoDbContext mongoContext, string tableName)
     {
-        _mongoClient = new MongoClient(connectionString);
-        _database = _mongoClient.GetDatabase(databaseName);
+        _database = mongoContext.Database;
         _tableName = tableName;
         
         var indexKeys = Builders<Api1DeputadoDtoMongo>.IndexKeys.Ascending("Nome");
