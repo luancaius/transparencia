@@ -29,8 +29,11 @@ public class DeputadoByIdSoap
     [XmlArray("cargosComissoes")]
     [XmlArrayItem("cargoComissoes")]
     public List<CargoComissoes> cargosComissoes { get; set; }
-    
-    // Add other properties as needed
+
+    public override string ToString()
+    {
+        return $"{nomeCivil} - {partidoAtual.sigla}";
+    }
 }
 
 public class PartidoAtual

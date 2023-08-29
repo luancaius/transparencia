@@ -1,6 +1,6 @@
 namespace Entity.API1_Rest;
 
-public class DeputadoItem
+public class Api1DeputadoItem
 {
     public int Id { get; set; }
     public string Uri { get; set; }
