@@ -1,3 +1,4 @@
+using Entity.API1_Rest;
 using Repository;
 using Repository.JsonEntity;
 
@@ -58,6 +59,29 @@ public class DeputadoService : RestService
                 Console.WriteLine($"{total} - {deputado_api2_mongo.Nome}");
                 
                 await _api2MongoRepository.InsertAsync(deputado_api2_mongo);
+                total++;
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+
+    public async Task<List<Api1DeputadoDespesa>> Ap1_GetDeputadoDespesas()
+    {
+        var deputados_api1 = await _api1RestService.GetAllAPI1();
+        try
+        {
+            var total = 0;
+            foreach (var deputado_item in deputados_api1.DeputadoList)
+            {
+                var deputado_api1 = await _api1RestService.GetDeputadoAPI1(deputado_item.Id);
+                var deputado_api1_mongo = new Api1DeputadoDtoMongo
+                    { Dados = deputado_api1, Nome = deputado_api1.NomeCivil };
+                Console.WriteLine($"{total} - {deputado_api1_mongo.Nome}");
+
+                await _api1MongoRepository.InsertAsync(deputado_api1_mongo);
                 total++;
             }
         }

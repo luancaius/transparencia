@@ -44,4 +44,9 @@ public class Api1MongoRepository : IMongoRepository<Api1DeputadoDtoMongo>
             Console.WriteLine("JsonRepository - InsertAsync error:"+e.Message);
         }
     }
+
+    public Task<List<Api1DeputadoDtoMongo>> GetAll()
+    {
+        throw new NotImplementedException();
+    }
 }

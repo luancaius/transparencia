@@ -31,6 +31,9 @@ namespace Console
                 case "b":
                     await deputadoService.Api2_GetAllDeputados_SaveOnMongoDB();
                     break;
+                case "c":
+                    await deputadoService.Ap1();
+                    break;
                 default:
                     System.Console.WriteLine("Invalid command. Please try again.");
                     break;

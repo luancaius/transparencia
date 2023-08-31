@@ -10,4 +10,6 @@ public interface IMongoRepository<T>
     Task<T> GetByIdAsync(ObjectId id);
 
     Task InsertAsync(T entity);
+
+    Task<List<T>> GetAll();
 }
