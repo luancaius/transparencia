@@ -31,7 +31,7 @@ public class Api1RestService : RestService
         return api1DeputadoDadosDto.DeputadoApi1;
     }
 
-    public async Task<List<Api1DeputadoDespesa>> GetDeputadoDespesa(int id, int year, int month)
+    public async Task<List<Api1DeputadoDespesa>> GetDeputadoDespesa(long id, int year, int month)
     {
         //https://dadosabertos.camara.leg.br/api/v2/deputados/:id/despesas?ano=2023&mes={mon}6&itens=10000
         String apiUrl = $"/deputados/{id}/despesas?ano={year}&mes={month}&itens=10000";

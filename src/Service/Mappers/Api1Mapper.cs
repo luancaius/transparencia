@@ -22,8 +22,8 @@ public static class Api1Mapper
 
     public static List<Api1DeputadoDespesa> MapApi1DeputadoDespesas(string deputado_despesas_raw)
     {
-        var response = JsonConvert.DeserializeObject<List<Api1DeputadoDespesa>>(deputado_despesas_raw);
+        var response = JsonConvert.DeserializeObject<Api1DeputadoDespesaList>(deputado_despesas_raw);
 
-        return response;    
+        return response.DeputadoDespesaList;    
     }
 }

@@ -45,8 +45,10 @@ public class Api1MongoRepository : IMongoRepository<Api1DeputadoDtoMongo>
         }
     }
 
-    public Task<List<Api1DeputadoDtoMongo>> GetAll()
+    public async Task<List<Api1DeputadoDtoMongo>> GetAll()
     {
-        throw new NotImplementedException();
+        var collection = GetEntitiesCollection();
+        var filter = Builders<Api1DeputadoDtoMongo>.Filter.Empty; 
+        return await collection.Find(filter).ToListAsync();
     }
 }

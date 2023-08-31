@@ -20,7 +20,7 @@ namespace Console
 
             bool running = true;
             System.Console.Write("Enter a command: ");
-            string command = "b"; //Console.ReadLine().ToLower();
+            string command = "c"; //Console.ReadLine().ToLower();
 
             System.Console.WriteLine($"Executing command {command}");
             switch (command)
@@ -32,7 +32,7 @@ namespace Console
                     await deputadoService.Api2_GetAllDeputados_SaveOnMongoDB();
                     break;
                 case "c":
-                    await deputadoService.Ap1();
+                    await deputadoService.Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(2023);
                     break;
                 default:
                     System.Console.WriteLine("Invalid command. Please try again.");
