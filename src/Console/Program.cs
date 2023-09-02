@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Repository;
 using Repository.JsonEntity;
+using Repository.Repositories;
+using Repository.Repositories.Mongo;
 using Service.Services;
 
 namespace Console
@@ -50,9 +52,12 @@ namespace Console
 
             string tableNameApi1 = "api1_deputados";
             string tableNameApi2 = "api2_deputados";
+            string tableNameApi1Despesas = "api1_deputado_despesas";
+
             services.AddSingleton<MongoDbContext>(sp => new MongoDbContext(mongoConnectionString, mongoDatabaseName));
-            services.AddTransient<Api1MongoRepository>(sp => new Api1MongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi1));
-            services.AddTransient<Api2MongoRepository>(sp => new Api2MongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi2));
+            services.AddTransient<Api1DeputadoMongoRepository>(sp => new Api1DeputadoMongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi1));
+            services.AddTransient<Api2DeputadoMongoRepository>(sp => new Api2DeputadoMongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi2));
+            services.AddTransient<Api1Deputado_DespesasMongoRepository>(sp => new Api1Deputado_DespesasMongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi1Despesas));
 
             services.AddTransient<Api1RestService>();
             services.AddTransient<Api2SoapService>();

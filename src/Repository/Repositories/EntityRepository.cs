@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace Repository;
+namespace Repository.Repositories;
 
 public class EntityFrameworkRepository<T> : IRepository<T> where T : class
 {

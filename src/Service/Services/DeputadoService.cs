@@ -1,6 +1,8 @@
 using Entity.API1_Rest;
 using Repository;
 using Repository.JsonEntity;
+using Repository.Repositories;
+using Repository.Repositories.Mongo;
 
 namespace Service.Services;
 
@@ -9,17 +11,20 @@ public class DeputadoService : RestService
     private Api1RestService _api1RestService;
     private Api2SoapService _api2SoapService;
 
-    private Api1MongoRepository _api1MongoRepository;
-    private Api2MongoRepository _api2MongoRepository;
+    private Api1DeputadoMongoRepository _api1MongoRepository;
+    private Api2DeputadoMongoRepository _api2MongoRepository;
+    private Api1Deputado_DespesasMongoRepository _api1DeputadoDespesasMongoRepository;
 
-    public DeputadoService(Api1MongoRepository api1MongoRepository, Api2MongoRepository api2MongoRepository, Api1RestService api1RestService,
-        Api2SoapService api2SoapService)
+    public DeputadoService(Api1DeputadoMongoRepository api1MongoRepository, Api2DeputadoMongoRepository api2MongoRepository, Api1RestService api1RestService,
+        Api2SoapService api2SoapService, Api1Deputado_DespesasMongoRepository api1DeputadoDespesasMongoRepository)
     {
         _api1MongoRepository = api1MongoRepository;
         _api2MongoRepository = api2MongoRepository;
         
         _api1RestService = api1RestService;
         _api2SoapService = api2SoapService;
+
+        _api1DeputadoDespesasMongoRepository = api1DeputadoDespesasMongoRepository;
     }
 
     public async Task Api1_GetAllDeputados_SaveOnMongoDB()
@@ -75,15 +80,15 @@ public class DeputadoService : RestService
         {
             var deputados_api1 = await _api1MongoRepository.GetAll();
 
-            var total = 0;
+            var total = 1;
             foreach (var deputado_item in deputados_api1)
             {
-                Console.WriteLine($"Getting despesas deputado {deputado_item.Nome}");
+                Console.WriteLine($"{total} - Getting despesas deputado {deputado_item.Nome}");
                 var deputado_despesas = await _api1RestService.GetDeputadoDespesa(deputado_item.Dados.Id, year, 1);
                 
-                //Console.WriteLine($"{total} - {deputado_api1_mongo.Nome}");
+                Console.WriteLine($"{total} - {deputado_item.Nome}");
 
-                //await _api1MongoRepository.InsertAsync(deputado_api1_mongo);
+                await _api1DeputadoDespesasMongoRepository.InsertManyAsync(deputado_despesas);
                 total++;
             }
         }

@@ -2,23 +2,19 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using Repository.JsonEntity;
 
-namespace Repository;
+namespace Repository.Repositories.Mongo;
 
-public class Api1MongoRepository : IMongoRepository<Api1DeputadoDtoMongo>
+public class Api1DeputadoMongoRepository : IMongoRepository<Api1DeputadoDtoMongo>
 {
     private readonly IMongoDatabase _database;
     private string _tableName;
 
-    public Api1MongoRepository(MongoDbContext mongoContext, string tableName)
+    public Api1DeputadoMongoRepository(MongoDbContext mongoContext, string tableName)
     {
         _database = mongoContext.Database;
         _tableName = tableName;
-        
-        var indexKeys = Builders<Api1DeputadoDtoMongo>.IndexKeys.Ascending("Nome");
-        var indexOptions = new CreateIndexOptions { Unique = true };
-        var indexModel = new CreateIndexModel<Api1DeputadoDtoMongo>(indexKeys, indexOptions);
-        var collection = _database.GetCollection<Api1DeputadoDtoMongo>(tableName);
-        collection.Indexes.CreateOne(indexModel); // Create the unique index
+
+        Util.createUniqueIndexForTable<Api1DeputadoDtoMongo>(_database, tableName, "Nome");
     }
     
     public IMongoCollection<Api1DeputadoDtoMongo> GetEntitiesCollection()
@@ -43,6 +39,11 @@ public class Api1MongoRepository : IMongoRepository<Api1DeputadoDtoMongo>
         {
             Console.WriteLine("JsonRepository - InsertAsync error:"+e.Message);
         }
+    }
+
+    public Task InsertManyAsync(List<Api1DeputadoDtoMongo> entity)
+    {
+        throw new NotImplementedException();
     }
 
     public async Task<List<Api1DeputadoDtoMongo>> GetAll()
