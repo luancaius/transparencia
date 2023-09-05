@@ -1,5 +1,4 @@
 using Entity.API1_Rest;
-using Entity.Congresso;
 using Newtonsoft.Json;
 
 namespace Service.Mappers;

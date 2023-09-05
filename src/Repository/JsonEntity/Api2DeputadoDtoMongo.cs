@@ -1,5 +1,3 @@
-using Entity.API2_Soap;
-using Entity.API2_Soap.GetAll;
 using Entity.API2_Soap.GetById;
 using MongoDB.Bson;
 

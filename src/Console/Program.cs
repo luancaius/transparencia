@@ -1,7 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Repository;
-using Repository.JsonEntity;
-using Repository.Repositories;
 using Repository.Repositories.Mongo;
 using Service.Services;
 

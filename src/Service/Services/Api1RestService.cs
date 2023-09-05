@@ -1,5 +1,4 @@
 using Entity.API1_Rest;
-using Entity.Congresso;
 using Service.Mappers;
 
 namespace Service.Services;

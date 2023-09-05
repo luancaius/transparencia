@@ -1,7 +1,5 @@
 using Entity.API1_Rest;
-using Repository;
 using Repository.JsonEntity;
-using Repository.Repositories;
 using Repository.Repositories.Mongo;
 
 namespace Service.Services;
@@ -29,18 +27,18 @@ public class DeputadoService : RestService
 
     public async Task Api1_GetAllDeputados_SaveOnMongoDB()
     {
-        var deputados_api1 = await _api1RestService.GetAllAPI1();
+        var deputadosApi1 = await _api1RestService.GetAllAPI1();
         try
         {
             var total = 0;
-            foreach (var deputado_item in deputados_api1.DeputadoList)
+            foreach (var deputadoItem in deputadosApi1.DeputadoList)
             {
-                var deputado_api1 = await _api1RestService.GetDeputadoAPI1(deputado_item.Id);
-                var deputado_api1_mongo = new Api1DeputadoDtoMongo
-                    { Dados = deputado_api1, Nome = deputado_api1.NomeCivil };
-                Console.WriteLine($"{total} - {deputado_api1_mongo.Nome}");
+                var deputadoApi1 = await _api1RestService.GetDeputadoAPI1(deputadoItem.Id);
+                var deputadoApi1Mongo = new Api1DeputadoDtoMongo
+                    { Dados = deputadoApi1, Nome = deputadoApi1.NomeCivil };
+                Console.WriteLine($"{total} - {deputadoApi1Mongo.Nome}");
 
-                await _api1MongoRepository.InsertAsync(deputado_api1_mongo);
+                await _api1MongoRepository.InsertAsync(deputadoApi1Mongo);
                 total++;
             }
         }
@@ -54,16 +52,16 @@ public class DeputadoService : RestService
     {
         try
         {
-            var deputados_api2 = await _api2SoapService.GetAllAPI2();
+            var deputadosApi2 = await _api2SoapService.GetAllAPI2();
             var total = 0;
-            foreach (var deputado_item in deputados_api2)
+            foreach (var deputadoItem in deputadosApi2)
             {
-                var deputado_api2 = await _api2SoapService.GetDeputadoById(deputado_item.IdeCadastro, 57);
-                var deputado_api2_mongo = new Api2DeputadoDtoMongo
-                    { Dados = deputado_api2, Nome = deputado_api2.nomeCivil };
-                Console.WriteLine($"{total} - {deputado_api2_mongo.Nome}");
+                var deputadoApi2 = await _api2SoapService.GetDeputadoById(deputadoItem.IdeCadastro, 57);
+                var deputadoApi2Mongo = new Api2DeputadoDtoMongo
+                    { Dados = deputadoApi2, Nome = deputadoApi2.nomeCivil };
+                Console.WriteLine($"{total} - {deputadoApi2Mongo.Nome}");
                 
-                await _api2MongoRepository.InsertAsync(deputado_api2_mongo);
+                await _api2MongoRepository.InsertAsync(deputadoApi2Mongo);
                 total++;
             }
         }
@@ -75,20 +73,25 @@ public class DeputadoService : RestService
 
     public async Task<List<Api1DeputadoDespesa>> Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(int year)
     {
-        var deputado_despesas_list = new List<Api1DeputadoDespesa>();
+        var deputadoDespesasList = new List<Api1DeputadoDespesa>();
         try
         {
-            var deputados_api1 = await _api1MongoRepository.GetAll();
+            var deputadosApi1 = await _api1MongoRepository.GetAll();
 
             var total = 1;
-            foreach (var deputado_item in deputados_api1)
+            foreach (var deputadoItem in deputadosApi1)
             {
-                Console.WriteLine($"{total} - Getting despesas deputado {deputado_item.Nome}");
-                var deputado_despesas = await _api1RestService.GetDeputadoDespesa(deputado_item.Dados.Id, year, 1);
-                
-                Console.WriteLine($"{total} - {deputado_item.Nome}");
+                var deputadoDespesasAno = new List<Api1DeputadoDespesa>();
+                Console.WriteLine($"{total} - Getting despesas deputado {deputadoItem.Nome}");
+                for (int month = 1; month <= 2; month++)
+                {
+                    var deputadoDespesasMes = await _api1RestService.GetDeputadoDespesa(deputadoItem.Dados.Id, year, month);
+                    deputadoDespesasAno.AddRange(deputadoDespesasMes);
+                }
 
-                await _api1DeputadoDespesasMongoRepository.InsertManyAsync(deputado_despesas);
+                Console.WriteLine($"{total} - {deputadoItem.Nome}");
+
+                await _api1DeputadoDespesasMongoRepository.InsertManyAsync(deputadoDespesasAno);
                 total++;
             }
         }
@@ -96,6 +99,6 @@ public class DeputadoService : RestService
         {
             Console.WriteLine(e.Message);
         }
-        return deputado_despesas_list;
+        return deputadoDespesasList;
     }
 }

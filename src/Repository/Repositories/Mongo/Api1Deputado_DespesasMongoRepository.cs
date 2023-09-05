@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Entity.API1_Rest;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using Repository.JsonEntity;
 
 namespace Repository.Repositories.Mongo
 {
@@ -18,7 +14,7 @@ namespace Repository.Repositories.Mongo
             _database = mongoContext.Database;
             _tableName = tableName;
 
-            Util.createUniqueIndexForTable<Api1DeputadoDespesa>(_database, tableName, "Nome");
+            Util.createUniqueIndexForTable<Api1DeputadoDespesa>(_database, tableName, new string[] {"DataDocumento","CnpjCpfFornecedor","NumDocumento"});
         }
         
         public IMongoCollection<Api1DeputadoDespesa> GetEntitiesCollection()
