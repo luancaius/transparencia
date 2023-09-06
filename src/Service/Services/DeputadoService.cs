@@ -74,6 +74,7 @@ public class DeputadoService : RestService
     public async Task<List<Api1DeputadoDespesa>> Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(int year)
     {
         var deputadoDespesasList = new List<Api1DeputadoDespesa>();
+        Api1DeputadoDtoMongo deputadoCurrent = null;
         try
         {
             var deputadosApi1 = await _api1MongoRepository.GetAll();
@@ -81,22 +82,26 @@ public class DeputadoService : RestService
             var total = 1;
             foreach (var deputadoItem in deputadosApi1)
             {
+                deputadoCurrent = deputadoItem;
                 var deputadoDespesasAno = new List<Api1DeputadoDespesa>();
-                Console.WriteLine($"{total} - Getting despesas deputado {deputadoItem.Nome}");
-                for (int month = 1; month <= 2; month++)
+                Console.WriteLine($"{total} - Getting despesas deputado {deputadoItem.Nome} {deputadoItem.Dados.Id}");
+                for (int month = 1; month <= 12; month++)
                 {
                     var deputadoDespesasMes = await _api1RestService.GetDeputadoDespesa(deputadoItem.Dados.Id, year, month);
                     deputadoDespesasAno.AddRange(deputadoDespesasMes);
                 }
 
-                Console.WriteLine($"{total} - {deputadoItem.Nome}");
-
-                await _api1DeputadoDespesasMongoRepository.InsertManyAsync(deputadoDespesasAno);
+                var sumDespesas = deputadoDespesasAno.Sum(a => a.ValorDocumento);
+                Console.WriteLine($"total despesas - {deputadoDespesasAno.Count} - soma:{sumDespesas}");
+                if (deputadoDespesasAno.Count > 0)
+                    await _api1DeputadoDespesasMongoRepository.InsertManyAsync(deputadoDespesasAno);
                 total++;
             }
         }
         catch (Exception e)
         {
+            if (deputadoCurrent != null)
+                Console.WriteLine($"deputado: {deputadoCurrent.Nome} {deputadoCurrent.Dados.Id}");
             Console.WriteLine(e.Message);
         }
         return deputadoDespesasList;

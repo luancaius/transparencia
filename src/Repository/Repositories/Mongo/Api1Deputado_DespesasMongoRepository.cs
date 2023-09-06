@@ -14,7 +14,7 @@ namespace Repository.Repositories.Mongo
             _database = mongoContext.Database;
             _tableName = tableName;
 
-            Util.createUniqueIndexForTable<Api1DeputadoDespesa>(_database, tableName, new string[] {"DataDocumento","CnpjCpfFornecedor","NumDocumento"});
+            Util.createUniqueIndexForTable<Api1DeputadoDespesa>(_database, tableName, new string[] {"DataDocumento","NumDocumento","ValorDocumento"});
         }
         
         public IMongoCollection<Api1DeputadoDespesa> GetEntitiesCollection()
@@ -35,8 +35,15 @@ namespace Repository.Repositories.Mongo
 
         public async Task InsertManyAsync(List<Api1DeputadoDespesa> entities)
         {
-            var collection = GetEntitiesCollection();
-            await collection.InsertManyAsync(entities);
+            try
+            {
+                var collection = GetEntitiesCollection();
+                await collection.InsertManyAsync(entities);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error Mongo Repository:"+e.Message);
+            }
         }
 
         public Task<List<Api1DeputadoDespesa>> GetAll()
