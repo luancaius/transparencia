@@ -88,13 +88,13 @@ public class DeputadoService : RestService
                 for (int month = 1; month <= 12; month++)
                 {
                     var deputadoDespesasMes = await _api1RestService.GetDeputadoDespesa(deputadoItem.Dados.Id, year, month);
+                    if (deputadoDespesasMes.Count > 0)
+                        await _api1DeputadoDespesasMongoRepository.InsertManyAsync(deputadoDespesasMes);
                     deputadoDespesasAno.AddRange(deputadoDespesasMes);
                 }
 
                 var sumDespesas = deputadoDespesasAno.Sum(a => a.ValorDocumento);
                 Console.WriteLine($"total despesas - {deputadoDespesasAno.Count} - soma:{sumDespesas}");
-                if (deputadoDespesasAno.Count > 0)
-                    await _api1DeputadoDespesasMongoRepository.InsertManyAsync(deputadoDespesasAno);
                 total++;
             }
         }
