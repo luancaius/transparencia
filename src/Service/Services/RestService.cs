@@ -1,28 +1,40 @@
 ﻿using System.Net.Http.Headers;
-using System.Text;
-using Service.Mappers;
+using Service.Interfaces;
 
 namespace Service.Services
 {
     public class RestService
     {
         private readonly HttpClient _httpClient;
+        private readonly IRedisCacheService _cacheService;
 
-        public RestService()
+        public RestService(IRedisCacheService cacheService)
         {
+            _cacheService = cacheService;
             _httpClient = new HttpClient();
             _httpClient.DefaultRequestHeaders.Accept.Clear();
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             
         }
         
-        public async Task<String> GetAsync(string apiUrl)
+        public async Task<string> GetAsync(string apiUrl)
         {
-            HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
+            var cacheKey = $"Api1RestService:{apiUrl}";
 
-            String data = await response.Content.ReadAsStringAsync();
-            
+            var cachedData = await _cacheService.GetStringAsync(cacheKey);
+
+            if (!string.IsNullOrEmpty(cachedData))
+            {
+                return cachedData;
+            }
+
+            HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
+            string data = await response.Content.ReadAsStringAsync();
+
+            await _cacheService.SetStringAsync(cacheKey, data, TimeSpan.FromHours(1));
+
             return data;
         }
+
     }
 }
