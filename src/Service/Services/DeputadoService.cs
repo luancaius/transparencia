@@ -1,10 +1,11 @@
 using Entity.API1_Rest;
 using Repository.JsonEntity;
 using Repository.Repositories.Mongo;
+using Service.Interfaces;
 
 namespace Service.Services;
 
-public class DeputadoService : RestService
+public class DeputadoService
 {
     private Api1RestService _api1RestService;
     private Api2SoapService _api2SoapService;
@@ -13,14 +14,14 @@ public class DeputadoService : RestService
     private Api2DeputadoMongoRepository _api2MongoRepository;
     private Api1Deputado_DespesasMongoRepository _api1DeputadoDespesasMongoRepository;
 
-    public DeputadoService(Api1DeputadoMongoRepository api1MongoRepository, Api2DeputadoMongoRepository api2MongoRepository, Api1RestService api1RestService,
-        Api2SoapService api2SoapService, Api1Deputado_DespesasMongoRepository api1DeputadoDespesasMongoRepository)
+    public DeputadoService(Api1DeputadoMongoRepository api1MongoRepository, Api2DeputadoMongoRepository api2MongoRepository,
+        Api1Deputado_DespesasMongoRepository api1DeputadoDespesasMongoRepository, IRedisCacheService redisCacheService)
     {
         _api1MongoRepository = api1MongoRepository;
         _api2MongoRepository = api2MongoRepository;
         
-        _api1RestService = api1RestService;
-        _api2SoapService = api2SoapService;
+        _api1RestService = new Api1RestService(redisCacheService);
+        _api2SoapService = new Api2SoapService();
 
         _api1DeputadoDespesasMongoRepository = api1DeputadoDespesasMongoRepository;
     }

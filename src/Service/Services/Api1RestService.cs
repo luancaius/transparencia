@@ -1,4 +1,5 @@
 using Entity.API1_Rest;
+using Service.Interfaces;
 using Service.Mappers;
 
 namespace Service.Services;
@@ -7,6 +8,9 @@ public class Api1RestService : RestService
 {
     private String baseUrl = "https://dadosabertos.camara.leg.br/api/v2";
 
+    public Api1RestService(IRedisCacheService cacheService) : base(cacheService)
+    {
+    }
     public async Task<Api1DeputadoList> GetAllAPI1()
     {
         String apiUrl = "/deputados";

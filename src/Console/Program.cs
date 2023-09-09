@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Repository;
 using Repository.Repositories.Mongo;
+using Service.Interfaces;
 using Service.Services;
 using StackExchange.Redis;
 
@@ -71,8 +72,15 @@ namespace Console
             // Register DeputadoService with caching proxy
             services.AddTransient<DeputadoService>(serviceProvider => 
             {
-                var actualService = new DeputadoService(/*... your dependencies ...*/);
-                return ProxyUtility.CreateProxyWithCaching<DeputadoService>(actualService, serviceProvider.GetRequiredService<IRedisCacheService>());
+                var api1MongoRepo = serviceProvider.GetRequiredService<Api1DeputadoMongoRepository>();
+                var api2MongoRepo = serviceProvider.GetRequiredService<Api2DeputadoMongoRepository>();
+                var api1DeputadoDespesasRepo = serviceProvider.GetRequiredService<Api1Deputado_DespesasMongoRepository>();
+                var redisCacheService = serviceProvider.GetRequiredService<IRedisCacheService>();
+                var redisDb = serviceProvider.GetRequiredService<IDatabase>();
+
+                var actualService = new DeputadoService(api1MongoRepo, api2MongoRepo, api1DeputadoDespesasRepo, redisCacheService);
+
+                return new ProxyUtility().CreateProxyWithCache<DeputadoService>(actualService, redisDb);
             });
         }
 
