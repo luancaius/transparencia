@@ -6,7 +6,7 @@ namespace Service.Services
     public class RestService
     {
         private readonly HttpClient _httpClient;
-        private readonly IRedisCacheService _cacheService;
+        protected readonly IRedisCacheService _cacheService;
 
         public RestService(IRedisCacheService cacheService)
         {
@@ -25,9 +25,10 @@ namespace Service.Services
 
             if (!string.IsNullOrEmpty(cachedData))
             {
+                Console.WriteLine($"Returning cache for key {apiUrl}");
                 return cachedData;
             }
-
+            Console.WriteLine($"Rest call to {apiUrl}");
             HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
             string data = await response.Content.ReadAsStringAsync();
 
