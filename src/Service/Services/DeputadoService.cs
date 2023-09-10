@@ -72,7 +72,7 @@ public class DeputadoService
         }
     }
 
-    public async Task<List<Api1DeputadoDespesa>> Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(int year)
+    public async Task<List<Api1DeputadoDespesa>> Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(int year, bool isWholeYear = false)
     {
         var deputadoDespesasList = new List<Api1DeputadoDespesa>();
         Api1DeputadoDtoMongo deputadoCurrent = null;
@@ -86,7 +86,8 @@ public class DeputadoService
                 deputadoCurrent = deputadoItem;
                 var deputadoDespesasAno = new List<Api1DeputadoDespesa>();
                 Console.WriteLine($"{total} - Getting despesas deputado {deputadoItem.Nome} {deputadoItem.Dados.Id}");
-                for (int month = 1; month <= 12; month++)
+                var currentMonth = isWholeYear ? 12 : DateTime.Now.Month;
+                for (int month = 1; month <= currentMonth; month++)
                 {
                     var deputadoDespesasMes = await _api1RestService.GetDeputadoDespesa(deputadoItem.Dados.Id, year, month);
                     if (deputadoDespesasMes.Count > 0)

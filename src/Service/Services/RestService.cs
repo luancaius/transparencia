@@ -32,7 +32,7 @@ namespace Service.Services
             HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
             string data = await response.Content.ReadAsStringAsync();
 
-            await _cacheService.SetStringAsync(cacheKey, data, TimeSpan.FromHours(1));
+            await _cacheService.SetStringAsync(cacheKey, data, TimeSpan.FromDays(10));
 
             return data;
         }
