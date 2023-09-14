@@ -36,6 +36,9 @@ namespace Console
                 case "c":
                     await deputadoService.Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(2023);
                     break;
+                case "d":
+                    await deputadoService.Api2_GetListaPresencaDeputado_SaveOnMongoDB(2023);
+                    break;
                 default:
                     System.Console.WriteLine("Invalid command. Please try again.");
                     break;

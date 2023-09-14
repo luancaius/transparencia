@@ -108,4 +108,40 @@ public class DeputadoService
         }
         return deputadoDespesasList;
     }
+
+    public async Task<List<DeputadoListaPresencaSoap>> Api2_GetListaPresencaDeputado_SaveOnMongoDB(int year)
+    {
+        var deputadoDespesasList = new List<Api1DeputadoDespesa>();
+        Api2DeputadoDtoMongo deputadoCurrent = null;
+        try
+        {
+            var deputadosApi2 = await _api2MongoRepository.GetAll();
+
+            var total = 1;
+            foreach (var deputadoItem in deputadosApi2)
+            {
+                deputadoCurrent = deputadoItem;
+                var deputadoDespesasAno = new List<Api1DeputadoDespesa>();
+                Console.WriteLine($"{total} - Getting lista presenca deputado {deputadoItem.Nome} {deputadoItem.Dados.Id}");
+                var currentMonth = isWholeYear ? 12 : DateTime.Now.Month;
+                for (int month = 1; month <= currentMonth; month++)
+                {
+                    var deputadoDespesasMes = await _api1Service.GetDeputadoDespesa(deputadoItem.Dados.Id, year, month);
+                    if (deputadoDespesasMes.Count > 0)
+                        await _api1DeputadoDespesasMongoRepository.InsertManyAsync(deputadoDespesasMes);
+                    deputadoDespesasAno.AddRange(deputadoDespesasMes);
+                }
+
+                var sumDespesas = deputadoDespesasAno.Sum(a => a.ValorDocumento);
+                Console.WriteLine($"total despesas - {deputadoDespesasAno.Count} - soma:{sumDespesas}");
+                total++;
+            }
+        }
+        catch (Exception e)
+        {
+            if (deputadoCurrent != null)
+                Console.WriteLine($"deputado: {deputadoCurrent.Nome} {deputadoCurrent.Dados.Id}");
+            Console.WriteLine(e.Message);
+        }
+        return deputadoDespesasList;    }
 }
