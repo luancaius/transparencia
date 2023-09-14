@@ -4,19 +4,21 @@ using Service.Mappers;
 
 namespace Service.Services;
 
-public class Api1RestService : RestService
+public class Api1Service
 {
+    private RestService _restService;
     private String baseUrl = "https://dadosabertos.camara.leg.br/api/v2";
 
-    public Api1RestService(IRedisCacheService cacheService) : base(cacheService)
+    public Api1Service(RestService restService)
     {
+        _restService = restService;
     }
     public async Task<Api1DeputadoList> GetAllAPI1()
     {
         String apiUrl = "/deputados";
         String param = "?ordem=ASC&ordenarPor=nome";
 
-        String deputados_raw = await GetAsync(baseUrl+apiUrl+param);
+        String deputados_raw = await _restService.GetAsync(baseUrl+apiUrl+param);
 
         var deputadosListApi1 = Api1Mapper.MapApi1ListToDto(deputados_raw);
 
@@ -27,7 +29,7 @@ public class Api1RestService : RestService
     {
         String apiUrl = $"/deputados/{id}";
 
-        String deputado_raw = await GetAsync(baseUrl+apiUrl);
+        String deputado_raw = await _restService.GetAsync(baseUrl+apiUrl);
 
         var api1DeputadoDadosDto = Api1Mapper.MapApi1ToDto(deputado_raw);
 
@@ -39,7 +41,7 @@ public class Api1RestService : RestService
         //https://dadosabertos.camara.leg.br/api/v2/deputados/:id/despesas?ano=2023&mes={mon}6&itens=10000
         String apiUrl = $"/deputados/{id}/despesas?ano={year}&mes={month}&itens=10000";
         
-        String deputado_despesas_raw = await GetAsync(baseUrl+apiUrl);
+        String deputado_despesas_raw = await _restService.GetAsync(baseUrl+apiUrl);
 
         var deputado_despesas = Api1Mapper.MapApi1DeputadoDespesas(deputado_despesas_raw);
 

@@ -38,11 +38,11 @@ public class DeputadoSoap {
     [XmlElement(ElementName="partido")] 
     public string Partido { get; set; } 
 
-    [XmlElement(ElementName="gabinete")] 
-    public int Gabinete { get; set; } 
+    [XmlElement(ElementName="gabinete", IsNullable = true)] 
+    public string Gabinete { get; set; } 
 
-    [XmlElement(ElementName="anexo")] 
-    public int Anexo { get; set; } 
+    [XmlElement(ElementName="anexo", IsNullable = true)] 
+    public string Anexo { get; set; } 
 
     [XmlElement(ElementName="fone")] 
     public string Fone { get; set; } 

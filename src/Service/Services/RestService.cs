@@ -20,7 +20,7 @@ namespace Service.Services
         
         public async Task<string> GetAsync(string apiUrl)
         {
-            var cacheKey = $"Api1RestService:GET:{apiUrl}";
+            var cacheKey = $"RestService:GET:{apiUrl}";
 
             var cachedData = await _cacheService.GetStringAsync(cacheKey);
             if (!string.IsNullOrEmpty(cachedData))
@@ -41,7 +41,7 @@ namespace Service.Services
         {            
             var contentHash = HashUtil.GetHash(await content.ReadAsStringAsync());
 
-            var cacheKey = $"Api1RestService:POST:{apiUrl}:{contentHash}";
+            var cacheKey = $"RestService:POST:{apiUrl}:{contentHash}";
             
             var cachedData = await _cacheService.GetStringAsync(cacheKey);
             if (!string.IsNullOrEmpty(cachedData))

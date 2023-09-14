@@ -7,34 +7,34 @@ namespace Service.Services;
 
 public class DeputadoService
 {
-    private Api1RestService _api1RestService;
-    private Api2SoapService _api2SoapService;
+    private Api1Service _api1Service;
+    private Api2Service _api2SoapService;
 
     private Api1DeputadoMongoRepository _api1MongoRepository;
     private Api2DeputadoMongoRepository _api2MongoRepository;
     private Api1Deputado_DespesasMongoRepository _api1DeputadoDespesasMongoRepository;
 
     public DeputadoService(Api1DeputadoMongoRepository api1MongoRepository, Api2DeputadoMongoRepository api2MongoRepository,
-        Api1Deputado_DespesasMongoRepository api1DeputadoDespesasMongoRepository, IRedisCacheService redisCacheService)
+        Api1Deputado_DespesasMongoRepository api1DeputadoDespesasMongoRepository, Api1Service api1Service, Api2Service api2SoapService)
     {
         _api1MongoRepository = api1MongoRepository;
         _api2MongoRepository = api2MongoRepository;
-        
-        _api1RestService = new Api1RestService(redisCacheService);
-        _api2SoapService = new Api2SoapService();
+
+        _api1Service = api1Service;
+        _api2SoapService = api2SoapService;
 
         _api1DeputadoDespesasMongoRepository = api1DeputadoDespesasMongoRepository;
     }
 
     public async Task Api1_GetAllDeputados_SaveOnMongoDB()
     {
-        var deputadosApi1 = await _api1RestService.GetAllAPI1();
+        var deputadosApi1 = await _api1Service.GetAllAPI1();
         try
         {
             var total = 0;
             foreach (var deputadoItem in deputadosApi1.DeputadoList)
             {
-                var deputadoApi1 = await _api1RestService.GetDeputadoAPI1(deputadoItem.Id);
+                var deputadoApi1 = await _api1Service.GetDeputadoAPI1(deputadoItem.Id);
                 var deputadoApi1Mongo = new Api1DeputadoDtoMongo
                     { Dados = deputadoApi1, Nome = deputadoApi1.NomeCivil };
                 Console.WriteLine($"{total} - {deputadoApi1Mongo.Nome}");
@@ -89,7 +89,7 @@ public class DeputadoService
                 var currentMonth = isWholeYear ? 12 : DateTime.Now.Month;
                 for (int month = 1; month <= currentMonth; month++)
                 {
-                    var deputadoDespesasMes = await _api1RestService.GetDeputadoDespesa(deputadoItem.Dados.Id, year, month);
+                    var deputadoDespesasMes = await _api1Service.GetDeputadoDespesa(deputadoItem.Dados.Id, year, month);
                     if (deputadoDespesasMes.Count > 0)
                         await _api1DeputadoDespesasMongoRepository.InsertManyAsync(deputadoDespesasMes);
                     deputadoDespesasAno.AddRange(deputadoDespesasMes);

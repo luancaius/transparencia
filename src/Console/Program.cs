@@ -59,8 +59,7 @@ namespace Console
             services.AddTransient<Api2DeputadoMongoRepository>(sp => new Api2DeputadoMongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi2));
             services.AddTransient<Api1Deputado_DespesasMongoRepository>(sp => new Api1Deputado_DespesasMongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi1Despesas));
 
-            services.AddTransient<Api1RestService>();
-            services.AddTransient<Api2SoapService>();
+
 
             // Redis Configuration
             string redisConnectionString = "localhost:6379";
@@ -68,6 +67,9 @@ namespace Console
             services.AddTransient<IDatabase>(sp => sp.GetRequiredService<IConnectionMultiplexer>().GetDatabase());
             services.AddTransient<IRedisCacheService, RedisCacheService>();
 
+            services.AddSingleton<RestService>();
+            services.AddTransient<Api1Service>();
+            services.AddTransient<Api2Service>();
             services.AddTransient<DeputadoService>();
 
         }
