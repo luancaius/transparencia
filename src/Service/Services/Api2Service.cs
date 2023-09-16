@@ -60,7 +60,51 @@ namespace Service.Services
             return null;
         }
 
-        public async Task<DeputadoListaPresencaSoap> GetDeputadoListaPresenca(DateTime dateBegin, DateTime dateEnd, int numMatricula)
+        public async Task<DeputadoByIdSoap> GetDeputadoById(int id, int numLegislatura)
+        {
+            string soapEndpoint = "https://www.camara.gov.br/SitCamaraWS/Deputados.asmx";
+
+            string soapRequest = $@"
+                <soapenv:Envelope xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/"" xmlns:dep=""https://www.camara.gov.br/SitCamaraWS/Deputados""> 
+                    <soapenv:Header/>
+                        <soapenv:Body>
+                            <dep:ObterDetalhesDeputado>
+                                <dep:ideCadastro>{id}</dep:ideCadastro>
+                                <dep:numLegislatura>{numLegislatura}</dep:numLegislatura>
+                            </dep:ObterDetalhesDeputado>
+                        </soapenv:Body>
+                </soapenv:Envelope>";
+
+            DeputadoByIdSoap deputado = null;
+            try
+            {
+                StringContent content = new StringContent(soapRequest, Encoding.UTF8, "text/xml");
+
+                String response = await _restService.PostAsync(soapEndpoint, content);
+
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(response);
+                XmlNode node = doc.DocumentElement.SelectSingleNode("//Deputados/Deputado");
+                XmlSerializer serializerDeputado = new XmlSerializer(typeof(DeputadoByIdSoap));
+
+                using (XmlNodeReader reader = new XmlNodeReader(node))
+                {
+                    deputado = (DeputadoByIdSoap)serializerDeputado.Deserialize(reader);
+                    Console.WriteLine(deputado);
+                }
+
+                return deputado;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+
+            return null;
+        }
+
+        public async Task<DeputadoListaPresencaSoap> GetDeputadoListaPresenca(DateTime dateBegin, DateTime dateEnd,
+            int numMatricula)
         {
             DeputadoListaPresencaSoap deputadoListaPresenca = null;
             try
@@ -69,12 +113,12 @@ namespace Service.Services
                 String dateFimStr = dateEnd.ToString("dd/MM/yyyy");
                 String url = $"https://www.camara.gov.br/SitCamaraWS/sessoesreunioes.asmx/ListarPresencasParlamentar?" +
                              $"dataIni={dateInicioStr}&dataFim={dateFimStr}&numMatriculaParlamentar={numMatricula}";
-                
+
                 String response = await _restService.GetAsync(url);
 
                 XmlDocument doc = new XmlDocument();
                 doc.LoadXml(response);
-                XmlNode node = doc.DocumentElement.SelectSingleNode("/parlamentar");
+                XmlNode node = doc.DocumentElement;
                 XmlSerializer serializerDeputado = new XmlSerializer(typeof(DeputadoListaPresencaSoap));
                 using (XmlNodeReader reader = new XmlNodeReader(node))
                 {

@@ -119,7 +119,6 @@ public class DeputadoService
             foreach (var deputadoItem in deputadosApi2)
             {
                 deputadoCurrent = deputadoItem;
-                var deputadoDespesasAno = new List<Api1DeputadoDespesa>();
                 Console.WriteLine($"{total} - Getting lista presenca deputado: {deputadoItem.Nome} matricula: {deputadoItem.Dados.numLegislatura}");
                 var currentMonth = isWholeYear ? 12 : DateTime.Now.Month;
                 for (int month = 1; month <= currentMonth; month++)
@@ -127,22 +126,17 @@ public class DeputadoService
                     var beginMonth = new DateTime(year, month, 1);
                     var dayEndMonth = DateTime.DaysInMonth(year, month);
                     var endMonth = new DateTime(year, month, dayEndMonth);
-                    var deputadoDespesasMes = await _api2SoapService.GetDeputadoListaPresenca();
-                    if (deputadoDespesasMes.Count > 0)
-                        await _api1DeputadoDespesasMongoRepository.InsertManyAsync(deputadoDespesasMes);
-                    deputadoDespesasAno.AddRange(deputadoDespesasMes);
+                    var matricula = deputadoItem.Dados.idParlamentarDeprecated;
+                    var deputadoListaPresenca = await _api2SoapService.GetDeputadoListaPresenca(beginMonth, endMonth, matricula);
+                    Console.WriteLine(deputadoListaPresenca);
                 }
-
-                var sumDespesas = deputadoDespesasAno.Sum(a => a.ValorDocumento);
-                Console.WriteLine($"total despesas - {deputadoDespesasAno.Count} - soma:{sumDespesas}");
-                total++;
             }
         }
         catch (Exception e)
         {
             if (deputadoCurrent != null)
-                Console.WriteLine($"deputado: {deputadoCurrent.Nome} {deputadoCurrent.Dados.Id}");
+                Console.WriteLine($"deputado: {deputadoCurrent.Nome} {deputadoCurrent.Dados.idParlamentarDeprecated}");
             Console.WriteLine(e.Message);
         }
-        return deputadoDespesasList;    }
+    }
 }

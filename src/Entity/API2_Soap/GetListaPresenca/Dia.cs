@@ -5,7 +5,7 @@ namespace Entity.API2_Soap.GetListaPresenca;
 public class Dia
 {
     [XmlElement("data")]
-    public DateTime Data { get; set; }
+    public string Data { get; set; }
 
     [XmlElement("frequencianoDia")]
     public string FrequenciaNoDia { get; set; }
