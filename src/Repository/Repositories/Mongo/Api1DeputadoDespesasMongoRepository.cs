@@ -4,12 +4,12 @@ using MongoDB.Driver;
 
 namespace Repository.Repositories.Mongo
 {
-    public class Api1Deputado_DespesasMongoRepository : IMongoRepository<Api1DeputadoDespesa>
+    public class Api1DeputadoDespesasMongoRepository : IMongoRepository<Api1DeputadoDespesa>
     {
         private readonly IMongoDatabase _database;
         private string _tableName;
 
-        public Api1Deputado_DespesasMongoRepository(MongoDbContext mongoContext, string tableName)
+        public Api1DeputadoDespesasMongoRepository(MongoDbContext mongoContext, string tableName)
         {
             _database = mongoContext.Database;
             _tableName = tableName;

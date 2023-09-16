@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.JavaScript;
 using Entity.API1_Rest;
 using Repository.JsonEntity;
 using Repository.Repositories.Mongo;
@@ -12,10 +13,10 @@ public class DeputadoService
 
     private Api1DeputadoMongoRepository _api1MongoRepository;
     private Api2DeputadoMongoRepository _api2MongoRepository;
-    private Api1Deputado_DespesasMongoRepository _api1DeputadoDespesasMongoRepository;
+    private Api1DeputadoDespesasMongoRepository _api1DeputadoDespesasMongoRepository;
 
     public DeputadoService(Api1DeputadoMongoRepository api1MongoRepository, Api2DeputadoMongoRepository api2MongoRepository,
-        Api1Deputado_DespesasMongoRepository api1DeputadoDespesasMongoRepository, Api1Service api1Service, Api2Service api2SoapService)
+        Api1DeputadoDespesasMongoRepository api1DeputadoDespesasMongoRepository, Api1Service api1Service, Api2Service api2SoapService)
     {
         _api1MongoRepository = api1MongoRepository;
         _api2MongoRepository = api2MongoRepository;
@@ -72,9 +73,8 @@ public class DeputadoService
         }
     }
 
-    public async Task<List<Api1DeputadoDespesa>> Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(int year, bool isWholeYear = false)
+    public async Task Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(int year, bool isWholeYear = false)
     {
-        var deputadoDespesasList = new List<Api1DeputadoDespesa>();
         Api1DeputadoDtoMongo deputadoCurrent = null;
         try
         {
@@ -106,12 +106,10 @@ public class DeputadoService
                 Console.WriteLine($"deputado: {deputadoCurrent.Nome} {deputadoCurrent.Dados.Id}");
             Console.WriteLine(e.Message);
         }
-        return deputadoDespesasList;
     }
 
-    public async Task<List<DeputadoListaPresencaSoap>> Api2_GetListaPresencaDeputado_SaveOnMongoDB(int year)
+    public async Task Api2_GetListaPresencaDeputado_SaveOnMongoDB(int year, bool isWholeYear = false)
     {
-        var deputadoDespesasList = new List<Api1DeputadoDespesa>();
         Api2DeputadoDtoMongo deputadoCurrent = null;
         try
         {
@@ -122,11 +120,14 @@ public class DeputadoService
             {
                 deputadoCurrent = deputadoItem;
                 var deputadoDespesasAno = new List<Api1DeputadoDespesa>();
-                Console.WriteLine($"{total} - Getting lista presenca deputado {deputadoItem.Nome} {deputadoItem.Dados.Id}");
+                Console.WriteLine($"{total} - Getting lista presenca deputado: {deputadoItem.Nome} matricula: {deputadoItem.Dados.numLegislatura}");
                 var currentMonth = isWholeYear ? 12 : DateTime.Now.Month;
                 for (int month = 1; month <= currentMonth; month++)
                 {
-                    var deputadoDespesasMes = await _api1Service.GetDeputadoDespesa(deputadoItem.Dados.Id, year, month);
+                    var beginMonth = new DateTime(year, month, 1);
+                    var dayEndMonth = DateTime.DaysInMonth(year, month);
+                    var endMonth = new DateTime(year, month, dayEndMonth);
+                    var deputadoDespesasMes = await _api2SoapService.GetDeputadoListaPresenca();
                     if (deputadoDespesasMes.Count > 0)
                         await _api1DeputadoDespesasMongoRepository.InsertManyAsync(deputadoDespesasMes);
                     deputadoDespesasAno.AddRange(deputadoDespesasMes);

@@ -11,24 +11,6 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
 
-  sql_server:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: sqlserver
-    ports:
-      - "1433:1433"
-    volumes:
-      - sqlserver-data:/var/opt/mssql
-    environment:
-      MSSQL_SA_PASSWORD: "root"
-      ACCEPT_EULA: "Y"
-
-  redis:
-    image: redis:latest
-    container_name: redis
-    ports:
-      - "6379:6379"
-
-
 volumes:
   mongo-data:
   sqlserver-data:

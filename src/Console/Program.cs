@@ -60,7 +60,7 @@ namespace Console
             services.AddSingleton<MongoDbContext>(sp => new MongoDbContext(mongoConnectionString, mongoDatabaseName));
             services.AddTransient<Api1DeputadoMongoRepository>(sp => new Api1DeputadoMongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi1));
             services.AddTransient<Api2DeputadoMongoRepository>(sp => new Api2DeputadoMongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi2));
-            services.AddTransient<Api1Deputado_DespesasMongoRepository>(sp => new Api1Deputado_DespesasMongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi1Despesas));
+            services.AddTransient<Api1DeputadoDespesasMongoRepository>(sp => new Api1DeputadoDespesasMongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi1Despesas));
 
 
 

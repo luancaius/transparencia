@@ -3,6 +3,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using Entity.API2_Soap.GetAll;
 using Entity.API2_Soap.GetById;
+using Entity.API2_Soap.GetListaPresenca;
 
 namespace Service.Services
 {
@@ -59,40 +60,29 @@ namespace Service.Services
             return null;
         }
 
-        public async Task<DeputadoByIdSoap> GetDeputadoById(int id, int numLegislatura)
+        public async Task<DeputadoListaPresencaSoap> GetDeputadoListaPresenca(DateTime dateBegin, DateTime dateEnd, int numMatricula)
         {
-            string soapEndpoint = "https://www.camara.gov.br/SitCamaraWS/Deputados.asmx";
-
-            string soapRequest = $@"
-                <soapenv:Envelope xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/"" xmlns:dep=""https://www.camara.gov.br/SitCamaraWS/Deputados""> 
-                    <soapenv:Header/>
-                        <soapenv:Body>
-                            <dep:ObterDetalhesDeputado>
-                                <dep:ideCadastro>{id}</dep:ideCadastro>
-                                <dep:numLegislatura>{numLegislatura}</dep:numLegislatura>
-                            </dep:ObterDetalhesDeputado>
-                        </soapenv:Body>
-                </soapenv:Envelope>";
-
-            DeputadoByIdSoap deputado = null;
+            DeputadoListaPresencaSoap deputadoListaPresenca = null;
             try
             {
-                StringContent content = new StringContent(soapRequest, Encoding.UTF8, "text/xml");
-
-                String response = await _restService.PostAsync(soapEndpoint, content);
+                String dateInicioStr = dateBegin.ToString("dd/MM/yyyy");
+                String dateFimStr = dateEnd.ToString("dd/MM/yyyy");
+                String url = $"https://www.camara.gov.br/SitCamaraWS/sessoesreunioes.asmx/ListarPresencasParlamentar?" +
+                             $"dataIni={dateInicioStr}&dataFim={dateFimStr}&numMatriculaParlamentar={numMatricula}";
+                
+                String response = await _restService.GetAsync(url);
 
                 XmlDocument doc = new XmlDocument();
                 doc.LoadXml(response);
-                XmlNode node = doc.DocumentElement.SelectSingleNode("//Deputados/Deputado");
-                XmlSerializer serializerDeputado = new XmlSerializer(typeof(DeputadoByIdSoap));
-
+                XmlNode node = doc.DocumentElement.SelectSingleNode("/parlamentar");
+                XmlSerializer serializerDeputado = new XmlSerializer(typeof(DeputadoListaPresencaSoap));
                 using (XmlNodeReader reader = new XmlNodeReader(node))
                 {
-                    deputado = (DeputadoByIdSoap)serializerDeputado.Deserialize(reader);
-                    Console.WriteLine(deputado);
+                    deputadoListaPresenca = (DeputadoListaPresencaSoap)serializerDeputado.Deserialize(reader);
+                    Console.WriteLine(deputadoListaPresenca);
                 }
 
-                return deputado;
+                return deputadoListaPresenca;
             }
             catch (Exception ex)
             {
