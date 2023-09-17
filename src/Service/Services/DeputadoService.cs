@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices.JavaScript;
 using Entity.API1_Rest;
+using Entity.API2_Soap.GetListaPresenca;
 using Repository.JsonEntity;
 using Repository.Repositories.Mongo;
 using Service.Interfaces;
@@ -14,9 +15,11 @@ public class DeputadoService
     private Api1DeputadoMongoRepository _api1MongoRepository;
     private Api2DeputadoMongoRepository _api2MongoRepository;
     private Api1DeputadoDespesasMongoRepository _api1DeputadoDespesasMongoRepository;
+    private Api2DeputadoListaPresencaMongoRepository _api2DeputadoListaPresencaMongoRepository;
 
-    public DeputadoService(Api1DeputadoMongoRepository api1MongoRepository, Api2DeputadoMongoRepository api2MongoRepository,
-        Api1DeputadoDespesasMongoRepository api1DeputadoDespesasMongoRepository, Api1Service api1Service, Api2Service api2SoapService)
+    public DeputadoService(Api1DeputadoMongoRepository api1MongoRepository, 
+        Api2DeputadoMongoRepository api2MongoRepository, Api1DeputadoDespesasMongoRepository api1DeputadoDespesasMongoRepository,
+        Api2DeputadoListaPresencaMongoRepository api2DeputadoListaPresencaMongoRepository, Api1Service api1Service, Api2Service api2SoapService)
     {
         _api1MongoRepository = api1MongoRepository;
         _api2MongoRepository = api2MongoRepository;
@@ -25,6 +28,7 @@ public class DeputadoService
         _api2SoapService = api2SoapService;
 
         _api1DeputadoDespesasMongoRepository = api1DeputadoDespesasMongoRepository;
+        _api2DeputadoListaPresencaMongoRepository = api2DeputadoListaPresencaMongoRepository;
     }
 
     public async Task Api1_GetAllDeputados_SaveOnMongoDB()
@@ -127,8 +131,19 @@ public class DeputadoService
                     var dayEndMonth = DateTime.DaysInMonth(year, month);
                     var endMonth = new DateTime(year, month, dayEndMonth);
                     var matricula = deputadoItem.Dados.idParlamentarDeprecated;
-                    var deputadoListaPresenca = await _api2SoapService.GetDeputadoListaPresenca(beginMonth, endMonth, matricula);
-                    Console.WriteLine(deputadoListaPresenca);
+                    DeputadoListaPresencaSoap deputadoListaPresenca = await _api2SoapService.GetDeputadoListaPresenca(beginMonth, endMonth, matricula);
+                    var listaDeputadoPresenca = new List<DeputadoItemPresencaSoap>();
+                    foreach (var sessaoDia in deputadoListaPresenca.DiasDeSessoes)
+                    {
+                        var deputadoItemPresenca = new DeputadoItemPresencaSoap{NumMatriculaDeputado = deputadoListaPresenca.CarteiraParlamentar};
+                        deputadoItemPresenca.Data = sessaoDia.Data;
+                        deputadoItemPresenca.Justificativa = sessaoDia.Justificativa;
+                        deputadoItemPresenca.QtdeSessoes = sessaoDia.QtdeSessoes;
+                        deputadoItemPresenca.FrequenciaNoDia = sessaoDia.FrequenciaNoDia;
+                        deputadoItemPresenca.Sessoes = sessaoDia.Sessoes;
+                        listaDeputadoPresenca.Add(deputadoItemPresenca);
+                    }
+                    await _api2DeputadoListaPresencaMongoRepository.InsertManyAsync(listaDeputadoPresenca);
                 }
             }
         }
