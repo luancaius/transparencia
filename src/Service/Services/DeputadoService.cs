@@ -77,7 +77,7 @@ public class DeputadoService
         }
     }
 
-    public async Task Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(int year, bool isWholeYear = false)
+    public async Task Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(int year)
     {
         Api1DeputadoDtoMongo deputadoCurrent = null;
         try
@@ -90,7 +90,7 @@ public class DeputadoService
                 deputadoCurrent = deputadoItem;
                 var deputadoDespesasAno = new List<Api1DeputadoDespesa>();
                 Console.WriteLine($"{total} - Getting despesas deputado {deputadoItem.Nome} {deputadoItem.Dados.Id}");
-                var currentMonth = isWholeYear ? 12 : DateTime.Now.Month;
+                var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
                 for (int month = 1; month <= currentMonth; month++)
                 {
                     var deputadoDespesasMes = await _api1Service.GetDeputadoDespesa(deputadoItem.Dados.Id, year, month);
@@ -112,7 +112,7 @@ public class DeputadoService
         }
     }
 
-    public async Task Api2_GetListaPresencaDeputado_SaveOnMongoDB(int year, bool isWholeYear = false)
+    public async Task Api2_GetListaPresencaDeputado_SaveOnMongoDB(int year)
     {
         Api2DeputadoDtoMongo deputadoCurrent = null;
         try
@@ -123,8 +123,10 @@ public class DeputadoService
             foreach (var deputadoItem in deputadosApi2)
             {
                 deputadoCurrent = deputadoItem;
-                Console.WriteLine($"{total} - Getting lista presenca deputado: {deputadoItem.Nome} matricula: {deputadoItem.Dados.numLegislatura}");
-                var currentMonth = isWholeYear ? 12 : DateTime.Now.Month;
+                Console.WriteLine($"{total} - Getting lista presenca deputado: {deputadoItem.Nome} " +
+                                  $"matricula: {deputadoItem.Dados.idParlamentarDeprecated} + id: {deputadoItem.Dados.ideCadastro}");
+                
+                var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
                 for (int month = 1; month <= currentMonth; month++)
                 {
                     var beginMonth = new DateTime(year, month, 1);

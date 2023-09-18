@@ -123,7 +123,6 @@ namespace Service.Services
                 using (XmlNodeReader reader = new XmlNodeReader(node))
                 {
                     deputadoListaPresenca = (DeputadoListaPresencaSoap)serializerDeputado.Deserialize(reader);
-                    Console.WriteLine(deputadoListaPresenca);
                 }
 
                 return deputadoListaPresenca;

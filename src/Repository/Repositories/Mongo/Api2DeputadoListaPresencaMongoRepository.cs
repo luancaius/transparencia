@@ -33,9 +33,17 @@ namespace Repository.Repositories.Mongo
             throw new NotImplementedException();
         }
 
-        public Task InsertManyAsync(List<DeputadoItemPresencaSoap> entity)
+        public async Task InsertManyAsync(List<DeputadoItemPresencaSoap> entities)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var collection = GetEntitiesCollection();
+                await collection.InsertManyAsync(entities);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error Mongo Repository:"+e.Message);
+            }        
         }
 
         Task<List<DeputadoItemPresencaSoap>> IMongoRepository<DeputadoItemPresencaSoap>.GetAll()
