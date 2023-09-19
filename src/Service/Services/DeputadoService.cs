@@ -124,7 +124,7 @@ public class DeputadoService
             {
                 deputadoCurrent = deputadoItem;
                 Console.WriteLine($"{total} - Getting lista presenca deputado: {deputadoItem.Nome} " +
-                                  $"matricula: {deputadoItem.Dados.idParlamentarDeprecated} + id: {deputadoItem.Dados.ideCadastro}");
+                                  $"matricula: {deputadoItem.Dados.idParlamentarDeprecated} id: {deputadoItem.Dados.ideCadastro}");
                 
                 var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
                 for (int month = 1; month <= currentMonth; month++)
@@ -134,6 +134,12 @@ public class DeputadoService
                     var endMonth = new DateTime(year, month, dayEndMonth);
                     var matricula = deputadoItem.Dados.idParlamentarDeprecated;
                     DeputadoListaPresencaSoap deputadoListaPresenca = await _api2SoapService.GetDeputadoListaPresenca(beginMonth, endMonth, matricula);
+                    if (deputadoListaPresenca == null)
+                    {
+                        Console.WriteLine($"Missing lista presenca data for deputado: {deputadoItem.Nome} " +
+                                          $"id:{deputadoItem.Dados.ideCadastro} matricula:{deputadoItem.Dados.idParlamentarDeprecated}");   
+                        continue;
+                    }
                     var listaDeputadoPresenca = new List<DeputadoItemPresencaSoap>();
                     foreach (var sessaoDia in deputadoListaPresenca.DiasDeSessoes)
                     {
