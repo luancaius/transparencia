@@ -143,12 +143,15 @@ public class DeputadoService
                     var listaDeputadoPresenca = new List<DeputadoItemPresencaSoap>();
                     foreach (var sessaoDia in deputadoListaPresenca.DiasDeSessoes)
                     {
-                        var deputadoItemPresenca = new DeputadoItemPresencaSoap{NumMatriculaDeputado = deputadoListaPresenca.CarteiraParlamentar};
-                        deputadoItemPresenca.Data = sessaoDia.Data;
-                        deputadoItemPresenca.Justificativa = sessaoDia.Justificativa;
-                        deputadoItemPresenca.QtdeSessoes = sessaoDia.QtdeSessoes;
-                        deputadoItemPresenca.FrequenciaNoDia = sessaoDia.FrequenciaNoDia;
-                        deputadoItemPresenca.Sessoes = sessaoDia.Sessoes;
+                        var deputadoItemPresenca = new DeputadoItemPresencaSoap
+                        {
+                            NumMatriculaDeputado = deputadoListaPresenca.CarteiraParlamentar,
+                            Data = sessaoDia.Data,
+                            Justificativa = sessaoDia.Justificativa,
+                            QtdeSessoes = sessaoDia.QtdeSessoes,
+                            FrequenciaNoDia = sessaoDia.FrequenciaNoDia,
+                            Sessoes = sessaoDia.Sessoes
+                        };
                         listaDeputadoPresenca.Add(deputadoItemPresenca);
                     }
                     await _api2DeputadoListaPresencaMongoRepository.InsertManyAsync(listaDeputadoPresenca);

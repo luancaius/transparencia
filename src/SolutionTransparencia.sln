@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{727EECC9-97B8-4F5C-B5CE-79DF7C38D9DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAnalysis", "DataAnalysis\DataAnalysis.csproj", "{793FC8E3-6061-4944-902F-0CF9416FA71A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{727EECC9-97B8-4F5C-B5CE-79DF7C38D9DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{727EECC9-97B8-4F5C-B5CE-79DF7C38D9DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{727EECC9-97B8-4F5C-B5CE-79DF7C38D9DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{793FC8E3-6061-4944-902F-0CF9416FA71A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{793FC8E3-6061-4944-902F-0CF9416FA71A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{793FC8E3-6061-4944-902F-0CF9416FA71A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{793FC8E3-6061-4944-902F-0CF9416FA71A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
