@@ -22,7 +22,7 @@ namespace Console
 
             bool running = true;
             System.Console.Write("Enter a command: ");
-            string command = "d"; //Console.ReadLine().ToLower();
+            string command = "b"; //Console.ReadLine().ToLower();
 
             System.Console.WriteLine($"Executing command {command}");
             switch (command)
@@ -37,6 +37,10 @@ namespace Console
                     await deputadoService.Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(2023);
                     break;
                 case "d":
+                    await deputadoService.Api2_GetListaPresencaDeputado_SaveOnMongoDB(2023);
+                    break;
+                case "e":
+                    await deputadoService.Api2_GetAllDeputados_SaveOnMongoDB();
                     await deputadoService.Api2_GetListaPresencaDeputado_SaveOnMongoDB(2023);
                     break;
                 default:
