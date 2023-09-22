@@ -64,7 +64,7 @@ public class DeputadoService
             foreach (var deputadoItem in deputadosApi2)
             {
                 DeputadoByIdSoap deputadoApi2 = await _api2SoapService.GetDeputadoById(deputadoItem.IdeCadastro, 57);
-                deputadoApi2.idParlamentar = deputadoItem.Matricula;
+                deputadoApi2.matriculaParlamentar = deputadoItem.Matricula;
                 var deputadoApi2Mongo = new Api2DeputadoDtoMongo
                     { Dados = deputadoApi2, Nome = deputadoApi2.nomeCivil, };
                 Console.WriteLine($"{total} - {deputadoApi2Mongo.Nome}");
@@ -126,7 +126,7 @@ public class DeputadoService
             {
                 deputadoCurrent = deputadoItem;
                 Console.WriteLine($"{total} - Getting lista presenca deputado: {deputadoItem.Nome} " +
-                                  $"matricula: {deputadoItem.Dados.idParlamentar} id: {deputadoItem.Dados.ideCadastro}");
+                                  $"matricula: {deputadoItem.Dados.matriculaParlamentar} id: {deputadoItem.Dados.ideCadastro}");
                 
                 var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
                 for (int month = 1; month <= currentMonth; month++)
@@ -134,12 +134,12 @@ public class DeputadoService
                     var beginMonth = new DateTime(year, month, 1);
                     var dayEndMonth = DateTime.DaysInMonth(year, month);
                     var endMonth = new DateTime(year, month, dayEndMonth);
-                    var matricula = deputadoItem.Dados.idParlamentar;
+                    var matricula = deputadoItem.Dados.matriculaParlamentar;
                     DeputadoListaPresencaSoap deputadoListaPresenca = await _api2SoapService.GetDeputadoListaPresenca(beginMonth, endMonth, matricula);
                     if (deputadoListaPresenca == null)
                     {
                         Console.WriteLine($"Missing lista presenca data for deputado: {deputadoItem.Nome} " +
-                                          $"id:{deputadoItem.Dados.ideCadastro} matricula:{deputadoItem.Dados.idParlamentar}");   
+                                          $"id:{deputadoItem.Dados.ideCadastro} matricula:{deputadoItem.Dados.matriculaParlamentar}");   
                         continue;
                     }
                     var listaDeputadoPresenca = new List<DeputadoItemPresencaSoap>();
@@ -147,7 +147,7 @@ public class DeputadoService
                     {
                         var deputadoItemPresenca = new DeputadoItemPresencaSoap
                         {
-                            NumMatriculaDeputado = deputadoItem.Dados.idParlamentar,
+                            NumMatriculaDeputado = deputadoItem.Dados.matriculaParlamentar,
                             Data = sessaoDia.Data,
                             Justificativa = sessaoDia.Justificativa,
                             QtdeSessoes = sessaoDia.QtdeSessoes,

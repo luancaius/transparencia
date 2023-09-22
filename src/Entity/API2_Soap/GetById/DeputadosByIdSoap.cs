@@ -14,7 +14,7 @@ public class DeputadoByIdSoap
     public string ufRepresentacaoAtual { get; set; }
     public string situacaoNaLegislaturaAtual { get; set; }
     public int ideCadastro { get; set; }
-    public int idParlamentar { get; set; }
+    public int matriculaParlamentar { get; set; }
     public int idParlamentarDeprecated { get; set; }
     public string nomeParlamentarAtual { get; set; }
     public string nomeCivil { get; set; }
