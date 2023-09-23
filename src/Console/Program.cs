@@ -22,7 +22,7 @@ namespace Console
 
             bool running = true;
             System.Console.Write("Enter a command: ");
-            string command = "b"; //Console.ReadLine().ToLower();
+            string command = "e"; //Console.ReadLine().ToLower();
 
             System.Console.WriteLine($"Executing command {command}");
             switch (command)
