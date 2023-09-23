@@ -135,6 +135,8 @@ public class DeputadoService
                     var dayEndMonth = DateTime.DaysInMonth(year, month);
                     var endMonth = new DateTime(year, month, dayEndMonth);
                     var matricula = deputadoItem.Dados.matriculaParlamentar;
+                    Console.WriteLine($"{total} -  Getting lista presenca deputado: {deputadoItem.Nome} " +
+                                      $"matricula: {deputadoItem.Dados.matriculaParlamentar} id: {deputadoItem.Dados.ideCadastro}");
                     DeputadoListaPresencaSoap deputadoListaPresenca = await _api2SoapService.GetDeputadoListaPresenca(beginMonth, endMonth, matricula);
                     if (deputadoListaPresenca == null)
                     {
@@ -158,6 +160,8 @@ public class DeputadoService
                     }
                     await _api2DeputadoListaPresencaMongoRepository.InsertManyAsync(listaDeputadoPresenca);
                 }
+
+                total++;
             }
         }
         catch (Exception e)

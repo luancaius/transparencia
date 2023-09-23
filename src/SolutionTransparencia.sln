@@ -15,13 +15,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAnalysis", "DataAnalysi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2_Infrastructure", "2_Infrastructure", "{435BA3BE-43EC-4AD3-A601-46AD676CCDC2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2_Presentation", "2_Presentation", "{8843EE94-3467-4D26-9258-6D346C8D5DF3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3_Presentation", "3_Presentation", "{8843EE94-3467-4D26-9258-6D346C8D5DF3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0_Domain", "0_Domain", "{B601157C-1DE9-4110-AD2A-03D9B04F8B11}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2_Persistence", "2_Persistence", "{AB54A2AE-C220-477E-A569-9DE4AB98D66F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_Application", "1_Application", "{326D4996-0CE4-4154-A597-ED910C9B2382}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{E5262E97-D5DD-45CA-A990-AA47A6CAC2FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,11 +49,18 @@ Global
 		{793FC8E3-6061-4944-902F-0CF9416FA71A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{793FC8E3-6061-4944-902F-0CF9416FA71A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{793FC8E3-6061-4944-902F-0CF9416FA71A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5262E97-D5DD-45CA-A990-AA47A6CAC2FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5262E97-D5DD-45CA-A990-AA47A6CAC2FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5262E97-D5DD-45CA-A990-AA47A6CAC2FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5262E97-D5DD-45CA-A990-AA47A6CAC2FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {81064EE2-7A2E-43A3-83FB-344C6F5B824C}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E5262E97-D5DD-45CA-A990-AA47A6CAC2FC} = {B601157C-1DE9-4110-AD2A-03D9B04F8B11}
 	EndGlobalSection
 EndGlobal
