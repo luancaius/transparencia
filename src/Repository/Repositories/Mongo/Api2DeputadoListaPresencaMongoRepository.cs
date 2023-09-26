@@ -1,4 +1,3 @@
-using Entity.API1_Rest;
 using Entity.API2_Soap.GetListaPresenca;
 using MongoDB.Bson;
 using MongoDB.Driver;

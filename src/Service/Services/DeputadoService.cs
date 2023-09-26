@@ -1,10 +1,8 @@
-using System.Runtime.InteropServices.JavaScript;
 using Entity.API1_Rest;
 using Entity.API2_Soap.GetById;
 using Entity.API2_Soap.GetListaPresenca;
 using Repository.JsonEntity;
 using Repository.Repositories.Mongo;
-using Service.Interfaces;
 
 namespace Service.Services;
 

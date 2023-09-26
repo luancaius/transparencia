@@ -1,5 +1,4 @@
 using Entity.API1_Rest;
-using Service.Interfaces;
 using Service.Mappers;
 
 namespace Service.Services;

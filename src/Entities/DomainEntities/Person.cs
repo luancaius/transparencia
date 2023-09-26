@@ -4,7 +4,7 @@ namespace Entities.DomainEntities;
 
 public class Person
 {
-    public Person(Guid id, string firstName, string lastName, DateTime dateOfBirth, Email email, Phone phone, Address address, string cpf, Gender gender)
+    public Person(Guid id, string firstName, string lastName, DateTime dateOfBirth, Email email, Phone phone, Address address, Cpf cpf, Gender gender)
     {
         Id = id;
         FirstName = firstName;
@@ -23,6 +23,6 @@ public class Person
     public Email Email { get; private set; }
     public Phone Phone { get; private set; }
     public Address Address { get; private set; }
-    public string CPF { get; private set; }
+    public Cpf CPF { get; private set; }
     public Gender Gender { get; private set; }
 }
