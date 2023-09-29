@@ -4,7 +4,7 @@ namespace Entities.DomainEntities;
 
 public class Company
 {
-    public Company(Guid id, string name, string industry, Address headquartersAddress, Email contactEmail, Phone contactPhone, Cnpj cnpj)
+    public Company(Guid id, string name, string industry, Address headquartersAddress, String contactEmail, Phone contactPhone, Cnpj cnpj)
     {
         Id = id;
         Name = name;
@@ -18,7 +18,7 @@ public class Company
     public string Name { get; private set; }
     public string Industry { get; private set; }
     public Address HeadquartersAddress { get; private set; }
-    public Email ContactEmail { get; private set; }
+    public String ContactEmail { get; private set; }
     public Phone ContactPhone { get; private set; }
     public Cnpj CNPJ { get; private set; }
 }

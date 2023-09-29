@@ -2,7 +2,7 @@ namespace Entities.ValueObject;
 
 public abstract class ValueObject
 {
-    protected abstract IEnumerable<object?> GetAtomicValues();
+    public abstract IEnumerable<object?> GetAtomicValues();
 
     public override bool Equals(object? obj)
     {

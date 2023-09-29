@@ -19,7 +19,7 @@ public class Address : ValueObject
         ZipCode = zipCode;
     }
 
-    protected override IEnumerable<object?> GetAtomicValues()
+    public override IEnumerable<object?> GetAtomicValues()
     {
         yield return Street;
         yield return City;

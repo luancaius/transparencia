@@ -1,6 +1,6 @@
 namespace CacheDatabase.Interfaces;
 
-public interface IRedisCacheService
+public interface IRedisCacheRepository
 {
     Task<string> GetStringAsync(string key);
     Task SetStringAsync(string key, string value, TimeSpan? expiry = null);

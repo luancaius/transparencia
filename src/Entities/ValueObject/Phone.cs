@@ -14,7 +14,7 @@ public class Phone : ValueObject
         Number = number;
     }
 
-    protected override IEnumerable<object?> GetAtomicValues()
+    public override IEnumerable<object?> GetAtomicValues()
     {
         yield return CountryCode;
         yield return AreaCode;
