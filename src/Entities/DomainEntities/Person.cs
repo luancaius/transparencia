@@ -2,7 +2,7 @@ using Entities.ValueObject;
 
 namespace Entities.DomainEntities;
 
-public class Person
+public class Person : IEntity
 {
     public Person(Guid id, string firstName, string lastName, DateTime dateOfBirth, String email, Phone phone, Address address, Cpf cpf, Gender gender)
     {
@@ -16,7 +16,6 @@ public class Person
         CPF = cpf;
         Gender = gender;
     }
-    public Guid Id { get; private set; }
     public string FirstName { get; private set; }
     public string LastName { get; private set; }
     public DateTime DateOfBirth { get; private set; }
@@ -25,4 +24,10 @@ public class Person
     public Address Address { get; private set; }
     public Cpf CPF { get; private set; }
     public Gender Gender { get; private set; }
+    public Guid Id { get; set; }
+}
+
+public interface IEntity
+{
+    public Guid Id { get; protected set; }
 }

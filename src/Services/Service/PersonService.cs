@@ -23,5 +23,10 @@ public class PersonService : IPersonService
     {
         return _personRepository.GetAll(predicate, page, pageSize).ToList();
     }
+
+    public int InsertPerson(Person person)
+    {
+        throw new NotImplementedException();
+    }
 }
 

@@ -1,15 +1,15 @@
 ﻿using System.Net.Http.Headers;
-using Service.Interfaces;
-using Service.Utilities;
+using CacheDatabase.Interfaces;
+using ExternalAPI.Utilities;
 
 namespace Service.Services
 {
     public class RestService
     {
         private readonly HttpClient _httpClient;
-        protected readonly IRedisCacheService _cacheService;
+        protected readonly IRedisCacheRepository _cacheService;
 
-        public RestService(IRedisCacheService cacheService)
+        public RestService(IRedisCacheRepository cacheService)
         {
             _cacheService = cacheService;
             _httpClient = new HttpClient();

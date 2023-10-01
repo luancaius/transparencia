@@ -1,7 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CacheDatabase.Interfaces;
+using CacheDatabase.Repositories;
+using Microsoft.Extensions.DependencyInjection;
 using Repository;
 using Repository.Repositories.Mongo;
-using Service.Interfaces;
 using Service.Services;
 using StackExchange.Redis;
 
@@ -74,7 +75,7 @@ namespace Console
             string redisConnectionString = "localhost:6379";
             services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(redisConnectionString));
             services.AddTransient<IDatabase>(sp => sp.GetRequiredService<IConnectionMultiplexer>().GetDatabase());
-            services.AddTransient<IRedisCacheService, RedisCacheService>();
+            services.AddTransient<IRedisCacheRepository, RedisCacheRepository>();
 
             services.AddSingleton<RestService>();
             services.AddTransient<Api1Service>();
