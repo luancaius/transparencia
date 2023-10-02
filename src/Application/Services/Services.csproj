@@ -8,8 +8,8 @@
 
 
     <ItemGroup>
-      <ProjectReference Include="..\Entities\Entities.csproj" />
-      <ProjectReference Include="..\RelationalDatabase\RelationalDatabase.csproj" />
+      <ProjectReference Include="..\..\Domain\Entities\Entities.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\RelationalDatabase\RelationalDatabase.csproj" />
     </ItemGroup>
 
 

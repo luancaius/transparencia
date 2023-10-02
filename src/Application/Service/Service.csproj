@@ -13,9 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Entity\Entity.csproj" />
-    <ProjectReference Include="..\ExternalAPI\ExternalAPI.csproj" />
-    <ProjectReference Include="..\Repository\Repository.csproj" />
+    <ProjectReference Include="..\..\Domain\Entity\Entity.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\ExternalAPI\ExternalAPI.csproj" />
+    <ProjectReference Include="..\..\Application\Repository\Repository.csproj" />
 
 
 

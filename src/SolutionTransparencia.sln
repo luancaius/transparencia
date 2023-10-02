@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{B61CFE9C-6770-456F-9E2D-D616FFB9B204}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Presentation\Console\Console.csproj", "{B61CFE9C-6770-456F-9E2D-D616FFB9B204}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{456E8A04-6A33-40B0-BC3A-339BF9535B85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Application\Service\Service.csproj", "{456E8A04-6A33-40B0-BC3A-339BF9535B85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{AA4F4330-C5A6-43B4-9C04-BE4F67A78C3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Application\Repository\Repository.csproj", "{AA4F4330-C5A6-43B4-9C04-BE4F67A78C3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{727EECC9-97B8-4F5C-B5CE-79DF7C38D9DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Domain\Entity\Entity.csproj", "{727EECC9-97B8-4F5C-B5CE-79DF7C38D9DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAnalysis", "DataAnalysis\DataAnalysis.csproj", "{793FC8E3-6061-4944-902F-0CF9416FA71A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAnalysis", "Application\DataAnalysis\DataAnalysis.csproj", "{793FC8E3-6061-4944-902F-0CF9416FA71A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{435BA3BE-43EC-4AD3-A601-46AD676CCDC2}"
 EndProject
@@ -21,21 +21,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{B60115
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{326D4996-0CE4-4154-A597-ED910C9B2382}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{E5262E97-D5DD-45CA-A990-AA47A6CAC2FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Domain\Entities\Entities.csproj", "{E5262E97-D5DD-45CA-A990-AA47A6CAC2FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{EB584E11-10CF-4E11-99EF-0D19E9ACEE0C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Application\Services\Services.csproj", "{EB584E11-10CF-4E11-99EF-0D19E9ACEE0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RelationalDatabase", "RelationalDatabase\RelationalDatabase.csproj", "{2BC2AFFF-BD16-49C9-B887-E5720E1F6D99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RelationalDatabase", "Infrastructure\RelationalDatabase\RelationalDatabase.csproj", "{2BC2AFFF-BD16-49C9-B887-E5720E1F6D99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonRelationalDatabase", "NonRelationalDatabase\NonRelationalDatabase.csproj", "{99954E97-9D8C-42C9-A82C-00A369891A1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonRelationalDatabase", "Infrastructure\NonRelationalDatabase\NonRelationalDatabase.csproj", "{99954E97-9D8C-42C9-A82C-00A369891A1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheDatabase", "CacheDatabase\CacheDatabase.csproj", "{C7782BF0-08CA-4881-B728-684B62B7C939}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheDatabase", "Infrastructure\CacheDatabase\CacheDatabase.csproj", "{C7782BF0-08CA-4881-B728-684B62B7C939}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D6B8682C-9E3E-497E-BC9A-19D4E3DB3A29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDomain", "TestDomain\TestDomain.csproj", "{6B152BAE-63D9-41C2-993C-A13FF6DE0F13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDomain", "Tests\TestDomain\TestDomain.csproj", "{6B152BAE-63D9-41C2-993C-A13FF6DE0F13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalAPI", "ExternalAPI\ExternalAPI.csproj", "{E9DFF0CF-3577-45C6-9602-720A28DB2E1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalAPI", "Infrastructure\ExternalAPI\ExternalAPI.csproj", "{E9DFF0CF-3577-45C6-9602-720A28DB2E1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
