@@ -1,14 +1,25 @@
 using System.Linq.Expressions;
 using Entities.DomainEntities;
+using Repositories.Interfaces;
 using Services.Interfaces;
 
 namespace Services.Service;
 
 public class DeputyService : IDeputyService
 {
-    public List<Deputy> GetAllDeputy(IQueryable<Deputy> queryable, Expression<Func<Deputy, bool>> predicate, int page, int pageSize)
+    private readonly IDeputyRepository _deputyRepository;
+    private readonly ISearchDeputyRepository _searchDeputyRepository;
+
+    public DeputyService(IDeputyRepository deputyRepository, ISearchDeputyRepository searchDeputyRepository)
     {
-        throw new NotImplementedException();
+        _deputyRepository = deputyRepository;
+        _searchDeputyRepository = searchDeputyRepository;
+    }
+    
+    public async Task<List<Deputy>> GetAllDeputy(int legislatura)
+    {
+        var deputies = await _deputyRepository.ListAllAsync(legislatura);
+        return deputies;
     }
 
     public Deputy GetDeputy(IQueryable<Deputy> queryable, Expression<Func<Deputy, bool>> predicate)

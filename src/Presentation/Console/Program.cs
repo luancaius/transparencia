@@ -31,19 +31,19 @@ namespace Console
                 case "a":
                     await deputadoService.Api1_GetAllDeputados_SaveOnMongoDB();
                     break;
-                case "b":
-                    await deputadoService.Api2_GetAllDeputados_SaveOnMongoDB();
-                    break;
-                case "c":
-                    await deputadoService.Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(2023);
-                    break;
-                case "d":
-                    await deputadoService.Api2_GetListaPresencaDeputado_SaveOnMongoDB(2023);
-                    break;
-                case "e":
-                    await deputadoService.Api2_GetAllDeputados_SaveOnMongoDB();
-                    await deputadoService.Api2_GetListaPresencaDeputado_SaveOnMongoDB(2023);
-                    break;
+                // case "b":
+                //     await deputadoService.Api2_GetAllDeputados_SaveOnMongoDB();
+                //     break;
+                // case "c":
+                //     await deputadoService.Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(2023);
+                //     break;
+                // case "d":
+                //     await deputadoService.Api2_GetListaPresencaDeputado_SaveOnMongoDB(2023);
+                //     break;
+                // case "e":
+                //     await deputadoService.Api2_GetAllDeputados_SaveOnMongoDB();
+                //     await deputadoService.Api2_GetListaPresencaDeputado_SaveOnMongoDB(2023);
+                //     break;
                 default:
                     System.Console.WriteLine("Invalid command. Please try again.");
                     break;
@@ -77,10 +77,7 @@ namespace Console
             services.AddTransient<IDatabase>(sp => sp.GetRequiredService<IConnectionMultiplexer>().GetDatabase());
             services.AddTransient<IRedisCacheRepository, RedisCacheRepository>();
 
-            services.AddSingleton<RestService>();
-            services.AddTransient<Api1Service>();
-            services.AddTransient<Api2Service>();
-            services.AddTransient<DeputadoService>();
+
 
         }
 
