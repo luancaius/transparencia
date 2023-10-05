@@ -4,7 +4,7 @@ namespace Repositories.Implementation;
 
 public class SearchDeputyRepository : ISearchDeputyRepository
 {
-    public string GetAllDeputies(int legislatura)
+    public async Task<string> GetAllDeputiesRaw(int legislatura)
     {
         // call rest api get all deputies
         
@@ -14,17 +14,17 @@ public class SearchDeputyRepository : ISearchDeputyRepository
         throw new NotImplementedException();
     }
 
-    public string GetDeputy(int legislatura, int id)
+    public Task<string> GetDeputy(int legislatura, int id)
     {
         throw new NotImplementedException();
     }
 
-    public string GetAllExpenses(int year, int month, int id)
+    public Task<string> GetAllExpenses(int year, int month, int id)
     {
         throw new NotImplementedException();
     }
 
-    public string GetAllWorkPresence(int year, int month, int id)
+    public Task<string> GetAllWorkPresence(int year, int month, int id)
     {
         throw new NotImplementedException();
     }

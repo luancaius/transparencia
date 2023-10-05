@@ -5,12 +5,8 @@ namespace Services.Interfaces;
 
 public interface IDeputyService
 {
-    List<Deputy> GetAllDeputy(IQueryable<Deputy> queryable, Expression<Func<Deputy, bool>> predicate, int page, int pageSize);
-    Deputy GetDeputy(IQueryable<Deputy> queryable, Expression<Func<Deputy, bool>> predicate);
-    String GetAllDeputyRawRest(int legislatura);
-    String GetAllDeputyRawSoap(int legislatura);
-    String GetDeputyRawRest(int legislatura, int id);
-    String GetDeputyRawSoap(int legislatura, int id);
-    String GetDeputyExpensesRawRest(int year, int id);
-    String GetDeputyWorkPresenceRawRest(int year, int id);
+    Task<String> GetAllDeputyRaw(int legislatura);
+    Task<String> GetDeputyRaw(int legislatura, int id);
+    Task<String> GetDeputyExpensesRaw(int year, int id);
+    Task<String> GetDeputyWorkPresenceRaw(int year, int id);
 }

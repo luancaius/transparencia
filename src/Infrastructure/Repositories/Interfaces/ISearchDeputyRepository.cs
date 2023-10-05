@@ -2,8 +2,8 @@ namespace Repositories.Interfaces;
 
 public interface ISearchDeputyRepository
 {
-    string GetAllDeputies(int legislatura);
-    string GetDeputy(int legislatura, int id);
-    string GetAllExpenses(int year, int month, int id);
-    string GetAllWorkPresence(int year, int month, int id);
+    Task<string> GetAllDeputiesRaw(int legislatura);
+    Task<string> GetDeputy(int legislatura, int id);
+    Task<string> GetAllExpenses(int year, int month, int id);
+    Task<string> GetAllWorkPresence(int year, int month, int id);
 }

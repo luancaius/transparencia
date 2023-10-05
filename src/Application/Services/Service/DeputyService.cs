@@ -15,44 +15,24 @@ public class DeputyService : IDeputyService
         _deputyRepository = deputyRepository;
         _searchDeputyRepository = searchDeputyRepository;
     }
-    
-    public async Task<List<Deputy>> GetAllDeputy(int legislatura)
+
+    public async Task<string> GetAllDeputyRaw(int legislatura)
     {
-        var deputies = await _deputyRepository.ListAllAsync(legislatura);
-        return deputies;
+        var deputiesString = await _searchDeputyRepository.GetAllDeputiesRaw(legislatura);
+        return deputiesString;
     }
 
-    public Deputy GetDeputy(IQueryable<Deputy> queryable, Expression<Func<Deputy, bool>> predicate)
-    {
-        throw new NotImplementedException();
-    }
-
-    public string GetAllDeputyRawRest(int legislatura)
+    public async Task<string> GetDeputyRaw(int legislatura, int id)
     {
         throw new NotImplementedException();
     }
 
-    public string GetAllDeputyRawSoap(int legislatura)
+    public async Task<string> GetDeputyExpensesRaw(int year, int id)
     {
         throw new NotImplementedException();
     }
 
-    public string GetDeputyRawRest(int legislatura, int id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public string GetDeputyRawSoap(int legislatura, int id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public string GetDeputyExpensesRawRest(int year, int id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public string GetDeputyWorkPresenceRawRest(int year, int id)
+    public async Task<string> GetDeputyWorkPresenceRaw(int year, int id)
     {
         throw new NotImplementedException();
     }

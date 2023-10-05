@@ -1,9 +1,12 @@
-﻿using CacheDatabase.Interfaces;
+﻿using System.Data.Common;
+using CacheDatabase.Interfaces;
 using CacheDatabase.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using Repository;
 using Repository.Repositories.Mongo;
 using Service.Services;
+using Services.Interfaces;
+using Services.Service;
 using StackExchange.Redis;
 
 namespace Console
@@ -19,7 +22,7 @@ namespace Console
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
             // Get an instance of DeputadoService from DI container
-            var deputadoService = serviceProvider.GetRequiredService<DeputadoService>();
+            var deputyService = serviceProvider.GetRequiredService<DeputyService>();
 
             bool running = true;
             System.Console.Write("Enter a command: ");
@@ -29,7 +32,8 @@ namespace Console
             switch (command)
             {
                 case "a":
-                    await deputadoService.Api1_GetAllDeputados_SaveOnMongoDB();
+                    var deputies = await deputyService.GetAllDeputyRaw(57);
+                    System.Console.WriteLine(deputies);
                     break;
                 // case "b":
                 //     await deputadoService.Api2_GetAllDeputados_SaveOnMongoDB();
@@ -77,8 +81,9 @@ namespace Console
             services.AddTransient<IDatabase>(sp => sp.GetRequiredService<IConnectionMultiplexer>().GetDatabase());
             services.AddTransient<IRedisCacheRepository, RedisCacheRepository>();
 
-
-
+            // Services
+            services.AddTransient<IDeputyService, DeputyService>();
+            
         }
 
     }
