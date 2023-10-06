@@ -5,11 +5,19 @@ namespace Repositories.Implementation;
 
 public class SearchDeputyRepository : ISearchDeputyRepository
 {
-    private IRestApi _restApi { get; set; }
+    private IDadosAbertosNewApi _DadosAbertosNewApi { get; set; }
+    private IDadosAbertosOldApi _DadosAbertosOldApi { get; set; }
+
+    public SearchDeputyRepository(IDadosAbertosNewApi dadosAbertosNewApi, IDadosAbertosOldApi dadosAbertosOldApi)
+    {
+        _DadosAbertosNewApi = dadosAbertosNewApi;
+        _DadosAbertosOldApi = dadosAbertosOldApi;
+    }
+    
     public async Task<string> GetAllDeputiesRaw(int legislatura)
     {
         // call rest api get all deputies
-        
+        var deputies = await _DadosAbertosNewApi.GetAllDeputiesRaw(legislatura);
         
         // call soap api get all deputies
         
