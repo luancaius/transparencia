@@ -3,14 +3,14 @@ using CacheDatabase.Interfaces;
 using ExternalAPI.Interfaces;
 using ExternalAPI.Utilities;
 
-namespace ExternalAPI.Rest;
+namespace ExternalAPI.Soap;
 
-public class RestAPI : IAPI
+public class SoapApi : ISoapApi
 {
     private readonly HttpClient _httpClient;
     protected readonly IRedisCacheRepository _cacheRepository;
 
-    public RestAPI(IRedisCacheRepository cacheService)
+    public SoapApi(IRedisCacheRepository cacheService)
     {
         _cacheRepository = cacheService;
         _httpClient = new HttpClient();

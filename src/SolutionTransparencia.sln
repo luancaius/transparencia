@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Infrastruct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workers", "Infrastructure\Workers\Workers.csproj", "{51179347-CD2F-47E3-BC9A-33005E5BBD02}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossOver", "CrossOver", "{21423E5B-151F-4093-A3F2-88EEDCBCC861}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepencyInjection", "CrossOver\DepencyInjection\DepencyInjection.csproj", "{A502E984-8423-496C-ADC3-62EEA7274CBE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +107,10 @@ Global
 		{51179347-CD2F-47E3-BC9A-33005E5BBD02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51179347-CD2F-47E3-BC9A-33005E5BBD02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51179347-CD2F-47E3-BC9A-33005E5BBD02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A502E984-8423-496C-ADC3-62EEA7274CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A502E984-8423-496C-ADC3-62EEA7274CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A502E984-8423-496C-ADC3-62EEA7274CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A502E984-8423-496C-ADC3-62EEA7274CBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

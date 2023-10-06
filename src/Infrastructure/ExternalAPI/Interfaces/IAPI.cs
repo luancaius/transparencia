@@ -1,6 +1,6 @@
 namespace ExternalAPI.Interfaces;
 
-public interface IAPI
+public interface IApi
 {
     Task<string> GetAsync(string apiUrl);
     Task<string> PostAsync(string apiUrl, HttpContent content);

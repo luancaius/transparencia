@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Soap\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\CacheDatabase\CacheDatabase.csproj" />
     </ItemGroup>
 

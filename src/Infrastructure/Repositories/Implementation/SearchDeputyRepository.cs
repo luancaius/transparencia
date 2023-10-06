@@ -1,12 +1,15 @@
+using ExternalAPI.Interfaces;
 using Repositories.Interfaces;
 
 namespace Repositories.Implementation;
 
 public class SearchDeputyRepository : ISearchDeputyRepository
 {
+    private IRestApi _restApi { get; set; }
     public async Task<string> GetAllDeputiesRaw(int legislatura)
     {
         // call rest api get all deputies
+        
         
         // call soap api get all deputies
         
