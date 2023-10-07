@@ -18,7 +18,7 @@ public class SearchDeputyRepository : ISearchDeputyRepository
     {
         // call rest api get all deputies
         var deputies = await _DadosAbertosNewApi.GetAllDeputiesRaw(legislatura);
-        
+        Console.WriteLine(deputies);
         // call soap api get all deputies
         
         // save on mongo unique information

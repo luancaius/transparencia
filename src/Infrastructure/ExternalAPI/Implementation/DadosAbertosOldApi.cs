@@ -15,12 +15,12 @@ public class DadosAbertosOldApi : IDadosAbertosOldApi
         string soapEndpoint = "https://www.camara.gov.br/SitCamaraWS/Deputados.asmx";
 
         string soapRequest = @"
-<soapenv:Envelope xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/"" xmlns:dep=""https://www.camara.gov.br/SitCamaraWS/Deputados"">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <dep:ObterDeputados/>
-   </soapenv:Body>
-</soapenv:Envelope>";
+            <soapenv:Envelope xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/"" xmlns:dep=""https://www.camara.gov.br/SitCamaraWS/Deputados"">
+               <soapenv:Header/>
+               <soapenv:Body>
+                  <dep:ObterDeputados/>
+               </soapenv:Body>
+            </soapenv:Envelope>";
 
         try
         {
