@@ -9,7 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Application\Services\Services.csproj" />
-      <ProjectReference Include="..\..\CrossOver\DepencyInjection\DepencyInjection.csproj" />
+      <ProjectReference Include="..\..\Common\DependencyInjection\DependencyInjection.csproj" />
     </ItemGroup>
 
 </Project>
