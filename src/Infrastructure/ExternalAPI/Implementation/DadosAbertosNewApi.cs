@@ -12,7 +12,7 @@ public class DadosAbertosNewApi : IDadosAbertosNewApi
     
     public async Task<string> GetAllDeputiesRaw(int legislatura)
     {
-        var apiUrl = $"https://dadosabertos.camara.leg.br/api/v2/deputados?legislatura={legislatura}";
+        var apiUrl = $"https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura={legislatura}";
         return await _baseApi.GetAsync(apiUrl);
     }
     

@@ -5,6 +5,7 @@ using ExternalAPI.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Repositories.Implementation;
 using Repositories.Interfaces;
+using Serilog;
 using Services.Interfaces;
 using Services.Service;
 using StackExchange.Redis;
@@ -58,6 +59,12 @@ public class ResolveDependencies
         #region Application
         services.AddTransient<IDeputyService, DeputyService>();       
         #endregion
+        
+        Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss}] {SourceContext} {Message:lj}{NewLine}{Exception}")
+            .CreateLogger();
+        services.AddSingleton(Log.Logger);
     }
 
     public T Resolve<T>()
