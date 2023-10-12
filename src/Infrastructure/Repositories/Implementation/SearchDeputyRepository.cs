@@ -1,5 +1,6 @@
 using ExternalAPI.Interfaces;
 using Repositories.Interfaces;
+using Serilog;
 
 namespace Repositories.Implementation;
 
@@ -7,11 +8,14 @@ public class SearchDeputyRepository : ISearchDeputyRepository
 {
     private IDadosAbertosNewApi _DadosAbertosNewApi { get; set; }
     private IDadosAbertosOldApi _DadosAbertosOldApi { get; set; }
+    private readonly ILogger _logger;
 
     public SearchDeputyRepository(IDadosAbertosNewApi dadosAbertosNewApi, IDadosAbertosOldApi dadosAbertosOldApi)
     {
         _DadosAbertosNewApi = dadosAbertosNewApi;
         _DadosAbertosOldApi = dadosAbertosOldApi;
+        _logger = Log.ForContext<SearchDeputyRepository>();
+
     }
     
     public async Task<string> GetAllDeputiesRaw(int legislatura)

@@ -21,15 +21,16 @@ public class DeputyService : IDeputyService
 
     public async Task<string> GetAllDeputyRaw(int legislatura)
     {
-        _logger.Information("GetAllDeputyRaw - Calling GetAllDeputiesRaw");
+        _logger.Information("GetAllDeputyRaw");
         var deputiesString = await _searchDeputyRepository.GetAllDeputiesRaw(legislatura);
         return deputiesString;
     }
 
     public async Task<string> GetDeputyRaw(int legislatura, int id)
     {
-        throw new NotImplementedException();
-    }
+        _logger.Information("GetDeputyRaw");
+        var deputiesString = await _searchDeputyRepository.GetDeputy(legislatura, id);
+        return deputiesString;    }
 
     public async Task<string> GetDeputyExpensesRaw(int year, int id)
     {

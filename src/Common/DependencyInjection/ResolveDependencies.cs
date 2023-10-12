@@ -2,6 +2,7 @@ using CacheDatabase.Interfaces;
 using CacheDatabase.Repositories;
 using ExternalAPI.Implementation;
 using ExternalAPI.Interfaces;
+using Logging;
 using Microsoft.Extensions.DependencyInjection;
 using Repositories.Implementation;
 using Repositories.Interfaces;
@@ -60,11 +61,7 @@ public class ResolveDependencies
         services.AddTransient<IDeputyService, DeputyService>();       
         #endregion
         
-        Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Debug()
-            .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss}] {SourceContext} {Message:lj}{NewLine}{Exception}")
-            .CreateLogger();
-        services.AddSingleton(Log.Logger);
+        services.AddSingleton<ILogger, Logger>();
     }
 
     public T Resolve<T>()
