@@ -1,5 +1,4 @@
-using System.Linq.Expressions;
-using Entities.DomainEntities;
+using Logging;
 using Repositories.Interfaces;
 using Serilog;
 using Services.Interfaces;
@@ -12,11 +11,11 @@ public class DeputyService : IDeputyService
     private readonly ISearchDeputyRepository _searchDeputyRepository;
     private readonly ILogger _logger;
 
-    public DeputyService(IDeputyRepository deputyRepository, ISearchDeputyRepository searchDeputyRepository)
+    public DeputyService(IDeputyRepository deputyRepository, ISearchDeputyRepository searchDeputyRepository, ILogger logger)
     {
         _deputyRepository = deputyRepository;
         _searchDeputyRepository = searchDeputyRepository;
-        _logger = Log.ForContext<DeputyService>();
+        _logger = logger.ForContext<DeputyService>();
     }
 
     public async Task<string> GetAllDeputyRaw(int legislatura)

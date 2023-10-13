@@ -61,7 +61,7 @@ public class ResolveDependencies
         services.AddTransient<IDeputyService, DeputyService>();       
         #endregion
         
-        services.AddSingleton<ILogger, Logger>();
+        services.AddTransient<ILogger, CustomLogger>();
     }
 
     public T Resolve<T>()

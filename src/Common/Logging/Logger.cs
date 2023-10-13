@@ -3,17 +3,15 @@ using Serilog.Events;
 
 namespace Logging;
 
-public class Logger
+public class CustomLogger : ILogger
 {
-    public Logger()
-    {
-        Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Debug()
-            .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss}] {SourceContext} {Message:lj}{NewLine}{Exception}")
-            .CreateLogger();
-    }
+    private readonly ILogger _logger = new LoggerConfiguration()
+        .MinimumLevel.Debug()
+        .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss}] {SourceContext} {Message:lj}{NewLine}{Exception}")
+        .CreateLogger();
+
     public void Write(LogEvent logEvent)
     {
-        throw new NotImplementedException();
+        _logger.Write(logEvent);
     }
 }

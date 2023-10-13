@@ -5,9 +5,7 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
+        <ProjectReference Include="..\..\Common\Logging\Logging.csproj" />
         <ProjectReference Include="..\ExternalAPI\ExternalAPI.csproj" />
-    </ItemGroup>
-    <ItemGroup>
-      <PackageReference Include="Serilog" Version="3.0.1" />
     </ItemGroup>
 </Project>

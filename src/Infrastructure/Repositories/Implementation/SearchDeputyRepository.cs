@@ -10,19 +10,18 @@ public class SearchDeputyRepository : ISearchDeputyRepository
     private IDadosAbertosOldApi _DadosAbertosOldApi { get; set; }
     private readonly ILogger _logger;
 
-    public SearchDeputyRepository(IDadosAbertosNewApi dadosAbertosNewApi, IDadosAbertosOldApi dadosAbertosOldApi)
+    public SearchDeputyRepository(IDadosAbertosNewApi dadosAbertosNewApi, IDadosAbertosOldApi dadosAbertosOldApi, ILogger logger)
     {
         _DadosAbertosNewApi = dadosAbertosNewApi;
         _DadosAbertosOldApi = dadosAbertosOldApi;
-        _logger = Log.ForContext<SearchDeputyRepository>();
-
+        _logger = logger.ForContext<SearchDeputyRepository>();
     }
     
     public async Task<string> GetAllDeputiesRaw(int legislatura)
     {
         // call rest api get all deputies
         var deputies = await _DadosAbertosNewApi.GetAllDeputiesRaw(legislatura);
-        Console.WriteLine(deputies);
+        _logger.Information(deputies);
         // call soap api get all deputies
         
         // save on mongo unique information

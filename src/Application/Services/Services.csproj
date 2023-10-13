@@ -8,6 +8,7 @@
 
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Common\Logging\Logging.csproj" />
       <ProjectReference Include="..\..\Domain\Entities\Entities.csproj" />
       <ProjectReference Include="..\..\Infrastructure\RelationalDatabase\RelationalDatabase.csproj" />
       <ProjectReference Include="..\..\Infrastructure\Repositories\Repositories.csproj" />
@@ -15,9 +16,6 @@
 
 
 
-    <ItemGroup>
-      <PackageReference Include="Serilog" Version="3.0.1" />
-    </ItemGroup>
 
 
 </Project>
