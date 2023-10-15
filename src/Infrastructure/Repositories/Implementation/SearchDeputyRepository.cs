@@ -19,13 +19,14 @@ public class SearchDeputyRepository : ISearchDeputyRepository
     
     public async Task<string> GetAllDeputiesRaw(int legislatura)
     {
+        _logger.Information("GetAllDeputiesRaw");
         // call rest api get all deputies
-        var deputies = await _DadosAbertosNewApi.GetAllDeputiesRaw(legislatura);
-        _logger.Information(deputies);
-        // call soap api get all deputies
+        var deputiesNewApi = await _DadosAbertosNewApi.GetAllDeputiesRaw(legislatura);
         
-        // save on mongo unique information
-        throw new NotImplementedException();
+        // call soap api get all deputies
+        var deputiesOldApi = await _DadosAbertosOldApi.GetAllDeputiesRaw(legislatura);
+
+        return "";
     }
 
     public Task<string> GetDeputy(int legislatura, int id)

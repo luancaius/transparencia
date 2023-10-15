@@ -1,4 +1,3 @@
-using Logging;
 using Repositories.Interfaces;
 using Serilog;
 using Services.Interfaces;

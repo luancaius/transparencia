@@ -1,17 +1,21 @@
 using System.Text;
 using ExternalAPI.Interfaces;
+using Serilog;
 
 namespace ExternalAPI.Implementation;
 
 public class DadosAbertosOldApi : IDadosAbertosOldApi
 {
     private IBaseApi _baseApi { get; set; }
-    public DadosAbertosOldApi(IBaseApi baseApi)
+    private readonly ILogger _logger;
+    public DadosAbertosOldApi(IBaseApi baseApi, ILogger logger)
     {
         _baseApi = baseApi;
+        _logger = logger.ForContext<DadosAbertosOldApi>();
     }
     public async Task<string> GetAllDeputiesRaw(int legislatura)
     {
+        _logger.Information("GetAllDeputiesRaw");
         string soapEndpoint = "https://www.camara.gov.br/SitCamaraWS/Deputados.asmx";
 
         string soapRequest = @"
