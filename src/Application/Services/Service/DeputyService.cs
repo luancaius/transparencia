@@ -1,5 +1,6 @@
 using Repositories.Interfaces;
 using Serilog;
+using Services.DTO;
 using Services.Interfaces;
 
 namespace Services.Service;
@@ -17,11 +18,15 @@ public class DeputyService : IDeputyService
         _logger = logger.ForContext<DeputyService>();
     }
 
-    public async Task<string> GetAllDeputyRaw(int legislatura)
+    public async Task<DeputiesList> GetDeputiesListExternalApi(int legislatura)
     {
-        _logger.Information("GetAllDeputyRaw");
-        var deputiesString = await _searchDeputyRepository.GetAllDeputiesRaw(legislatura);
-        return deputiesString;
+        _logger.Information("GetDeputiesListExternalApi");
+        var deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
+        
+        var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
+        
+        var deputiesList = new DeputiesList(deputiesListOldApi, deputiesListNewApi);
+        return deputiesList;
     }
 
     public async Task<string> GetDeputyRaw(int legislatura, int id)

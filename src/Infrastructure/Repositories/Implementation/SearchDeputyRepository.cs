@@ -1,4 +1,5 @@
 using ExternalAPI.Interfaces;
+using Repositories.DTO;
 using Repositories.Interfaces;
 using Serilog;
 
@@ -16,17 +17,21 @@ public class SearchDeputyRepository : ISearchDeputyRepository
         _DadosAbertosOldApi = dadosAbertosOldApi;
         _logger = logger.ForContext<SearchDeputyRepository>();
     }
-    
-    public async Task<string> GetAllDeputiesRaw(int legislatura)
-    {
-        _logger.Information("GetAllDeputiesRaw");
-        // call rest api get all deputies
-        var deputiesNewApi = await _DadosAbertosNewApi.GetAllDeputiesRaw(legislatura);
-        
-        // call soap api get all deputies
-        var deputiesOldApi = await _DadosAbertosOldApi.GetAllDeputiesRaw(legislatura);
 
-        return "";
+    public async Task<DeputiesListOldApi> GetAllDeputiesOldApi(int legislatura)
+    {
+        _logger.Information("GetAllDeputiesOldApi");
+        var deputiesNewApi = await _DadosAbertosOldApi.GetAllDeputiesRaw(legislatura);    
+        var deputiesListOldApi = new DeputiesListOldApi(deputiesNewApi);
+        return deputiesListOldApi;
+    }
+
+    public async Task<DeputiesListNewApi> GetAllDeputiesNewApi(int legislatura)
+    {
+        _logger.Information("GetAllDeputiesNewApi");
+        var deputiesNewApi = await _DadosAbertosNewApi.GetAllDeputiesRaw(legislatura);    
+        var deputiesListNewApi = new DeputiesListNewApi(deputiesNewApi);
+        return deputiesListNewApi;
     }
 
     public Task<string> GetDeputy(int legislatura, int id)

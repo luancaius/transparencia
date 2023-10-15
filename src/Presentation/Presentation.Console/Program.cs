@@ -30,7 +30,7 @@ namespace Presentation.Console
             switch (command)
             {
                 case "a":
-                    var deputies = await _deputyService.GetAllDeputyRaw(57);
+                    var deputies = await _deputyService.GetDeputiesListExternalApi(57);
                     System.Console.WriteLine(deputies);
                     break;
                 // case "b":
