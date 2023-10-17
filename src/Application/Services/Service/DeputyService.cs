@@ -20,7 +20,7 @@ public class DeputyService : IDeputyService
 
     public async Task<DeputiesList> GetDeputiesListExternalApi(int legislatura)
     {
-        _logger.Information("GetDeputiesListExternalApi");
+        _logger.Information("GetDeputiesListExternalApi $legislatura");
         var deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
         
         var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
@@ -31,17 +31,22 @@ public class DeputyService : IDeputyService
 
     public async Task<string> GetDeputyRaw(int legislatura, int id)
     {
-        _logger.Information("GetDeputyRaw");
+        _logger.Information("GetDeputyRaw $legislatura $id");
         var deputiesString = await _searchDeputyRepository.GetDeputy(legislatura, id);
-        return deputiesString;    }
-
-    public async Task<string> GetDeputyExpensesRaw(int year, int id)
-    {
-        throw new NotImplementedException();
+        return deputiesString;    
     }
 
-    public async Task<string> GetDeputyWorkPresenceRaw(int year, int id)
+    public async Task<string> GetDeputyExpensesRaw(int year, int month ,int id)
     {
-        throw new NotImplementedException();
+        _logger.Information("GetDeputyExpensesRaw $year $id");
+        var deputyExpenses = await _searchDeputyRepository.GetAllExpenses(year, month, id);
+        return deputyExpenses;       
+    }
+
+    public async Task<string> GetDeputyWorkPresenceRaw(int year, int month, int id)
+    {
+        _logger.Information("GetDeputyWorkPresenceRaw $year $id");
+        var deputyWorkPresense = await _searchDeputyRepository.GetAllWorkPresence(year, month, id);
+        return deputyWorkPresense;       
     }
 }

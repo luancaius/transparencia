@@ -36,16 +36,19 @@ public class SearchDeputyRepository : ISearchDeputyRepository
 
     public Task<string> GetDeputy(int legislatura, int id)
     {
+        _logger.Information("GetAllDeputiesNewApi $legislatura $id");
         throw new NotImplementedException();
     }
 
     public Task<string> GetAllExpenses(int year, int month, int id)
     {
+        _logger.Information("GetAllExpenses $year $month $id");
         throw new NotImplementedException();
     }
 
     public Task<string> GetAllWorkPresence(int year, int month, int id)
     {
+        _logger.Information("GetAllWorkPresence $year $month $id");
         throw new NotImplementedException();
     }
 }
