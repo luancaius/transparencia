@@ -3,7 +3,7 @@ using StackExchange.Redis;
 
 namespace CacheDatabase.Repositories;
 
-public class RedisCacheRepository : IRedisCacheRepository
+public class RedisCacheRepository : ICacheRepository
 {
     private readonly IDatabase _database;
 

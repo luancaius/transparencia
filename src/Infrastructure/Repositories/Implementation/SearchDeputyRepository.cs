@@ -1,5 +1,7 @@
 using ExternalAPI.Interfaces;
 using Repositories.DTO;
+using Repositories.DTO.NewApi;
+using Repositories.DTO.OldApi.GetAll;
 using Repositories.Interfaces;
 using Serilog;
 
@@ -21,8 +23,8 @@ public class SearchDeputyRepository : ISearchDeputyRepository
     public async Task<DeputiesListOldApi> GetAllDeputiesOldApi(int legislatura)
     {
         _logger.Information("GetAllDeputiesOldApi");
-        var deputiesNewApi = await _DadosAbertosOldApi.GetAllDeputiesRaw(legislatura);    
-        var deputiesListOldApi = new DeputiesListOldApi(deputiesNewApi);
+        var deputiesRaw = await _DadosAbertosOldApi.GetAllDeputiesRaw(legislatura);    
+        var deputiesListOldApi = new DeputiesListOldApi(deputiesRaw);
         return deputiesListOldApi;
     }
 

@@ -8,9 +8,9 @@ namespace ExternalAPI.Implementation;
 public class BaseApi : IBaseApi
 {
     private readonly HttpClient _httpClient;
-    protected readonly IRedisCacheRepository _cacheRepository;
+    protected readonly ICacheRepository _cacheRepository;
 
-    public BaseApi(IRedisCacheRepository cacheService)
+    public BaseApi(ICacheRepository cacheService)
     {
         _cacheRepository = cacheService;
         _httpClient = new HttpClient();

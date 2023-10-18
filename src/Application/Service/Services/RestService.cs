@@ -7,9 +7,9 @@ namespace Service.Services
     public class RestService
     {
         private readonly HttpClient _httpClient;
-        protected readonly IRedisCacheRepository _cacheService;
+        protected readonly ICacheRepository _cacheService;
 
-        public RestService(IRedisCacheRepository cacheService)
+        public RestService(ICacheRepository cacheService)
         {
             _cacheService = cacheService;
             _httpClient = new HttpClient();

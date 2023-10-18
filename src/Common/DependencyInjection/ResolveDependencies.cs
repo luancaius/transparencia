@@ -3,6 +3,7 @@ using CacheDatabase.Repositories;
 using ExternalAPI.Implementation;
 using ExternalAPI.Interfaces;
 using Logging;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using Repositories.Implementation;
 using Repositories.Interfaces;
@@ -43,11 +44,22 @@ public class ResolveDependencies
         // services.AddTransient<Api1DeputadoDespesasMongoRepository>(sp => new Api1DeputadoDespesasMongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi1Despesas));
         // services.AddTransient<Api2DeputadoListaPresencaMongoRepository>(sp => new Api2DeputadoListaPresencaMongoRepository(sp.GetRequiredService<MongoDbContext>(), tableNameApi2ListaPresenca));
         
-        // Redis Configuration
         string redisConnectionString = "localhost:6379";
-        services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(redisConnectionString));
-        services.AddTransient<IDatabase>(sp => sp.GetRequiredService<IConnectionMultiplexer>().GetDatabase());
-        services.AddTransient<IRedisCacheRepository, RedisCacheRepository>();
+        try
+        {
+            var multiplexer = ConnectionMultiplexer.Connect(redisConnectionString);
+
+            services.AddSingleton<IConnectionMultiplexer>(multiplexer);
+            services.AddTransient<IDatabase>(sp => sp.GetRequiredService<IConnectionMultiplexer>().GetDatabase());
+            services.AddTransient<ICacheRepository, RedisCacheRepository>();
+        }
+        catch (Exception e)
+        {
+            var memoryCache = new MemoryCache(new MemoryCacheOptions());
+            services.AddSingleton<IMemoryCache>(memoryCache);
+            services.AddTransient<IDatabase>(_ => null); // No Redis, so provide a null database
+            services.AddTransient<ICacheRepository, MemoryCacheRepository>();
+        }
 
         services.AddTransient<IBaseApi, BaseApi>();
         services.AddTransient<IDadosAbertosOldApi, DadosAbertosOldApi>();

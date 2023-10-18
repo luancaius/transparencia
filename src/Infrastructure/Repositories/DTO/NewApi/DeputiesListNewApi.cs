@@ -1,4 +1,4 @@
-namespace Repositories.DTO;
+namespace Repositories.DTO.NewApi;
 
 public class DeputiesListNewApi
 {
