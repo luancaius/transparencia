@@ -8,4 +8,7 @@
         <ProjectReference Include="..\..\Common\Logging\Logging.csproj" />
         <ProjectReference Include="..\ExternalAPI\ExternalAPI.csproj" />
     </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
 </Project>
