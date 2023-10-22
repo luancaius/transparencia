@@ -14,7 +14,7 @@ public class DeputiesListOldApi
             XNamespace camara = "https://www.camara.gov.br/SitCamaraWS/Deputados";
             XNamespace empty = "";
 
-            Deputies = doc.Descendants(soap + "Body")
+            DeputiesOldApi = doc.Descendants(soap + "Body")
                 .Descendants(camara + "ObterDeputadosResponse")
                 .Descendants(camara + "ObterDeputadosResult")
                 .Descendants(empty + "deputados")
@@ -43,7 +43,7 @@ public class DeputiesListOldApi
                     }
                 }).ToList();
 
-            Console.WriteLine(Deputies);
+            Console.WriteLine(DeputiesOldApi);
         }
         catch (Exception e)
         {
@@ -52,5 +52,5 @@ public class DeputiesListOldApi
         }
     }
 
-    public List<DeputyOldApi> Deputies { get; set; }
+    public List<DeputyOldApi> DeputiesOldApi { get; set; }
 }

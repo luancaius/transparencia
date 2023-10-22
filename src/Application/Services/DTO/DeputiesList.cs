@@ -5,10 +5,17 @@ using Repositories.DTO.OldApi.GetAll;
 
 namespace Services.DTO;
 
-public class DeputiesList
+public class DeputiesListDto
 {
-    public DeputiesList(DeputiesListOldApi deputiesListOldApi, DeputiesListNewApi deputiesListNewApi)
+    public List<DeputyDto> Deputies { get; set; } = new List<DeputyDto>();
+    public DeputiesListDto(DeputiesListOldApi deputiesListOldApi, DeputiesListNewApi deputiesListNewApi)
     {
-        throw new NotImplementedException();
+        for(int i=0;i<deputiesListOldApi.DeputiesOldApi.Count;i++)
+        {
+            var deputyNewApi = deputiesListNewApi.DeputiesNewApi[i];
+            var deputyOldApi = deputiesListOldApi.DeputiesOldApi.First(a => a.Email == deputyNewApi.Email);
+            var deputy = new DeputyDto(deputyNewApi, deputyOldApi);
+            Deputies.Add(deputy);
+        }
     }
 }

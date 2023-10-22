@@ -18,14 +18,14 @@ public class DeputyService : IDeputyService
         _logger = logger.ForContext<DeputyService>();
     }
 
-    public async Task<DeputiesList> GetDeputiesListExternalApi(int legislatura)
+    public async Task<DeputiesListDto> GetDeputiesListExternalApi(int legislatura)
     {
         _logger.Information("GetDeputiesListExternalApi $legislatura");
         var deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
         
         var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
         
-        var deputiesList = new DeputiesList(deputiesListOldApi, deputiesListNewApi);
+        var deputiesList = new DeputiesListDto(deputiesListOldApi, deputiesListNewApi);
         return deputiesList;
     }
 

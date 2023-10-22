@@ -4,14 +4,14 @@ namespace Repositories.DTO.NewApi.GetAll;
 
 public class DeputiesListNewApi
 {
-    public List<DeputyNewApi> DeputyListNewApi { get; set; }
+    public List<DeputyNewApi> DeputiesNewApi { get; set; }
 
     public DeputiesListNewApi(String rawDeputiesList)
     {
         JObject root = JObject.Parse(rawDeputiesList);
         JArray deputadosArray = (JArray)root["dados"];
 
-        DeputyListNewApi = new List<DeputyNewApi>();
+        DeputiesNewApi = new List<DeputyNewApi>();
         foreach (JToken deputadoToken in deputadosArray)
         {
             var temp = new DeputyNewApi();
@@ -24,7 +24,7 @@ public class DeputiesListNewApi
             temp.IdLegislatura = deputadoToken["idLegislatura"].Value<int>();
             temp.UrlFoto = deputadoToken["urlFoto"].ToString();
             temp.Email = deputadoToken["email"].ToString();
-            DeputyListNewApi.Add(temp); 
+            DeputiesNewApi.Add(temp); 
         }
     }
 }
