@@ -42,9 +42,36 @@ public class DadosAbertosOldApi : IDadosAbertosOldApi
         return String.Empty;
     }
 
-    public async Task<string> GetDeputyRaw(int id)
+    public async Task<string> GetDeputyRaw(int id, int numLegislatura)
     {
-        throw new NotImplementedException();
+        _logger.Information("GetDeputyRaw");
+        string soapEndpoint = "https://www.camara.gov.br/SitCamaraWS/Deputados.asmx";
+
+        string soapRequest = $@"
+                <soapenv:Envelope xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/"" xmlns:dep=""https://www.camara.gov.br/SitCamaraWS/Deputados""> 
+                    <soapenv:Header/>
+                        <soapenv:Body>
+                            <dep:ObterDetalhesDeputado>
+                                <dep:ideCadastro>{id}</dep:ideCadastro>
+                                <dep:numLegislatura>{numLegislatura}</dep:numLegislatura>
+                            </dep:ObterDetalhesDeputado>
+                        </soapenv:Body>
+                </soapenv:Envelope>";
+
+        try
+        {
+            StringContent content = new StringContent(soapRequest, Encoding.UTF8, "text/xml");
+
+            String response = await _baseApi.PostAsync(soapEndpoint, content);
+            
+            return response;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+        }
+
+        return String.Empty;
     }
 
     public async Task<string> GetDeputyWorkPresenceRaw(int year, int id)

@@ -3,6 +3,7 @@ using Repositories.DTO;
 using Repositories.DTO.NewApi;
 using Repositories.DTO.NewApi.GetAll;
 using Repositories.DTO.OldApi.GetAll;
+using Repositories.DTO.OldApi.GetById;
 using Repositories.Interfaces;
 using Serilog;
 
@@ -24,19 +25,27 @@ public class SearchDeputyRepository : ISearchDeputyRepository
     public async Task<DeputiesListOldApi> GetAllDeputiesOldApi(int legislatura)
     {
         _logger.Information("GetAllDeputiesOldApi");
-        var deputiesRaw = await _DadosAbertosOldApi.GetAllDeputiesRaw(legislatura);    
-        var deputiesListOldApi = new DeputiesListOldApi(deputiesRaw);
+        var deputiesOldApiString = await _DadosAbertosOldApi.GetAllDeputiesRaw(legislatura);    
+        var deputiesListOldApi = new DeputiesListOldApi(deputiesOldApiString);
         return deputiesListOldApi;
     }
 
     public async Task<DeputiesListNewApi> GetAllDeputiesNewApi(int legislatura)
     {
         _logger.Information("GetAllDeputiesNewApi");
-        var deputiesNewApi = await _DadosAbertosNewApi.GetAllDeputiesRaw(legislatura);    
-        var deputiesListNewApi = new DeputiesListNewApi(deputiesNewApi);
+        var deputiesNewApiString = await _DadosAbertosNewApi.GetAllDeputiesRaw(legislatura);    
+        var deputiesListNewApi = new DeputiesListNewApi(deputiesNewApiString);
         return deputiesListNewApi;
     }
 
+    public async Task<DeputyDetailOldApi> GetDeputyDetailOldApi(int id, int legislatura)
+    {
+        _logger.Information("GetDeputyDetailOldApi");
+        var deputyDetailOldApiString = await _DadosAbertosOldApi.GetDeputyRaw(id, legislatura);    
+        var deputyDetailOldApi = new DeputyDetailOldApi(deputyDetailOldApiString);
+        return deputyDetailOldApi;
+    }
+    
     public Task<string> GetDeputy(int legislatura, int id)
     {
         _logger.Information("GetAllDeputiesNewApi $legislatura $id");
