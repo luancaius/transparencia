@@ -42,7 +42,7 @@ public class DadosAbertosOldApi : IDadosAbertosOldApi
         return String.Empty;
     }
 
-    public async Task<string> GetDeputyRaw(int id, int numLegislatura)
+    public async Task<string> GetDeputyRaw(int legislatura, int id)
     {
         _logger.Information("GetDeputyRaw");
         string soapEndpoint = "https://www.camara.gov.br/SitCamaraWS/Deputados.asmx";
@@ -53,7 +53,7 @@ public class DadosAbertosOldApi : IDadosAbertosOldApi
                         <soapenv:Body>
                             <dep:ObterDetalhesDeputado>
                                 <dep:ideCadastro>{id}</dep:ideCadastro>
-                                <dep:numLegislatura>{numLegislatura}</dep:numLegislatura>
+                                <dep:numLegislatura>{legislatura}</dep:numLegislatura>
                             </dep:ObterDetalhesDeputado>
                         </soapenv:Body>
                 </soapenv:Envelope>";

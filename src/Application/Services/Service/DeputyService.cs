@@ -29,6 +29,20 @@ public class DeputyService : IDeputyService
         return deputiesList;
     }
 
+    public async Task<DeputiesDetailListDto> GetDeputiesDetailListExternalApi(int legislatura)
+    {
+        var deputiesListDto = await GetDeputiesListExternalApi(legislatura);
+        var deputies = deputiesListDto.Deputies;
+        foreach (var deputy in deputies)
+        {
+            var deputyDetailOldApi = await _searchDeputyRepository.GetDeputiesDetailOldApi(legislatura, deputy.IdeCadastro);
+            var deputyDetailNewApi = await _searchDeputyRepository.GetAllDeputiesDetailNewApi(legislatura, deputy.IdeCadastro);
+        }
+
+        return null;
+
+    }
+
     public async Task<string> GetDeputyRaw(int legislatura, int id)
     {
         _logger.Information("GetDeputyRaw $legislatura $id");

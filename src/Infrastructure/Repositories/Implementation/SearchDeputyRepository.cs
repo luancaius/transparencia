@@ -38,6 +38,18 @@ public class SearchDeputyRepository : ISearchDeputyRepository
         return deputiesListNewApi;
     }
 
+    public async Task<DeputiesListOldApi> GetDeputiesDetailOldApi(int legislatura, int id)
+    {
+        _logger.Information("GetDeputiesDetailOldApi");
+        var deputyDetail = await _DadosAbertosOldApi.GetDeputyRaw(legislatura, id);
+        return null;
+    }
+
+    public async Task<DeputiesListNewApi> GetAllDeputiesDetailNewApi(int legislatura, int id)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<DeputyDetailOldApi> GetDeputyDetailOldApi(int id, int legislatura)
     {
         _logger.Information("GetDeputyDetailOldApi");

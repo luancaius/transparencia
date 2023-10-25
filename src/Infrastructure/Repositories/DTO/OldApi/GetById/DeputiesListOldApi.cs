@@ -1,0 +1,56 @@
+using System.Xml.Linq;
+using Repositories.DTO.OldApi.GetAll;
+
+namespace Repositories.DTO.OldApi.GetById;
+
+public class DeputiesDetailListOldApi
+{
+    public DeputiesDetailListOldApi(String rawDeputiesList)
+    {
+        try
+        {
+            XDocument doc = XDocument.Parse(rawDeputiesList);
+            XNamespace soap = "http://schemas.xmlsoap.org/soap/envelope/";
+            XNamespace camara = "https://www.camara.gov.br/SitCamaraWS/Deputados";
+            XNamespace empty = "";
+
+            DeputiesOldApi = doc.Descendants(soap + "Body")
+                .Descendants(camara + "ObterDeputadosResponse")
+                .Descendants(camara + "ObterDeputadosResult")
+                .Descendants(empty + "deputados")
+                .Descendants("deputado")
+                .Select(d => new DeputyOldApi
+                {
+                    IdeCadastro = (int)d.Element("ideCadastro"),
+                    CodOrcamento = (string)d.Element("codOrcamento"),
+                    Condicao = (string)d.Element("condicao"),
+                    Matricula = (int)d.Element("matricula"),
+                    IdParlamentar = (int)d.Element("idParlamentar"),
+                    Nome = (string)d.Element("nome"),
+                    NomeParlamentar = (string)d.Element("nomeParlamentar"),
+                    UrlFoto = (string)d.Element("urlFoto"),
+                    Sexo = (string)d.Element("sexo"),
+                    Uf = (string)d.Element("uf"),
+                    Partido = (string)d.Element("partido"),
+                    Gabinete = (string)d.Element("gabinete"),
+                    Anexo = (string)d.Element("anexo"),
+                    Fone = (string)d.Element("fone"),
+                    Email = (string)d.Element("email"),
+                    Comissoes = new GetAll.Comissoes
+                    {
+                        Titular = (string)d.Element("comissoes").Element("titular"),
+                        Suplente = (string)d.Element("comissoes").Element("suplente"),
+                    }
+                }).ToList();
+
+            Console.WriteLine(DeputiesOldApi);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+
+    public List<DeputyOldApi> DeputiesOldApi { get; set; }
+}
