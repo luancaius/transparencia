@@ -35,8 +35,9 @@ public class DeputyService : IDeputyService
         var deputies = deputiesListDto.Deputies;
         foreach (var deputy in deputies)
         {
-            var deputyDetailOldApi = await _searchDeputyRepository.GetDeputiesDetailOldApi(legislatura, deputy.IdeCadastro);
-            var deputyDetailNewApi = await _searchDeputyRepository.GetAllDeputiesDetailNewApi(legislatura, deputy.IdeCadastro);
+            var deputyDetailOldApi = await _searchDeputyRepository.GetDeputyDetailOldApi(legislatura, deputy.IdeCadastro);
+            var deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, deputy.IdeCadastro);
+            var deputyDetailUnified = new DeputyDetailDto(deputyDetailOldApi, deputyDetailNewApi);
         }
 
         return null;

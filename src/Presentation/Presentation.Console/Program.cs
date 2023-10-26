@@ -24,7 +24,7 @@ namespace Presentation.Console
         
         public static async Task ExecuteConsole(IDeputyService _deputyService)
         {
-            string command = "a";
+            string command = "b";
 
             System.Console.WriteLine($"Executing command {command}");
             switch (command)
@@ -33,9 +33,9 @@ namespace Presentation.Console
                     var deputies = await _deputyService.GetDeputiesListExternalApi(57);
                     System.Console.WriteLine(deputies);
                     break;
-                // case "b":
-                //     await deputadoService.Api2_GetAllDeputados_SaveOnMongoDB();
-                //     break;
+                case "b":
+                    await _deputyService.GetDeputiesDetailListExternalApi(57);
+                    break;
                 // case "c":
                 //     await deputadoService.Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(2023);
                 //     break;

@@ -60,14 +60,3 @@ public class DeputyDto
         Comissoes = new Comissoes(oldApi.Comissoes);
     }
 }
-
-public class Comissoes {
-    public object? Titular { get; set; } 
-    public object? Suplente { get; set; }
-
-    public Comissoes(Repositories.DTO.OldApi.GetAll.Comissoes comissoes)
-    {
-        Titular = comissoes.Titular;
-        Suplente = comissoes.Suplente;
-    }
-}

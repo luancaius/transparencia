@@ -34,6 +34,30 @@ public class DeputyDetailDto
 
     public DeputyDetailDto(DeputyDetailOldApi deputyDetailOldApi, DeputyDetailNewApi deputyDetailNewApi)
     {
-        
+        // From DeputyDetailNewApi
+        Id = deputyDetailNewApi.Id;
+        Uri = deputyDetailNewApi.Uri;
+        Nome = deputyDetailNewApi.Nome;
+        SiglaPartido = deputyDetailNewApi.SiglaPartido;
+        UriPartido = deputyDetailNewApi.UriPartido;
+        SiglaUf = deputyDetailNewApi.SiglaUf;
+        IdLegislatura = deputyDetailNewApi.IdLegislatura;
+        UrlFoto = deputyDetailNewApi.UrlFoto;
+        Email = deputyDetailNewApi.Email;
+
+        // From DeputyDetailOldApi
+        IdeCadastro = deputyDetailOldApi.IdeCadastro;
+        CodOrcamento = ""; // This value seems to be missing from both API models
+        Condicao = ""; // This value seems to be missing from both API models
+        Matricula = 0; // This value seems to be missing from both API models
+        IdParlamentar = 0; // This value seems to be missing from both API models
+        NomeParlamentar = deputyDetailOldApi.NomeParlamentar;
+        Sexo = deputyDetailOldApi.Sexo;
+        Uf = deputyDetailOldApi.Uf;
+        Partido = deputyDetailOldApi.Partido;
+        Gabinete = deputyDetailOldApi.Gabinete;
+        Anexo = deputyDetailOldApi.Anexo;
+        Fone = deputyDetailOldApi.Fone;
+        Comissoes = new Comissoes(deputyDetailOldApi.Comissoes);
     }
 }

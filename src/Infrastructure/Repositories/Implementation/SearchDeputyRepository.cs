@@ -2,6 +2,7 @@ using ExternalAPI.Interfaces;
 using Repositories.DTO;
 using Repositories.DTO.NewApi;
 using Repositories.DTO.NewApi.GetAll;
+using Repositories.DTO.NewApi.GetById;
 using Repositories.DTO.OldApi.GetAll;
 using Repositories.DTO.OldApi.GetById;
 using Repositories.Interfaces;
@@ -38,24 +39,20 @@ public class SearchDeputyRepository : ISearchDeputyRepository
         return deputiesListNewApi;
     }
 
-    public async Task<DeputiesListOldApi> GetDeputiesDetailOldApi(int legislatura, int id)
+    public async Task<DeputyDetailOldApi> GetDeputyDetailOldApi(int legislatura, int id)
     {
         _logger.Information("GetDeputiesDetailOldApi");
-        var deputyDetail = await _DadosAbertosOldApi.GetDeputyRaw(legislatura, id);
-        return null;
+        var deputyDetailString = await _DadosAbertosOldApi.GetDeputyRaw(legislatura, id);
+        var deputyDetail = new DeputyDetailOldApi(deputyDetailString);
+        return deputyDetail;
     }
 
-    public async Task<DeputiesListNewApi> GetAllDeputiesDetailNewApi(int legislatura, int id)
+    public async Task<DeputyDetailNewApi> GetDeputyDetailNewApi(int legislatura, int id)
     {
-        throw new NotImplementedException();
-    }
-
-    public async Task<DeputyDetailOldApi> GetDeputyDetailOldApi(int id, int legislatura)
-    {
-        _logger.Information("GetDeputyDetailOldApi");
-        var deputyDetailOldApiString = await _DadosAbertosOldApi.GetDeputyRaw(id, legislatura);    
-        var deputyDetailOldApi = new DeputyDetailOldApi(deputyDetailOldApiString);
-        return deputyDetailOldApi;
+        _logger.Information("GetDeputyDetailNewApi");
+        var deputyDetailString = await _DadosAbertosNewApi.GetDeputyRaw(id);
+        var deputyDetail = new DeputyDetailNewApi(deputyDetailString);
+        return deputyDetail;    
     }
     
     public Task<string> GetDeputy(int legislatura, int id)
