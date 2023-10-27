@@ -16,15 +16,24 @@ public class DeputyDetailNewApi
     
     public DeputyDetailNewApi(string deputyDetailString)
     {
-        var deputyDetail = JsonConvert.DeserializeObject<DeputyDetailNewApi>(deputyDetailString);
-        Id = deputyDetail.Id;
-        Uri = deputyDetail.Uri;
-        Nome = deputyDetail.Nome;
-        SiglaPartido = deputyDetail.SiglaPartido;
-        UriPartido = deputyDetail.UriPartido;
-        SiglaUf = deputyDetail.SiglaUf;
-        IdLegislatura = deputyDetail.IdLegislatura;
-        UrlFoto = deputyDetail.UrlFoto;
-        Email = deputyDetail.Email;
+        try
+        {
+            var deputyDetail = JsonConvert.DeserializeObject<DeputyDetailNewApi>(deputyDetailString);
+            Id = deputyDetail.Id;
+            Uri = deputyDetail.Uri;
+            Nome = deputyDetail.Nome;
+            SiglaPartido = deputyDetail.SiglaPartido;
+            UriPartido = deputyDetail.UriPartido;
+            SiglaUf = deputyDetail.SiglaUf;
+            IdLegislatura = deputyDetail.IdLegislatura;
+            UrlFoto = deputyDetail.UrlFoto;
+            Email = deputyDetail.Email;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+        
     }
 }

@@ -59,4 +59,18 @@ public class DeputyDto
         Fone = oldApi.Fone;
         Comissoes = new Comissoes(oldApi.Comissoes);
     }
+    
+    public DeputyDto(DeputyNewApi newApi){
+        // Properties from DeputyNewApi
+        Id = newApi.Id;
+        Uri = newApi.Uri;
+        Nome = newApi.Nome;
+        SiglaPartido = newApi.SiglaPartido;
+        UriPartido = newApi.UriPartido;
+        SiglaUf = newApi.SiglaUf;
+        IdLegislatura = newApi.IdLegislatura;
+        UrlFoto = newApi.UrlFoto;
+        Email = newApi.Email;
+    }
+    
 }
