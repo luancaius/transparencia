@@ -1,3 +1,5 @@
+using Repositories.DTO.NewApi.GetById;
+using Repositories.DTO.OldApi.GetById;
 using Repositories.Interfaces;
 using Serilog;
 using Services.DTO;
@@ -31,17 +33,25 @@ public class DeputyService : IDeputyService
 
     public async Task<DeputiesDetailListDto> GetDeputiesDetailListExternalApi(int legislatura)
     {
-        var deputiesListDto = await GetDeputiesListExternalApi(legislatura);
-        var deputies = deputiesListDto.Deputies;
-        foreach (var deputy in deputies)
+        var deputiesDetailListNewApi = new List<DeputyDetailNewApi>();
+        var deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
+        foreach (var deputy in deputiesListNewApi.DeputiesNewApi)
         {
-            var deputyDetailOldApi = await _searchDeputyRepository.GetDeputyDetailOldApi(legislatura, deputy.IdeCadastro);
-            var deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, deputy.IdeCadastro);
-            var deputyDetailUnified = new DeputyDetailDto(deputyDetailOldApi, deputyDetailNewApi);
+            var id = Convert.ToInt32(deputy.Id);
+            var deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, id);
+            deputiesDetailListNewApi.Add(deputyDetailNewApi);
         }
-
-        return null;
-
+        var deputiesDetailListOldApi = new List<DeputyDetailOldApi>();
+        var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
+        foreach (var deputy in deputiesListOldApi.DeputiesOldApi)
+        {
+            var id = Convert.ToInt32(deputy.IdeCadastro);
+            var deputyDetailOldApi = await _searchDeputyRepository.GetDeputyDetailOldApi(legislatura, id);
+            deputiesDetailListOldApi.Add(deputyDetailOldApi);
+        }
+        var deputiesDetailList = new DeputiesDetailListDto(deputiesDetailListOldApi, deputiesDetailListNewApi);
+        
+        return deputiesDetailList;
     }
 
     public async Task<string> GetDeputyRaw(int legislatura, int id)
