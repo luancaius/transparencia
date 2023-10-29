@@ -1,5 +1,3 @@
-using Repositories.DTO;
-using Repositories.DTO.NewApi;
 using Repositories.DTO.NewApi.GetAll;
 using Repositories.DTO.OldApi.GetAll;
 

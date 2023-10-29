@@ -1,4 +1,3 @@
-using Repositories.DTO.NewApi.GetById;
 using Repositories.DTO.OldApi.GetById;
 using Repositories.Interfaces;
 using Serilog;

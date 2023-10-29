@@ -1,8 +1,5 @@
 using ExternalAPI.Interfaces;
-using Repositories.DTO;
-using Repositories.DTO.NewApi;
 using Repositories.DTO.NewApi.GetAll;
-using Repositories.DTO.NewApi.GetById;
 using Repositories.DTO.OldApi.GetAll;
 using Repositories.DTO.OldApi.GetById;
 using Repositories.Interfaces;

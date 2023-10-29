@@ -1,6 +1,3 @@
-using Repositories.DTO;
-using Repositories.DTO.NewApi;
-using Repositories.DTO.NewApi.GetById;
 using Repositories.DTO.OldApi.GetById;
 
 namespace Services.DTO;

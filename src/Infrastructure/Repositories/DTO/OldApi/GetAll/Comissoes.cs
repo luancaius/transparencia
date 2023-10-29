@@ -1,5 +1,3 @@
-using System.Xml.Serialization;
-
 namespace Repositories.DTO.OldApi.GetAll;
 
 public class Comissoes {

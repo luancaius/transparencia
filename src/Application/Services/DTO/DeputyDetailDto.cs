@@ -1,13 +1,10 @@
-using Repositories.DTO.NewApi.GetAll;
-using Repositories.DTO.NewApi.GetById;
-using Repositories.DTO.OldApi.GetAll;
 using Repositories.DTO.OldApi.GetById;
 
 namespace Services.DTO;
 
 public class DeputyDetailDto
 {
-    public string Id { get; set; }
+    public int Id { get; set; }
     public string Uri { get; set; }
     public string Nome { get; set; } // Renamed to avoid conflict
     public string SiglaPartido { get; set; }
