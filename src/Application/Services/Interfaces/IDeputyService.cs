@@ -9,4 +9,5 @@ public interface IDeputyService
     Task<String> GetDeputyRaw(int legislatura, int id);
     Task<String> GetDeputyExpensesRaw(int year, int month, int id);
     Task<String> GetDeputyWorkPresenceRaw(int year, int month, int id);
+    Task RefreshDatabase(int i);
 }

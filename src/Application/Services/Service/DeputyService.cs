@@ -73,4 +73,15 @@ public class DeputyService : IDeputyService
         var deputyWorkPresense = await _searchDeputyRepository.GetAllWorkPresence(year, month, id);
         return deputyWorkPresense;       
     }
+
+    public async Task RefreshDatabase(int legislatura)
+    {
+        // TODO call all methods to refresh database
+        // starting old api getall deputies
+        // then call deputy details one by one
+        // then call deputy work presence one by one
+        // call new api get all
+        // call deputy details one by one
+        // call deputy expenses one by one
+    }
 }

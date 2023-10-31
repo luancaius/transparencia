@@ -36,16 +36,9 @@ namespace Presentation.Console
                 case "b":
                     await _deputyService.GetDeputiesDetailListExternalApi(57);
                     break;
-                // case "c":
-                //     await deputadoService.Api1_GetDeputadoDespesasByYear_SaveOnMongoDB(2023);
-                //     break;
-                // case "d":
-                //     await deputadoService.Api2_GetListaPresencaDeputado_SaveOnMongoDB(2023);
-                //     break;
-                // case "e":
-                //     await deputadoService.Api2_GetAllDeputados_SaveOnMongoDB();
-                //     await deputadoService.Api2_GetListaPresencaDeputado_SaveOnMongoDB(2023);
-                //     break;
+                case "c":
+                    await _deputyService.RefreshDatabase(57);
+                    break;
                 default:
                     System.Console.WriteLine("Invalid command. Please try again.");
                     break;
