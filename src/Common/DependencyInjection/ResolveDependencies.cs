@@ -5,6 +5,7 @@ using ExternalAPI.Interfaces;
 using Logging;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
+using NonRelationalDatabase.Helpers;
 using Repositories.Implementation;
 using Repositories.Interfaces;
 using Serilog;
@@ -30,9 +31,20 @@ public class ResolveDependencies
         #region Infrastructure
         
         // MongoDB Configuration
-        // string mongoConnectionString = "mongodb://root:root@localhost:27017";
-        // string mongoDatabaseName = "congresso";
-        //
+        string mongoConnectionString = "mongodb://root:root@localhost:27017";
+        string mongoDatabaseName = "congresso";
+        try
+        {
+            services.AddSingleton<MongoDbHelper>(sp => new MongoDbHelper(mongoConnectionString, mongoDatabaseName));
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("MongoDB is not running");
+            throw;
+        }
+        
+
+        
         // string tableNameApi1 = "api1_deputados";
         // string tableNameApi2 = "api2_deputados";
         // string tableNameApi1Despesas = "api1_deputado_despesas";
@@ -66,7 +78,6 @@ public class ResolveDependencies
         services.AddTransient<IDadosAbertosNewApi, DadosAbertosNewApi>();
         
         services.AddTransient<ISearchDeputyRepository, SearchDeputyRepository>();
-        services.AddTransient<IDeputyRepository, DeputyRepository>();
         #endregion
 
         #region Application

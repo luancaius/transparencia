@@ -18,6 +18,7 @@
       <ProjectReference Include="..\..\Application\Repository\Repository.csproj" />
       <ProjectReference Include="..\..\Application\Services\Services.csproj" />
       <ProjectReference Include="..\..\Infrastructure\CacheDatabase\CacheDatabase.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\NonRelationalDatabase\NonRelationalDatabase.csproj" />
       <ProjectReference Include="..\Logging\Logging.csproj" />
     </ItemGroup>
 

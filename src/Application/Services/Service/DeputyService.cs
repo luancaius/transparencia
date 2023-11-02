@@ -8,13 +8,11 @@ namespace Services.Service;
 
 public class DeputyService : IDeputyService
 {
-    private readonly IDeputyRepository _deputyRepository;
     private readonly ISearchDeputyRepository _searchDeputyRepository;
     private readonly ILogger _logger;
 
-    public DeputyService(IDeputyRepository deputyRepository, ISearchDeputyRepository searchDeputyRepository, ILogger logger)
+    public DeputyService(ISearchDeputyRepository searchDeputyRepository, ILogger logger)
     {
-        _deputyRepository = deputyRepository;
         _searchDeputyRepository = searchDeputyRepository;
         _logger = logger.ForContext<DeputyService>();
     }
