@@ -44,10 +44,10 @@ public class DeputyDetailDto
 
         // From DeputyDetailOldApi
         IdeCadastro = deputyDetailOldApi.IdeCadastro;
-        CodOrcamento = ""; // This value seems to be missing from both API models
-        Condicao = ""; // This value seems to be missing from both API models
-        Matricula = 0; // This value seems to be missing from both API models
-        IdParlamentar = 0; // This value seems to be missing from both API models
+        CodOrcamento = ""; 
+        Condicao = ""; 
+        Matricula = 0; 
+        IdParlamentar = 0; 
         NomeParlamentar = deputyDetailOldApi.NomeParlamentar;
         Sexo = deputyDetailOldApi.Sexo;
         Uf = deputyDetailOldApi.Uf;

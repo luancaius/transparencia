@@ -72,14 +72,36 @@ public class DeputyService : IDeputyService
         return deputyWorkPresense;       
     }
 
-    public async Task RefreshDatabase(int legislatura)
+    public async Task RefreshDatabase(int legislatura, int year)
     {
-        // TODO call all methods to refresh database
-        // starting old api getall deputies
-        // then call deputy details one by one
-        // then call deputy work presence one by one
-        // call new api get all
-        // call deputy details one by one
-        // call deputy expenses one by one
+        var deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
+        // save on mongo
+        foreach (var deputy in deputiesListNewApi.DeputiesNewApi)
+        {
+            var id = Convert.ToInt32(deputy.Id);
+            var deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, id);
+            // save on mongo
+            var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
+            for (int month = 1; month <= currentMonth; month++)
+            {
+                var deputyExpenses = await _searchDeputyRepository.GetAllExpenses(year, month, id);
+                // save on mongo
+            }
+        }
+        
+        var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
+        // save on mongo
+        foreach (var deputy in deputiesListOldApi.DeputiesOldApi)
+        {
+            var id = Convert.ToInt32(deputy.IdeCadastro);
+            var deputyDetailOldApi = await _searchDeputyRepository.GetDeputyDetailOldApi(legislatura, id);
+            // save on mongo
+            var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
+            for (int month = 1; month <= currentMonth; month++)
+            {
+                var deputyWorkPresense = await _searchDeputyRepository.GetAllWorkPresence(year, month, id);
+                // save on mongo
+            }
+        }
     }
 }
