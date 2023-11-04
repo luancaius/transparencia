@@ -6,16 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-
-
     <ItemGroup>
-      <PackageReference Include="MongoDB.Driver" Version="2.22.0" />
-    </ItemGroup>
-
-
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\Common\SharedLibraries\SharedLibraries.csproj" />
+      <ProjectReference Include="..\Logging\Logging.csproj" />
     </ItemGroup>
 
 </Project>

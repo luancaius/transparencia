@@ -79,12 +79,12 @@ public class DeputyService : IDeputyService
     public async Task RefreshDatabase(int legislatura, int year)
     {
         var deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
-        await _nonRelationalDatabase.Insert(deputiesListNewApi);
+        await _nonRelationalDatabase.CheckAndUpdate(deputiesListNewApi, null);
         foreach (var deputy in deputiesListNewApi.DeputiesNewApi)
         {
             var id = Convert.ToInt32(deputy.Id);
             var deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, id);
-            await _nonRelationalDatabase.Insert(deputyDetailNewApi);
+            await _nonRelationalDatabase.CheckAndUpdate(deputyDetailNewApi, deputyDetailNewApi.Cpf);
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
             for (int month = 1; month <= currentMonth; month++)
             {
@@ -94,12 +94,12 @@ public class DeputyService : IDeputyService
         }
         
         var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
-        await _nonRelationalDatabase.Insert(deputiesListOldApi);
+        await _nonRelationalDatabase.CheckAndUpdate(deputiesListOldApi, null);
         foreach (var deputy in deputiesListOldApi.DeputiesOldApi)
         {
             var id = Convert.ToInt32(deputy.IdeCadastro);
             var deputyDetailOldApi = await _searchDeputyRepository.GetDeputyDetailOldApi(legislatura, id);
-            await _nonRelationalDatabase.Insert(deputyDetailOldApi);
+            await _nonRelationalDatabase.CheckAndUpdate(deputyDetailOldApi, deputyDetailOldApi.IdeCadastro.ToString());
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
             for (int month = 1; month <= currentMonth; month++)
             {

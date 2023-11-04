@@ -14,14 +14,61 @@ public class MongoDbHelper
 
     public void InsertData<T>(string collectionName, T document)
     {
-        var collection = _database.GetCollection<T>(collectionName);
-        collection.InsertOne(document);
+        try
+        {
+            var collection = _database.GetCollection<T>(collectionName);
+            collection.InsertOne(document);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
     
     public List<T> GetData<T>(string collectionName, FilterDefinition<T> filter = null)
     {
-        var collection = _database.GetCollection<T>(collectionName);
-        filter ??= Builders<T>.Filter.Empty;
-        return collection.Find(filter).ToList();
+        try
+        {
+            var collection = _database.GetCollection<T>(collectionName);
+            filter ??= Builders<T>.Filter.Empty;
+            return collection.Find(filter).ToList();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+    
+    public void UpsertData<T>(string collectionName, FilterDefinition<T> filter, T document)
+    {
+        try
+        {
+            var collection = _database.GetCollection<T>(collectionName);
+            var options = new ReplaceOptions { IsUpsert = true };
+            collection.ReplaceOne(filter, document, options);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+    
+    //delete data
+    public void DeleteData<T>(string collectionName, T entity)
+    {
+        try
+        {
+            var collection = _database.GetCollection<T>(collectionName);
+            var filter = Builders<T>.Filter.Eq("Id", entity);
+            collection.DeleteOne(filter);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }
