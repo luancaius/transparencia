@@ -6,6 +6,8 @@ using Logging;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using NonRelationalDatabase.Helpers;
+using NonRelationalDatabase.Implementation;
+using NonRelationalDatabase.Interfaces;
 using Repositories.Implementation;
 using Repositories.Interfaces;
 using Serilog;
@@ -43,7 +45,7 @@ public class ResolveDependencies
             throw;
         }
         
-
+        services.AddTransient<INonRelationalDatabase, MongoDb>();
         
         // string tableNameApi1 = "api1_deputados";
         // string tableNameApi2 = "api2_deputados";

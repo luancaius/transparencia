@@ -1,3 +1,4 @@
+using NonRelationalDatabase.Interfaces;
 using Repositories.DTO.OldApi.GetById;
 using Repositories.Interfaces;
 using Serilog;
@@ -8,13 +9,16 @@ namespace Services.Service;
 
 public class DeputyService : IDeputyService
 {
+    private readonly INonRelationalDatabase _nonRelationalDatabase;
     private readonly ISearchDeputyRepository _searchDeputyRepository;
     private readonly ILogger _logger;
 
-    public DeputyService(ISearchDeputyRepository searchDeputyRepository, ILogger logger)
+    public DeputyService(ISearchDeputyRepository searchDeputyRepository, ILogger logger, 
+        INonRelationalDatabase nonRelationalDatabase)
     {
         _searchDeputyRepository = searchDeputyRepository;
         _logger = logger.ForContext<DeputyService>();
+        _nonRelationalDatabase = nonRelationalDatabase;
     }
 
     public async Task<DeputiesListDto> GetDeputiesListExternalApi(int legislatura)
@@ -75,32 +79,32 @@ public class DeputyService : IDeputyService
     public async Task RefreshDatabase(int legislatura, int year)
     {
         var deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
-        // save on mongo
+        await _nonRelationalDatabase.Insert(deputiesListNewApi);
         foreach (var deputy in deputiesListNewApi.DeputiesNewApi)
         {
             var id = Convert.ToInt32(deputy.Id);
             var deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, id);
-            // save on mongo
+            await _nonRelationalDatabase.Insert(deputyDetailNewApi);
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
             for (int month = 1; month <= currentMonth; month++)
             {
-                var deputyExpenses = await _searchDeputyRepository.GetAllExpenses(year, month, id);
-                // save on mongo
+                // var deputyExpenses = await _searchDeputyRepository.GetAllExpenses(year, month, id);
+                // await _nonRelationalDatabase.Insert(deputyExpenses);
             }
         }
         
         var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
-        // save on mongo
+        await _nonRelationalDatabase.Insert(deputiesListOldApi);
         foreach (var deputy in deputiesListOldApi.DeputiesOldApi)
         {
             var id = Convert.ToInt32(deputy.IdeCadastro);
             var deputyDetailOldApi = await _searchDeputyRepository.GetDeputyDetailOldApi(legislatura, id);
-            // save on mongo
+            await _nonRelationalDatabase.Insert(deputyDetailOldApi);
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
             for (int month = 1; month <= currentMonth; month++)
             {
-                var deputyWorkPresense = await _searchDeputyRepository.GetAllWorkPresence(year, month, id);
-                // save on mongo
+                //var deputyWorkPresence = await _searchDeputyRepository.GetAllWorkPresence(year, month, id);
+                // await _nonRelationalDatabase.Insert(deputyWorkPresence);
             }
         }
     }

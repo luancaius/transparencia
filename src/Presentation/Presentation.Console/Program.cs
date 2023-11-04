@@ -24,7 +24,7 @@ namespace Presentation.Console
         
         public static async Task ExecuteConsole(IDeputyService _deputyService)
         {
-            string command = "b";
+            string command = "c";
 
             System.Console.WriteLine($"Executing command {command}");
             switch (command)
