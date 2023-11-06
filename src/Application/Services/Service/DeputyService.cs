@@ -1,4 +1,6 @@
 using NonRelationalDatabase.Interfaces;
+using Repositories.DTO.NewApi.GetAll;
+using Repositories.DTO.OldApi.GetAll;
 using Repositories.DTO.OldApi.GetById;
 using Repositories.Interfaces;
 using Serilog;
@@ -35,7 +37,7 @@ public class DeputyService : IDeputyService
     public async Task<DeputiesDetailListDto> GetDeputiesDetailListExternalApi(int legislatura)
     {
         var deputiesDetailListNewApi = new List<DeputyDetailNewApi>();
-        var deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
+        DeputiesListNewApi deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
         foreach (var deputy in deputiesListNewApi.DeputiesNewApi)
         {
             var id = Convert.ToInt32(deputy.Id);
@@ -43,7 +45,7 @@ public class DeputyService : IDeputyService
             deputiesDetailListNewApi.Add(deputyDetailNewApi);
         }
         var deputiesDetailListOldApi = new List<DeputyDetailOldApi>();
-        var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
+        DeputiesListOldApi deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
         foreach (var deputy in deputiesListOldApi.DeputiesOldApi)
         {
             var id = Convert.ToInt32(deputy.IdeCadastro);
@@ -78,8 +80,7 @@ public class DeputyService : IDeputyService
 
     public async Task RefreshDatabase(int legislatura, int year)
     {
-        var deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
-        await _nonRelationalDatabase.CheckAndUpdate(deputiesListNewApi, null);
+        DeputiesListNewApi deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
         foreach (var deputy in deputiesListNewApi.DeputiesNewApi)
         {
             var id = Convert.ToInt32(deputy.Id);
@@ -94,7 +95,6 @@ public class DeputyService : IDeputyService
         }
         
         var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
-        await _nonRelationalDatabase.CheckAndUpdate(deputiesListOldApi, null);
         foreach (var deputy in deputiesListOldApi.DeputiesOldApi)
         {
             var id = Convert.ToInt32(deputy.IdeCadastro);
