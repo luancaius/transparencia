@@ -23,14 +23,17 @@ public class MongoDb : INonRelationalDatabase
     public Task CheckAndUpdate<T>(T entity, string id)
     {
         string collectionName = typeof(T).Name;
-        var filter = Builders<T>.Filter.Empty;
-        var originalEntity = _mongoDbHelper.GetData<T>(collectionName, filter).FirstOrDefault();
+        FilterDefinition<T> filter = Builders<T>.Filter.Eq("IdEntity", id); // Assuming the entity has an Id property
+        var originalEntity = _mongoDbHelper.GetData(collectionName, filter).FirstOrDefault();
         if (originalEntity != null)
         {
-            _mongoDbHelper.DeleteData(collectionName, originalEntity);
+            _mongoDbHelper.DeleteData(collectionName, filter);
         }
-
-        _mongoDbHelper.InsertData(collectionName, entity);
+        originalEntity = _mongoDbHelper.GetData(collectionName, filter).FirstOrDefault();
+        if (originalEntity == null)
+        {
+            _mongoDbHelper.InsertData(collectionName, entity);
+        }
         return Task.CompletedTask;
     }
 

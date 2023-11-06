@@ -1,33 +1,32 @@
 using Repositories.DTO.OldApi.GetById;
+using Repositories.DTO;
 
 namespace Services.DTO;
 
 public class DeputyDetailDto
 {
+    // Properties from DeputyDetailNewApi
     public int Id { get; set; }
     public string Uri { get; set; }
-    public string Nome { get; set; } // Renamed to avoid conflict
+    public string Nome { get; set; }
     public string SiglaPartido { get; set; }
     public string UriPartido { get; set; }
     public string SiglaUf { get; set; }
     public int IdLegislatura { get; set; }
-    public string UrlFoto { get; set; } // Renamed to avoid conflict
-    public string Email { get; set; } // Renamed to avoid conflict
+    public string UrlFoto { get; set; }
+    public string Email { get; set; }
 
-    // Properties from DeputyOldApi
-    public int IdeCadastro { get; set; } 
-    public string CodOrcamento { get; set; } 
-    public string Condicao { get; set; } 
-    public int Matricula { get; set; } 
-    public int IdParlamentar { get; set; } 
-    public string NomeParlamentar { get; set; } 
-    public string Sexo { get; set; } 
-    public string Uf { get; set; } 
-    public string Partido { get; set; } 
-    public string Gabinete { get; set; } 
-    public string Anexo { get; set; } 
-    public string Fone { get; set; } 
-    public Comissoes Comissoes { get; set; }
+    // Properties from DeputyDetailOldApi
+    public int IdeCadastro { get; set; }
+    public string NomeCivil { get; set; }
+    public string NomeParlamentarAtual { get; set; }
+    public string Sexo { get; set; }
+    public string UfRepresentacaoAtual { get; set; }
+    public string SituacaoNaLegislaturaAtual { get; set; }
+    public int IdParlamentarDeprecated { get; set; }
+    public PartidoAtual PartidoAtual { get; set; }
+    public Gabinete Gabinete { get; set; }
+    public List<Comissao> Comissoes { get; set; }
 
     public DeputyDetailDto(DeputyDetailOldApi deputyDetailOldApi, DeputyDetailNewApi deputyDetailNewApi)
     {
@@ -44,17 +43,14 @@ public class DeputyDetailDto
 
         // From DeputyDetailOldApi
         IdeCadastro = deputyDetailOldApi.IdeCadastro;
-        CodOrcamento = ""; 
-        Condicao = ""; 
-        Matricula = 0; 
-        IdParlamentar = 0; 
-        NomeParlamentar = deputyDetailOldApi.NomeParlamentar;
+        NomeCivil = deputyDetailOldApi.NomeCivil;
+        NomeParlamentarAtual = deputyDetailOldApi.NomeParlamentarAtual;
         Sexo = deputyDetailOldApi.Sexo;
-        Uf = deputyDetailOldApi.Uf;
-        Partido = deputyDetailOldApi.Partido;
+        UfRepresentacaoAtual = deputyDetailOldApi.UfRepresentacaoAtual;
+        SituacaoNaLegislaturaAtual = deputyDetailOldApi.SituacaoNaLegislaturaAtual;
+        IdParlamentarDeprecated = deputyDetailOldApi.IdParlamentarDeprecated;
+        PartidoAtual = deputyDetailOldApi.PartidoAtual;
         Gabinete = deputyDetailOldApi.Gabinete;
-        Anexo = deputyDetailOldApi.Anexo;
-        Fone = deputyDetailOldApi.Fone;
-        Comissoes = new Comissoes(deputyDetailOldApi.Comissoes);
+        Comissoes = deputyDetailOldApi.Comissoes;
     }
 }

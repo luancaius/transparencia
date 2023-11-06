@@ -41,7 +41,7 @@ public class ResolveDependencies
         }
         catch (Exception e)
         {
-            Console.WriteLine("MongoDB is not running");
+            Console.WriteLine($"MongoDB is not running: ${e.Message}");
             throw;
         }
         
@@ -69,6 +69,7 @@ public class ResolveDependencies
         }
         catch (Exception e)
         {
+            Console.WriteLine($"Redis is not running: ${e.Message}");
             var memoryCache = new MemoryCache(new MemoryCacheOptions());
             services.AddSingleton<IMemoryCache>(memoryCache);
             services.AddTransient<IDatabase>(_ => null); // No Redis, so provide a null database

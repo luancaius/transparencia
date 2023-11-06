@@ -85,7 +85,7 @@ public class DeputyService : IDeputyService
         {
             var id = Convert.ToInt32(deputy.Id);
             var deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, id);
-            await _nonRelationalDatabase.CheckAndUpdate(deputyDetailNewApi, deputyDetailNewApi.Cpf);
+            await _nonRelationalDatabase.CheckAndUpdate(deputyDetailNewApi, deputyDetailNewApi.IdEntity.ToString());
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
             for (int month = 1; month <= currentMonth; month++)
             {
@@ -99,7 +99,7 @@ public class DeputyService : IDeputyService
         {
             var id = Convert.ToInt32(deputy.IdeCadastro);
             var deputyDetailOldApi = await _searchDeputyRepository.GetDeputyDetailOldApi(legislatura, id);
-            await _nonRelationalDatabase.CheckAndUpdate(deputyDetailOldApi, deputyDetailOldApi.IdeCadastro.ToString());
+            await _nonRelationalDatabase.CheckAndUpdate(deputyDetailOldApi, deputyDetailOldApi.IdEntity.ToString());
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
             for (int month = 1; month <= currentMonth; month++)
             {

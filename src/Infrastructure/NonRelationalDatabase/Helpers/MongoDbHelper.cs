@@ -56,19 +56,19 @@ public class MongoDbHelper
         }
     }
     
-    //delete data
-    public void DeleteData<T>(string collectionName, T entity)
+    public bool DeleteData<T>(string collectionName, FilterDefinition<T> filter)
     {
         try
         {
             var collection = _database.GetCollection<T>(collectionName);
-            var filter = Builders<T>.Filter.Eq("Id", entity);
-            collection.DeleteOne(filter);
+            var result = collection.DeleteOne(filter);
+            return result.IsAcknowledged && result.DeletedCount > 0;
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            Console.WriteLine($"Error deleting data: {e.Message}");
+            return false;
         }
     }
+
 }
