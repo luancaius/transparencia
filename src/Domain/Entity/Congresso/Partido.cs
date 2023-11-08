@@ -6,7 +6,7 @@ public class Partido : BaseEntity
 {        
     [Required]
     [MaxLength(100)]
-    public string Nome { get; set; }
+    public string Nome { get; }
         
     [MaxLength(10)]
     public string Sigla { get; set; }

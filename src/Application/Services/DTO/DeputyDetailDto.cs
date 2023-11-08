@@ -42,7 +42,7 @@ public class DeputyDetailDto
         Email = deputyDetailNewApi.Email;
 
         // From DeputyDetailOldApi
-        IdeCadastro = deputyDetailOldApi.IdeCadastro;
+        IdeCadastro = deputyDetailOldApi.Id;
         NomeCivil = deputyDetailOldApi.NomeCivil;
         NomeParlamentarAtual = deputyDetailOldApi.NomeParlamentarAtual;
         Sexo = deputyDetailOldApi.Sexo;

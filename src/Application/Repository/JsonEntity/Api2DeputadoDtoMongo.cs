@@ -5,7 +5,7 @@ namespace Repository.JsonEntity;
 
 public class Api2DeputadoDtoMongo
 {
-    public ObjectId _id { get; set; }
+    public ObjectId _id { get; }
     public string Nome { get; set; }
     public DeputadoByIdSoap Dados { get; set; }
 }

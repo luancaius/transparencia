@@ -7,8 +7,8 @@ using System.Globalization;
 public class DeputyDetailNewApi : BaseEntity
 {
     // Properties from 'dados'
-    public int Id { get; set; }
-    public string Uri { get; set; }
+    public int Id { get; }
+    public string Uri { get; }
     public string NomeCivil { get; set; }
     public string Cpf { get; set; }
     public string Sexo { get; set; }
@@ -21,13 +21,13 @@ public class DeputyDetailNewApi : BaseEntity
     public List<string> RedeSocial { get; set; } // Assuming 'redeSocial' is a list of strings
 
     // Properties from 'ultimoStatus'
-    public string Nome { get; set; }
-    public string SiglaPartido { get; set; }
-    public string UriPartido { get; set; }
-    public string SiglaUf { get; set; }
-    public int IdLegislatura { get; set; }
-    public string UrlFoto { get; set; }
-    public string Email { get; set; }
+    public string Nome { get; }
+    public string SiglaPartido { get; }
+    public string UriPartido { get; }
+    public string SiglaUf { get; }
+    public int IdLegislatura { get; }
+    public string UrlFoto { get; }
+    public string Email { get; }
     public DateTime? Data { get; set; } // Nullable DateTime
     public string NomeEleitoral { get; set; }
     public string Situacao { get; set; }

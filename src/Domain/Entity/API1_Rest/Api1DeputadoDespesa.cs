@@ -16,7 +16,7 @@ public class Api1DeputadoDespesa
     public string TipoDespesa { get; set; }
     public string TipoDocumento { get; set; }
     public string UrlDocumento { get; set; }
-    public decimal ValorDocumento { get; set; }
+    public decimal ValorDocumento { get; }
     public decimal ValorGlosa { get; set; }
     public decimal ValorLiquido { get; set; }
 }

@@ -2,9 +2,9 @@ namespace Entity.API1_Rest;
 
 public class Api1DeputadoDto
 {
-    public long Id { get; set; }
+    public long Id { get; }
     public string Uri { get; set; }
-    public string NomeCivil { get; set; }
+    public string NomeCivil { get; }
     public UltimoStatusDto UltimoStatus { get; set; }
     public string Cpf { get; set; }
     public string Sexo { get; set; }

@@ -40,7 +40,7 @@ public class DeputadoByIdSoap
 public class PartidoAtual
 {
     public string idPartido { get; set; }
-    public string sigla { get; set; }
+    public string sigla { get; }
     public string nome { get; set; }
 }
 

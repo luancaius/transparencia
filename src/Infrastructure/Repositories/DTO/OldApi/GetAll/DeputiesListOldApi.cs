@@ -51,5 +51,5 @@ public class DeputiesListOldApi
         }
     }
 
-    public List<DeputyOldApi> DeputiesOldApi { get; set; }
+    public List<DeputyOldApi> DeputiesOldApi { get; }
 }

@@ -4,7 +4,7 @@ namespace Services.DTO;
 
 public class DeputiesDetailListDto
 {
-    public List<DeputyDetailDto> DeputiesDetail { get; set; } = new List<DeputyDetailDto>();
+    public List<DeputyDetailDto> DeputiesDetail { get; } = new List<DeputyDetailDto>();
     public DeputiesDetailListDto(List<DeputyDetailOldApi> deputiesDetailListOldApi, List<DeputyDetailNewApi> deputiesDetailListNewApi)
     {
         for(int i=0;i<deputiesDetailListOldApi.Count;i++)
@@ -18,7 +18,7 @@ public class DeputiesDetailListDto
             }
             catch (Exception e)
             {
-                Console.WriteLine($"{deputyDetailOldApi.IdeCadastro}-{e}");
+                Console.WriteLine($"{deputyDetailOldApi.Id}-{e}");
                 throw;
             }
         }

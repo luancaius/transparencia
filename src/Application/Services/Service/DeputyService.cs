@@ -80,19 +80,21 @@ public class DeputyService : IDeputyService
 
     public async Task RefreshDatabase(int legislatura, int year)
     {
-        DeputiesListNewApi deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
-        foreach (var deputy in deputiesListNewApi.DeputiesNewApi)
-        {
-            var id = Convert.ToInt32(deputy.Id);
-            var deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, id);
-            await _nonRelationalDatabase.CheckAndUpdate(deputyDetailNewApi, deputyDetailNewApi.IdEntity.ToString());
-            var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
-            for (int month = 1; month <= currentMonth; month++)
-            {
-                // var deputyExpenses = await _searchDeputyRepository.GetAllExpenses(year, month, id);
-                // await _nonRelationalDatabase.Insert(deputyExpenses);
-            }
-        }
+        _logger.Information($"RefreshDatabase ${legislatura} ${year}");
+
+        // DeputiesListNewApi deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
+        // foreach (var deputy in deputiesListNewApi.DeputiesNewApi)
+        // {
+        //     var id = Convert.ToInt32(deputy.Id);
+        //     var deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, id);
+        //     await _nonRelationalDatabase.CheckAndUpdate(deputyDetailNewApi, deputyDetailNewApi.IdEntity.ToString());
+        //     var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
+        //     for (int month = 1; month <= currentMonth; month++)
+        //     {
+        //         // var deputyExpenses = await _searchDeputyRepository.GetAllExpenses(year, month, id);
+        //         // await _nonRelationalDatabase.Insert(deputyExpenses);
+        //     }
+        // }
         
         var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
         foreach (var deputy in deputiesListOldApi.DeputiesOldApi)

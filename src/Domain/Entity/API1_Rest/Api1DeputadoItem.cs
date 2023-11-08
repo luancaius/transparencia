@@ -2,7 +2,7 @@ namespace Entity.API1_Rest;
 
 public class Api1DeputadoItem
 {
-    public int Id { get; set; }
+    public int Id { get; }
     public string Uri { get; set; }
     public string Nome { get; set; }
     public string SiglaPartido { get; set; }

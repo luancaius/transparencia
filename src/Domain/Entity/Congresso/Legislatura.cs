@@ -2,7 +2,7 @@ namespace Entity.Congresso;
 
 public class Legislatura : BaseEntity
 {        
-    public int Numero { get; set; }
+    public int Numero { get; }
         
     public DateTime Inicio { get; set; }
         

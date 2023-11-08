@@ -18,5 +18,5 @@ public class Dia
 
     [XmlArray("sessoes")]
     [XmlArrayItem("sessao")]
-    public List<Sessao> Sessoes { get; set; }
+    public List<Sessao> Sessoes { get; }
 }

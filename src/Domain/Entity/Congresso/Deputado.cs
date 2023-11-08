@@ -7,9 +7,9 @@ public class Deputado : BaseEntity
 {        
     [Required]
     [MaxLength(100)]
-    public string Nome { get; set; }
-    public Partido? Partido { get; set; }
-    public Legislatura Legislatura { get; set; }
+    public string Nome { get; }
+    public Partido? Partido { get; }
+    public Legislatura Legislatura { get; }
 
     public PessoaFisica PessoaFisica { get; set; }
     

@@ -5,7 +5,7 @@ namespace Services.DTO;
 
 public class DeputiesListDto
 {
-    public List<DeputyDto> Deputies { get; set; }
+    public List<DeputyDto> Deputies { get; }
     public DeputiesListDto(DeputiesListOldApi deputiesListOldApi, DeputiesListNewApi deputiesListNewApi)
     {
         int i = 0;

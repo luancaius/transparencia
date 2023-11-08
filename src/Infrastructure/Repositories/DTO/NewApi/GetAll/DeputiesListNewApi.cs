@@ -4,7 +4,7 @@ namespace Repositories.DTO.NewApi.GetAll;
 
 public class DeputiesListNewApi
 {
-    public List<DeputyNewApi> DeputiesNewApi { get; set; }
+    public List<DeputyNewApi> DeputiesNewApi { get; }
 
     public DeputiesListNewApi(String rawDeputiesList)
     {
