@@ -51,12 +51,6 @@ public class SearchDeputyRepository : ISearchDeputyRepository
         var deputyDetail = new DeputyDetailNewApi(deputyDetailString);
         return deputyDetail;    
     }
-    
-    public Task<string> GetDeputy(int legislatura, int id)
-    {
-        _logger.Information("GetAllDeputiesNewApi $legislatura $id");
-        throw new NotImplementedException();
-    }
 
     public Task<string> GetAllExpenses(int year, int month, int id)
     {

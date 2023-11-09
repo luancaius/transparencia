@@ -25,7 +25,7 @@ public class DeputyService : IDeputyService
 
     public async Task<DeputiesListDto> GetDeputiesListExternalApi(int legislatura)
     {
-        _logger.Information("GetDeputiesListExternalApi $legislatura");
+        _logger.Information($"GetDeputiesListExternalApi {legislatura}");
         var deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
         
         var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
@@ -57,44 +57,37 @@ public class DeputyService : IDeputyService
         return deputiesDetailList;
     }
 
-    public async Task<string> GetDeputyRaw(int legislatura, int id)
-    {
-        _logger.Information("GetDeputyRaw $legislatura $id");
-        var deputiesString = await _searchDeputyRepository.GetDeputy(legislatura, id);
-        return deputiesString;    
-    }
-
     public async Task<string> GetDeputyExpensesRaw(int year, int month ,int id)
     {
-        _logger.Information("GetDeputyExpensesRaw $year $id");
+        _logger.Information($"GetDeputyExpensesRaw {year} {id}");
         var deputyExpenses = await _searchDeputyRepository.GetAllExpenses(year, month, id);
         return deputyExpenses;       
     }
 
     public async Task<string> GetDeputyWorkPresenceRaw(int year, int month, int id)
     {
-        _logger.Information("GetDeputyWorkPresenceRaw $year $id");
+        _logger.Information($"GetDeputyWorkPresenceRaw {year} {id}");
         var deputyWorkPresense = await _searchDeputyRepository.GetAllWorkPresence(year, month, id);
         return deputyWorkPresense;       
     }
 
     public async Task RefreshDatabase(int legislatura, int year)
     {
-        _logger.Information($"RefreshDatabase ${legislatura} ${year}");
+        _logger.Information($"RefreshDatabase {legislatura} {year}");
 
-        // DeputiesListNewApi deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
-        // foreach (var deputy in deputiesListNewApi.DeputiesNewApi)
-        // {
-        //     var id = Convert.ToInt32(deputy.Id);
-        //     var deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, id);
-        //     await _nonRelationalDatabase.CheckAndUpdate(deputyDetailNewApi, deputyDetailNewApi.IdEntity.ToString());
-        //     var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
-        //     for (int month = 1; month <= currentMonth; month++)
-        //     {
-        //         // var deputyExpenses = await _searchDeputyRepository.GetAllExpenses(year, month, id);
-        //         // await _nonRelationalDatabase.Insert(deputyExpenses);
-        //     }
-        // }
+        DeputiesListNewApi deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
+        foreach (var deputy in deputiesListNewApi.DeputiesNewApi)
+        {
+            var id = Convert.ToInt32(deputy.Id);
+            var deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, id);
+            await _nonRelationalDatabase.CheckAndUpdate(deputyDetailNewApi, deputyDetailNewApi.IdEntity.ToString());
+            var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
+            for (int month = 1; month <= currentMonth; month++)
+            {
+                // var deputyExpenses = await _searchDeputyRepository.GetAllExpenses(year, month, id);
+                // await _nonRelationalDatabase.Insert(deputyExpenses);
+            }
+        }
         
         var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
         foreach (var deputy in deputiesListOldApi.DeputiesOldApi)

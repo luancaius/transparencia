@@ -36,7 +36,7 @@ public class DadosAbertosOldApi : IDadosAbertosOldApi
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"An error occurred: {ex.Message}");
+            _logger.Error($"An error occurred: {ex.Message}");
         }
 
         return String.Empty;
@@ -68,7 +68,7 @@ public class DadosAbertosOldApi : IDadosAbertosOldApi
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"An error occurred: {ex.Message}");
+            _logger.Error($"An error occurred: {ex.Message}");
         }
 
         return String.Empty;

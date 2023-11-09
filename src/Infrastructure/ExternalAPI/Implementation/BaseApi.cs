@@ -2,6 +2,7 @@ using System.Net.Http.Headers;
 using CacheDatabase.Interfaces;
 using ExternalAPI.Interfaces;
 using ExternalAPI.Utilities;
+using Serilog;
 
 namespace ExternalAPI.Implementation;
 
@@ -9,30 +10,34 @@ public class BaseApi : IBaseApi
 {
     private readonly HttpClient _httpClient;
     protected readonly ICacheRepository _cacheRepository;
+    private readonly ILogger _logger;
 
-    public BaseApi(ICacheRepository cacheService)
+    public BaseApi(ICacheRepository cacheService, ILogger logger)
     {
         _cacheRepository = cacheService;
         _httpClient = new HttpClient();
         _httpClient.DefaultRequestHeaders.Accept.Clear();
         _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        _logger = logger.ForContext<BaseApi>();
     }
 
     public async Task<string> GetAsync(string apiUrl)
     {
+        _logger.Information($"GetAsync");
         var cacheKey = $"RestService:GET:{apiUrl}";
 
         var cachedData = await _cacheRepository.GetStringAsync(cacheKey);
         if (!string.IsNullOrEmpty(cachedData))
         {
-            Console.WriteLine($"Returning cache for key {cacheKey}");
+            _logger.Information($"Returning cache for key {cacheKey}");
             return cachedData;
         }
 
-        Console.WriteLine($"Rest call to {apiUrl}");
+        _logger.Information($"Rest call for {apiUrl}");
         HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
         string data = await response.Content.ReadAsStringAsync();
 
+        _logger.Information($"GetAsync setting key {cacheKey}");
         await _cacheRepository.SetStringAsync(cacheKey, data, TimeSpan.FromDays(30));
 
         return data;
@@ -40,6 +45,8 @@ public class BaseApi : IBaseApi
 
     public async Task<string> PostAsync(string apiUrl, HttpContent content)
     {
+        _logger.Information($"PostAsync");
+
         var contentHash = HashUtil.GetHash(await content.ReadAsStringAsync());
 
         var cacheKey = $"RestService:POST:{apiUrl}:{contentHash}";
@@ -47,13 +54,14 @@ public class BaseApi : IBaseApi
         var cachedData = await _cacheRepository.GetStringAsync(cacheKey);
         if (!string.IsNullOrEmpty(cachedData))
         {
-            Console.WriteLine($"Returning cache for key {cacheKey}");
+            _logger.Information($"Returning cache for key {cacheKey}");
             return cachedData;
         }
 
         HttpResponseMessage response = await _httpClient.PostAsync(apiUrl, content);
         string responseData = await response.Content.ReadAsStringAsync();
 
+        _logger.Information($"PostAsync setting key {cacheKey}");
         await _cacheRepository.SetStringAsync(cacheKey, responseData, TimeSpan.FromDays(30));
 
         return responseData;
