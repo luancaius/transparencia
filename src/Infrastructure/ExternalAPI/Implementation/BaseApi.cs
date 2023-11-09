@@ -1,3 +1,4 @@
+using System.Net;
 using System.Net.Http.Headers;
 using CacheDatabase.Interfaces;
 using ExternalAPI.Interfaces;
@@ -35,10 +36,14 @@ public class BaseApi : IBaseApi
 
         _logger.Information($"Rest call for {apiUrl}");
         HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
-        string data = await response.Content.ReadAsStringAsync();
+        string data = String.Empty;
+        if (response.StatusCode == HttpStatusCode.Accepted)
+        {
+            data = await response.Content.ReadAsStringAsync();
 
-        _logger.Information($"GetAsync setting key {cacheKey}");
-        await _cacheRepository.SetStringAsync(cacheKey, data, TimeSpan.FromDays(30));
+            _logger.Information($"GetAsync setting key {cacheKey}");
+            await _cacheRepository.SetStringAsync(cacheKey, data, TimeSpan.FromDays(30));
+        }
 
         return data;
     }
@@ -59,11 +64,19 @@ public class BaseApi : IBaseApi
         }
 
         HttpResponseMessage response = await _httpClient.PostAsync(apiUrl, content);
+        string data = String.Empty;
+        if (response.StatusCode == HttpStatusCode.Accepted)
+        {
+            data = await response.Content.ReadAsStringAsync();
+            _logger.Information($"PostAsync setting key {cacheKey}");
+            await _cacheRepository.SetStringAsync(cacheKey, data, TimeSpan.FromDays(30));
+            return data;
+        }
         string responseData = await response.Content.ReadAsStringAsync();
 
         _logger.Information($"PostAsync setting key {cacheKey}");
         await _cacheRepository.SetStringAsync(cacheKey, responseData, TimeSpan.FromDays(30));
 
-        return responseData;
+        return data;
     }
 }
