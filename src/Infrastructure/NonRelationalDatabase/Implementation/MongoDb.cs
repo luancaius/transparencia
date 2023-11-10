@@ -25,7 +25,7 @@ public class MongoDb : INonRelationalDatabase
 
     public Task CheckAndUpdate<T>(T entity, string id)
     {
-        _logger.Information($"CheckAndUpdate ${entity.GetType()} ${id}");
+        _logger.Information($"CheckAndUpdate {entity.GetType()} id: {id}");
 
         string collectionName = typeof(T).Name;
         FilterDefinition<T> filter = Builders<T>.Filter.Eq("IdEntity", id); // Assuming the entity has an Id property

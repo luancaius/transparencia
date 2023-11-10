@@ -37,12 +37,16 @@ public class BaseApi : IBaseApi
         _logger.Information($"Rest call for {apiUrl}");
         HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
         string data = String.Empty;
-        if (response.StatusCode == HttpStatusCode.Accepted)
+        if (response.StatusCode == HttpStatusCode.OK)
         {
             data = await response.Content.ReadAsStringAsync();
 
             _logger.Information($"GetAsync setting key {cacheKey}");
             await _cacheRepository.SetStringAsync(cacheKey, data, TimeSpan.FromDays(30));
+        }
+        else
+        {
+            _logger.Error($"Error calling {apiUrl}: {response.StatusCode}");
         }
 
         return data;
@@ -65,18 +69,17 @@ public class BaseApi : IBaseApi
 
         HttpResponseMessage response = await _httpClient.PostAsync(apiUrl, content);
         string data = String.Empty;
-        if (response.StatusCode == HttpStatusCode.Accepted)
+        if (response.StatusCode == HttpStatusCode.OK)
         {
             data = await response.Content.ReadAsStringAsync();
             _logger.Information($"PostAsync setting key {cacheKey}");
             await _cacheRepository.SetStringAsync(cacheKey, data, TimeSpan.FromDays(30));
-            return data;
         }
-        string responseData = await response.Content.ReadAsStringAsync();
-
-        _logger.Information($"PostAsync setting key {cacheKey}");
-        await _cacheRepository.SetStringAsync(cacheKey, responseData, TimeSpan.FromDays(30));
-
+        else
+        {
+            _logger.Error($"Error calling {apiUrl}: {response.StatusCode}");
+        }
+        
         return data;
     }
 }
