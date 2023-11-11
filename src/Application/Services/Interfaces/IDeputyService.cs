@@ -6,7 +6,5 @@ public interface IDeputyService
 {
     Task<DeputiesListDto> GetDeputiesListExternalApi(int legislatura);
     Task<DeputiesDetailListDto> GetDeputiesDetailListExternalApi(int legislatura);
-    Task<String> GetDeputyExpensesRaw(int year, int month, int id);
-    Task<String> GetDeputyWorkPresenceRaw(int year, int month, int id);
     Task RefreshDatabase(int legislatura, int year);
 }

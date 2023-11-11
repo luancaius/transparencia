@@ -57,20 +57,6 @@ public class DeputyService : IDeputyService
         return deputiesDetailList;
     }
 
-    public async Task<string> GetDeputyExpensesRaw(int year, int month ,int id)
-    {
-        _logger.Information($"GetDeputyExpensesRaw {year} {id}");
-        var deputyExpenses = await _searchDeputyRepository.GetAllExpenses(year, month, id);
-        return deputyExpenses;       
-    }
-
-    public async Task<string> GetDeputyWorkPresenceRaw(int year, int month, int id)
-    {
-        _logger.Information($"GetDeputyWorkPresenceRaw {year} {id}");
-        var deputyWorkPresense = await _searchDeputyRepository.GetAllWorkPresence(year, month, id);
-        return deputyWorkPresense;       
-    }
-
     public async Task RefreshDatabase(int legislatura, int year)
     {
         _logger.Information($"RefreshDatabase {legislatura} {year}");
@@ -86,8 +72,8 @@ public class DeputyService : IDeputyService
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
             for (int month = 1; month <= currentMonth; month++)
             {
-                // var deputyExpenses = await _searchDeputyRepository.GetAllExpenses(year, month, id);
-                // await _nonRelationalDatabase.Insert(deputyExpenses);
+                var deputyExpenses = await _searchDeputyRepository.GetAllExpenses(year, month, id);
+                await _nonRelationalDatabase.Insert(deputyExpenses);
             }
         }
 
