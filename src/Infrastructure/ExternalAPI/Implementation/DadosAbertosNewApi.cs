@@ -30,7 +30,7 @@ public class DadosAbertosNewApi : IDadosAbertosNewApi
     public async Task<string> GetDeputyExpensesRaw(int year, int month, int id)
     {
         _logger.Information("GetDeputyExpensesRaw");
-        var apiUrl = $"https://dadosabertos.camara.leg.br/api/v2/deputados/{id}/despesas?ano={year}";
+        var apiUrl = $"https://dadosabertos.camara.leg.br/api/v2/deputados/{id}/despesas?ano={year}&mes={month}";
         return await _baseApi.GetAsync(apiUrl);
     }
 }

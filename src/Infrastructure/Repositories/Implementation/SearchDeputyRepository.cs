@@ -52,14 +52,14 @@ public class SearchDeputyRepository : ISearchDeputyRepository
         return deputyDetail;    
     }
 
-    public Task<string> GetAllExpenses(int year, int month, int id)
+    public async Task<string> GetAllExpenses(int year, int month, int id)
     {
         _logger.Information("GetAllExpenses {year} {month} {id}");
         var deputyExpenses = await _DadosAbertosNewApi.GetDeputyExpensesRaw(year, month, id);
         return deputyExpenses;     
     }
 
-    public Task<string> GetAllWorkPresence(int year, int month, int id)
+    public async Task<string> GetAllWorkPresence(int year, int month, int id)
     {
         _logger.Information("GetAllWorkPresence {year} {month} {id}");
         throw new NotImplementedException();
