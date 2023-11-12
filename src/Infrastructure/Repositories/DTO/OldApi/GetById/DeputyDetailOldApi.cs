@@ -33,7 +33,7 @@ namespace Repositories.DTO.OldApi.GetById;
             if (deputy != null)
             {
                 Id = (int)deputy.Element(ns + "ideCadastro");
-                IdEntity = Id;
+                IdEntity = Id.ToString();
                 NomeCivil = (string)deputy.Element(ns + "nomeCivil");
                 NomeParlamentarAtual = (string)deputy.Element(ns + "nomeParlamentarAtual");
                 Sexo = (string)deputy.Element(ns + "sexo");

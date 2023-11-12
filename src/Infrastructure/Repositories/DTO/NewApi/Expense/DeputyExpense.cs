@@ -3,9 +3,8 @@ using System;
 
 namespace Repositories.DTO.NewApi.Expense
 {
-    public class DeputyExpense
+    public class DeputyExpense : BaseEntity
     {
-        // Properties to store data
         public int Ano { get; private set; }
         public int Mes { get; private set; }
         public int IdDeputy { get; private set; }
@@ -34,6 +33,7 @@ namespace Repositories.DTO.NewApi.Expense
                 dynamic dadosArray = jsonObject.dados;
 
                 IdDeputy = id;
+                IdEntity = $"{id}-{ano}-{mes}-{dadosArray.Count}";
                 if (dadosArray.Count > 0)
                 {
                     dynamic dadosItem = dadosArray[0]; // Accessing the first item
@@ -55,6 +55,7 @@ namespace Repositories.DTO.NewApi.Expense
                     NumRessarcimento = dadosItem.numRessarcimento;
                     CodLote = dadosItem.codLote;
                     Parcela = dadosItem.parcela;
+                    IdEntity+="-"+ValorDocumento;
                 }
                 else
                 {

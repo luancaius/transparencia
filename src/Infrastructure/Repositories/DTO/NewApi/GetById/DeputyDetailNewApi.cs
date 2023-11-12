@@ -54,7 +54,7 @@ public class DeputyDetailNewApi : BaseEntity
 
             // Mapping 'dados' properties
             Id = dados.id;
-            IdEntity = Id;
+            IdEntity = Id.ToString();
             Uri = dados.uri;
             NomeCivil = dados.nomeCivil;
             Cpf = dados.cpf;
