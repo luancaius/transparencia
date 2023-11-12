@@ -6,7 +6,7 @@ namespace Services.DTO;
 public class DeputyDetailDto
 {
     // Properties from DeputyDetailNewApi
-    public int Id { get; set; }
+    public int IdDeputy { get; set; }
     public string Uri { get; set; }
     public string Nome { get; set; }
     public string SiglaPartido { get; set; }
@@ -31,7 +31,7 @@ public class DeputyDetailDto
     public DeputyDetailDto(DeputyDetailOldApi deputyDetailOldApi, DeputyDetailNewApi deputyDetailNewApi)
     {
         // From DeputyDetailNewApi
-        Id = deputyDetailNewApi.Id;
+        IdDeputy = deputyDetailNewApi.IdDeputy;
         Uri = deputyDetailNewApi.Uri;
         Nome = deputyDetailNewApi.Nome;
         SiglaPartido = deputyDetailNewApi.SiglaPartido;
@@ -42,7 +42,7 @@ public class DeputyDetailDto
         Email = deputyDetailNewApi.Email;
 
         // From DeputyDetailOldApi
-        IdeCadastro = deputyDetailOldApi.Id;
+        IdeCadastro = deputyDetailOldApi.IdDeputy;
         NomeCivil = deputyDetailOldApi.NomeCivil;
         NomeParlamentarAtual = deputyDetailOldApi.NomeParlamentarAtual;
         Sexo = deputyDetailOldApi.Sexo;

@@ -2,5 +2,5 @@ namespace Repositories.DTO;
 
 public class BaseEntity
 {
-    public string IdEntity { get; set; }
+    public string Id { get; set; }
 }

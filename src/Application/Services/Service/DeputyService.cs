@@ -68,14 +68,14 @@ public class DeputyService : IDeputyService
         {
             var id = Convert.ToInt32(deputy.Id);
             _logger.Debug($"starting deputy {id} {counter}");
-            var deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, id);
-            await _nonRelationalDatabase.CheckAndUpdate(deputyDetailNewApi, deputyDetailNewApi.IdEntity);
+            DeputyDetailNewApi deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, id);
+            await _nonRelationalDatabase.CheckAndUpdate(deputyDetailNewApi, deputyDetailNewApi.Id);
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
             for (int month = 1; month <= currentMonth; month++)
             {
                 _logger.Debug($"getting expenses deputy {id} {counter}");
                 DeputyExpense deputyExpense = await _searchDeputyRepository.GetDeputyExpense(year, month, id);
-                await _nonRelationalDatabase.CheckAndUpdate(deputyExpense, deputyExpense.IdEntity);
+                await _nonRelationalDatabase.CheckAndUpdate(deputyExpense, deputyExpense.Id);
             }
 
             counter++;
@@ -88,7 +88,7 @@ public class DeputyService : IDeputyService
             var id = Convert.ToInt32(deputy.IdeCadastro);
             _logger.Debug($"starting deputy {id} {counter}", id, counter++);
             var deputyDetailOldApi = await _searchDeputyRepository.GetDeputyDetailOldApi(legislatura, id);
-            await _nonRelationalDatabase.CheckAndUpdate(deputyDetailOldApi, deputyDetailOldApi.IdEntity);
+            await _nonRelationalDatabase.CheckAndUpdate(deputyDetailOldApi, deputyDetailOldApi.Id);
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
             for (int month = 1; month <= currentMonth; month++)
             {

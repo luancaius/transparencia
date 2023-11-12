@@ -28,7 +28,7 @@ public class MongoDb : INonRelationalDatabase
         _logger.Information($"CheckAndUpdate {entity.GetType()} id: {id}");
 
         string collectionName = typeof(T).Name;
-        FilterDefinition<T> filter = Builders<T>.Filter.Eq("IdEntity", id); // Assuming the entity has an Id property
+        FilterDefinition<T> filter = Builders<T>.Filter.Eq("Id", id); // Assuming the entity has an Id property
         var originalEntity = _mongoDbHelper.GetData(collectionName, filter).FirstOrDefault();
         if (originalEntity == null)
         {

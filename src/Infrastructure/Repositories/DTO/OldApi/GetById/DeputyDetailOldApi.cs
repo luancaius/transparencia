@@ -7,7 +7,7 @@ namespace Repositories.DTO.OldApi.GetById;
 
     public class DeputyDetailOldApi : BaseEntity
     {
-        public int Id { get; set; }
+        public int IdDeputy { get; set; }
         public string NomeCivil { get; set; }
         public string NomeParlamentarAtual { get; set; }
         public string Sexo { get; set; }
@@ -32,8 +32,8 @@ namespace Repositories.DTO.OldApi.GetById;
 
             if (deputy != null)
             {
-                Id = (int)deputy.Element(ns + "ideCadastro");
-                IdEntity = Id.ToString();
+                IdDeputy = (int)deputy.Element(ns + "ideCadastro");
+                Id = IdDeputy.ToString();
                 NomeCivil = (string)deputy.Element(ns + "nomeCivil");
                 NomeParlamentarAtual = (string)deputy.Element(ns + "nomeParlamentarAtual");
                 Sexo = (string)deputy.Element(ns + "sexo");

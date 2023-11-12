@@ -7,13 +7,13 @@ using System.Globalization;
 public class DeputyDetailNewApi : BaseEntity
 {
     // Properties from 'dados'
-    public int Id { get; }
+    public int IdDeputy { get; }
     public string Uri { get; }
     public string NomeCivil { get; set; }
     public string Cpf { get; set; }
     public string Sexo { get; set; }
-    public DateTime? DataNascimento { get; set; } // Nullable DateTime
-    public DateTime? DataFalecimento { get; set; } // Nullable DateTime
+    public DateTime? DataNascimento { get; set; } 
+    public DateTime? DataFalecimento { get; set; } 
     public string UfNascimento { get; set; }
     public string MunicipioNascimento { get; set; }
     public string Escolaridade { get; set; }
@@ -52,9 +52,8 @@ public class DeputyDetailNewApi : BaseEntity
             dynamic dados = jsonObject.dados;
             dynamic ultimoStatus = dados.ultimoStatus;
 
-            // Mapping 'dados' properties
-            Id = dados.id;
-            IdEntity = Id.ToString();
+            IdDeputy = dados.id;
+            Id = IdDeputy.ToString();
             Uri = dados.uri;
             NomeCivil = dados.nomeCivil;
             Cpf = dados.cpf;
@@ -65,9 +64,8 @@ public class DeputyDetailNewApi : BaseEntity
             MunicipioNascimento = dados.municipioNascimento;
             Escolaridade = dados.escolaridade;
             UrlWebsite = dados.urlWebsite;
-            RedeSocial = dados.redeSocial.ToObject<List<string>>(); // Convert to List<string>
+            RedeSocial = dados.redeSocial.ToObject<List<string>>(); 
 
-            // Mapping 'ultimoStatus' properties
             Nome = ultimoStatus.nome;
             SiglaPartido = ultimoStatus.siglaPartido;
             UriPartido = ultimoStatus.uriPartido;
