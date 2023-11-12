@@ -1,4 +1,5 @@
 using ExternalAPI.Interfaces;
+using Repositories.DTO.NewApi.Expense;
 using Repositories.DTO.NewApi.GetAll;
 using Repositories.DTO.OldApi.GetAll;
 using Repositories.DTO.OldApi.GetById;
@@ -52,16 +53,17 @@ public class SearchDeputyRepository : ISearchDeputyRepository
         return deputyDetail;    
     }
 
-    public async Task<string> GetAllExpenses(int year, int month, int id)
+    public async Task<DeputyExpense> GetDeputyExpense(int year, int month, int id)
     {
-        _logger.Information("GetAllExpenses {year} {month} {id}");
-        var deputyExpenses = await _DadosAbertosNewApi.GetDeputyExpensesRaw(year, month, id);
-        return deputyExpenses;     
+        _logger.Information($"GetAllExpenses {year} {month} {id}");
+        var deputyExpenseRaw = await _DadosAbertosNewApi.GetDeputyExpensesRaw(year, month, id);
+        var deputyExpense = new DeputyExpense(deputyExpenseRaw, year, month, id);
+        return deputyExpense;     
     }
 
     public async Task<string> GetAllWorkPresence(int year, int month, int id)
     {
-        _logger.Information("GetAllWorkPresence {year} {month} {id}");
+        _logger.Information($"GetAllWorkPresence {year} {month} {id}");
         throw new NotImplementedException();
     }
 }

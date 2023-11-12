@@ -37,7 +37,7 @@ namespace Presentation.Console
                     await _deputyService.GetDeputiesDetailListExternalApi(57);
                     break;
                 case "c":
-                    await _deputyService.RefreshDatabase(57, 2023);
+                    await _deputyService.RefreshDatabase(57, 2022);
                     break;
                 default:
                     System.Console.WriteLine("Invalid command. Please try again.");

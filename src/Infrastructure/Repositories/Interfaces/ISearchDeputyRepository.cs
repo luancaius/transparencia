@@ -1,3 +1,4 @@
+using Repositories.DTO.NewApi.Expense;
 using Repositories.DTO.NewApi.GetAll;
 using Repositories.DTO.OldApi.GetAll;
 using Repositories.DTO.OldApi.GetById;
@@ -11,6 +12,6 @@ public interface ISearchDeputyRepository
 
     Task<DeputyDetailOldApi> GetDeputyDetailOldApi(int legislatura, int id);
     Task<DeputyDetailNewApi> GetDeputyDetailNewApi(int legislatura, int id);
-    Task<string> GetAllExpenses(int year, int month, int id);
+    Task<DeputyExpense> GetDeputyExpense(int year, int month, int id);
     Task<string> GetAllWorkPresence(int year, int month, int id);
 }
