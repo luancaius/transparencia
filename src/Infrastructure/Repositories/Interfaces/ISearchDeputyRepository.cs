@@ -13,5 +13,5 @@ public interface ISearchDeputyRepository
     Task<DeputyDetailOldApi> GetDeputyDetailOldApi(int legislatura, int id);
     Task<DeputyDetailNewApi> GetDeputyDetailNewApi(int legislatura, int id);
     Task<DeputyExpense> GetDeputyExpense(int year, int month, int id);
-    Task<string> GetAllWorkPresence(int year, int month, int id);
+    Task<string> GetDeputyWorkPresence(int year, int month, int id);
 }

@@ -55,15 +55,17 @@ public class SearchDeputyRepository : ISearchDeputyRepository
 
     public async Task<DeputyExpense> GetDeputyExpense(int year, int month, int id)
     {
-        _logger.Information($"GetAllExpenses {year} {month} {id}");
+        _logger.Information($"GetDeputyExpense {year} {month} {id}");
         var deputyExpenseRaw = await _DadosAbertosNewApi.GetDeputyExpensesRaw(year, month, id);
         var deputyExpense = new DeputyExpense(deputyExpenseRaw, year, month, id);
         return deputyExpense;     
     }
 
-    public async Task<string> GetAllWorkPresence(int year, int month, int id)
+    public async Task<string> GetDeputyWorkPresence(int year, int month, int id)
     {
-        _logger.Information($"GetAllWorkPresence {year} {month} {id}");
-        throw new NotImplementedException();
+        _logger.Information($"GetDeputyWorkPresence {year} {month} {id}");
+        var deputyDeputyWorkPresenceRaw = await _DadosAbertosOldApi.GetDeputyWorkPresenceRaw(year, month, id);
+        //var deputyExpense = new DeputyExpense(deputyExpenseRaw, year, month, id);
+        return deputyDeputyWorkPresenceRaw;
     }
 }

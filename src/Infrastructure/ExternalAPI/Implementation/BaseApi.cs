@@ -42,7 +42,7 @@ public class BaseApi : IBaseApi
             data = await response.Content.ReadAsStringAsync();
 
             _logger.Information($"GetAsync setting key {cacheKey}");
-            await _cacheRepository.SetStringAsync(cacheKey, data, TimeSpan.FromDays(30));
+            await _cacheRepository.SetStringAsync(cacheKey, data, TimeSpan.Zero);
         }
         else
         {
@@ -73,7 +73,7 @@ public class BaseApi : IBaseApi
         {
             data = await response.Content.ReadAsStringAsync();
             _logger.Information($"PostAsync setting key {cacheKey}");
-            await _cacheRepository.SetStringAsync(cacheKey, data, TimeSpan.FromDays(30));
+            await _cacheRepository.SetStringAsync(cacheKey, data, TimeSpan.Zero);
         }
         else
         {

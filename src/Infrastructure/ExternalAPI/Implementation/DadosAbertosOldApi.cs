@@ -74,8 +74,24 @@ public class DadosAbertosOldApi : IDadosAbertosOldApi
         return String.Empty;
     }
 
-    public async Task<string> GetDeputyWorkPresenceRaw(int year, int id)
+    public async Task<string> GetDeputyWorkPresenceRaw(int year, int month, int id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            DateTime dateBegin = new DateTime(year, month, 1);
+            DateTime dateEnd = new DateTime(year, month, 1).AddMonths(1).AddDays(-1);
+            String dateInicioStr = dateBegin.ToString("dd/MM/yyyy");
+            String dateFimStr = dateEnd.ToString("dd/MM/yyyy");
+            String url = $"https://www.camara.gov.br/SitCamaraWS/sessoesreunioes.asmx/ListarPresencasParlamentar?" +
+                         $"dataIni={dateInicioStr}&dataFim={dateFimStr}&numMatriculaParlamentar={id}";
+            String response = await _baseApi.GetAsync(url);
+            return response;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+        }
+
+        return "";
     }
 }

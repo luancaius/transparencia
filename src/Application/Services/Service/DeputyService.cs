@@ -66,8 +66,9 @@ public class DeputyService : IDeputyService
         DeputiesListNewApi deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
         foreach (var deputy in deputiesListNewApi.DeputiesNewApi)
         {
+            break;
             var id = Convert.ToInt32(deputy.Id);
-            _logger.Debug($"starting deputy {id} {counter}");
+            _logger.Debug($"starting deputy details old api {id} {counter}");
             DeputyDetailNewApi deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, id);
             await _nonRelationalDatabase.CheckAndUpdate(deputyDetailNewApi, deputyDetailNewApi.Id);
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
@@ -86,13 +87,14 @@ public class DeputyService : IDeputyService
         foreach (var deputy in deputiesListOldApi.DeputiesOldApi)
         {
             var id = Convert.ToInt32(deputy.IdeCadastro);
-            _logger.Debug($"starting deputy {id} {counter}", id, counter++);
+            _logger.Debug($"starting deputy details old api {id} {counter}");
             var deputyDetailOldApi = await _searchDeputyRepository.GetDeputyDetailOldApi(legislatura, id);
             await _nonRelationalDatabase.CheckAndUpdate(deputyDetailOldApi, deputyDetailOldApi.Id);
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
             for (int month = 1; month <= currentMonth; month++)
             {
-                //var deputyWorkPresence = await _searchDeputyRepository.GetAllWorkPresence(year, month, id);
+                _logger.Debug($"getting work presence deputy {id} {counter}");
+                var deputyWorkPresence = await _searchDeputyRepository.GetDeputyWorkPresence(year, month, id);
                 // await _nonRelationalDatabase.Insert(deputyWorkPresence);
             }
 
