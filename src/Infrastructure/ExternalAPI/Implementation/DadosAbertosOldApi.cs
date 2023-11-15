@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text;
 using ExternalAPI.Interfaces;
 using Serilog;
@@ -80,8 +81,9 @@ public class DadosAbertosOldApi : IDadosAbertosOldApi
         {
             DateTime dateBegin = new DateTime(year, month, 1);
             DateTime dateEnd = new DateTime(year, month, 1).AddMonths(1).AddDays(-1);
-            String dateInicioStr = dateBegin.ToString("dd/MM/yyyy");
-            String dateFimStr = dateEnd.ToString("dd/MM/yyyy");
+            CultureInfo cultureInfo = new CultureInfo("pt-BR"); // Example for Portuguese-Brazil, which uses "dd/MM/yyyy" format
+            String dateInicioStr = dateBegin.ToString("dd/MM/yyyy", cultureInfo);
+            String dateFimStr = dateEnd.ToString("dd/MM/yyyy", cultureInfo);
             String url = $"https://www.camara.gov.br/SitCamaraWS/sessoesreunioes.asmx/ListarPresencasParlamentar?" +
                          $"dataIni={dateInicioStr}&dataFim={dateFimStr}&numMatriculaParlamentar={id}";
             String response = await _baseApi.GetAsync(url);

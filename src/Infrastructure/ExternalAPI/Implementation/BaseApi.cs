@@ -12,6 +12,7 @@ public class BaseApi : IBaseApi
     private readonly HttpClient _httpClient;
     protected readonly ICacheRepository _cacheRepository;
     private readonly ILogger _logger;
+    private readonly TimeSpan _timespan = TimeSpan.FromDays(365);
 
     public BaseApi(ICacheRepository cacheService, ILogger logger)
     {
@@ -42,7 +43,7 @@ public class BaseApi : IBaseApi
             data = await response.Content.ReadAsStringAsync();
 
             _logger.Information($"GetAsync setting key {cacheKey}");
-            await _cacheRepository.SetStringAsync(cacheKey, data, TimeSpan.Zero);
+            await _cacheRepository.SetStringAsync(cacheKey, data, _timespan);
         }
         else
         {
@@ -73,7 +74,7 @@ public class BaseApi : IBaseApi
         {
             data = await response.Content.ReadAsStringAsync();
             _logger.Information($"PostAsync setting key {cacheKey}");
-            await _cacheRepository.SetStringAsync(cacheKey, data, TimeSpan.Zero);
+            await _cacheRepository.SetStringAsync(cacheKey, data, _timespan);
         }
         else
         {

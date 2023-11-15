@@ -86,15 +86,16 @@ public class DeputyService : IDeputyService
         var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
         foreach (var deputy in deputiesListOldApi.DeputiesOldApi)
         {
-            var id = Convert.ToInt32(deputy.IdeCadastro);
+            var id = deputy.IdeCadastro;
+            var matricula = deputy.Matricula;
             _logger.Debug($"starting deputy details old api {id} {counter}");
             var deputyDetailOldApi = await _searchDeputyRepository.GetDeputyDetailOldApi(legislatura, id);
             await _nonRelationalDatabase.CheckAndUpdate(deputyDetailOldApi, deputyDetailOldApi.Id);
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
             for (int month = 1; month <= currentMonth; month++)
             {
-                _logger.Debug($"getting work presence deputy {id} {counter}");
-                var deputyWorkPresence = await _searchDeputyRepository.GetDeputyWorkPresence(year, month, id);
+                _logger.Debug($"getting work presence deputy {matricula} {counter}");
+                var deputyWorkPresence = await _searchDeputyRepository.GetDeputyWorkPresence(year, month, matricula);
                 // await _nonRelationalDatabase.Insert(deputyWorkPresence);
             }
 
