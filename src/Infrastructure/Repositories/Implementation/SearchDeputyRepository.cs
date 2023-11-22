@@ -3,6 +3,7 @@ using Repositories.DTO.NewApi.Expense;
 using Repositories.DTO.NewApi.GetAll;
 using Repositories.DTO.OldApi.GetAll;
 using Repositories.DTO.OldApi.GetById;
+using Repositories.DTO.OldApi.WorkPresence;
 using Repositories.Interfaces;
 using Serilog;
 
@@ -65,7 +66,7 @@ public class SearchDeputyRepository : ISearchDeputyRepository
     {
         _logger.Information($"GetDeputyWorkPresence {year} {month} {id}");
         var deputyDeputyWorkPresenceRaw = await _DadosAbertosOldApi.GetDeputyWorkPresenceRaw(year, month, id);
-        //var deputyExpense = new DeputyExpense(deputyExpenseRaw, year, month, id);
+        var deputyDeputyWorkPresence = new DeputyWorkPresence(deputyDeputyWorkPresenceRaw, year, month);
         return deputyDeputyWorkPresenceRaw;
     }
 }
