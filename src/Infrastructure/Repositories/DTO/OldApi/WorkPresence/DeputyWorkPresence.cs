@@ -2,7 +2,7 @@ using System.Xml.Linq;
 
 namespace Repositories.DTO.OldApi.WorkPresence;
 
-public class DeputyWorkPresence : BaseEntity
+public class DeputyWorkPresence : BaseEntityDTO
 {
     public int Ano { get; private set; }
     public int Mes { get; private set; }

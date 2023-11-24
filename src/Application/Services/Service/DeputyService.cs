@@ -70,13 +70,13 @@ public class DeputyService : IDeputyService
             var id = Convert.ToInt32(deputy.Id);
             _logger.Debug($"starting deputy details old api {id} {counter}");
             DeputyDetailNewApi deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, id);
-            await _nonRelationalDatabase.CheckAndUpdate(deputyDetailNewApi, deputyDetailNewApi.Id);
+            await _nonRelationalDatabase.CheckAndUpdate(deputyDetailNewApi);
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
             for (int month = 1; month <= currentMonth; month++)
             {
                 _logger.Debug($"getting expenses deputy {id} {counter}");
                 DeputyExpense deputyExpense = await _searchDeputyRepository.GetDeputyExpense(year, month, id);
-                await _nonRelationalDatabase.CheckAndUpdate(deputyExpense, deputyExpense.Id);
+                await _nonRelationalDatabase.CheckAndUpdate(deputyExpense);
             }
 
             counter++;
@@ -101,5 +101,6 @@ public class DeputyService : IDeputyService
 
             counter++;
         }
+        _logger.Information("Database refreshed");
     }
 }

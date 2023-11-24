@@ -3,7 +3,7 @@ using System;
 
 namespace Repositories.DTO.NewApi.Expense
 {
-    public class DeputyExpense : BaseEntity
+    public class DeputyExpense : BaseEntityDTO
     {
         public int Ano { get; private set; }
         public int Mes { get; private set; }

@@ -2,6 +2,7 @@ using Entity;
 using MongoDB.Driver;
 using NonRelationalDatabase.Helpers;
 using NonRelationalDatabase.Interfaces;
+using Repositories.DTO;
 using Serilog;
 
 namespace NonRelationalDatabase.Implementation;
@@ -24,7 +25,7 @@ public class MongoDb : INonRelationalDatabase
         return Task.CompletedTask;
     }
 
-    public Task CheckAndUpdate<T>(T entity) where T : BaseEntity
+    public Task CheckAndUpdate<T>(T entity) where T : BaseEntityDTO
     {
         var id = entity.Id;
         _logger.Information($"CheckAndUpdate {entity.GetType()} id: {id}");

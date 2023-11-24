@@ -1,6 +1,6 @@
 namespace Repositories.DTO;
 
-public class BaseEntity
+public class BaseEntityDTO
 {
     public string Id { get; set; }
 }

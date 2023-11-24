@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Repositories.DTO.OldApi.GetById;
 
-    public class DeputyDetailOldApi : BaseEntity
+    public class DeputyDetailOldApi : BaseEntityDTO
     {
         public int IdDeputy { get; set; }
         public string NomeCivil { get; set; }

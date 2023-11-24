@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-public class DeputyDetailNewApi : BaseEntity
+public class DeputyDetailNewApi : BaseEntityDTO
 {
     // Properties from 'dados'
     public int IdDeputy { get; }
