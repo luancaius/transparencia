@@ -62,11 +62,11 @@ public class SearchDeputyRepository : ISearchDeputyRepository
         return deputyExpense;     
     }
 
-    public async Task<string> GetDeputyWorkPresence(int year, int month, int id)
+    public async Task<DeputyWorkPresence> GetDeputyWorkPresence(int year, int month, int id)
     {
         _logger.Information($"GetDeputyWorkPresence {year} {month} {id}");
         var deputyDeputyWorkPresenceRaw = await _DadosAbertosOldApi.GetDeputyWorkPresenceRaw(year, month, id);
-        var deputyDeputyWorkPresence = new DeputyWorkPresence(deputyDeputyWorkPresenceRaw, year, month);
-        return deputyDeputyWorkPresenceRaw;
+        var deputyDeputyWorkPresence = new DeputyWorkPresence(deputyDeputyWorkPresenceRaw, year, month, id);
+        return deputyDeputyWorkPresence;
     }
 }

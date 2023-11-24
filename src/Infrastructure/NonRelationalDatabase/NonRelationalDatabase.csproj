@@ -16,6 +16,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Common\Logging\Logging.csproj" />
+      <ProjectReference Include="..\..\Domain\Entity\Entity.csproj" />
     </ItemGroup>
 
 </Project>

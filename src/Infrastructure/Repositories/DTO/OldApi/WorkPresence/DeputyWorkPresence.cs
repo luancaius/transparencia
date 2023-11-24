@@ -2,8 +2,10 @@ using System.Xml.Linq;
 
 namespace Repositories.DTO.OldApi.WorkPresence;
 
-public class DeputyWorkPresence
+public class DeputyWorkPresence : BaseEntity
 {
+    public int Ano { get; private set; }
+    public int Mes { get; private set; }
     public int Legislatura { get; set; }
     public int CarteiraParlamentar { get; set; }
     public string NomeParlamentar { get; set; }
@@ -11,10 +13,13 @@ public class DeputyWorkPresence
     public string SiglaUF { get; set; }
     public List<DiaDeSessao> DiasDeSessoes { get; set; }
 
-    public DeputyWorkPresence(string deputyDeputyWorkPresenceRaw, int year, int month)
+    public DeputyWorkPresence(string deputyDeputyWorkPresenceRaw, int year, int month, int id)
     {
         try
         {
+            Ano = year;
+            Mes = month;
+            Id = $"{year}-{month}-{id}";
             if (string.IsNullOrEmpty(deputyDeputyWorkPresenceRaw))
             {
                 return;

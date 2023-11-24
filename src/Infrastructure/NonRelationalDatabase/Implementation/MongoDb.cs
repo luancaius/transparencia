@@ -1,3 +1,4 @@
+using Entity;
 using MongoDB.Driver;
 using NonRelationalDatabase.Helpers;
 using NonRelationalDatabase.Interfaces;
@@ -23,8 +24,9 @@ public class MongoDb : INonRelationalDatabase
         return Task.CompletedTask;
     }
 
-    public Task CheckAndUpdate<T>(T entity, string id)
+    public Task CheckAndUpdate<T>(T entity) where T : BaseEntity
     {
+        var id = entity.Id;
         _logger.Information($"CheckAndUpdate {entity.GetType()} id: {id}");
 
         string collectionName = typeof(T).Name;
