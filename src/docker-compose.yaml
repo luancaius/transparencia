@@ -17,6 +17,18 @@ services:
     ports:
       - "6379:6379"
 
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: "local@123"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+
 volumes:
   mongo-data:
   sqlserver-data:
+  redis-data:
