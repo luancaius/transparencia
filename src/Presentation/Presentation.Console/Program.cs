@@ -12,8 +12,9 @@ namespace Presentation.Console
                 var resolver = new ResolveDependencies();
             
                 var _deputyService = resolver.Resolve<IDeputyService>();
+                var _personService = resolver.Resolve<IPersonService>();
 
-                await ExecuteConsole(_deputyService);            
+                await ExecuteConsole(_deputyService, _personService);            
             }
             catch (Exception ex)
             {
@@ -22,7 +23,7 @@ namespace Presentation.Console
 
         }
         
-        public static async Task ExecuteConsole(IDeputyService _deputyService)
+        public static async Task ExecuteConsole(IDeputyService _deputyService, IPersonService _personService)
         {
             string command = "c";
 
@@ -37,7 +38,10 @@ namespace Presentation.Console
                     await _deputyService.GetDeputiesDetailListExternalApi(57);
                     break;
                 case "c":
-                    await _deputyService.RefreshDatabase(57, 2022);
+                    await _deputyService.RefreshDatabase(2022);
+                    break;
+                case "d":
+                    await _personService.RefreshPersonTableFromMongo();
                     break;
                 default:
                     System.Console.WriteLine("Invalid command. Please try again.");

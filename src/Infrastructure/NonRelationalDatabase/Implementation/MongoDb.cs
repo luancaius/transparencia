@@ -1,4 +1,3 @@
-using Entity;
 using MongoDB.Driver;
 using NonRelationalDatabase.Helpers;
 using NonRelationalDatabase.Interfaces;

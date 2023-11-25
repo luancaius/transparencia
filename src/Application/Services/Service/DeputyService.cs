@@ -1,3 +1,4 @@
+using Entities.ValueObject;
 using NonRelationalDatabase.Interfaces;
 using Repositories.DTO.NewApi.Expense;
 using Repositories.DTO.NewApi.GetAll;
@@ -58,15 +59,17 @@ public class DeputyService : IDeputyService
         return deputiesDetailList;
     }
 
-    public async Task RefreshDatabase(int legislatura, int year)
+    public async Task RefreshDatabase(int year)
     {
+        var legislaturaObj = Legislatura.CriarLegislaturaPorAno(year);
+        var legislatura = legislaturaObj.Numero;
         _logger.Information($"RefreshDatabase {legislatura} {year}");
         int counter = 0;
         
         DeputiesListNewApi deputiesListNewApi = await _searchDeputyRepository.GetAllDeputiesNewApi(legislatura);
+        var total = deputiesListNewApi.DeputiesNewApi.Count;
         foreach (var deputy in deputiesListNewApi.DeputiesNewApi)
         {
-            break;
             var id = Convert.ToInt32(deputy.Id);
             _logger.Debug($"starting deputy details old api {id} {counter}");
             DeputyDetailNewApi deputyDetailNewApi = await _searchDeputyRepository.GetDeputyDetailNewApi(legislatura, id);
@@ -74,7 +77,7 @@ public class DeputyService : IDeputyService
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
             for (int month = 1; month <= currentMonth; month++)
             {
-                _logger.Debug($"getting expenses deputy {id} {counter}");
+                _logger.Debug($"getting expenses deputy {id} {counter}/{total}");
                 DeputyExpense deputyExpense = await _searchDeputyRepository.GetDeputyExpense(year, month, id);
                 await _nonRelationalDatabase.CheckAndUpdate(deputyExpense);
             }
@@ -84,17 +87,18 @@ public class DeputyService : IDeputyService
 
         counter = 0;
         var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
+        total = deputiesListOldApi.DeputiesOldApi.Count;
         foreach (var deputy in deputiesListOldApi.DeputiesOldApi)
         {
             var id = deputy.IdeCadastro;
             var matricula = deputy.Matricula;
-            _logger.Debug($"starting deputy details old api {id} {counter}");
+            _logger.Debug($"starting deputy details old api {id} {counter}/{total}");
             DeputyDetailOldApi deputyDetailOldApi = await _searchDeputyRepository.GetDeputyDetailOldApi(legislatura, id);
             await _nonRelationalDatabase.CheckAndUpdate(deputyDetailOldApi);
             var currentMonth = DateTime.Now.Year == year ? DateTime.Now.Month : 12;
             for (int month = 1; month <= currentMonth; month++)
             {
-                _logger.Debug($"getting work presence deputy {matricula} {counter}");
+                _logger.Debug($"getting work presence deputy {matricula} {counter}/{total}");
                 var deputyWorkPresence = await _searchDeputyRepository.GetDeputyWorkPresence(year, month, matricula);
                 await _nonRelationalDatabase.CheckAndUpdate(deputyWorkPresence);
             }

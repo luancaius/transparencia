@@ -6,7 +6,7 @@ public class Legislatura
 
     private Legislatura() { }
 
-    public Legislatura(int numero)
+    private Legislatura(int numero)
     {
         if (numero < 48)
         {
