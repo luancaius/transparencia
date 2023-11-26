@@ -25,6 +25,10 @@ namespace Repositories.DTO.OldApi.GetById;
     {
         try
         {
+            if (string.IsNullOrEmpty(deputyDetailOldApiRaw))
+            {
+                return;
+            }
             XDocument doc = XDocument.Parse(deputyDetailOldApiRaw);
             XNamespace ns = "";
 

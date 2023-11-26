@@ -25,7 +25,7 @@ namespace Presentation.Console
         
         public static async Task ExecuteConsole(IDeputyService _deputyService, IPersonService _personService)
         {
-            string command = "c";
+            string command = "e";
 
             System.Console.WriteLine($"Executing command {command}");
             switch (command)
@@ -38,10 +38,13 @@ namespace Presentation.Console
                     await _deputyService.GetDeputiesDetailListExternalApi(57);
                     break;
                 case "c":
-                    await _deputyService.RefreshDatabase(2022);
+                    await _deputyService.RefreshAllMongoDb(2022);
                     break;
                 case "d":
-                    await _personService.RefreshPersonTableFromMongo();
+                    await _deputyService.RefreshNewApi(2022);
+                    break;
+                case "e":
+                    await _deputyService.RefreshOldApi(2022);
                     break;
                 default:
                     System.Console.WriteLine("Invalid command. Please try again.");
