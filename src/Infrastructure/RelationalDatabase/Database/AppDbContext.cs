@@ -1,13 +1,12 @@
 using Entities.DomainEntities;
 using Microsoft.EntityFrameworkCore;
+using RelationalDatabase.DTO;
 
 namespace RelationalDatabase.Database;
 
 public class AppDbContext : DbContext
 {
-    public DbSet<Person> Persons { get; set; }
-    public DbSet<Company> Companies { get; set; }
-    public DbSet<Deputy> Deputies { get; set; }
+    public DbSet<Deputado> Deputados { get; set; }
     
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {

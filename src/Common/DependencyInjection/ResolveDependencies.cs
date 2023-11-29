@@ -3,11 +3,14 @@ using CacheDatabase.Repositories;
 using ExternalAPI.Implementation;
 using ExternalAPI.Interfaces;
 using Logging;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NonRelationalDatabase.Helpers;
 using NonRelationalDatabase.Implementation;
 using NonRelationalDatabase.Interfaces;
+using RelationalDatabase.Database;
 using Repositories.Implementation;
 using Repositories.Interfaces;
 using Serilog;
@@ -24,13 +27,20 @@ public class ResolveDependencies
     public ResolveDependencies()
     {
         var serviceCollection = new ServiceCollection();
-        ConfigureServices(serviceCollection);
+        var configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json")
+            .Build();
+        ConfigureServices(serviceCollection, configuration);
         _serviceProvider = serviceCollection.BuildServiceProvider();
     }
     
-    private static void ConfigureServices(IServiceCollection services)
+    private static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
     {
         #region Infrastructure
+        
+        services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         
         // MongoDB Configuration
         string mongoConnectionString = "mongodb://root:root@localhost:27017";
