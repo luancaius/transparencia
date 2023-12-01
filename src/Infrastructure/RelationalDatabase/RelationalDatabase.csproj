@@ -29,7 +29,17 @@
 
 
     <ItemGroup>
+      <Folder Include="Infrastructure\RelationalDatabase\Migrations\" />
       <Folder Include="Migrations\" />
+    </ItemGroup>
+
+
+
+
+
+    <ItemGroup>
+      <Compile Remove="Infrastructure\RelationalDatabase\Migrations\20231201033255_Initial.cs" />
+      <Compile Remove="Infrastructure\RelationalDatabase\Migrations\20231201033255_Initial.Designer.cs" />
     </ItemGroup>
 
 
