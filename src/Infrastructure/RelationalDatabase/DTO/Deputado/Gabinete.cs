@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RelationalDatabase.DTO;
 
-[Table("Gabinete", Schema = "Congresso")]
+[Table("Gabinete", Schema = "congresso")]
 public class Gabinete : BaseEntity
 {
     public string Numero { get; set; }

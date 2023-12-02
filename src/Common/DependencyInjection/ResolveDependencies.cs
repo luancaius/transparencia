@@ -38,7 +38,6 @@ public class ResolveDependencies
     private static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
     {
         #region Infrastructure
-        
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         

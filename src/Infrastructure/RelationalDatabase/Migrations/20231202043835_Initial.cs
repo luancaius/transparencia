@@ -12,11 +12,11 @@ namespace RelationalDatabase.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.EnsureSchema(
-                name: "Congresso");
+                name: "congresso");
 
             migrationBuilder.CreateTable(
                 name: "Gabinete",
-                schema: "Congresso",
+                schema: "congresso",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -32,7 +32,7 @@ namespace RelationalDatabase.Migrations
 
             migrationBuilder.CreateTable(
                 name: "PartidoAtual",
-                schema: "Congresso",
+                schema: "congresso",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -47,7 +47,7 @@ namespace RelationalDatabase.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Deputado",
-                schema: "Congresso",
+                schema: "congresso",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -74,14 +74,14 @@ namespace RelationalDatabase.Migrations
                     table.ForeignKey(
                         name: "FK_Deputado_Gabinete_GabineteId",
                         column: x => x.GabineteId,
-                        principalSchema: "Congresso",
+                        principalSchema: "congresso",
                         principalTable: "Gabinete",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Deputado_PartidoAtual_PartidoAtualId",
                         column: x => x.PartidoAtualId,
-                        principalSchema: "Congresso",
+                        principalSchema: "congresso",
                         principalTable: "PartidoAtual",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -89,7 +89,7 @@ namespace RelationalDatabase.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Comissao",
-                schema: "Congresso",
+                schema: "congresso",
                 columns: table => new
                 {
                     IdOrgaoLegislativoCD = table.Column<int>(type: "int", nullable: false)
@@ -107,26 +107,26 @@ namespace RelationalDatabase.Migrations
                     table.ForeignKey(
                         name: "FK_Comissao_Deputado_DeputadoId",
                         column: x => x.DeputadoId,
-                        principalSchema: "Congresso",
+                        principalSchema: "congresso",
                         principalTable: "Deputado",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comissao_DeputadoId",
-                schema: "Congresso",
+                schema: "congresso",
                 table: "Comissao",
                 column: "DeputadoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Deputado_GabineteId",
-                schema: "Congresso",
+                schema: "congresso",
                 table: "Deputado",
                 column: "GabineteId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Deputado_PartidoAtualId",
-                schema: "Congresso",
+                schema: "congresso",
                 table: "Deputado",
                 column: "PartidoAtualId");
         }
@@ -136,19 +136,19 @@ namespace RelationalDatabase.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Comissao",
-                schema: "Congresso");
+                schema: "congresso");
 
             migrationBuilder.DropTable(
                 name: "Deputado",
-                schema: "Congresso");
+                schema: "congresso");
 
             migrationBuilder.DropTable(
                 name: "Gabinete",
-                schema: "Congresso");
+                schema: "congresso");
 
             migrationBuilder.DropTable(
                 name: "PartidoAtual",
-                schema: "Congresso");
+                schema: "congresso");
         }
     }
 }

@@ -55,7 +55,7 @@ namespace RelationalDatabase.Migrations
 
                     b.HasIndex("DeputadoId");
 
-                    b.ToTable("Comissao", "Congresso");
+                    b.ToTable("Comissao", "congresso");
                 });
 
             modelBuilder.Entity("RelationalDatabase.DTO.Deputado", b =>
@@ -129,7 +129,7 @@ namespace RelationalDatabase.Migrations
 
                     b.HasIndex("PartidoAtualId");
 
-                    b.ToTable("Deputado", "Congresso");
+                    b.ToTable("Deputado", "congresso");
                 });
 
             modelBuilder.Entity("RelationalDatabase.DTO.Gabinete", b =>
@@ -154,7 +154,7 @@ namespace RelationalDatabase.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Gabinete", "Congresso");
+                    b.ToTable("Gabinete", "congresso");
                 });
 
             modelBuilder.Entity("RelationalDatabase.DTO.PartidoAtual", b =>
@@ -175,7 +175,7 @@ namespace RelationalDatabase.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PartidoAtual", "Congresso");
+                    b.ToTable("PartidoAtual", "congresso");
                 });
 
             modelBuilder.Entity("RelationalDatabase.DTO.Comissao", b =>
