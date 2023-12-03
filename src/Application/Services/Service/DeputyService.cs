@@ -60,6 +60,16 @@ public class DeputyService : IDeputyService
 
         return deputiesDetailList;
     }
+    
+    public async Task RefreshDeputyDetails(int year)
+    {
+        var legislaturaObj = Legislatura.CriarLegislaturaPorAno(year);
+        var deputiesDetailListDto = await GetDeputiesDetailListExternalApi(legislaturaObj.Numero);
+        foreach (DeputyDetailDto deputyDetail in deputiesDetailListDto.DeputiesDetail)
+        {
+            await _nonRelationalDatabase.CheckAndUpdate(deputyDetail);
+        }
+    }
 
     public async Task RefreshNewApi(int year)
     {

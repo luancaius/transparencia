@@ -31,7 +31,6 @@
 
 
     <ItemGroup>
-      <Folder Include="Infrastructure\RelationalDatabase\Migrations\" />
       <Folder Include="Migrations\" />
     </ItemGroup>
 

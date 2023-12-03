@@ -8,13 +8,13 @@ public class DeputyDto
     // Properties from DeputyNewApi
     public string Id { get; set; }
     public string Uri { get; set; }
-    public string Nome { get; set; } // Renamed to avoid conflict
+    public string Nome { get; set; } 
     public string SiglaPartido { get; set; }
     public string UriPartido { get; set; }
     public string SiglaUf { get; set; }
     public int IdLegislatura { get; set; }
-    public string UrlFoto { get; set; } // Renamed to avoid conflict
-    public string Email { get; set; } // Renamed to avoid conflict
+    public string UrlFoto { get; set; } 
+    public string Email { get; set; } 
 
     // Properties from DeputyOldApi
     public int IdeCadastro { get; set; } 

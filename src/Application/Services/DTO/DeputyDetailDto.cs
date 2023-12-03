@@ -3,7 +3,7 @@ using Repositories.DTO;
 
 namespace Services.DTO;
 
-public class DeputyDetailDto
+public class DeputyDetailDto : BaseEntityDTO
 {
     // Properties from DeputyDetailNewApi
     public int IdDeputy { get; set; }
@@ -52,5 +52,7 @@ public class DeputyDetailDto
         PartidoAtual = deputyDetailOldApi.PartidoAtual;
         Gabinete = deputyDetailOldApi.Gabinete;
         Comissoes = deputyDetailOldApi.Comissoes;
+
+        Id = $"{IdDeputy}-{IdeCadastro}";
     }
 }
