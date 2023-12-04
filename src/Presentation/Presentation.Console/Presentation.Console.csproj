@@ -12,4 +12,10 @@
       <ProjectReference Include="..\..\Common\DependencyInjection\DependencyInjection.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

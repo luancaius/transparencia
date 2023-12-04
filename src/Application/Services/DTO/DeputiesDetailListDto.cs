@@ -1,3 +1,4 @@
+using System.Diagnostics.Metrics;
 using Repositories.DTO.OldApi.GetById;
 
 namespace Services.DTO;
@@ -12,8 +13,9 @@ public class DeputiesDetailListDto
             var deputyDetailOldApi = deputiesDetailListOldApi[i];
             try
             {
-                var deputyDetailNewApi = deputiesDetailListNewApi.First(a => a.Email == deputyDetailOldApi.Email);
-                var deputyDetail = new DeputyDetailDto(deputyDetailOldApi, deputyDetailNewApi);
+                var deputyDetailNewApi = deputiesDetailListNewApi.FirstOrDefault(a => a.Email == deputyDetailOldApi.Email) ??
+                                         deputiesDetailListNewApi.First(a => a.Nome == deputyDetailOldApi.NomeParlamentarAtual);
+                var deputyDetail = new DeputyDetailDto(deputyDetailNewApi, deputyDetailOldApi);
                 DeputiesDetail.Add(deputyDetail);
             }
             catch (Exception e)
@@ -22,5 +24,16 @@ public class DeputiesDetailListDto
                 throw;
             }
         }
+
+        var counter = 0;
+        foreach (var deputyDetailNewApi in deputiesDetailListNewApi)
+        {
+            if (DeputiesDetail.Any(a => a.IdDeputy == deputyDetailNewApi.IdDeputy)) continue;
+            var deputyDetail = new DeputyDetailDto(deputyDetailNewApi);
+            DeputiesDetail.Add(deputyDetail);
+            counter++;
+        }
+        Console.WriteLine("Total deputados extras na new api: " + counter);
+        
     }
 }
