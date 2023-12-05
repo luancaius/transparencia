@@ -27,4 +27,9 @@ public class Address : ValueObject
         yield return Country;
         yield return ZipCode;
     }
+    
+    public override string ToString()
+    {
+        return $"{Street}, {City}, {State}, {Country}, {ZipCode}";
+    }
 }

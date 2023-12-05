@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using RelationalDatabase.Entities;
 
 namespace RelationalDatabase.DTO;
 
@@ -27,4 +28,5 @@ public class Deputado : BaseEntity
         [ForeignKey("GabineteId")]
         public virtual Gabinete Gabinete { get; set; }
         public virtual ICollection<Comissao> Comissoes { get; set; }
+        public virtual ICollection<DeputyExpenses> Expenses { get; set; }
 }
