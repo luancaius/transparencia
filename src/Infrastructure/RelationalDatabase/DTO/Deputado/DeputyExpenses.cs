@@ -1,16 +1,11 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using RelationalDatabase.DTO;
 
-namespace RelationalDatabase.Entities
+namespace RelationalDatabase.DTO.Deputado
 {
     [Table("DeputyExpenses", Schema = "congresso")]
     public class DeputyExpenses : BaseEntity
     {
-        [Key]
-        public string Id { get; set; } // Assuming Id should be a unique identifier
-
         public int Ano { get; set; }
         public int Mes { get; set; }
         public int IdDeputy { get; set; }

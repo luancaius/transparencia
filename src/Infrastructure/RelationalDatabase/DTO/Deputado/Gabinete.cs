@@ -1,7 +1,6 @@
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RelationalDatabase.DTO;
+namespace RelationalDatabase.DTO.Deputado;
 
 [Table("Gabinete", Schema = "congresso")]
 public class Gabinete : BaseEntity
