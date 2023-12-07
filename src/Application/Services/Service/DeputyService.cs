@@ -1,5 +1,6 @@
 using Entities.ValueObject;
 using NonRelationalDatabase.Interfaces;
+using RelationalDatabase.DTO.Deputado;
 using Repositories.DTO.NewApi.Expense;
 using Repositories.DTO.NewApi.GetAll;
 using Repositories.DTO.OldApi.GetAll;
@@ -14,15 +15,17 @@ namespace Services.Service;
 public class DeputyService : IDeputyService
 {
     private readonly INonRelationalDatabase _nonRelationalDatabase;
+    private readonly IUnitOfWork _unitOfWork;
     private readonly ISearchDeputyRepository _searchDeputyRepository;
     private readonly ILogger _logger;
 
     public DeputyService(ISearchDeputyRepository searchDeputyRepository, ILogger logger,
-        INonRelationalDatabase nonRelationalDatabase)
+        INonRelationalDatabase nonRelationalDatabase, IUnitOfWork unitOfWork)
     {
         _searchDeputyRepository = searchDeputyRepository;
         _logger = logger.ForContext<DeputyService>();
         _nonRelationalDatabase = nonRelationalDatabase;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task<DeputiesListDto> GetDeputiesListExternalApi(int legislatura)
@@ -159,7 +162,14 @@ public class DeputyService : IDeputyService
 
         foreach (DeputyDetailDto deputyDetailDto in deputiesDetailDtos)
         {
-            Console.WriteLine(deputyDetailDto);
+            using (_unitOfWork)
+            {
+                
+                // convert dto to entity database
+                _unitOfWork.DeputyRepository.Add();
+                
+                await _unitOfWork.SaveChangesAsync();
+            }        
         }
         Console.WriteLine("");
 

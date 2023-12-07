@@ -59,7 +59,7 @@ public class MongoDb : INonRelationalDatabase
         return result.FirstOrDefault();
     }
 
-    public async Task<IEnumerable<T>> GetAll<T>(int? legislatura)
+    public async Task<List<T>> GetAll<T>(int? legislatura)
     {
         string collectionName = typeof(T).Name;
         FilterDefinition<T> filter = null;
