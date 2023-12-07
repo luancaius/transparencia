@@ -59,10 +59,13 @@ public class MongoDb : INonRelationalDatabase
         return result.FirstOrDefault();
     }
 
-    public async Task<IEnumerable<T>> GetAll<T>()
+    public async Task<IEnumerable<T>> GetAll<T>(int? legislatura)
     {
         string collectionName = typeof(T).Name;
-        var result = _mongoDbHelper.GetData<T>(collectionName);
+        FilterDefinition<T> filter = null;
+        if(legislatura.HasValue)
+            filter = Builders<T>.Filter.Eq("IdLegislatura", legislatura); 
+        var result = _mongoDbHelper.GetData<T>(collectionName, filter);
         return result;
-    }
+    }   
 }

@@ -148,13 +148,22 @@ public class DeputyService : IDeputyService
         await RefreshNewApi(year);
         await RefreshOldApi(year);
     }
-
-    public Task RefreshRelationalDbFromNonRelationalDb(int year)
+    
+    
+    public async Task RefreshRelationalDbFromNonRelationalDb(int year)
     {
-        // create models for deputy details, expenses and work presence
+        var legislaturaObj = Legislatura.CriarLegislaturaPorAno(year);
         // get all deputies from non relational db
+        IEnumerable<DeputyDetailDto> deputiesDetailDtos = 
+            await _nonRelationalDatabase.GetAll<DeputyDetailDto>(legislaturaObj.Numero);
+
+        foreach (DeputyDetailDto deputyDetailDto in deputiesDetailDtos)
+        {
+            Console.WriteLine(deputyDetailDto);
+        }
+        Console.WriteLine("");
+
         // for each deputy, get details, expenses and work presence
         // save each one on relational db
-        throw new NotImplementedException();
     }
 }
