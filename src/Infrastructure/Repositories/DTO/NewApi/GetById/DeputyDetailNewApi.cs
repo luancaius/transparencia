@@ -12,7 +12,7 @@ public class DeputyDetailNewApi : BaseEntityDTO
     public string NomeCivil { get; set; }
     public string Cpf { get; set; }
     public string Sexo { get; set; }
-    public DateTime? DataNascimento { get; set; } 
+    public DateTime DataNascimento { get; set; } 
     public DateTime? DataFalecimento { get; set; } 
     public string UfNascimento { get; set; }
     public string MunicipioNascimento { get; set; }

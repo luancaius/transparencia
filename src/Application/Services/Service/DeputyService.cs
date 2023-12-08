@@ -162,18 +162,13 @@ public class DeputyService : IDeputyService
 
         foreach (DeputyDetailDto deputyDetailDto in deputiesDetailDtos)
         {
-            using (_unitOfWork)
-            {
-                
-                // convert dto to entity database
-                _unitOfWork.DeputyRepository.Add();
-                
-                await _unitOfWork.SaveChangesAsync();
-            }        
-        }
-        Console.WriteLine("");
+            var deputyEntity = DeputyDetailDto.GetDeputadoFromDto(deputyDetailDto);
+            _unitOfWork.DeputyRepository.Add(deputyEntity);
 
-        // for each deputy, get details, expenses and work presence
+            
+            await _unitOfWork.SaveChangesAsync();
+        }
+        // for each deputy, expenses and work presence
         // save each one on relational db
     }
 }

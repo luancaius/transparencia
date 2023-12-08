@@ -1,5 +1,9 @@
+using RelationalDatabase.DTO.Deputado;
 using Repositories.DTO.OldApi.GetById;
 using Repositories.DTO;
+using Comissao = Repositories.DTO.OldApi.GetById.Comissao;
+using Gabinete = Repositories.DTO.OldApi.GetById.Gabinete;
+using PartidoAtual = Repositories.DTO.OldApi.GetById.PartidoAtual;
 
 namespace Services.DTO;
 
@@ -11,7 +15,7 @@ public class DeputyDetailDto : BaseEntityDTO
     public string NomeCivil { get; set; }
     public string Cpf { get; set; }
     public string Sexo { get; set; }
-    public DateTime? DataNascimento { get; set; }
+    public DateTime DataNascimento { get; set; }
     public DateTime? DataFalecimento { get; set; }
     public string UfNascimento { get; set; }
     public string MunicipioNascimento { get; set; }
@@ -113,4 +117,45 @@ public class DeputyDetailDto : BaseEntityDTO
             Email = gabinete.Email;
         }
     }
+
+    public static Deputado GetDeputadoFromDto(DeputyDetailDto deputyDetailDto)
+    {
+        var deputado = new Deputado
+        {
+            Id = Convert.ToInt32(deputyDetailDto.Id),
+            Uri = deputyDetailDto.Uri,
+            NomeCivil = deputyDetailDto.NomeCivil,
+            Cpf = deputyDetailDto.Cpf,
+            Sexo = deputyDetailDto.Sexo,
+            DataNascimento = deputyDetailDto.DataNascimento,
+            DataFalecimento = deputyDetailDto.DataFalecimento,
+            UfNascimento = deputyDetailDto.UfNascimento,
+            MunicipioNascimento = deputyDetailDto.MunicipioNascimento,
+            Escolaridade = deputyDetailDto.Escolaridade,
+            UrlWebsite = deputyDetailDto.UrlWebsite,
+            RedeSocial = deputyDetailDto.RedeSocial,
+            Nome = deputyDetailDto.Nome,
+            SiglaPartido = deputyDetailDto.SiglaPartido,
+            UriPartido = deputyDetailDto.UriPartido,
+            SiglaUf = deputyDetailDto.SiglaUf,
+            Legislatura = deputyDetailDto.IdLegislatura,
+            UrlFoto = deputyDetailDto.UrlFoto,
+            Email = deputyDetailDto.Email,
+            Data = deputyDetailDto.Data,
+            NomeEleitoral = deputyDetailDto.NomeEleitoral,
+            Situacao = deputyDetailDto.Situacao,
+            CondicaoEleitoral = deputyDetailDto.CondicaoEleitoral,
+            Gabinete = new RelationalDatabase.DTO.Deputado.Gabinete()
+            {
+                Nome = deputyDetailDto.GabineteInfo.Nome,
+                Predio = deputyDetailDto.GabineteInfo.Predio,
+                Sala = deputyDetailDto.GabineteInfo.Sala,
+                Andar = deputyDetailDto.GabineteInfo.Andar,
+                Telefone = deputyDetailDto.GabineteInfo.Telefone,
+                Email = deputyDetailDto.GabineteInfo.Email
+            }
+        };
+        return deputado;
+    }
+
 }

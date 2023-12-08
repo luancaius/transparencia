@@ -19,7 +19,20 @@ public class Deputado : BaseEntity
         public string Sexo { get; set; }
         public string UfRepresentacaoAtual { get; set; }
         public string SituacaoNaLegislaturaAtual { get; set; }
-
+        public string Cpf { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public DateTime? DataFalecimento { get; set; }
+        public string UfNascimento { get; set; }
+        public string MunicipioNascimento { get; set; }
+        public string Escolaridade { get; set; }
+        public string UrlWebsite { get; set; }
+        public List<string> RedeSocial { get; set; }
+        public DateTime? Data { get; set; }
+        public string NomeEleitoral { get; set; }
+        public string Situacao { get; set; }
+        public string CondicaoEleitoral { get; set; }
+        
+        
         // Navigation properties
         [ForeignKey("PartidoAtualId")]
         public virtual PartidoAtual PartidoAtual { get; set; }
