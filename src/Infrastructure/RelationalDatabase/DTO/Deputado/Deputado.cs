@@ -26,7 +26,7 @@ public class Deputado : BaseEntity
         public string MunicipioNascimento { get; set; }
         public string Escolaridade { get; set; }
         public string UrlWebsite { get; set; }
-        public List<string> RedeSocial { get; set; }
+        public string RedeSocial { get; set; }
         public DateTime? Data { get; set; }
         public string NomeEleitoral { get; set; }
         public string Situacao { get; set; }

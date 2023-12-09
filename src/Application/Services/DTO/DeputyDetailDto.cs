@@ -133,7 +133,7 @@ public class DeputyDetailDto : BaseEntityDTO
             MunicipioNascimento = deputyDetailDto.MunicipioNascimento,
             Escolaridade = deputyDetailDto.Escolaridade,
             UrlWebsite = deputyDetailDto.UrlWebsite,
-            RedeSocial = deputyDetailDto.RedeSocial,
+            RedeSocial = String.Join(',', deputyDetailDto.RedeSocial),
             Nome = deputyDetailDto.Nome,
             SiglaPartido = deputyDetailDto.SiglaPartido,
             UriPartido = deputyDetailDto.UriPartido,
