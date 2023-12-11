@@ -40,4 +40,5 @@ public class Deputado : BaseEntity
         public virtual Gabinete Gabinete { get; set; }
         public virtual ICollection<Comissao> Comissoes { get; set; }
         public virtual ICollection<DeputyExpenses> Expenses { get; set; }
+        public virtual ICollection<DeputyWorkPresence> WorkPresences { get; set; }
 }
