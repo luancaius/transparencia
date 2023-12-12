@@ -122,7 +122,6 @@ public class DeputyDetailDto : BaseEntityDTO
     {
         var deputado = new Deputado
         {
-            Id = Convert.ToInt32(deputyDetailDto.Id),
             Uri = deputyDetailDto.Uri,
             NomeCivil = deputyDetailDto.NomeCivil,
             Cpf = deputyDetailDto.Cpf,
@@ -135,6 +134,7 @@ public class DeputyDetailDto : BaseEntityDTO
             UrlWebsite = deputyDetailDto.UrlWebsite,
             RedeSocial = String.Join(',', deputyDetailDto.RedeSocial),
             Nome = deputyDetailDto.Nome,
+            NomeParlamentarAtual = deputyDetailDto.NomeParlamentarAtual,
             SiglaPartido = deputyDetailDto.SiglaPartido,
             UriPartido = deputyDetailDto.UriPartido,
             SiglaUf = deputyDetailDto.SiglaUf,
@@ -153,7 +153,9 @@ public class DeputyDetailDto : BaseEntityDTO
                 Andar = deputyDetailDto.GabineteInfo.Andar,
                 Telefone = deputyDetailDto.GabineteInfo.Telefone,
                 Email = deputyDetailDto.GabineteInfo.Email
-            }
+            },
+            UfRepresentacaoAtual = deputyDetailDto.UfRepresentacaoAtual,
+            SituacaoNaLegislaturaAtual = deputyDetailDto.SituacaoNaLegislaturaAtual
         };
         return deputado;
     }

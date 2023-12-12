@@ -11,6 +11,8 @@ using NonRelationalDatabase.Helpers;
 using NonRelationalDatabase.Implementation;
 using NonRelationalDatabase.Interfaces;
 using RelationalDatabase.Database;
+using RelationalDatabase.Interfaces;
+using RelationalDatabase.Repositories;
 using Repositories.Implementation;
 using Repositories.Interfaces;
 using Serilog;
@@ -78,6 +80,8 @@ public class ResolveDependencies
         services.AddTransient<IDadosAbertosOldApi, DadosAbertosOldApi>();
         services.AddTransient<IDadosAbertosNewApi, DadosAbertosNewApi>();
         
+        
+        services.AddTransient<IUnitOfWork, UnitOfWork>();
         services.AddTransient<ISearchDeputyRepository, SearchDeputyRepository>();
         #endregion
 

@@ -1,5 +1,6 @@
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using RelationalDatabase.Interfaces;
 
 namespace RelationalDatabase.Repositories;
 

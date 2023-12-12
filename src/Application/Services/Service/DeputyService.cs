@@ -1,6 +1,7 @@
 using Entities.ValueObject;
 using NonRelationalDatabase.Interfaces;
 using RelationalDatabase.DTO.Deputado;
+using RelationalDatabase.Interfaces;
 using Repositories.DTO.NewApi.Expense;
 using Repositories.DTO.NewApi.GetAll;
 using Repositories.DTO.OldApi.GetAll;
@@ -155,20 +156,27 @@ public class DeputyService : IDeputyService
     
     public async Task RefreshRelationalDbFromNonRelationalDb(int year)
     {
-        var legislaturaObj = Legislatura.CriarLegislaturaPorAno(year);
-        // get all deputies from non relational db
-        IEnumerable<DeputyDetailDto> deputiesDetailDtos = 
-            await _nonRelationalDatabase.GetAll<DeputyDetailDto>(legislaturaObj.Numero);
-
-        foreach (DeputyDetailDto deputyDetailDto in deputiesDetailDtos)
+        try
         {
-            var deputyEntity = DeputyDetailDto.GetDeputadoFromDto(deputyDetailDto);
-            _unitOfWork.DeputyRepository.Add(deputyEntity);
+            _logger.Information($"RefreshRelationalDbFromNonRelationalDb {year}");
 
-            
-            await _unitOfWork.SaveChangesAsync();
+            var legislaturaObj = Legislatura.CriarLegislaturaPorAno(year);
+            IEnumerable<DeputyDetailDto> deputiesDetailDtos = 
+                await _nonRelationalDatabase.GetAll<DeputyDetailDto>(legislaturaObj.Numero);
+
+            foreach (DeputyDetailDto deputyDetailDto in deputiesDetailDtos)
+            {
+                var deputyEntity = DeputyDetailDto.GetDeputadoFromDto(deputyDetailDto);
+                _unitOfWork.DeputyRepository.Add(deputyEntity);
+                await _unitOfWork.SaveChangesAsync();
+            }
         }
-        // for each deputy, expenses and work presence
-        // save each one on relational db
+        catch (Exception ex)
+        {
+            _logger.Error($"An error occurred while refreshing the database from the non-relational database for the year {year}: {ex.Message}");
+            // Optionally, rethrow the exception or handle it as needed
+            throw;
+        }
     }
+
 }

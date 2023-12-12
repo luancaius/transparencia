@@ -1,7 +1,7 @@
 using RelationalDatabase.DTO.Deputado;
 using RelationalDatabase.Repositories;
 
-namespace Repositories.Interfaces;
+namespace RelationalDatabase.Interfaces;
 
 public interface IUnitOfWork : IDisposable
 {

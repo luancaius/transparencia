@@ -1,5 +1,6 @@
 using System.Linq.Expressions;
 using RelationalDatabase.DTO.Deputado;
+using RelationalDatabase.Interfaces;
 
 namespace RelationalDatabase.Repositories;
 
