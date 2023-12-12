@@ -145,15 +145,6 @@ public class DeputyDetailDto : BaseEntityDTO
             NomeEleitoral = deputyDetailDto.NomeEleitoral,
             Situacao = deputyDetailDto.Situacao,
             CondicaoEleitoral = deputyDetailDto.CondicaoEleitoral,
-            Gabinete = new RelationalDatabase.DTO.Deputado.Gabinete()
-            {
-                Nome = deputyDetailDto.GabineteInfo.Nome,
-                Predio = deputyDetailDto.GabineteInfo.Predio,
-                Sala = deputyDetailDto.GabineteInfo.Sala,
-                Andar = deputyDetailDto.GabineteInfo.Andar,
-                Telefone = deputyDetailDto.GabineteInfo.Telefone,
-                Email = deputyDetailDto.GabineteInfo.Email
-            },
             UfRepresentacaoAtual = deputyDetailDto.UfRepresentacaoAtual,
             SituacaoNaLegislaturaAtual = deputyDetailDto.SituacaoNaLegislaturaAtual
         };

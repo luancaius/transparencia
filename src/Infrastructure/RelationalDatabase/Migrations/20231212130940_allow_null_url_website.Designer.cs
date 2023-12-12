@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RelationalDatabase.Database;
 
@@ -11,9 +12,11 @@ using RelationalDatabase.Database;
 namespace RelationalDatabase.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231212130940_allow_null_url_website")]
+    partial class allow_null_url_website
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -117,7 +120,11 @@ namespace RelationalDatabase.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("PartidoAtualId")
+                        .HasColumnType("int");
+
                     b.Property<string>("RedeSocial")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Sexo")
@@ -149,20 +156,26 @@ namespace RelationalDatabase.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Uri")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UriPartido")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UrlFoto")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UrlWebsite")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("GabineteId");
+
+                    b.HasIndex("PartidoAtualId");
 
                     b.ToTable("Deputado", "congresso");
                 });
@@ -365,6 +378,27 @@ namespace RelationalDatabase.Migrations
                     b.ToTable("Gabinete", "congresso");
                 });
 
+            modelBuilder.Entity("RelationalDatabase.DTO.Deputado.PartidoAtual", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sigla")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PartidoAtual", "congresso");
+                });
+
             modelBuilder.Entity("RelationalDatabase.DTO.Deputado.Comissao", b =>
                 {
                     b.HasOne("RelationalDatabase.DTO.Deputado.Deputado", null)
@@ -380,7 +414,15 @@ namespace RelationalDatabase.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("RelationalDatabase.DTO.Deputado.PartidoAtual", "PartidoAtual")
+                        .WithMany()
+                        .HasForeignKey("PartidoAtualId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Gabinete");
+
+                    b.Navigation("PartidoAtual");
                 });
 
             modelBuilder.Entity("RelationalDatabase.DTO.Deputado.DeputyExpenses", b =>
