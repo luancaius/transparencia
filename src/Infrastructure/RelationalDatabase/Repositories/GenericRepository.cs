@@ -1,10 +1,11 @@
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using RelationalDatabase.DTO;
 using RelationalDatabase.Interfaces;
 
 namespace RelationalDatabase.Repositories;
 
-public class Repository<T> : IRepository<T> where T : class
+public class Repository<T> : IRepository<T> where T : BaseEntity
 {
     private readonly DbContext _context;
     private readonly DbSet<T> _dbSet;
@@ -15,7 +16,7 @@ public class Repository<T> : IRepository<T> where T : class
         _dbSet = context.Set<T>();
     }
 
-    public T Get(Expression<Func<T, bool>> predicate)
+    public T? Get(Expression<Func<T, bool>> predicate)
     {
         return _dbSet.Where(predicate).FirstOrDefault();
     }
@@ -35,6 +36,21 @@ public class Repository<T> : IRepository<T> where T : class
     {
         _dbSet.Attach(entity);
         _context.Entry(entity).State = EntityState.Modified;
+        _context.SaveChanges();
+    }
+    
+    public void Upsert(T entity)
+    {
+        var item = _dbSet.FirstOrDefault(a => a.Id == entity.Id);
+        if (item == null)
+        {
+            _dbSet.Add(entity);
+        }
+        else
+        {
+            _dbSet.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+        }
         _context.SaveChanges();
     }
 

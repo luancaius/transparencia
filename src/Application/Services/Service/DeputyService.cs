@@ -153,7 +153,6 @@ public class DeputyService : IDeputyService
         await RefreshOldApi(year);
     }
     
-    
     public async Task RefreshRelationalDbFromNonRelationalDb(int year)
     {
         try
@@ -167,7 +166,7 @@ public class DeputyService : IDeputyService
             foreach (DeputyDetailDto deputyDetailDto in deputiesDetailDtos)
             {
                 var deputyEntity = DeputyDetailDto.GetDeputadoFromDto(deputyDetailDto);
-                _unitOfWork.DeputyRepository.Add(deputyEntity);
+                _unitOfWork.DeputyRepository.Upsert(deputyEntity);
                 await _unitOfWork.SaveChangesAsync();
             }
         }
@@ -178,5 +177,4 @@ public class DeputyService : IDeputyService
             throw;
         }
     }
-
 }
