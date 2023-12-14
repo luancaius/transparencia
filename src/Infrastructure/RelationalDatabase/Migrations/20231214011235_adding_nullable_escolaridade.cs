@@ -5,7 +5,7 @@
 namespace RelationalDatabase.Migrations
 {
     /// <inheritdoc />
-    public partial class expenses : Migration
+    public partial class adding_nullable_escolaridade : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

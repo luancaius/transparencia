@@ -25,7 +25,7 @@ public class Deputado : BaseEntity
         public DateTime? DataFalecimento { get; set; }
         public string UfNascimento { get; set; }
         public string MunicipioNascimento { get; set; }
-        public string Escolaridade { get; set; }
+        public string? Escolaridade { get; set; }
         public string? UrlWebsite { get; set; }
         public string? RedeSocial { get; set; }
         public DateTime? Data { get; set; }

@@ -91,9 +91,6 @@ namespace RelationalDatabase.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("GabineteId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Legislatura")
                         .HasColumnType("int");
 
@@ -161,8 +158,6 @@ namespace RelationalDatabase.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("GabineteId");
 
                     b.ToTable("Deputado", "congresso");
                 });
@@ -328,59 +323,11 @@ namespace RelationalDatabase.Migrations
                     b.ToTable("DiaSessao", "congresso");
                 });
 
-            modelBuilder.Entity("RelationalDatabase.DTO.Deputado.Gabinete", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Andar")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Predio")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Sala")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Gabinete", "congresso");
-                });
-
             modelBuilder.Entity("RelationalDatabase.DTO.Deputado.Comissao", b =>
                 {
                     b.HasOne("RelationalDatabase.DTO.Deputado.Deputado", null)
                         .WithMany("Comissoes")
                         .HasForeignKey("DeputadoId");
-                });
-
-            modelBuilder.Entity("RelationalDatabase.DTO.Deputado.Deputado", b =>
-                {
-                    b.HasOne("RelationalDatabase.DTO.Deputado.Gabinete", "Gabinete")
-                        .WithMany()
-                        .HasForeignKey("GabineteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Gabinete");
                 });
 
             modelBuilder.Entity("RelationalDatabase.DTO.Deputado.DeputyExpenses", b =>
