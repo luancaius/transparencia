@@ -120,35 +120,43 @@ public class DeputyDetailDto : BaseEntityDTO
 
     public static Deputado GetDeputadoFromDto(DeputyDetailDto deputyDetailDto)
     {
-        var deputado = new Deputado
+        try
         {
-            Uri = deputyDetailDto.Uri,
-            NomeCivil = deputyDetailDto.NomeCivil,
-            Cpf = deputyDetailDto.Cpf,
-            Sexo = deputyDetailDto.Sexo,
-            DataNascimento = deputyDetailDto.DataNascimento,
-            DataFalecimento = deputyDetailDto.DataFalecimento,
-            UfNascimento = deputyDetailDto.UfNascimento,
-            MunicipioNascimento = deputyDetailDto.MunicipioNascimento,
-            Escolaridade = deputyDetailDto.Escolaridade,
-            UrlWebsite = deputyDetailDto.UrlWebsite,
-            RedeSocial = String.Join(',', deputyDetailDto.RedeSocial),
-            Nome = deputyDetailDto.Nome,
-            NomeParlamentarAtual = deputyDetailDto.NomeParlamentarAtual,
-            SiglaPartido = deputyDetailDto.SiglaPartido,
-            UriPartido = deputyDetailDto.UriPartido,
-            SiglaUf = deputyDetailDto.SiglaUf,
-            Legislatura = deputyDetailDto.IdLegislatura,
-            UrlFoto = deputyDetailDto.UrlFoto,
-            Email = deputyDetailDto.Email,
-            Data = deputyDetailDto.Data,
-            NomeEleitoral = deputyDetailDto.NomeEleitoral,
-            Situacao = deputyDetailDto.Situacao,
-            CondicaoEleitoral = deputyDetailDto.CondicaoEleitoral,
-            UfRepresentacaoAtual = deputyDetailDto.UfRepresentacaoAtual,
-            SituacaoNaLegislaturaAtual = deputyDetailDto.SituacaoNaLegislaturaAtual
-        };
-        return deputado;
+            var deputado = new Deputado
+            {
+                Uri = deputyDetailDto.Uri,
+                NomeCivil = deputyDetailDto.NomeCivil,
+                Cpf = deputyDetailDto.Cpf,
+                Sexo = deputyDetailDto.Sexo,
+                DataNascimento = deputyDetailDto.DataNascimento,
+                DataFalecimento = deputyDetailDto.DataFalecimento,
+                UfNascimento = deputyDetailDto.UfNascimento,
+                MunicipioNascimento = deputyDetailDto.MunicipioNascimento,
+                Escolaridade = deputyDetailDto.Escolaridade,
+                UrlWebsite = deputyDetailDto.UrlWebsite,
+                RedeSocial = String.Join(',', deputyDetailDto.RedeSocial),
+                Nome = deputyDetailDto.Nome,
+                NomeParlamentarAtual = deputyDetailDto.NomeParlamentarAtual,
+                SiglaPartido = deputyDetailDto.SiglaPartido,
+                UriPartido = deputyDetailDto.UriPartido,
+                SiglaUf = deputyDetailDto.SiglaUf,
+                Legislatura = deputyDetailDto.IdLegislatura,
+                UrlFoto = deputyDetailDto.UrlFoto,
+                Email = deputyDetailDto.Email,
+                Data = deputyDetailDto.Data,
+                NomeEleitoral = deputyDetailDto.NomeEleitoral,
+                Situacao = deputyDetailDto.Situacao,
+                CondicaoEleitoral = deputyDetailDto.CondicaoEleitoral,
+                UfRepresentacaoAtual = deputyDetailDto.UfRepresentacaoAtual,
+                SituacaoNaLegislaturaAtual = deputyDetailDto.SituacaoNaLegislaturaAtual
+            };
+            return deputado;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
 }
