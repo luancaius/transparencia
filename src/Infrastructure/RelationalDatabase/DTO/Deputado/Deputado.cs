@@ -22,7 +22,7 @@ public class Deputado : BaseEntity
     public string NomeCivil { get; set; }
 
     [StringLength(100)]
-    public string NomeParlamentarAtual { get; set; }
+    public string? NomeParlamentarAtual { get; set; }
 
     [StringLength(20)]
     public string SiglaPartido { get; set; }
@@ -69,7 +69,7 @@ public class Deputado : BaseEntity
     [StringLength(200)]
     public string? UrlWebsite { get; set; }
 
-    [StringLength(200)]
+    [StringLength(600)]
     public string? RedeSocial { get; set; }
 
     public DateTime? Data { get; set; }
