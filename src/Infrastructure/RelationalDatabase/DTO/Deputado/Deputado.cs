@@ -24,7 +24,7 @@ public class Deputado : BaseEntity
     [StringLength(100)]
     public string NomeParlamentarAtual { get; set; }
 
-    [StringLength(10)]
+    [StringLength(20)]
     public string SiglaPartido { get; set; }
 
     [StringLength(200)]
