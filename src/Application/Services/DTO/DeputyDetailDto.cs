@@ -1,3 +1,4 @@
+using Entities.DomainEntities;
 using RelationalDatabase.DTO.Deputado;
 using Repositories.DTO.OldApi.GetById;
 using Repositories.DTO;
@@ -118,6 +119,35 @@ public class DeputyDetailDto : BaseEntityDTO
         }
     }
 
+    public static DeputyDomain GetDeputyDomainFromDto(DeputyDetailDto deputyDetailDto)
+    {
+        try
+        {
+            var deputado = DeputyDomain.CreateDeputy
+            (
+                Guid.Parse(deputyDetailDto.Id),
+                deputyDetailDto.NomeCivil,
+                deputyDetailDto.Nome,
+                deputyDetailDto.NomeEleitoral,
+                deputyDetailDto.DataNascimento,
+                "",
+                deputyDetailDto.UfNascimento,
+                deputyDetailDto.Cpf,
+                deputyDetailDto.Sexo,
+                deputyDetailDto.SiglaPartido,
+                deputyDetailDto.UfRepresentacaoAtual,
+                deputyDetailDto.NomeEleitoral,
+                deputyDetailDto.Email
+            );
+            return deputado;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+    
     public static Deputado GetDeputadoFromDto(DeputyDetailDto deputyDetailDto)
     {
         try

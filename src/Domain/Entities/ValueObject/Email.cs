@@ -8,7 +8,7 @@ public class Email
     {
         if (string.IsNullOrWhiteSpace(value))
         {
-            throw new ArgumentException("Email cannot be empty.");
+            Value = "No email provided.";
         }
 
         if (!IsValidEmail(value))

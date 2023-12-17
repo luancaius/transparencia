@@ -2,7 +2,7 @@ using Entities.ValueObject;
 
 namespace Entities.DomainEntities;
 
-public class Person : IEntity
+public class PersonDomain : IEntity
 {
     public string FirstName { get; private set; }
     public string LastName { get; private set; }
@@ -14,7 +14,7 @@ public class Person : IEntity
     public Gender Gender { get; private set; }
     public Guid Id { get; set; }
     
-    private Person(Guid id, string firstName, string lastName, string fullName, DateTime dateOfBirth, String email, 
+    private PersonDomain(Guid id, string firstName, string lastName, string fullName, DateTime dateOfBirth, String email, 
         string stateBirth, string cpf, string gender)
     {
         Id = id;
@@ -28,9 +28,9 @@ public class Person : IEntity
         Gender = GenderExtensions.FromString(gender);
     }
 
-    public static Person CreatePerson(Guid id, string firstName, string lastName, string fullName,
+    public static PersonDomain CreatePerson(Guid id, string firstName, string lastName, string fullName,
         DateTime dateOfBirth, string email, string stateBirth, string cpf, string gender)
     {
-        return new Person(id, firstName, lastName, fullName, dateOfBirth, stateBirth, email, cpf, gender);
+        return new PersonDomain(id, firstName, lastName, fullName, dateOfBirth, stateBirth, email, cpf, gender);
     }
 }
