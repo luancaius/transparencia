@@ -2,6 +2,7 @@ using Entities.ValueObject;
 using NonRelationalDatabase.Interfaces;
 using RelationalDatabase.DTO.Deputado;
 using RelationalDatabase.Interfaces;
+using RelationalDatabase.Mapper;
 using Repositories.DTO.NewApi.Expense;
 using Repositories.DTO.NewApi.GetAll;
 using Repositories.DTO.OldApi.GetAll;
@@ -165,7 +166,8 @@ public class DeputyService : IDeputyService
 
             foreach (DeputyDetailDto deputyDetailDto in deputiesDetailDtos)
             {
-                var deputyEntity = DeputyDetailDto.GetDeputadoFromDto(deputyDetailDto);
+                var deputyDomain = DeputyDetailDto.GetDeputyDomainFromDto(deputyDetailDto);
+                var deputyEntity = DeputyMapper.MapToDeputado(deputyDomain);
                 _unitOfWork.DeputyRepository.Upsert(deputyEntity);
                 await _unitOfWork.SaveChangesAsync();
             }

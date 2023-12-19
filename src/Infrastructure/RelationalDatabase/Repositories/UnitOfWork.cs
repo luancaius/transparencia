@@ -18,7 +18,7 @@ public class UnitOfWork : IUnitOfWork
     {
         get
         {
-            return _deputyRepository ?? (_deputyRepository = new Repository<Deputado>(_context));
+            return _deputyRepository ??= new Repository<Deputado>(_context);
         }
     }   
     
