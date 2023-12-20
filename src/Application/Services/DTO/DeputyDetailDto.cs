@@ -135,7 +135,6 @@ public class DeputyDetailDto : BaseEntityDTO
                 deputyDetailDto.Nome,
                 deputyDetailDto.NomeEleitoral,
                 deputyDetailDto.DataNascimento,
-                "",
                 deputyDetailDto.UfNascimento,
                 deputyDetailDto.Cpf,
                 deputyDetailDto.Sexo,

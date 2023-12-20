@@ -1,3 +1,4 @@
+using Entities.DomainEntities;
 using Entities.ValueObject;
 using NonRelationalDatabase.Interfaces;
 using RelationalDatabase.DTO.Deputado;
@@ -158,6 +159,7 @@ public class DeputyService : IDeputyService
     public async Task RefreshRelationalDbFromNonRelationalDb(int year)
     {
         DeputyDetailDto currentDeputy = null;
+        DeputyDomain currentDeputyDomain = null;
         try
         {
             _logger.Information($"RefreshRelationalDbFromNonRelationalDb {year}");
@@ -169,8 +171,8 @@ public class DeputyService : IDeputyService
             foreach (DeputyDetailDto deputyDetailDto in deputiesDetailDtos)
             {
                 currentDeputy = deputyDetailDto;
-                var deputyDomain = DeputyDetailDto.GetDeputyDomainFromDto(deputyDetailDto);
-                var deputyEntity = DeputyMapper.MapToDeputado(deputyDomain);
+                currentDeputyDomain = DeputyDetailDto.GetDeputyDomainFromDto(deputyDetailDto);
+                var deputyEntity = DeputyMapper.MapToDeputado(currentDeputyDomain);
                 _unitOfWork.DeputyRepository.Upsert(deputyEntity);
                 await _unitOfWork.SaveChangesAsync();
             }

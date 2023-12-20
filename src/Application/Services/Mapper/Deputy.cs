@@ -13,10 +13,10 @@ public static class DeputyMapper
             NomeEleitoral = deputyDomain.NomeEleitoral,
             NomeCivil = deputyDomain.Person.FirstName + " " + deputyDomain.Person.LastName,
             SiglaPartido = deputyDomain.Partido,
-            SiglaUf = deputyDomain.UfRepresentacao,
+            SiglaUf = deputyDomain.EstadoRepresentacao.ToString(),
             Cpf = deputyDomain.Person.CPF.ToString(),
             DataNascimento = deputyDomain.Person.DateOfBirth,
-            UfNascimento = deputyDomain.Person.StateBirth,
+            UfNascimento = deputyDomain.Person.EstadoNascimento.ToString(),
             Sexo = deputyDomain.Person.Gender.ToString(),
             Email = deputyDomain.EmailDeputado.Value
         };
