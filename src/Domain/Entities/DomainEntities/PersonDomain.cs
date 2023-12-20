@@ -12,9 +12,9 @@ public class PersonDomain : IEntity
     public Email Email { get; private set; }
     public Cpf CPF { get; private set; }
     public Gender Gender { get; private set; }
-    public Guid Id { get; set; }
-    
-    private PersonDomain(Guid id, string firstName, string lastName, string fullName, DateTime dateOfBirth, String email, 
+    public string Id { get; set; }
+
+    private PersonDomain(string id, string firstName, string lastName, string fullName, DateTime dateOfBirth, String email, 
         string stateBirth, string cpf, string gender)
     {
         Id = id;
@@ -28,9 +28,10 @@ public class PersonDomain : IEntity
         Gender = GenderExtensions.FromString(gender);
     }
 
-    public static PersonDomain CreatePerson(Guid id, string firstName, string lastName, string fullName,
+    public static PersonDomain CreatePerson(string id, string firstName, string lastName, string fullName,
         DateTime dateOfBirth, string email, string stateBirth, string cpf, string gender)
     {
         return new PersonDomain(id, firstName, lastName, fullName, dateOfBirth, stateBirth, email, cpf, gender);
     }
+
 }

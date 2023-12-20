@@ -10,10 +10,9 @@ public class Email
         {
             Value = "No email provided.";
         }
-
-        if (!IsValidEmail(value))
+        else if (!IsValidEmail(value))
         {
-            throw new ArgumentException("Invalid email format.");
+            throw new ArgumentException($"Invalid email format - {value}" );
         }
 
         Value = value;
