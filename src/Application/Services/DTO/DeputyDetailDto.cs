@@ -2,6 +2,7 @@ using Entities.DomainEntities;
 using RelationalDatabase.DTO.Deputado;
 using Repositories.DTO.OldApi.GetById;
 using Repositories.DTO;
+using Repositories.DTO.NewApi.GetById;
 using Comissao = Repositories.DTO.OldApi.GetById.Comissao;
 using Gabinete = Repositories.DTO.OldApi.GetById.Gabinete;
 using PartidoAtual = Repositories.DTO.OldApi.GetById.PartidoAtual;
@@ -49,6 +50,10 @@ public class DeputyDetailDto : BaseEntityDTO
     public List<PeriodoExercicio> PeriodosExercicio { get; set; }
     public List<ItemHistoricoLider> HistoricoLider { get; set; }
 
+    public override string ToString()
+    {
+        return $"{IdDeputy}-{IdeCadastro}-{Nome}-{Cpf}";
+    }
 
     public DeputyDetailDto(DeputyDetailNewApi deputyDetailNewApi, DeputyDetailOldApi? deputyDetailOldApi = null)
     {
@@ -125,7 +130,7 @@ public class DeputyDetailDto : BaseEntityDTO
         {
             var deputado = DeputyDomain.CreateDeputy
             (
-                Guid.Parse(deputyDetailDto.Id),
+                deputyDetailDto.Id,
                 deputyDetailDto.NomeCivil,
                 deputyDetailDto.Nome,
                 deputyDetailDto.NomeEleitoral,
@@ -147,46 +152,4 @@ public class DeputyDetailDto : BaseEntityDTO
             throw;
         }
     }
-    
-    public static Deputado GetDeputadoFromDto(DeputyDetailDto deputyDetailDto)
-    {
-        try
-        {
-            var deputado = new Deputado
-            {
-                Uri = deputyDetailDto.Uri,
-                NomeCivil = deputyDetailDto.NomeCivil,
-                Cpf = deputyDetailDto.Cpf,
-                Sexo = deputyDetailDto.Sexo,
-                DataNascimento = deputyDetailDto.DataNascimento,
-                DataFalecimento = deputyDetailDto.DataFalecimento,
-                UfNascimento = deputyDetailDto.UfNascimento,
-                MunicipioNascimento = deputyDetailDto.MunicipioNascimento,
-                Escolaridade = deputyDetailDto.Escolaridade,
-                UrlWebsite = deputyDetailDto.UrlWebsite,
-                RedeSocial = String.Join(',', deputyDetailDto.RedeSocial),
-                Nome = deputyDetailDto.Nome,
-                NomeParlamentarAtual = deputyDetailDto.NomeParlamentarAtual,
-                SiglaPartido = deputyDetailDto.SiglaPartido,
-                UriPartido = deputyDetailDto.UriPartido,
-                SiglaUf = deputyDetailDto.SiglaUf,
-                Legislatura = deputyDetailDto.IdLegislatura,
-                UrlFoto = deputyDetailDto.UrlFoto,
-                Email = deputyDetailDto.Email,
-                Data = deputyDetailDto.Data,
-                NomeEleitoral = deputyDetailDto.NomeEleitoral,
-                Situacao = deputyDetailDto.Situacao,
-                CondicaoEleitoral = deputyDetailDto.CondicaoEleitoral,
-                UfRepresentacaoAtual = deputyDetailDto.UfRepresentacaoAtual,
-                SituacaoNaLegislaturaAtual = deputyDetailDto.SituacaoNaLegislaturaAtual
-            };
-            return deputado;
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-    }
-
 }

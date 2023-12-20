@@ -1,7 +1,7 @@
 using Entities.DomainEntities;
 using RelationalDatabase.DTO.Deputado;
 
-namespace RelationalDatabase.Mapper;
+namespace Services.Mapper;
 
 public static class DeputyMapper
 {

@@ -2,15 +2,16 @@ using Entities.ValueObject;
 using NonRelationalDatabase.Interfaces;
 using RelationalDatabase.DTO.Deputado;
 using RelationalDatabase.Interfaces;
-using RelationalDatabase.Mapper;
 using Repositories.DTO.NewApi.Expense;
 using Repositories.DTO.NewApi.GetAll;
+using Repositories.DTO.NewApi.GetById;
 using Repositories.DTO.OldApi.GetAll;
 using Repositories.DTO.OldApi.GetById;
 using Repositories.Interfaces;
 using Serilog;
 using Services.DTO;
 using Services.Interfaces;
+using Services.Mapper;
 
 namespace Services.Service;
 
@@ -156,6 +157,7 @@ public class DeputyService : IDeputyService
     
     public async Task RefreshRelationalDbFromNonRelationalDb(int year)
     {
+        DeputyDetailDto currentDeputy = null;
         try
         {
             _logger.Information($"RefreshRelationalDbFromNonRelationalDb {year}");
@@ -166,6 +168,7 @@ public class DeputyService : IDeputyService
 
             foreach (DeputyDetailDto deputyDetailDto in deputiesDetailDtos)
             {
+                currentDeputy = deputyDetailDto;
                 var deputyDomain = DeputyDetailDto.GetDeputyDomainFromDto(deputyDetailDto);
                 var deputyEntity = DeputyMapper.MapToDeputado(deputyDomain);
                 _unitOfWork.DeputyRepository.Upsert(deputyEntity);
@@ -174,8 +177,7 @@ public class DeputyService : IDeputyService
         }
         catch (Exception ex)
         {
-            _logger.Error($"An error occurred while refreshing the database from the non-relational database for the year {year}: {ex.Message}");
-            // Optionally, rethrow the exception or handle it as needed
+            _logger.Error($"An error occurred while refreshing the database from the non-relational database for the year {year}: {currentDeputy} {ex.Message}");
             throw;
         }
     }
