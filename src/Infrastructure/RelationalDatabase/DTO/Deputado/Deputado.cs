@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace RelationalDatabase.DTO.Deputado;
 
 [Table("Deputado", Schema = "congresso")]
+[Index(nameof(Cpf), IsUnique = true)] 
 public class Deputado : BaseEntity
 {
     [StringLength(100)]
@@ -39,4 +41,7 @@ public class Deputado : BaseEntity
 
     [StringLength(50)]
     public string? Email { get; set; }
+    
+    [StringLength(10)]
+    public string IdApi { get; set; }
 }
