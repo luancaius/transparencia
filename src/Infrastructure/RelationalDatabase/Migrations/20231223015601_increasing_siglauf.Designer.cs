@@ -12,8 +12,8 @@ using RelationalDatabase.Database;
 namespace RelationalDatabase.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231220024340_Initial")]
-    partial class Initial
+    [Migration("20231223015601_increasing_siglauf")]
+    partial class increasing_siglauf
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,11 +27,9 @@ namespace RelationalDatabase.Migrations
 
             modelBuilder.Entity("RelationalDatabase.DTO.Deputado.Deputado", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Cpf")
                         .IsRequired()
@@ -44,6 +42,11 @@ namespace RelationalDatabase.Migrations
                     b.Property<string>("Email")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("IdApi")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -87,7 +90,10 @@ namespace RelationalDatabase.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Deputado", "congresso");
+                    b.HasIndex("Cpf")
+                        .IsUnique();
+
+                    b.ToTable("deputado", "congresso");
                 });
 #pragma warning restore 612, 618
         }

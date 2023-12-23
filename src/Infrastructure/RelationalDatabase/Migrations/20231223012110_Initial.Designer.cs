@@ -12,8 +12,8 @@ using RelationalDatabase.Database;
 namespace RelationalDatabase.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231222062826_ids_and_constraint")]
-    partial class ids_and_constraint
+    [Migration("20231223012110_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,7 +93,7 @@ namespace RelationalDatabase.Migrations
                     b.HasIndex("Cpf")
                         .IsUnique();
 
-                    b.ToTable("Deputado", "congresso");
+                    b.ToTable("deputado", "congresso");
                 });
 #pragma warning restore 612, 618
         }

@@ -90,7 +90,7 @@ namespace RelationalDatabase.Migrations
                     b.HasIndex("Cpf")
                         .IsUnique();
 
-                    b.ToTable("Deputado", "congresso");
+                    b.ToTable("deputado", "congresso");
                 });
 #pragma warning restore 612, 618
         }
