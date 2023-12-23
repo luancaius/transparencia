@@ -19,7 +19,8 @@ public static class DeputyMapper
             DataNascimento = deputyDomain.Person.DateOfBirth,
             UfNascimento = deputyDomain.Person.EstadoNascimento.ToString(),
             Sexo = deputyDomain.Person.Gender.ToString(),
-            Email = deputyDomain.EmailDeputado.Value
+            Email = deputyDomain.EmailDeputado.Value,
+            UfRepresentacaoAtual = deputyDomain.EstadoRepresentacao.ToString()
         };
         
         return deputado;

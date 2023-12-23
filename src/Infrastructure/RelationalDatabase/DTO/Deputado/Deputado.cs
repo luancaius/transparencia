@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace RelationalDatabase.DTO.Deputado;
 
-[Table("Deputado", Schema = "congresso")]
+[Table("deputado", Schema = "congresso")]
 [Index(nameof(Cpf), IsUnique = true)] 
 public class Deputado : BaseEntity
 {
@@ -22,7 +22,7 @@ public class Deputado : BaseEntity
     [StringLength(20)]
     public string SiglaPartido { get; set; }
 
-    [StringLength(2)]
+    [StringLength(15)]
     public string SiglaUf { get; set; }
 
     [StringLength(11)]

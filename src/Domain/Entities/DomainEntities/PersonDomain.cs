@@ -2,7 +2,7 @@ using Entities.ValueObject;
 
 namespace Entities.DomainEntities;
 
-public class PersonDomain : IEntity
+public class PersonDomain
 {
     public string FirstName { get; private set; }
     public string LastName { get; private set; }
@@ -12,14 +12,12 @@ public class PersonDomain : IEntity
     public Email Email { get; private set; }
     public Cpf CPF { get; private set; }
     public Gender Gender { get; private set; }
-    public string Id { get; set; }
 
-    private PersonDomain(string id, string firstName, string lastName, string fullName, DateTime dateOfBirth, String email, 
+    private PersonDomain(string firstName, string lastName, string fullName, DateTime dateOfBirth, String email, 
         string stateBirth, string cpf, string gender)
     {
         try
         {
-            Id = id;
             FirstName = firstName;
             LastName = lastName;
             FullName = fullName;
@@ -39,10 +37,10 @@ public class PersonDomain : IEntity
         }
     }
 
-    public static PersonDomain CreatePerson(string id, string firstName, string lastName, string fullName,
+    public static PersonDomain CreatePerson(string firstName, string lastName, string fullName,
         DateTime dateOfBirth, string email, string estadoNascimento, string cpf, string gender)
     {
-        return new PersonDomain(id, firstName, lastName, fullName, dateOfBirth, estadoNascimento, email, cpf, gender);
+        return new PersonDomain(firstName, lastName, fullName, dateOfBirth, estadoNascimento, email, cpf, gender);
     }
 
 }

@@ -84,7 +84,7 @@ public class DeputyDetailDto : BaseEntityDTO
         GabineteInfo = new GabineteNewApi(deputyDetailNewApi.GabineteInfo);
 
         // From DeputyDetailOldApi
-        if (deputyDetailOldApi == null) 
+        if (deputyDetailOldApi == null)
             Id = $"{IdDeputy}-0";
         else
         {
@@ -103,7 +103,7 @@ public class DeputyDetailDto : BaseEntityDTO
             Id = $"{IdDeputy}-{IdeCadastro}";
         }
     }
-    
+
     public class GabineteNewApi
     {
         public string Nome { get; set; }
@@ -112,7 +112,7 @@ public class DeputyDetailDto : BaseEntityDTO
         public string Andar { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
-        
+
         public GabineteNewApi(DeputyDetailNewApi.Gabinete gabinete)
         {
             Nome = gabinete.Nome;
@@ -130,7 +130,7 @@ public class DeputyDetailDto : BaseEntityDTO
         {
             var deputado = DeputyDomain.CreateDeputy
             (
-                deputyDetailDto.Id,
+                deputyDetailDto.IdDeputy.ToString(),
                 deputyDetailDto.NomeCivil,
                 deputyDetailDto.Nome,
                 deputyDetailDto.NomeEleitoral,

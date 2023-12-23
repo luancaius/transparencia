@@ -2,12 +2,13 @@ using Entities.ValueObject;
 
 namespace Entities.DomainEntities;
 
-public class DeputyDomain : IEntity
+public class DeputyDomain
 {
     private DeputyDomain(string id, string firstName, string lastName, string fullName, DateTime dateOfBirth, String email,
         string stateBirth, string cpf, string gender, string partido, string estadoRepresentacao, string nomeEleitoral, string emailDeputado)
     {
-        Person = PersonDomain.CreatePerson(id, firstName, lastName, fullName, dateOfBirth, stateBirth, email, cpf, gender);
+        Id = id;
+        Person = PersonDomain.CreatePerson(firstName, lastName, fullName, dateOfBirth, stateBirth, email, cpf, gender);
         Partido = partido;
         EstadoRepresentacao = estadoRepresentacao.ConvertStringToEstado();
         NomeEleitoral = nomeEleitoral;
