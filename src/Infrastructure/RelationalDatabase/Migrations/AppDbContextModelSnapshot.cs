@@ -72,8 +72,8 @@ namespace RelationalDatabase.Migrations
 
                     b.Property<string>("SiglaUf")
                         .IsRequired()
-                        .HasMaxLength(2)
-                        .HasColumnType("nvarchar(2)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("UfNascimento")
                         .IsRequired()

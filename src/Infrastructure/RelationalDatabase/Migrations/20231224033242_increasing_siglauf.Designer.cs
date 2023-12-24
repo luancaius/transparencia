@@ -12,7 +12,7 @@ using RelationalDatabase.Database;
 namespace RelationalDatabase.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231223015601_increasing_siglauf")]
+    [Migration("20231224033242_increasing_siglauf")]
     partial class increasing_siglauf
     {
         /// <inheritdoc />
@@ -75,8 +75,8 @@ namespace RelationalDatabase.Migrations
 
                     b.Property<string>("SiglaUf")
                         .IsRequired()
-                        .HasMaxLength(2)
-                        .HasColumnType("nvarchar(2)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("UfNascimento")
                         .IsRequired()
