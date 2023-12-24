@@ -23,7 +23,7 @@ public class DeputyDomain
             gender, partido, ufRepresentacao, nomeEleitoral, emailDeputado);
     }
     
-    public string Id { get; set; }
+    public string Id { get; private set; }
     public PersonDomain Person { get; private set; }
     public string Partido { get; private set; }
     public Estado EstadoRepresentacao { get; private set; }

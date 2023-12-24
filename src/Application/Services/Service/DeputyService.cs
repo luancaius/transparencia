@@ -175,6 +175,7 @@ public class DeputyService : IDeputyService
                 currentDeputyDomain = DeputyDetailDto.GetDeputyDomainFromDto(deputyDetailDto);
                 var deputyEntity = DeputyMapper.MapToDeputado(currentDeputyDomain);
                 _unitOfWork.DeputyRepository.Upsert(deputyEntity);
+                var expenses = await _nonRelationalDatabase.GetAll<DeputyExpense>(year);
                 await _unitOfWork.SaveChangesAsync();
             }
         }
