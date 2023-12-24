@@ -1,4 +1,5 @@
 using Services.DTO;
+using Services.DTO.Deputy;
 
 namespace Services.Interfaces;
 

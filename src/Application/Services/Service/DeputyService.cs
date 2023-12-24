@@ -11,6 +11,7 @@ using Repositories.DTO.OldApi.GetById;
 using Repositories.Interfaces;
 using Serilog;
 using Services.DTO;
+using Services.DTO.Deputy;
 using Services.Interfaces;
 using Services.Mapper;
 

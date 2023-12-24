@@ -1,4 +1,4 @@
-namespace Services.DTO;
+namespace Services.DTO.Deputy;
 
 public class Comissoes {
     public object? Titular { get; set; } 

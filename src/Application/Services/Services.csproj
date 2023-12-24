@@ -16,11 +16,6 @@
     </ItemGroup>
 
 
-    <ItemGroup>
-      <Folder Include="DTO\Deputy\" />
-    </ItemGroup>
-
-
 
 
 

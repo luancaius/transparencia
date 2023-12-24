@@ -1,8 +1,7 @@
-using System.Diagnostics.Metrics;
 using Repositories.DTO.NewApi.GetById;
 using Repositories.DTO.OldApi.GetById;
 
-namespace Services.DTO;
+namespace Services.DTO.Deputy;
 
 public class DeputiesDetailListDto
 {

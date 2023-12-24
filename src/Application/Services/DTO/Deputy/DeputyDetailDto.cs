@@ -1,13 +1,12 @@
 using Entities.DomainEntities;
-using RelationalDatabase.DTO.Deputado;
-using Repositories.DTO.OldApi.GetById;
 using Repositories.DTO;
 using Repositories.DTO.NewApi.GetById;
+using Repositories.DTO.OldApi.GetById;
 using Comissao = Repositories.DTO.OldApi.GetById.Comissao;
 using Gabinete = Repositories.DTO.OldApi.GetById.Gabinete;
 using PartidoAtual = Repositories.DTO.OldApi.GetById.PartidoAtual;
 
-namespace Services.DTO;
+namespace Services.DTO.Deputy;
 
 public class DeputyDetailDto : BaseEntityDTO
 {
