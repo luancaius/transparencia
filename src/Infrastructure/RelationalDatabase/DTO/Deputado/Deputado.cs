@@ -36,7 +36,7 @@ public class Deputado : BaseEntity
     [StringLength(10)]
     public string Sexo { get; set; }
 
-    [StringLength(2)]
+    [StringLength(15)]
     public string UfRepresentacaoAtual { get; set; }
 
     [StringLength(50)]
