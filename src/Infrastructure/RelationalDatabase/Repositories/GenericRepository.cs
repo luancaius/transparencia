@@ -39,17 +39,17 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
         _context.SaveChanges();
     }
     
-    public void Upsert(T entity)
+    public void UpdateInsert(T entity, Expression<Func<T, bool>> filter)
     {
-        var item = _dbSet.FirstOrDefault(a => a.Id == entity.Id);
+        var item = _dbSet.FirstOrDefault(filter);
         if (item == null)
         {
             _dbSet.Add(entity);
         }
         else
         {
-            _dbSet.Attach(entity);
-            _context.Entry(entity).State = EntityState.Modified;
+            entity.Id = item.Id;
+            _context.Entry(item).CurrentValues.SetValues(entity);
         }
         _context.SaveChanges();
     }

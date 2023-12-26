@@ -167,15 +167,20 @@ public class DeputyService : IDeputyService
 
             var legislaturaObj = Legislatura.CriarLegislaturaPorAno(year);
             IEnumerable<DeputyDetailDto> deputiesDetailDtos = 
-                await _nonRelationalDatabase.GetAll<DeputyDetailDto>(legislaturaObj.Numero);
+                await _nonRelationalDatabase.GetAll<DeputyDetailDto>(a => a.IdLegislatura == legislaturaObj.Numero);
 
             foreach (DeputyDetailDto deputyDetailDto in deputiesDetailDtos)
             {
                 currentDeputy = deputyDetailDto;
                 currentDeputyDomain = DeputyDetailDto.GetDeputyDomainFromDto(deputyDetailDto);
                 var deputyEntity = DeputyMapper.MapToDeputado(currentDeputyDomain);
-                _unitOfWork.DeputyRepository.Upsert(deputyEntity);
-                var expenses = await _nonRelationalDatabase.GetAll<DeputyExpense>(year);
+                _unitOfWork.DeputyRepository.UpdateInsert(deputyEntity, a => a.Cpf == deputyEntity.Cpf);
+                var expenses = await _nonRelationalDatabase.GetAll<DeputyExpense>(
+                    a => a.HasData && a
+                        .IdDeputy == deputyDetailDto.IdDeputy && a.Ano == year);
+                // create domain from mongo dto
+                // create entity from domain
+                // call upsert from unit of work
                 await _unitOfWork.SaveChangesAsync();
             }
         }

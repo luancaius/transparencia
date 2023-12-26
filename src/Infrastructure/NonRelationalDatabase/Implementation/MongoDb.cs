@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using MongoDB.Driver;
 using NonRelationalDatabase.Helpers;
 using NonRelationalDatabase.Interfaces;
@@ -59,12 +60,12 @@ public class MongoDb : INonRelationalDatabase
         return result.FirstOrDefault();
     }
 
-    public async Task<List<T>> GetAll<T>(int? legislatura)
+    public async Task<List<T>> GetAll<T>(Expression<Func<T, bool>>? filterExpression = null)
     {
         string collectionName = typeof(T).Name;
-        FilterDefinition<T> filter = null;
-        if(legislatura.HasValue)
-            filter = Builders<T>.Filter.Eq("IdLegislatura", legislatura); 
+        FilterDefinition<T> filter = filterExpression != null ? 
+            Builders<T>.Filter.Where(filterExpression) : 
+            Builders<T>.Filter.Empty;
         var result = _mongoDbHelper.GetData<T>(collectionName, filter);
         return result;
     }   
