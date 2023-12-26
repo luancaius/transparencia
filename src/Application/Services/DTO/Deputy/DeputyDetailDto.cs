@@ -127,12 +127,15 @@ public class DeputyDetailDto : BaseEntityDTO
     {
         try
         {
+            var splitName = deputyDetailDto.NomeCivil.Split(' ');
+            var firstName = splitName[0];
+            var lastName = splitName[1..].Aggregate((i, j) => i + " " + j);
             var deputado = DeputyDomain.CreateDeputy
             (
                 deputyDetailDto.IdDeputy.ToString(),
+                firstName,
+                lastName,
                 deputyDetailDto.NomeCivil,
-                deputyDetailDto.Nome,
-                deputyDetailDto.NomeEleitoral,
                 deputyDetailDto.DataNascimento,
                 deputyDetailDto.UfNascimento,
                 deputyDetailDto.Cpf,

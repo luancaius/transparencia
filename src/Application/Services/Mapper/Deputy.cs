@@ -10,11 +10,9 @@ public static class DeputyMapper
         var deputado = new Deputado
         {
             IdApi = deputyDomain.Id,
-            Nome = deputyDomain.Person.FullName,
             NomeEleitoral = deputyDomain.NomeEleitoral,
             NomeCivil = deputyDomain.Person.FirstName + " " + deputyDomain.Person.LastName,
             SiglaPartido = deputyDomain.Partido,
-            SiglaUf = deputyDomain.EstadoRepresentacao.ToString(),
             Cpf = deputyDomain.Person.CPF.ToString(),
             DataNascimento = deputyDomain.Person.DateOfBirth,
             UfNascimento = deputyDomain.Person.EstadoNascimento.ToString(),

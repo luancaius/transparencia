@@ -10,10 +10,7 @@ namespace RelationalDatabase.DTO.Deputado;
 [Index(nameof(Cpf), IsUnique = true)] 
 public class Deputado : BaseEntity
 {
-    [StringLength(100)]
-    public string Nome { get; set; }
-
-    [StringLength(100)]
+    [StringLength(50)]
     public string NomeEleitoral { get; set; }
 
     [StringLength(100)]
@@ -21,9 +18,6 @@ public class Deputado : BaseEntity
 
     [StringLength(20)]
     public string SiglaPartido { get; set; }
-
-    [StringLength(15)]
-    public string SiglaUf { get; set; }
 
     [StringLength(11)]
     public string Cpf { get; set; }
