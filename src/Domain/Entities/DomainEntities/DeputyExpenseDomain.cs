@@ -1,6 +1,6 @@
 namespace Entities.DomainEntities;
 
-public class ExpenseDomain
+public class DeputyExpenseDomain
 {
     public DateTime DateTimeExpense { get; private set; }
     public int DeputyId { get; private set; }
@@ -13,7 +13,7 @@ public class ExpenseDomain
     public string IdDocument { get; private set; }
     public CompanyDomain Company { get; private set; }
     
-    private ExpenseDomain(DateTime dateTimeExpense, int deputyId, decimal amountDocument, decimal amountFinal, 
+    private DeputyExpenseDomain(DateTime dateTimeExpense, int deputyId, decimal amountDocument, decimal amountFinal, 
         string receiptUrl, string typeExpense, string typeReceipt, string numberDocument, string idDocument, 
         CompanyDomain company)
     {
@@ -29,12 +29,12 @@ public class ExpenseDomain
         Company = company;
     }
     
-    public static ExpenseDomain CreateExpense(DateTime dateTimeExpense, int deputyId, decimal amountDocument, 
+    public static DeputyExpenseDomain CreateExpense(DateTime dateTimeExpense, int deputyId, decimal amountDocument, 
         decimal amountFinal, string receiptUrl, string typeExpense, string typeReceipt, string numberDocument, 
         string idDocument, string  cnpjCompany, string nameCompany)
     {
         var company = CompanyDomain.CreateCompany(nameCompany, cnpjCompany);
-        return new ExpenseDomain(dateTimeExpense, deputyId, amountDocument, amountFinal, receiptUrl, typeExpense, 
+        return new DeputyExpenseDomain(dateTimeExpense, deputyId, amountDocument, amountFinal, receiptUrl, typeExpense, 
             typeReceipt, numberDocument, idDocument, company);
     }
 }
