@@ -50,7 +50,7 @@ namespace Presentation.Console
                     await _deputyService.RefreshOldApi(2022);
                     break;
                 case "f":
-                    await _deputyService.RefreshRelationalDbFromNonRelationalDb(2023);
+                    await _deputyService.RefreshRelationalDbFromNonRelationalDb(2022);
                     break;
                 default:
                     System.Console.WriteLine("Invalid command. Please try again.");

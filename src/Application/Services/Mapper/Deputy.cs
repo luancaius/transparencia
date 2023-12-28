@@ -1,5 +1,6 @@
 using Entities.DomainEntities;
 using RelationalDatabase.DTO.Deputado;
+using Services.DTO.Deputy;
 
 namespace Services.Mapper;
 

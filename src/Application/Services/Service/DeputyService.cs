@@ -14,6 +14,7 @@ using Services.DTO;
 using Services.DTO.Deputy;
 using Services.Interfaces;
 using Services.Mapper;
+using DeputyExpense = Repositories.DTO.NewApi.Expense.DeputyExpense;
 
 namespace Services.Service;
 
@@ -178,9 +179,13 @@ public class DeputyService : IDeputyService
                 var expenses = await _nonRelationalDatabase.GetAll<DeputyExpense>(
                     a => a.HasData && a
                         .IdDeputy == deputyDetailDto.IdDeputy && a.Ano == year);
-                // create domain from mongo dto
-                // create entity from domain
-                // call upsert from unit of work
+                foreach (var expense in expenses)
+                {
+                    var expenseDto = DeputyExpenseDto.GetDtoFromMongo(expense);
+                    var expenseDomain = DeputyExpenseMapper.MapToExpense(expenseDto);
+                    // create entity from domain
+                    // call upsert from unit of work   
+                }
                 await _unitOfWork.SaveChangesAsync();
             }
         }
