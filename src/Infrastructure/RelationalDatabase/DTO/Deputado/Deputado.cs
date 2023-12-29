@@ -38,4 +38,6 @@ public class Deputado : BaseEntity
     
     [StringLength(10)]
     public string IdApi { get; set; }
+    
+    public virtual ICollection<DeputyExpense> DeputyExpenses { get; set; }
 }

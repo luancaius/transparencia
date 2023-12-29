@@ -179,6 +179,8 @@ public class DeputyService : IDeputyService
                 var expenses = await _nonRelationalDatabase.GetAll<DeputyExpense>(
                     a => a.HasData && a
                         .IdDeputy == deputyDetailDto.IdDeputy && a.Ano == year);
+                if(expenses.Count == 0)
+                    continue;
                 foreach (var expense in expenses)
                 {
                     var expenseDto = DeputyExpenseDto.GetDtoFromMongo(expense);

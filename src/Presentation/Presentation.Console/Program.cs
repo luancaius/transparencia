@@ -41,7 +41,7 @@ namespace Presentation.Console
                     await _deputyService.RefreshDeputyDetails(2023);
                     break;
                 case "c":
-                    await _deputyService.RefreshAllMongoDb(2022);
+                    await _deputyService.RefreshAllMongoDb(2023);
                     break;
                 case "d":
                     await _deputyService.RefreshNewApi(2022);
@@ -50,7 +50,7 @@ namespace Presentation.Console
                     await _deputyService.RefreshOldApi(2022);
                     break;
                 case "f":
-                    await _deputyService.RefreshRelationalDbFromNonRelationalDb(2022);
+                    await _deputyService.RefreshRelationalDbFromNonRelationalDb(2023);
                     break;
                 default:
                     System.Console.WriteLine("Invalid command. Please try again.");
