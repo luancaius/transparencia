@@ -1,4 +1,5 @@
 using RelationalDatabase.Database;
+using RelationalDatabase.DTO;
 using RelationalDatabase.DTO.Deputado;
 using RelationalDatabase.Interfaces;
 
@@ -8,7 +9,8 @@ public class UnitOfWork : IUnitOfWork
 {
     private readonly AppDbContext _context;
     private IRepository<Deputado> _deputyRepository;
-
+    public IRepository<Company> CompanyRepository { get; }
+    public IRepository<DeputyExpense> DeputyExpenseRepository { get; }
     public UnitOfWork(AppDbContext context)
     {
         _context = context;
@@ -20,7 +22,7 @@ public class UnitOfWork : IUnitOfWork
         {
             return _deputyRepository ??= new Repository<Deputado>(_context);
         }
-    }   
+    }
     
     public void SaveChanges()
     {

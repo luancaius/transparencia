@@ -185,8 +185,11 @@ public class DeputyService : IDeputyService
                 {
                     var expenseDto = DeputyExpenseDto.GetDtoFromMongo(expense);
                     var expenseDomain = DeputyExpenseMapper.MapToExpense(expenseDto);
-                    // create entity from domain
-                    // call upsert from unit of work   
+                    var companyDomain = expenseDomain.Company;
+                    var companyEntity = CompanyMapper.MapToCompany(companyDomain);
+                    _unitOfWork.CompanyRepository.UpdateInsert(companyEntity, a => a.Cnpj == companyEntity.Cnpj);
+                    var expenseEntity = DeputyExpenseMapper.MapToDeputyExpense(expenseDomain);
+                    _unitOfWork.DeputyExpenseRepository.UpdateInsert(expenseEntity, a => a.IdDocument == expenseEntity.IdDocument);
                 }
                 await _unitOfWork.SaveChangesAsync();
             }

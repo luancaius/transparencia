@@ -1,4 +1,6 @@
 using Entities.DomainEntities;
+using RelationalDatabase.DTO;
+using RelationalDatabase.DTO.Deputado;
 using Services.DTO.Deputy;
 
 namespace Services.Mapper;
@@ -23,4 +25,29 @@ public static class DeputyExpenseMapper
 
         return despesa;
     }
+    
+    public static DeputyExpense MapToDeputyExpense(DeputyExpenseDomain expenseDomain)
+    {
+        var company = new Company
+        {
+            Cnpj = expenseDomain.Company.Cnpj.ToString(),
+            Name = expenseDomain.Company.Name
+        };
+        var despesa = new DeputyExpense
+        {
+            DateTimeExpense = expenseDomain.DateTimeExpense,
+            DeputyId = expenseDomain.DeputyId,
+            AmountDocument = expenseDomain.AmountDocument,
+            AmountFinal = expenseDomain.AmountFinal,
+            ReceiptUrl = expenseDomain.ReceiptUrl,
+            TypeExpense = expenseDomain.TypeExpense,
+            TypeReceipt = expenseDomain.TypeReceipt,
+            NumberDocument = expenseDomain.NumberDocument,
+            IdDocument = expenseDomain.IdDocument,
+            Company = company
+        };
+        
+        return despesa;
+    } 
+    
 }
