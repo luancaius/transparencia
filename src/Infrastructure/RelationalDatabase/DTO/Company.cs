@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RelationalDatabase.DTO;
 
-[Table("Company")]
+[Table("empresa", Schema = "general")]
 public class Company
 {
     [Key] 

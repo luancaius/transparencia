@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RelationalDatabase.DTO.Deputado;
 
-[Table("DeputadoDespesa")]
+[Table("DeputadoDespesa", Schema = "congresso")]
 public class DeputyExpense
 {
     [Key] 
