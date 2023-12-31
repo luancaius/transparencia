@@ -13,7 +13,7 @@ public class DeputyExpenseDto
     public string TypeReceipt { get; set; }
     public string NumberDocument { get; set; }
     public string IdDocument { get; set; }
-    public string Cnpj { get; set; }
+    public string CnpjOrCpf { get; set; }
     public string NameCompany { get; set; }
     
     public static DeputyExpenseDto GetDtoFromMongo(DeputyExpense expense)
@@ -34,7 +34,7 @@ public class DeputyExpenseDto
             TypeReceipt = expense.TipoDocumento,
             NumberDocument = expense.NumDocumento,
             IdDocument = expense.CodDocumento.ToString(),
-            Cnpj = expense.CnpjCpfFornecedor,
+            CnpjOrCpf = expense.CnpjCpfFornecedor,
             NameCompany = expense.NomeFornecedor
         };
     }

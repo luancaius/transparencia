@@ -19,7 +19,7 @@ public static class DeputyExpenseMapper
             expenseDto.TypeReceipt,
             expenseDto.NumberDocument,
             expenseDto.IdDocument,
-            expenseDto.Cnpj,
+            expenseDto.CnpjOrCpf,
             expenseDto.NameCompany
         );
 
