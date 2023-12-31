@@ -12,8 +12,8 @@ using RelationalDatabase.Database;
 namespace RelationalDatabase.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231230213617_refactor")]
-    partial class refactor
+    [Migration("20231231210150_refatoring_migrations")]
+    partial class refatoring_migrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,11 +27,9 @@ namespace RelationalDatabase.Migrations
 
             modelBuilder.Entity("RelationalDatabase.DTO.Company", b =>
                 {
-                    b.Property<int>("CompanyId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CompanyId"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Cnpj")
                         .IsRequired()
@@ -43,7 +41,7 @@ namespace RelationalDatabase.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("CompanyId");
+                    b.HasKey("Id");
 
                     b.ToTable("empresa", "general");
                 });
@@ -111,11 +109,9 @@ namespace RelationalDatabase.Migrations
 
             modelBuilder.Entity("RelationalDatabase.DTO.Deputado.DeputyExpense", b =>
                 {
-                    b.Property<int>("DeputyExpenseId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DeputyExpenseId"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("AmountDocument")
                         .HasColumnType("decimal(18, 2)");
@@ -123,8 +119,8 @@ namespace RelationalDatabase.Migrations
                     b.Property<decimal>("AmountFinal")
                         .HasColumnType("decimal(18, 2)");
 
-                    b.Property<int>("CompanyId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("DateTimeExpense")
                         .HasColumnType("datetime2");
@@ -160,7 +156,7 @@ namespace RelationalDatabase.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("DeputyExpenseId");
+                    b.HasKey("Id");
 
                     b.HasIndex("CompanyId");
 

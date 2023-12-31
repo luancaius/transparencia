@@ -162,6 +162,7 @@ public class DeputyService : IDeputyService
     {
         DeputyDetailDto currentDeputy = null;
         DeputyDomain currentDeputyDomain = null;
+        DeputyExpense currentExpense = null;
         try
         {
             _logger.Information($"RefreshRelationalDbFromNonRelationalDb {year}");
@@ -183,6 +184,7 @@ public class DeputyService : IDeputyService
                     continue;
                 foreach (var expense in expenses)
                 {
+                    currentExpense = expense;
                     var expenseDto = DeputyExpenseDto.GetDtoFromMongo(expense);
                     var expenseDomain = DeputyExpenseMapper.MapToExpense(expenseDto);
                     var companyDomain = expenseDomain.Company;
@@ -196,7 +198,7 @@ public class DeputyService : IDeputyService
         }
         catch (Exception ex)
         {
-            _logger.Error($"An error occurred while refreshing the database from the non-relational database for the year {year}: {currentDeputy} {ex.Message}");
+            _logger.Error($"An error occurred while refreshing the database from the non-relational database for the year {year}: {currentDeputy} {currentExpense} {ex.Message}");
             throw;
         }
     }

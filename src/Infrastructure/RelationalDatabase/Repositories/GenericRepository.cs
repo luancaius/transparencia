@@ -45,13 +45,14 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
         if (item == null)
         {
             _dbSet.Add(entity);
+            _context.SaveChanges();
         }
         else
         {
-            entity.Id = item.Id;
-            _context.Entry(item).CurrentValues.SetValues(entity);
+            // entity.Id = item.Id;
+            // _context.Entry(item).CurrentValues.SetValues(entity);
+            // _context.SaveChanges();
         }
-        _context.SaveChanges();
     }
 
     public void Delete(T entity)

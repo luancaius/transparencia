@@ -1,14 +1,13 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace RelationalDatabase.DTO;
 
 [Table("empresa", Schema = "general")]
-public class Company
+[Index(nameof(Cnpj), IsUnique = true)] 
+public class Company : BaseEntity
 {
-    [Key] 
-    public int CompanyId { get; set; }
-
     [StringLength(14)] 
     public string Cnpj { get; set; }
 

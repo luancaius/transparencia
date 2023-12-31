@@ -9,21 +9,29 @@ public class UnitOfWork : IUnitOfWork
 {
     private readonly AppDbContext _context;
     private IRepository<Deputado> _deputyRepository;
-    public IRepository<Company> CompanyRepository { get; }
-    public IRepository<DeputyExpense> DeputyExpenseRepository { get; }
+    private IRepository<Company> _companyRepository;
+    private IRepository<DeputyExpense> _deputyExpenseRepository;
+
+    public IRepository<Deputado> DeputyRepository
+    {
+        get { return _deputyRepository ??= new Repository<Deputado>(_context); }
+    }
+
+    public IRepository<Company> CompanyRepository
+    {
+        get { return _companyRepository ??= new Repository<Company>(_context); }
+    }
+
+    public IRepository<DeputyExpense> DeputyExpenseRepository
+    {
+        get { return _deputyExpenseRepository ??= new Repository<DeputyExpense>(_context); }
+    }
+
     public UnitOfWork(AppDbContext context)
     {
         _context = context;
     }
-    
-    public IRepository<Deputado> DeputyRepository
-    {
-        get
-        {
-            return _deputyRepository ??= new Repository<Deputado>(_context);
-        }
-    }
-    
+
     public void SaveChanges()
     {
         _context.SaveChanges();
@@ -38,7 +46,6 @@ public class UnitOfWork : IUnitOfWork
     {
         if (disposing)
         {
-            // Dispose managed resources.
             _context?.Dispose();
         }
     }
@@ -47,5 +54,10 @@ public class UnitOfWork : IUnitOfWork
     {
         Dispose(true);
         GC.SuppressFinalize(this);
+    }
+
+    ~UnitOfWork()  // Finalizer
+    {
+        Dispose(false);
     }
 }

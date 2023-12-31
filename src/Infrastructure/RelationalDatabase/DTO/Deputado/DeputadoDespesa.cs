@@ -5,11 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace RelationalDatabase.DTO.Deputado;
 
 [Table("DeputadoDespesa", Schema = "congresso")]
-public class DeputyExpense
+public class DeputyExpense : BaseEntity
 {
-    [Key] 
-    public int DeputyExpenseId { get; set; } // Assuming there is an ID field
-
     [Column(TypeName = "datetime2")] 
     public DateTime? DateTimeExpense { get; set; } // Stored as DateTime
 
@@ -34,7 +31,7 @@ public class DeputyExpense
     [StringLength(50)] 
     public string IdDocument { get; set; }
 
-    public int CompanyId { get; set; }
+    public Guid CompanyId { get; set; }
     
     public int DeputyId { get; set; }
     

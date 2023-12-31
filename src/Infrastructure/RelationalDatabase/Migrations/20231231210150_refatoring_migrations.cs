@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace RelationalDatabase.Migrations
 {
     /// <inheritdoc />
-    public partial class refactor : Migration
+    public partial class refatoring_migrations : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -44,14 +44,13 @@ namespace RelationalDatabase.Migrations
                 schema: "general",
                 columns: table => new
                 {
-                    CompanyId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Cnpj = table.Column<string>(type: "nvarchar(14)", maxLength: 14, nullable: false),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_empresa", x => x.CompanyId);
+                    table.PrimaryKey("PK_empresa", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -59,8 +58,7 @@ namespace RelationalDatabase.Migrations
                 schema: "congresso",
                 columns: table => new
                 {
-                    DeputyExpenseId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DateTimeExpense = table.Column<DateTime>(type: "datetime2", nullable: true),
                     AmountDocument = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     AmountFinal = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -69,13 +67,13 @@ namespace RelationalDatabase.Migrations
                     TypeReceipt = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     NumberDocument = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     IdDocument = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    CompanyId = table.Column<int>(type: "int", nullable: false),
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DeputyId = table.Column<int>(type: "int", nullable: false),
                     DeputadoId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DeputadoDespesa", x => x.DeputyExpenseId);
+                    table.PrimaryKey("PK_DeputadoDespesa", x => x.Id);
                     table.ForeignKey(
                         name: "FK_DeputadoDespesa_deputado_DeputadoId",
                         column: x => x.DeputadoId,
@@ -87,7 +85,7 @@ namespace RelationalDatabase.Migrations
                         column: x => x.CompanyId,
                         principalSchema: "general",
                         principalTable: "empresa",
-                        principalColumn: "CompanyId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 

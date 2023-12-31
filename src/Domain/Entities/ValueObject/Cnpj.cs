@@ -13,7 +13,7 @@ public class Cnpj
 
         if (!IsValidCnpj(cnpj))
         {
-            throw new ArgumentException("Invalid CNPJ.");
+            throw new ArgumentException($"Invalid CNPJ: {cnpj}");
         }
 
         _value = cnpj;
