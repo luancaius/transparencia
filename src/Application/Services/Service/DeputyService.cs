@@ -187,9 +187,9 @@ public class DeputyService : IDeputyService
                     currentExpense = expense;
                     var expenseDto = DeputyExpenseDto.GetDtoFromMongo(expense);
                     var expenseDomain = DeputyExpenseMapper.MapToExpense(expenseDto);
-                    var companyDomain = expenseDomain.Company;
-                    var companyEntity = CompanyMapper.MapToCompany(companyDomain);
-                    _unitOfWork.CompanyRepository.UpdateInsert(companyEntity, a => a.Cnpj == companyEntity.Cnpj);
+                    //var companyDomain = expenseDomain.Supplier;
+                    //var companyEntity = CompanyMapper.MapToCompany(companyDomain);
+                    //_unitOfWork.CompanyRepository.UpdateInsert(companyEntity, a => a.Cnpj == companyEntity.Cnpj);
                     var expenseEntity = DeputyExpenseMapper.MapToDeputyExpense(expenseDomain);
                     _unitOfWork.DeputyExpenseRepository.UpdateInsert(expenseEntity, a => a.IdDocument == expenseEntity.IdDocument);
                 }

@@ -22,7 +22,7 @@ public class PersonDomain
             LastName = lastName;
             FullName = fullName;
             DateOfBirth = dateOfBirth;
-            EstadoNascimento = Extensions.ConvertStringToEstado(stateBirth);
+            EstadoNascimento = stateBirth.ConvertStringToEstado();
             Email = new Email(email);
             CPF = new Cpf(cpf); 
             Gender = GenderExtensions.FromString(gender); 

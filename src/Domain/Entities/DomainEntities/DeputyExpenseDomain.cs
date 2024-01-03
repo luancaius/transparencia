@@ -11,11 +11,12 @@ public class DeputyExpenseDomain
     public string TypeReceipt { get; private set; }
     public string NumberDocument { get; private set; }
     public string IdDocument { get; private set; }
-    public CompanyDomain Company { get; private set; }
+    public SupplierDomain Supplier { get; private set; }
+
     
     private DeputyExpenseDomain(DateTime dateTimeExpense, int deputyId, decimal amountDocument, decimal amountFinal, 
         string receiptUrl, string typeExpense, string typeReceipt, string numberDocument, string idDocument, 
-        CompanyDomain company)
+        SupplierDomain supplierDomain)
     {
         DateTimeExpense = dateTimeExpense;
         DeputyId = deputyId;
@@ -26,15 +27,15 @@ public class DeputyExpenseDomain
         TypeReceipt = typeReceipt;
         NumberDocument = numberDocument;
         IdDocument = idDocument;
-        Company = company;
+        Supplier = supplierDomain;
     }
     
     public static DeputyExpenseDomain CreateExpense(DateTime dateTimeExpense, int deputyId, decimal amountDocument, 
         decimal amountFinal, string receiptUrl, string typeExpense, string typeReceipt, string numberDocument, 
         string idDocument, string  cnpjCompany, string nameCompany)
     {
-        var company = CompanyDomain.CreateCompany(nameCompany, cnpjCompany);
+        var supplier = SupplierDomain.CreateSupplier(nameCompany, cnpjCompany);
         return new DeputyExpenseDomain(dateTimeExpense, deputyId, amountDocument, amountFinal, receiptUrl, typeExpense, 
-            typeReceipt, numberDocument, idDocument, company);
+            typeReceipt, numberDocument, idDocument, supplier);
     }
 }

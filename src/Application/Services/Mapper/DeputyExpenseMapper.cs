@@ -28,11 +28,7 @@ public static class DeputyExpenseMapper
     
     public static DeputyExpense MapToDeputyExpense(DeputyExpenseDomain expenseDomain)
     {
-        var company = new Company
-        {
-            Cnpj = expenseDomain.Company.Cnpj.ToString(),
-            Name = expenseDomain.Company.Name
-        };
+        
         var despesa = new DeputyExpense
         {
             DateTimeExpense = expenseDomain.DateTimeExpense,
@@ -43,8 +39,7 @@ public static class DeputyExpenseMapper
             TypeExpense = expenseDomain.TypeExpense,
             TypeReceipt = expenseDomain.TypeReceipt,
             NumberDocument = expenseDomain.NumberDocument,
-            IdDocument = expenseDomain.IdDocument,
-            Company = company
+            IdDocument = expenseDomain.IdDocument
         };
         
         return despesa;
