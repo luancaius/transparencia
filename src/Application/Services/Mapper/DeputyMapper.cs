@@ -15,7 +15,7 @@ public static class DeputyMapper
             NomeCivil = deputyDomain.Person.FirstName + " " + deputyDomain.Person.LastName,
             SiglaPartido = deputyDomain.Partido,
             Cpf = deputyDomain.Person.CPF.ToString(),
-            DataNascimento = deputyDomain.Person.DateOfBirth,
+            DataNascimento = (DateTime)deputyDomain.Person.DateOfBirth!,
             UfNascimento = deputyDomain.Person.EstadoNascimento.ToString(),
             Sexo = deputyDomain.Person.Gender.ToString(),
             Email = deputyDomain.EmailDeputado.Value,

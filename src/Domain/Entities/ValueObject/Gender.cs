@@ -6,7 +6,8 @@ public enum Gender
     Female,
     NonBinary,
     PreferNotToSay,
-    Other
+    Other,
+    Unknown
 }
 
 public static class GenderExtensions
