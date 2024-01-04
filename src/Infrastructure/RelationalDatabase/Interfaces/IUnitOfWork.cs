@@ -7,7 +7,7 @@ namespace RelationalDatabase.Interfaces;
 public interface IUnitOfWork : IDisposable
 {
     IRepository<Deputado> DeputyRepository { get; }
-    IRepository<Company> CompanyRepository { get; }
+    IRepository<Supplier> SupplierRepository { get; }
     IRepository<DeputyExpense> DeputyExpenseRepository { get; }
     void SaveChanges();
     Task SaveChangesAsync();

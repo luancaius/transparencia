@@ -9,7 +9,7 @@ public class UnitOfWork : IUnitOfWork
 {
     private readonly AppDbContext _context;
     private IRepository<Deputado> _deputyRepository;
-    private IRepository<Company> _companyRepository;
+    private IRepository<Supplier> _supplierRepository;
     private IRepository<DeputyExpense> _deputyExpenseRepository;
 
     public IRepository<Deputado> DeputyRepository
@@ -17,9 +17,9 @@ public class UnitOfWork : IUnitOfWork
         get { return _deputyRepository ??= new Repository<Deputado>(_context); }
     }
 
-    public IRepository<Company> CompanyRepository
+    public IRepository<Supplier> SupplierRepository
     {
-        get { return _companyRepository ??= new Repository<Company>(_context); }
+        get { return _supplierRepository ??= new Repository<Supplier>(_context); }
     }
 
     public IRepository<DeputyExpense> DeputyExpenseRepository

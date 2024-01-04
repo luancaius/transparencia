@@ -31,10 +31,10 @@ public class DeputyExpense : BaseEntity
     [StringLength(50)] 
     public string IdDocument { get; set; }
 
-    public Guid CompanyId { get; set; }
+    public Guid SupplierId { get; set; }
     
     public int DeputyId { get; set; }
     
-    [ForeignKey("CompanyId")]
-    public virtual Company Company { get; set; }
+    [ForeignKey("SupplierId")]
+    public virtual Supplier Supplier { get; set; }
 }
