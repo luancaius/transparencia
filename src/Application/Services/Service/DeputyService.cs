@@ -189,9 +189,20 @@ public class DeputyService : IDeputyService
                     var expenseDomain = DeputyExpenseMapper.MapToExpense(expenseDto);
                     var supplierDomain = expenseDomain.Supplier;
                     var supplierEntity = SupplierMapper.MapToEntity(supplierDomain);
-                    _unitOfWork.SupplierRepository.UpdateInsert(supplierEntity, a => a.Cnpj == supplierEntity.Cnpj || 
-                        a.Cpf == supplierEntity.Cpf);
                     var expenseEntity = DeputyExpenseMapper.MapToDeputyExpense(expenseDomain);
+
+                    var supplierItem = _unitOfWork.SupplierRepository.Get(a => a.Cnpj == supplierEntity.Cnpj ||
+                                                            a.Cpf == supplierEntity.Cpf);
+                    if (supplierItem == null)
+                    {
+                        _unitOfWork.SupplierRepository.Add(supplierEntity);
+                        expenseEntity.Supplier = supplierEntity;
+                    }
+                    else
+                    {
+                        expenseEntity.Supplier = supplierItem;
+                    }
+
                     _unitOfWork.DeputyExpenseRepository.UpdateInsert(expenseEntity, a => a.IdDocument == expenseEntity.IdDocument);
                 }
                 await _unitOfWork.SaveChangesAsync();
