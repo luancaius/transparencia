@@ -12,8 +12,8 @@ using RelationalDatabase.Database;
 namespace RelationalDatabase.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231231210150_refatoring_migrations")]
-    partial class refatoring_migrations
+    [Migration("20240105044950_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,6 +42,9 @@ namespace RelationalDatabase.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Cnpj")
+                        .IsUnique();
 
                     b.ToTable("empresa", "general");
                 });
@@ -119,9 +122,6 @@ namespace RelationalDatabase.Migrations
                     b.Property<decimal>("AmountFinal")
                         .HasColumnType("decimal(18, 2)");
 
-                    b.Property<Guid>("CompanyId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("DateTimeExpense")
                         .HasColumnType("datetime2");
 
@@ -146,6 +146,9 @@ namespace RelationalDatabase.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<Guid>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("TypeExpense")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -158,26 +161,58 @@ namespace RelationalDatabase.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanyId");
-
                     b.HasIndex("DeputadoId");
+
+                    b.HasIndex("SupplierId");
 
                     b.ToTable("DeputadoDespesa", "congresso");
                 });
 
+            modelBuilder.Entity("RelationalDatabase.DTO.Supplier", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Cnpj")
+                        .HasMaxLength(14)
+                        .HasColumnType("nvarchar(14)");
+
+                    b.Property<string>("Cpf")
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Cnpj")
+                        .IsUnique()
+                        .HasFilter("[Cnpj] IS NOT NULL");
+
+                    b.HasIndex("Cpf")
+                        .IsUnique()
+                        .HasFilter("[Cpf] IS NOT NULL");
+
+                    b.ToTable("fornecedores", "general");
+                });
+
             modelBuilder.Entity("RelationalDatabase.DTO.Deputado.DeputyExpense", b =>
                 {
-                    b.HasOne("RelationalDatabase.DTO.Company", "Company")
-                        .WithMany()
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("RelationalDatabase.DTO.Deputado.Deputado", null)
                         .WithMany("DeputyExpenses")
                         .HasForeignKey("DeputadoId");
 
-                    b.Navigation("Company");
+                    b.HasOne("RelationalDatabase.DTO.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Supplier");
                 });
 
             modelBuilder.Entity("RelationalDatabase.DTO.Deputado.Deputado", b =>

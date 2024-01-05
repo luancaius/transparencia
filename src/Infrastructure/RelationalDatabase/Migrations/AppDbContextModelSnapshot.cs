@@ -172,12 +172,10 @@ namespace RelationalDatabase.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Cnpj")
-                        .IsRequired()
                         .HasMaxLength(14)
                         .HasColumnType("nvarchar(14)");
 
                     b.Property<string>("Cpf")
-                        .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("nvarchar(11)");
 
@@ -189,10 +187,12 @@ namespace RelationalDatabase.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("Cnpj")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[Cnpj] IS NOT NULL");
 
                     b.HasIndex("Cpf")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[Cpf] IS NOT NULL");
 
                     b.ToTable("fornecedores", "general");
                 });

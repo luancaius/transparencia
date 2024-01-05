@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace RelationalDatabase.Migrations
 {
     /// <inheritdoc />
-    public partial class refatoring_migrations : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -54,6 +54,21 @@ namespace RelationalDatabase.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "fornecedores",
+                schema: "general",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Cnpj = table.Column<string>(type: "nvarchar(14)", maxLength: 14, nullable: true),
+                    Cpf = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_fornecedores", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "DeputadoDespesa",
                 schema: "congresso",
                 columns: table => new
@@ -67,7 +82,7 @@ namespace RelationalDatabase.Migrations
                     TypeReceipt = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     NumberDocument = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     IdDocument = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    SupplierId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DeputyId = table.Column<int>(type: "int", nullable: false),
                     DeputadoId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
@@ -81,10 +96,10 @@ namespace RelationalDatabase.Migrations
                         principalTable: "deputado",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_DeputadoDespesa_empresa_CompanyId",
-                        column: x => x.CompanyId,
+                        name: "FK_DeputadoDespesa_fornecedores_SupplierId",
+                        column: x => x.SupplierId,
                         principalSchema: "general",
-                        principalTable: "empresa",
+                        principalTable: "fornecedores",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -97,16 +112,39 @@ namespace RelationalDatabase.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_DeputadoDespesa_CompanyId",
-                schema: "congresso",
-                table: "DeputadoDespesa",
-                column: "CompanyId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_DeputadoDespesa_DeputadoId",
                 schema: "congresso",
                 table: "DeputadoDespesa",
                 column: "DeputadoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DeputadoDespesa_SupplierId",
+                schema: "congresso",
+                table: "DeputadoDespesa",
+                column: "SupplierId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_empresa_Cnpj",
+                schema: "general",
+                table: "empresa",
+                column: "Cnpj",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_fornecedores_Cnpj",
+                schema: "general",
+                table: "fornecedores",
+                column: "Cnpj",
+                unique: true,
+                filter: "[Cnpj] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_fornecedores_Cpf",
+                schema: "general",
+                table: "fornecedores",
+                column: "Cpf",
+                unique: true,
+                filter: "[Cpf] IS NOT NULL");
         }
 
         /// <inheritdoc />
@@ -117,11 +155,15 @@ namespace RelationalDatabase.Migrations
                 schema: "congresso");
 
             migrationBuilder.DropTable(
+                name: "empresa",
+                schema: "general");
+
+            migrationBuilder.DropTable(
                 name: "deputado",
                 schema: "congresso");
 
             migrationBuilder.DropTable(
-                name: "empresa",
+                name: "fornecedores",
                 schema: "general");
         }
     }
