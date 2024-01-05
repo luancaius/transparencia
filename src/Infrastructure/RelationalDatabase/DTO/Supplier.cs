@@ -11,8 +11,10 @@ public class Supplier : BaseEntity
 {
     [StringLength(100)] 
     public string Name { get; set; }
+    
     [StringLength(14)] 
-    public string Cnpj { get; set; }
+    public string? Cnpj { get; set; }
+    
     [StringLength(11)] 
-    public string Cpf { get; set; }
+    public string? Cpf { get; set; }
 }
