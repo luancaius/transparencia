@@ -24,7 +24,8 @@ public class DeputyService : IDeputyService
     private readonly IUnitOfWork _unitOfWork;
     private readonly ISearchDeputyRepository _searchDeputyRepository;
     private readonly ILogger _logger;
-
+    private const double THRESHOLD_VALUE = 1000;
+    
     public DeputyService(ISearchDeputyRepository searchDeputyRepository, ILogger logger,
         INonRelationalDatabase nonRelationalDatabase, IUnitOfWork unitOfWork)
     {
@@ -184,26 +185,42 @@ public class DeputyService : IDeputyService
                     continue;
                 foreach (var expense in expenses)
                 {
-                    currentExpense = expense;
-                    var expenseDto = DeputyExpenseDto.GetDtoFromMongo(expense);
-                    var expenseDomain = DeputyExpenseMapper.MapToExpense(expenseDto);
-                    var supplierDomain = expenseDomain.Supplier;
-                    var supplierEntity = SupplierMapper.MapToEntity(supplierDomain);
-                    var expenseEntity = DeputyExpenseMapper.MapToDeputyExpense(expenseDomain);
-
-                    var supplierItem = _unitOfWork.SupplierRepository.Get(a => a.Cnpj == supplierEntity.Cnpj ||
-                                                            a.Cpf == supplierEntity.Cpf);
-                    if (supplierItem == null)
+                    try
                     {
-                        _unitOfWork.SupplierRepository.Add(supplierEntity);
-                        expenseEntity.Supplier = supplierEntity;
-                    }
-                    else
-                    {
-                        expenseEntity.Supplier = supplierItem;
-                    }
+                        currentExpense = expense;
+                        var expenseDto = DeputyExpenseDto.GetDtoFromMongo(expense);
+                        var expenseDomain = DeputyExpenseMapper.MapToExpense(expenseDto);
+                        var supplierDomain = expenseDomain.Supplier;
+                        var supplierEntity = SupplierMapper.MapToEntity(supplierDomain);
+                        var expenseEntity = DeputyExpenseMapper.MapToDeputyExpense(expenseDomain);
 
-                    _unitOfWork.DeputyExpenseRepository.UpdateInsert(expenseEntity, a => a.IdDocument == expenseEntity.IdDocument);
+                        var supplierItem = _unitOfWork.SupplierRepository.Get(a => a.Cnpj == supplierEntity.Cnpj ||
+                            a.Cpf == supplierEntity.Cpf);
+                        if (supplierItem == null)
+                        {
+                            _unitOfWork.SupplierRepository.Add(supplierEntity);
+                            expenseEntity.Supplier = supplierEntity;
+                        }
+                        else
+                        {
+                            expenseEntity.Supplier = supplierItem;
+                        }
+
+                        _unitOfWork.DeputyExpenseRepository.UpdateInsert(expenseEntity,
+                            a => a.IdDocument == expenseEntity.IdDocument);
+                    }
+                    catch (Exception e)
+                    {
+                        var message = $"Expense error: {expense} - message: {e.Message}";
+                        if (expense.ValorLiquido < THRESHOLD_VALUE)
+                        {
+                            _logger.Error(message);
+                        }
+                        else
+                        {
+                            // write the expense in another table for manual analysis
+                        }
+                    }
                 }
                 await _unitOfWork.SaveChangesAsync();
             }

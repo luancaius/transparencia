@@ -36,7 +36,7 @@ namespace Repositories.DTO.NewApi.Expense
                 Id = $"{id}-{ano}-{mes}-{dadosArray.Count}";
                 if (dadosArray.Count > 0)
                 {
-                    dynamic dadosItem = dadosArray[0]; // Accessing the first item
+                    dynamic dadosItem = dadosArray[0]; 
                     HasData = true; 
                     Ano = dadosItem.ano;
                     Mes = dadosItem.mes;
@@ -63,14 +63,17 @@ namespace Repositories.DTO.NewApi.Expense
                     Mes = mes;
                     HasData = false;
                 }
-                // Process links if needed
-                // [Add link processing here if necessary]
             }
             catch (Exception ex)
             {
-                // Handle exceptions
                 Console.WriteLine("Error parsing JSON: " + ex.Message);
             }
+        }
+
+        public override string ToString()
+        {
+            return $"DeputyId {IdDeputy} Expense: {Id} - fornecedor: {NomeFornecedor} - valor: {ValorLiquido} - " +
+                   $"url: {UrlDocumento} - lote: {CodLote} - parcela: {Parcela}, data: {DataDocumento}";
         }
     }
 }
