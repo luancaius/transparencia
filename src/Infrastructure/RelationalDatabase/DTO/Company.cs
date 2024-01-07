@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace RelationalDatabase.DTO;
 
-[Table("empresa", Schema = "general")]
+[Table("empresas", Schema = "general")]
 [Index(nameof(Cnpj), IsUnique = true)] 
 public class Company : BaseEntity
 {

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace RelationalDatabase.DTO.Deputado;
 
-[Table("deputado", Schema = "congresso")]
+[Table("deputados", Schema = "congresso")]
 [Index(nameof(Cpf), IsUnique = true)] 
 public class Deputado : BaseEntity
 {
