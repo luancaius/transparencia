@@ -177,7 +177,6 @@ public class DeputyService : IDeputyService
                 currentDeputy = deputyDetailDto;
                 currentDeputyDomain = DeputyDetailDto.GetDeputyDomainFromDto(deputyDetailDto);
                 var deputyEntity = DeputyMapper.MapToDeputado(currentDeputyDomain);
-                _unitOfWork.DeputyRepository.UpdateInsert(deputyEntity, a => a.Cpf == deputyEntity.Cpf);
                 var expenses = await _nonRelationalDatabase.GetAll<DeputyExpense>(
                     a => a.HasData && a
                         .IdDeputy == deputyDetailDto.IdDeputy && a.Ano == year);
@@ -205,7 +204,8 @@ public class DeputyService : IDeputyService
                         {
                             expenseEntity.Supplier = supplierItem;
                         }
-
+                        deputyEntity.DeputyExpenses.Add(expenseEntity);
+                        _unitOfWork.DeputyRepository.UpdateInsert(deputyEntity, a => a.Cpf == deputyEntity.Cpf);
                         _unitOfWork.DeputyExpenseRepository.UpdateInsert(expenseEntity,
                             a => a.IdDocument == expenseEntity.IdDocument);
                     }
@@ -218,6 +218,7 @@ public class DeputyService : IDeputyService
                         }
                         else
                         {
+                            _logger.Fatal(message);
                             // write the expense in another table for manual analysis
                         }
                     }
