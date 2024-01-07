@@ -204,10 +204,11 @@ public class DeputyService : IDeputyService
                         {
                             expenseEntity.Supplier = supplierItem;
                         }
-                        deputyEntity.DeputyExpenses.Add(expenseEntity);
-                        _unitOfWork.DeputyRepository.UpdateInsert(deputyEntity, a => a.Cpf == deputyEntity.Cpf);
                         _unitOfWork.DeputyExpenseRepository.UpdateInsert(expenseEntity,
                             a => a.IdDocument == expenseEntity.IdDocument);
+                        deputyEntity.DeputyExpenses.Add(expenseEntity);
+                        _unitOfWork.DeputyRepository.UpdateInsert(deputyEntity, a => a.Cpf == deputyEntity.Cpf);
+                        
                     }
                     catch (Exception e)
                     {
