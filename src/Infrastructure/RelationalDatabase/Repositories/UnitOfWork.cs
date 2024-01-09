@@ -11,6 +11,8 @@ public class UnitOfWork : IUnitOfWork
     private IRepository<Deputado> _deputyRepository;
     private IRepository<Supplier> _supplierRepository;
     private IRepository<DeputyExpense> _deputyExpenseRepository;
+    private IRepository<Company> _companyRepository;
+    private IRepository<Person> _personRepository;
 
     public IRepository<Deputado> DeputyRepository
     {
@@ -27,6 +29,16 @@ public class UnitOfWork : IUnitOfWork
         get { return _deputyExpenseRepository ??= new Repository<DeputyExpense>(_context); }
     }
 
+    public IRepository<Company> CompanyRepository
+    {
+        get { return _companyRepository ??= new Repository<Company>(_context); }
+    }
+    
+    public IRepository<Person> PersonRepository
+    {
+        get { return _personRepository ??= new Repository<Person>(_context); }
+    }
+    
     public UnitOfWork(AppDbContext context)
     {
         _context = context;
@@ -56,7 +68,7 @@ public class UnitOfWork : IUnitOfWork
         GC.SuppressFinalize(this);
     }
 
-    ~UnitOfWork()  // Finalizer
+    ~UnitOfWork()
     {
         Dispose(false);
     }

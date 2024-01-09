@@ -3,7 +3,7 @@ using RelationalDatabase.DTO;
 
 namespace Services.Mapper;
 
-public static class CompanyMapper
+public static class Mapper
 {
     public static Company MapToCompany(CompanyDomain companyDomain)
     {
@@ -14,5 +14,16 @@ public static class CompanyMapper
         };
 
         return company;
+    }
+    
+    public static Person MapToPerson(PersonDomain personDomain)
+    {
+        var person = new Person
+        {
+            Cpf = personDomain.CPF.ToString(),
+            Name = personDomain.FullName
+        };
+
+        return person;
     }
 }

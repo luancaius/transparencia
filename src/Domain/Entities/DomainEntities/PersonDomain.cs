@@ -59,7 +59,7 @@ public class PersonDomain
         }
     }
 
-    public static PersonDomain CreatePerson(string name, string cpf)
+    public static PersonDomain CreateSimplePerson(string name, string cpf)
     {
         return new PersonDomain(name, cpf);
     }

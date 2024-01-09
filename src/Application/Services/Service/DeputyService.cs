@@ -1,6 +1,7 @@
 using Entities.DomainEntities;
 using Entities.ValueObject;
 using NonRelationalDatabase.Interfaces;
+using RelationalDatabase.DTO;
 using RelationalDatabase.DTO.Deputado;
 using RelationalDatabase.Interfaces;
 using Repositories.DTO.NewApi.Expense;
@@ -203,6 +204,19 @@ public class DeputyService : IDeputyService
                         else
                         {
                             expenseEntity.Supplier = supplierItem;
+                        }
+
+                        if (supplierItem.Cnpj == null)
+                        {
+                            var personDomain = PersonDomain.CreateSimplePerson(supplierItem.Name, supplierItem.Cpf);
+                            var personEntity = Mapper.Mapper.MapToPerson(personDomain);
+                            _unitOfWork.PersonRepository.UpdateInsert(personEntity, a => a.Cpf == personEntity.Cpf);
+                        }
+                        else
+                        {
+                            var companyDomain = CompanyDomain.CreateCompany(supplierItem.Name, supplierItem.Cnpj);
+                            var companyEntity = Mapper.Mapper.MapToCompany(companyDomain);
+                            _unitOfWork.CompanyRepository.UpdateInsert(companyEntity, a => a.Cnpj == companyEntity.Cnpj);
                         }
                         _unitOfWork.DeputyExpenseRepository.UpdateInsert(expenseEntity,
                             a => a.IdDocument == expenseEntity.IdDocument);
