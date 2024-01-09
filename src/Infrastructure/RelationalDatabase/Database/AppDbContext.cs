@@ -11,6 +11,7 @@ public class AppDbContext : DbContext
     public DbSet<Company> Empresas { get; set; }
     public DbSet<Supplier> Fornecedores { get; set; }
     public DbSet<DeputyExpense> DeputadoDespesas  { get; set; }
+    public DbSet<Person> Pessoas  { get; set; }
 
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
