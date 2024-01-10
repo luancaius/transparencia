@@ -194,8 +194,8 @@ public class DeputyService : IDeputyService
                         var supplierEntity = SupplierMapper.MapToEntity(supplierDomain);
                         var expenseEntity = DeputyExpenseMapper.MapToDeputyExpense(expenseDomain);
 
-                        var supplierItem = _unitOfWork.SupplierRepository.Get(a => a.Cnpj == supplierEntity.Cnpj ||
-                            a.Cpf == supplierEntity.Cpf);
+                        var supplierItem = supplierEntity.Cnpj == null? _unitOfWork.SupplierRepository.Get(a => a.Cpf == supplierEntity.Cpf)
+                        : _unitOfWork.SupplierRepository.Get(a => a.Cnpj == supplierEntity.Cnpj);
                         if (supplierItem == null)
                         {
                             _unitOfWork.SupplierRepository.Add(supplierEntity);
