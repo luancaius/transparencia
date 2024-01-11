@@ -70,6 +70,7 @@ public class DadosAbertosOldApi : IDadosAbertosOldApi
         catch (Exception ex)
         {
             _logger.Error($"An error occurred: {ex.Message}");
+            _logger.Error($"endpoint: {soapEndpoint}\n request: {soapRequest}");
         }
 
         return String.Empty;

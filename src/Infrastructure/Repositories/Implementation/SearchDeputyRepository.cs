@@ -43,7 +43,7 @@ public class SearchDeputyRepository : ISearchDeputyRepository
     {
         _logger.Information("GetDeputiesDetailOldApi");
         var deputyDetailString = await _DadosAbertosOldApi.GetDeputyRaw(legislatura, id);
-        var deputyDetail = new DeputyDetailOldApi(deputyDetailString);
+        var deputyDetail = new DeputyDetailOldApi(deputyDetailString, id);
         return deputyDetail;
     }
 

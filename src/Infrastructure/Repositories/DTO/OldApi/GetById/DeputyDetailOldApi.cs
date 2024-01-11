@@ -21,13 +21,13 @@ namespace Repositories.DTO.OldApi.GetById;
         public List<PeriodoExercicio> PeriodosExercicio { get; set; }
         public List<ItemHistoricoLider> HistoricoLider { get; set; }
 
-    public DeputyDetailOldApi(string deputyDetailOldApiRaw)
+    public DeputyDetailOldApi(string deputyDetailOldApiRaw, int id)
     {
         try
         {
             if (string.IsNullOrEmpty(deputyDetailOldApiRaw))
             {
-                return;
+                throw new Exception($"Erro on id: {id}");
             }
             XDocument doc = XDocument.Parse(deputyDetailOldApiRaw);
             XNamespace ns = "";
