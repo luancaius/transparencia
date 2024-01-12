@@ -59,12 +59,21 @@ public class DeputyService : IDeputyService
         }
 
         var deputiesDetailListOldApi = new List<DeputyDetailOldApi>();
-        DeputiesListOldApi deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
-        foreach (var deputy in deputiesListOldApi.DeputiesOldApi)
+        var currentYear = DateTime.Now.Year;
+        var legislaturaObj = Legislatura.CriarLegislaturaPorAno(currentYear);
+        if (legislatura!= legislaturaObj.Numero)
         {
-            var id = Convert.ToInt32(deputy.IdeCadastro);
-            var deputyDetailOldApi = await _searchDeputyRepository.GetDeputyDetailOldApi(legislatura, id);
-            deputiesDetailListOldApi.Add(deputyDetailOldApi);
+            _logger.Warning($"Cannot get deputy details for legislatura {legislatura} because it is not the current one");
+        }
+        else
+        {
+            DeputiesListOldApi deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
+            foreach (var deputy in deputiesListOldApi.DeputiesOldApi)
+            {
+                var id = Convert.ToInt32(deputy.IdeCadastro);
+                var deputyDetailOldApi = await _searchDeputyRepository.GetDeputyDetailOldApi(legislatura, id);
+                deputiesDetailListOldApi.Add(deputyDetailOldApi);
+            }
         }
 
         var deputiesDetailList = new DeputiesDetailListDto(deputiesDetailListOldApi, deputiesDetailListNewApi);
