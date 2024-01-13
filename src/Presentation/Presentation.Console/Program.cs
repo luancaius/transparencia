@@ -25,7 +25,7 @@ namespace Presentation.Console
         
         public static async Task ExecuteConsole(IDeputyService _deputyService, IPersonService _personService)
         {
-            string command = "bb";
+            string command = "g";
 
             System.Console.WriteLine($"Executing command {command}");
             switch (command)
@@ -51,6 +51,9 @@ namespace Presentation.Console
                     break;
                 case "f":
                     await _deputyService.RefreshRelationalDbFromNonRelationalDb(2022);
+                    break;
+                case "g":
+                    await _deputyService.RefreshDeputyDetailRelationalDb();
                     break;
                 default:
                     System.Console.WriteLine("Invalid command. Please try again.");

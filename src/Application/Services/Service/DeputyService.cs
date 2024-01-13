@@ -26,7 +26,7 @@ public class DeputyService : IDeputyService
     private readonly ISearchDeputyRepository _searchDeputyRepository;
     private readonly ILogger _logger;
     private const double THRESHOLD_VALUE = 1000;
-    
+
     public DeputyService(ISearchDeputyRepository searchDeputyRepository, ILogger logger,
         INonRelationalDatabase nonRelationalDatabase, IUnitOfWork unitOfWork)
     {
@@ -61,11 +61,7 @@ public class DeputyService : IDeputyService
         var deputiesDetailListOldApi = new List<DeputyDetailOldApi>();
         var currentYear = DateTime.Now.Year;
         var legislaturaObj = Legislatura.CriarLegislaturaPorAno(currentYear);
-        if (legislatura!= legislaturaObj.Numero)
-        {
-            _logger.Warning($"Cannot get deputy details for legislatura {legislatura} because it is not the current one");
-        }
-        else
+        if (legislatura == legislaturaObj.Numero)
         {
             DeputiesListOldApi deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
             foreach (var deputy in deputiesListOldApi.DeputiesOldApi)
@@ -75,12 +71,17 @@ public class DeputyService : IDeputyService
                 deputiesDetailListOldApi.Add(deputyDetailOldApi);
             }
         }
+        else
+        {
+            _logger.Warning(
+                $"Cannot get deputy details for legislatura {legislatura} because it is not the current one");
+        }
 
         var deputiesDetailList = new DeputiesDetailListDto(deputiesDetailListOldApi, deputiesDetailListNewApi);
 
         return deputiesDetailList;
     }
-    
+
     public async Task RefreshDeputyDetails(int year)
     {
         var legislaturaObj = Legislatura.CriarLegislaturaPorAno(year);
@@ -116,6 +117,7 @@ public class DeputyService : IDeputyService
                     DeputyExpense deputyExpense = await _searchDeputyRepository.GetDeputyExpense(year, month, id);
                     await _nonRelationalDatabase.CheckAndUpdate(deputyExpense);
                 }
+
                 counter++;
             }
             catch (Exception ex)
@@ -123,6 +125,7 @@ public class DeputyService : IDeputyService
                 _logger.Error(ex, $"Error on deputy new api {deputy.Id}");
             }
         }
+
         _logger.Information("Database RefreshNewApi refreshed");
     }
 
@@ -132,7 +135,7 @@ public class DeputyService : IDeputyService
         var legislatura = legislaturaObj.Numero;
         _logger.Information($"RefreshNewApi {legislatura} {year}");
         int counter = 0;
-        
+
         var deputiesListOldApi = await _searchDeputyRepository.GetAllDeputiesOldApi(legislatura);
         var total = deputiesListOldApi.DeputiesOldApi.Count;
         foreach (var deputy in deputiesListOldApi.DeputiesOldApi)
@@ -153,6 +156,7 @@ public class DeputyService : IDeputyService
                         await _searchDeputyRepository.GetDeputyWorkPresence(year, month, matricula);
                     await _nonRelationalDatabase.CheckAndUpdate(deputyWorkPresence);
                 }
+
                 counter++;
             }
             catch (Exception e)
@@ -160,15 +164,46 @@ public class DeputyService : IDeputyService
                 _logger.Error(e, $"Error on deputy old api {deputy.IdeCadastro}");
             }
         }
+
         _logger.Information("Database RefreshOldApi refreshed");
     }
-    
+
     public async Task RefreshAllMongoDb(int year)
     {
         await RefreshNewApi(year);
         await RefreshOldApi(year);
     }
-    
+
+    public async Task RefreshDeputyDetailRelationalDb()
+    {
+        DeputyDetailDto currentDeputy = null;
+        try
+        {
+            _logger.Information($"RefreshDeputyDetailRelationalDb");
+
+            IEnumerable<DeputyDetailDto> deputiesDetailDtos =
+                await _nonRelationalDatabase.GetAll<DeputyDetailDto>();
+
+            foreach (DeputyDetailDto deputyDetailDto in deputiesDetailDtos)
+            {
+                currentDeputy = deputyDetailDto;
+                var deputyDomain = DeputyDetailDto.GetDeputyDomainFromDto(deputyDetailDto);
+                var deputyEntity = DeputyMapper.MapToDeputado(deputyDomain);
+
+                _unitOfWork.DeputyRepository.UpdateInsert(deputyEntity, a => a.Cpf == deputyEntity.Cpf);
+            }
+
+            await _unitOfWork.SaveChangesAsync();
+        }
+        catch (Exception ex)
+        {
+            _logger.Error(
+                $"An error occurred while refreshing the database from the non-relational database: {currentDeputy} {ex.Message}");
+            throw;
+        }
+    }
+
+
     public async Task RefreshRelationalDbFromNonRelationalDb(int year)
     {
         DeputyDetailDto currentDeputy = null;
@@ -179,7 +214,7 @@ public class DeputyService : IDeputyService
             _logger.Information($"RefreshRelationalDbFromNonRelationalDb {year}");
 
             var legislaturaObj = Legislatura.CriarLegislaturaPorAno(year);
-            IEnumerable<DeputyDetailDto> deputiesDetailDtos = 
+            IEnumerable<DeputyDetailDto> deputiesDetailDtos =
                 await _nonRelationalDatabase.GetAll<DeputyDetailDto>(a => a.IdLegislatura == legislaturaObj.Numero);
 
             foreach (DeputyDetailDto deputyDetailDto in deputiesDetailDtos)
@@ -190,7 +225,7 @@ public class DeputyService : IDeputyService
                 var expenses = await _nonRelationalDatabase.GetAll<DeputyExpense>(
                     a => a.HasData && a
                         .IdDeputy == deputyDetailDto.IdDeputy && a.Ano == year);
-                if(expenses.Count == 0)
+                if (expenses.Count == 0)
                     continue;
                 foreach (var expense in expenses)
                 {
@@ -203,8 +238,9 @@ public class DeputyService : IDeputyService
                         var supplierEntity = SupplierMapper.MapToEntity(supplierDomain);
                         var expenseEntity = DeputyExpenseMapper.MapToDeputyExpense(expenseDomain);
 
-                        var supplierItem = supplierEntity.Cnpj == null? _unitOfWork.SupplierRepository.Get(a => a.Cpf == supplierEntity.Cpf)
-                        : _unitOfWork.SupplierRepository.Get(a => a.Cnpj == supplierEntity.Cnpj);
+                        var supplierItem = supplierEntity.Cnpj == null
+                            ? _unitOfWork.SupplierRepository.Get(a => a.Cpf == supplierEntity.Cpf)
+                            : _unitOfWork.SupplierRepository.Get(a => a.Cnpj == supplierEntity.Cnpj);
                         if (supplierItem == null)
                         {
                             _unitOfWork.SupplierRepository.Add(supplierEntity);
@@ -225,13 +261,14 @@ public class DeputyService : IDeputyService
                         {
                             var companyDomain = CompanyDomain.CreateCompany(supplierItem.Name, supplierItem.Cnpj);
                             var companyEntity = Mapper.Mapper.MapToCompany(companyDomain);
-                            _unitOfWork.CompanyRepository.UpdateInsert(companyEntity, a => a.Cnpj == companyEntity.Cnpj);
+                            _unitOfWork.CompanyRepository.UpdateInsert(companyEntity,
+                                a => a.Cnpj == companyEntity.Cnpj);
                         }
+
                         _unitOfWork.DeputyExpenseRepository.UpdateInsert(expenseEntity,
                             a => a.IdDocument == expenseEntity.IdDocument);
                         deputyEntity.DeputyExpenses.Add(expenseEntity);
                         _unitOfWork.DeputyRepository.UpdateInsert(deputyEntity, a => a.Cpf == deputyEntity.Cpf);
-                        
                     }
                     catch (Exception e)
                     {
@@ -247,12 +284,14 @@ public class DeputyService : IDeputyService
                         }
                     }
                 }
+
                 await _unitOfWork.SaveChangesAsync();
             }
         }
         catch (Exception ex)
         {
-            _logger.Error($"An error occurred while refreshing the database from the non-relational database for the year {year}: {currentDeputy} {currentExpense} {ex.Message}");
+            _logger.Error(
+                $"An error occurred while refreshing the database from the non-relational database for the year {year}: {currentDeputy} {currentExpense} {ex.Message}");
             throw;
         }
     }

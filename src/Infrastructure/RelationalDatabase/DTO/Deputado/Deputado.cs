@@ -24,7 +24,7 @@ public class Deputado : BaseEntity
 
     public DateTime DataNascimento { get; set; }
 
-    [StringLength(2)]
+    [StringLength(20)]
     public string UfNascimento { get; set; }
 
     [StringLength(10)]
