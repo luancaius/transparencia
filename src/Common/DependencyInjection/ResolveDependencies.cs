@@ -72,7 +72,6 @@ public class ResolveDependencies
             Console.WriteLine($"Redis is not running: ${e.Message}");
             var memoryCache = new MemoryCache(new MemoryCacheOptions());
             services.AddSingleton<IMemoryCache>(memoryCache);
-            services.AddTransient<IDatabase>(_ => null); // No Redis, so provide a null database
             services.AddTransient<ICacheRepository, MemoryCacheRepository>();
         }
 

@@ -26,13 +26,18 @@ public class MongoDbHelper
         }
     }
     
-    public List<T> GetData<T>(string collectionName, FilterDefinition<T> filter = null)
+    public List<T> GetData<T>(string collectionName, FilterDefinition<T>? filter = null)
     {
         try
         {
             var collection = _database.GetCollection<T>(collectionName);
             filter ??= Builders<T>.Filter.Empty;
-            return collection.Find(filter).ToList();
+            var result =  collection.Find(filter);
+            if (result.Any())
+            {
+                return result.ToList();
+            }
+            return new List<T>();
         }
         catch (Exception e)
         {
@@ -56,7 +61,7 @@ public class MongoDbHelper
         }
     }
     
-    public bool DeleteData<T>(string collectionName, FilterDefinition<T> filter)
+    public bool DeleteData<T>(string collectionName, FilterDefinition<T>? filter)
     {
         try
         {

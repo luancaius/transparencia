@@ -31,7 +31,7 @@ public class MongoDb : INonRelationalDatabase
         _logger.Information($"CheckAndUpdate {entity.GetType()} id: {id}");
 
         string collectionName = typeof(T).Name;
-        FilterDefinition<T> filter = Builders<T>.Filter.Eq("Id", id); // Assuming the entity has an Id property
+        FilterDefinition<T>? filter = Builders<T>.Filter.Eq("Id", id); // Assuming the entity has an Id property
         var originalEntity = _mongoDbHelper.GetData(collectionName, filter).FirstOrDefault();
         if (originalEntity == null)
         {
@@ -52,21 +52,21 @@ public class MongoDb : INonRelationalDatabase
         return Task.CompletedTask;
     }
 
-    public async Task<T> Get<T>(string id)
+    public Task<T?> Get<T>(string id)
     {
         string collectionName = typeof(T).Name;
-        FilterDefinition<T> filter = Builders<T>.Filter.Eq("Id", id); // Assuming the entity has an Id property
+        FilterDefinition<T>? filter = Builders<T>.Filter.Eq("Id", id); // Assuming the entity has an Id property
         var result = _mongoDbHelper.GetData(collectionName, filter);
-        return result.FirstOrDefault();
+        return Task.FromResult(result.FirstOrDefault());
     }
 
-    public async Task<List<T>> GetAll<T>(Expression<Func<T, bool>>? filterExpression = null)
+    public Task<List<T>> GetAll<T>(Expression<Func<T, bool>>? filterExpression = null)
     {
         string collectionName = typeof(T).Name;
-        FilterDefinition<T> filter = filterExpression != null ? 
+        FilterDefinition<T>? filter = filterExpression != null ? 
             Builders<T>.Filter.Where(filterExpression) : 
             Builders<T>.Filter.Empty;
         var result = _mongoDbHelper.GetData<T>(collectionName, filter);
-        return result;
+        return Task.FromResult(result);
     }   
 }
