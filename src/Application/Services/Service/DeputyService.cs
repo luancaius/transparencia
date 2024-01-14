@@ -204,18 +204,16 @@ public class DeputyService : IDeputyService
     }
 
 
-    public async Task RefreshRelationalDbFromNonRelationalDb(int year)
+    public async Task RefreshRelationalDbFromNonRelationalDb()
     {
         DeputyDetailDto currentDeputy = null;
         DeputyDomain currentDeputyDomain = null;
         DeputyExpense currentExpense = null;
         try
         {
-            _logger.Information($"RefreshRelationalDbFromNonRelationalDb {year}");
+            _logger.Information($"RefreshRelationalDbFromNonRelationalDb ");
 
-            var legislaturaObj = Legislatura.CriarLegislaturaPorAno(year);
-            IEnumerable<DeputyDetailDto> deputiesDetailDtos =
-                await _nonRelationalDatabase.GetAll<DeputyDetailDto>(a => a.IdLegislatura == legislaturaObj.Numero);
+            IEnumerable<DeputyDetailDto> deputiesDetailDtos = await _nonRelationalDatabase.GetAll<DeputyDetailDto>();
 
             foreach (DeputyDetailDto deputyDetailDto in deputiesDetailDtos)
             {
@@ -223,8 +221,7 @@ public class DeputyService : IDeputyService
                 currentDeputyDomain = DeputyDetailDto.GetDeputyDomainFromDto(deputyDetailDto);
                 var deputyEntity = DeputyMapper.MapToDeputado(currentDeputyDomain);
                 var expenses = await _nonRelationalDatabase.GetAll<DeputyExpense>(
-                    a => a.HasData && a
-                        .IdDeputy == deputyDetailDto.IdDeputy && a.Ano == year);
+                    a => a.HasData && a.IdDeputy == deputyDetailDto.IdDeputy);
                 if (expenses.Count == 0)
                     continue;
                 foreach (var expense in expenses)
@@ -251,15 +248,19 @@ public class DeputyService : IDeputyService
                             expenseEntity.Supplier = supplierItem;
                         }
 
-                        if (supplierItem.Cnpj == null)
+                        var supplierName = supplierItem == null ? supplierEntity.Name : supplierItem.Name;
+                        var supplierCpf = supplierItem == null ? supplierEntity.Cpf : supplierItem.Cpf;
+                        var supplierCnpj = supplierItem == null ? supplierEntity.Cnpj : supplierItem.Cnpj;
+
+                        if (supplierCpf != null)
                         {
-                            var personDomain = PersonDomain.CreateSimplePerson(supplierItem.Name, supplierItem.Cpf);
+                            var personDomain = PersonDomain.CreateSimplePerson(supplierName, supplierCpf);
                             var personEntity = Mapper.Mapper.MapToPerson(personDomain);
                             _unitOfWork.PersonRepository.UpdateInsert(personEntity, a => a.Cpf == personEntity.Cpf);
                         }
                         else
                         {
-                            var companyDomain = CompanyDomain.CreateCompany(supplierItem.Name, supplierItem.Cnpj);
+                            var companyDomain = CompanyDomain.CreateCompany(supplierName, supplierCnpj);
                             var companyEntity = Mapper.Mapper.MapToCompany(companyDomain);
                             _unitOfWork.CompanyRepository.UpdateInsert(companyEntity,
                                 a => a.Cnpj == companyEntity.Cnpj);
@@ -291,7 +292,7 @@ public class DeputyService : IDeputyService
         catch (Exception ex)
         {
             _logger.Error(
-                $"An error occurred while refreshing the database from the non-relational database for the year {year}: {currentDeputy} {currentExpense} {ex.Message}");
+                $"An error occurred while refreshing the database from the non-relational database: {currentDeputy} {currentExpense} {ex.Message}");
             throw;
         }
     }

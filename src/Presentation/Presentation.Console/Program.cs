@@ -25,7 +25,7 @@ namespace Presentation.Console
         
         public static async Task ExecuteConsole(IDeputyService _deputyService, IPersonService _personService)
         {
-            string command = "g";
+            string command = "f";
 
             System.Console.WriteLine($"Executing command {command}");
             switch (command)
@@ -50,7 +50,7 @@ namespace Presentation.Console
                     await _deputyService.RefreshOldApi(2022);
                     break;
                 case "f":
-                    await _deputyService.RefreshRelationalDbFromNonRelationalDb(2022);
+                    await _deputyService.RefreshRelationalDbFromNonRelationalDb();
                     break;
                 case "g":
                     await _deputyService.RefreshDeputyDetailRelationalDb();

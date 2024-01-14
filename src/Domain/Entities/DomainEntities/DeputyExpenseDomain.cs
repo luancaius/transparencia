@@ -22,7 +22,7 @@ public class DeputyExpenseDomain
         DeputyId = deputyId;
         AmountDocument = amountDocument;
         AmountFinal = amountFinal;
-        ReceiptUrl = receiptUrl;
+        ReceiptUrl = receiptUrl ?? "Sem nota fiscal";
         TypeExpense = typeExpense;
         TypeReceipt = typeReceipt;
         NumberDocument = numberDocument;

@@ -11,6 +11,6 @@ public interface IDeputyService
     Task RefreshNewApi(int year);
     Task RefreshOldApi(int year);
     Task RefreshAllMongoDb(int year);
-    Task RefreshRelationalDbFromNonRelationalDb(int year);
+    Task RefreshRelationalDbFromNonRelationalDb();
     Task RefreshDeputyDetailRelationalDb();
 }
