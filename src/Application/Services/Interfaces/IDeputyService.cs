@@ -13,4 +13,5 @@ public interface IDeputyService
     Task RefreshAllMongoDb(int year);
     Task RefreshRelationalDbFromNonRelationalDb();
     Task RefreshDeputyDetailRelationalDb();
+    Task DownloadReceipts(string url);
 }

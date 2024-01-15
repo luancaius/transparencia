@@ -1,17 +1,13 @@
 using Entities.DomainEntities;
 using Entities.ValueObject;
 using NonRelationalDatabase.Interfaces;
-using RelationalDatabase.DTO;
-using RelationalDatabase.DTO.Deputado;
 using RelationalDatabase.Interfaces;
-using Repositories.DTO.NewApi.Expense;
 using Repositories.DTO.NewApi.GetAll;
 using Repositories.DTO.NewApi.GetById;
 using Repositories.DTO.OldApi.GetAll;
 using Repositories.DTO.OldApi.GetById;
 using Repositories.Interfaces;
 using Serilog;
-using Services.DTO;
 using Services.DTO.Deputy;
 using Services.Interfaces;
 using Services.Mapper;
@@ -203,7 +199,6 @@ public class DeputyService : IDeputyService
         }
     }
 
-
     public async Task RefreshRelationalDbFromNonRelationalDb()
     {
         DeputyDetailDto currentDeputy = null;
@@ -214,9 +209,11 @@ public class DeputyService : IDeputyService
             _logger.Information($"RefreshRelationalDbFromNonRelationalDb ");
 
             IEnumerable<DeputyDetailDto> deputiesDetailDtos = await _nonRelationalDatabase.GetAll<DeputyDetailDto>();
-
+            var totalDeputies = deputiesDetailDtos.Count();
+            var counterDeputies = 0;
             foreach (DeputyDetailDto deputyDetailDto in deputiesDetailDtos)
             {
+                counterDeputies++;
                 currentDeputy = deputyDetailDto;
                 currentDeputyDomain = DeputyDetailDto.GetDeputyDomainFromDto(deputyDetailDto);
                 var deputyEntity = DeputyMapper.MapToDeputado(currentDeputyDomain);
@@ -224,8 +221,13 @@ public class DeputyService : IDeputyService
                     a => a.HasData && a.IdDeputy == deputyDetailDto.IdDeputy);
                 if (expenses.Count == 0)
                     continue;
+                var totalExpenses = expenses.Count();
+                var counterExpenses = 0;
                 foreach (var expense in expenses)
                 {
+                    counterExpenses++;
+                    _logger.Information(
+                        $"RefreshRelationalDbFromNonRelationalDb {counterDeputies}/{totalDeputies} {counterExpenses}/{totalExpenses}");
                     try
                     {
                         currentExpense = expense;
@@ -295,5 +297,14 @@ public class DeputyService : IDeputyService
                 $"An error occurred while refreshing the database from the non-relational database: {currentDeputy} {currentExpense} {ex.Message}");
             throw;
         }
+    }
+    
+    public Task DownloadReceipts(string url)
+    {
+        // check if it's a url
+        // create the record
+        // send to another project to download the file
+        // use the file to update the record
+        throw new NotImplementedException();
     }
 }
