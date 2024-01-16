@@ -25,7 +25,7 @@ namespace Presentation.Console
         
         public static async Task ExecuteConsole(IDeputyService _deputyService, IPersonService _personService)
         {
-            string command = "f";
+            string command = "d";
 
             System.Console.WriteLine($"Executing command {command}");
             switch (command)
@@ -44,7 +44,7 @@ namespace Presentation.Console
                     await _deputyService.RefreshAllMongoDb(2023);
                     break;
                 case "d":
-                    await _deputyService.RefreshNewApi(2022);
+                    await _deputyService.RefreshNewApi(2023);
                     break;
                 case "e":
                     await _deputyService.RefreshOldApi(2022);
