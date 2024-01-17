@@ -37,31 +37,9 @@ public class PersonDomain
         }
     }
 
-    private PersonDomain(string name, string cpf)
-    {
-        try
-        {
-            FullName = name;
-            CPF = new Cpf(cpf);
-            Email = new Email("");
-            Gender = Gender.Unknown;
-            EstadoNascimento = Estado.SemInformacao;
-            DateOfBirth = null;
-
-        }
-        catch (ArgumentException ex)
-        {
-            throw new ArgumentException($"Erro ao processar dados de PersonDomain: {ex.Message}", ex);
-        }
-        catch (Exception ex)
-        {
-            throw new Exception($"Erro inesperado ao criar PersonDomain: {ex.Message}", ex);
-        }
-    }
-
     public static PersonDomain CreateSimplePerson(string name, string cpf)
     {
-        return new PersonDomain(name, cpf);
+        return new PersonDomain(name, "", name, DateTime.MinValue, "", "", cpf, "");
     }
     
     public static PersonDomain CreatePerson(string firstName, string lastName, string fullName,

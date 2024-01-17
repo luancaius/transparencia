@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0_Domain", "0_Domain", "{B6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_Application", "1_Application", "{326D4996-0CE4-4154-A597-ED910C9B2382}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Domain\Entities\Entities.csproj", "{E5262E97-D5DD-45CA-A990-AA47A6CAC2FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "0_Domain\Entities\Entities.csproj", "{E5262E97-D5DD-45CA-A990-AA47A6CAC2FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Application\Services\Services.csproj", "{EB584E11-10CF-4E11-99EF-0D19E9ACEE0C}"
 EndProject
