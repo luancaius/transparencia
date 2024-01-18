@@ -23,7 +23,7 @@
 
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Domain\Entities\Entities.csproj" />
+      <ProjectReference Include="..\..\0_Domain\Entities\Entities.csproj" />
     </ItemGroup>
 
 

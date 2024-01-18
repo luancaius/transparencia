@@ -1,4 +1,3 @@
-using Entities.DomainEntities;
 using Microsoft.EntityFrameworkCore;
 using RelationalDatabase.DTO;
 using RelationalDatabase.DTO.Deputado;
