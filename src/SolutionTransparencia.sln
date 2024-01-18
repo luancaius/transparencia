@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3_Infrastructure", "3_Infrastructure", "{435BA3BE-43EC-4AD3-A601-46AD676CCDC2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2_Presentation", "2_Presentation", "{8843EE94-3467-4D26-9258-6D346C8D5DF3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2_Presenters", "2_Presenters", "{8843EE94-3467-4D26-9258-6D346C8D5DF3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0_Domain", "0_Domain", "{B601157C-1DE9-4110-AD2A-03D9B04F8B11}"
 EndProject
@@ -33,7 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{21423E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "Common\DependencyInjection\DependencyInjection.csproj", "{A502E984-8423-496C-ADC3-62EEA7274CBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.Console", "Presentation\Presentation.Console\Presentation.Console.csproj", "{7FDBE304-24CD-45BD-B90F-FEAB64CA0533}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.Console", "2_Presenters\Presentation.Console\Presentation.Console.csproj", "{7FDBE304-24CD-45BD-B90F-FEAB64CA0533}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Common\Logging\Logging.csproj", "{F0F51212-49BF-4374-994D-E79A8C6CB3BD}"
 EndProject
