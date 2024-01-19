@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Common\Logging\Logging.csproj" />
-      <ProjectReference Include="..\CacheDatabase\CacheDatabase.csproj" />
+      <ProjectReference Include="..\..\Shared\Logging\Logging.csproj" />
+      <ProjectReference Include="..\..\3_Databases\CacheDatabase\CacheDatabase.csproj" />
     </ItemGroup>
 
 

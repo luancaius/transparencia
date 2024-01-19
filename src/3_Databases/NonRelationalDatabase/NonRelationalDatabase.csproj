@@ -15,8 +15,8 @@
 
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Common\Logging\Logging.csproj" />
-      <ProjectReference Include="..\Repositories\Repositories.csproj" />
+      <ProjectReference Include="..\..\Shared\Logging\Logging.csproj" />
+      <ProjectReference Include="..\2_Gateways\Repositories\Repositories.csproj" />
     </ItemGroup>
 
 </Project>
