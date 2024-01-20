@@ -9,7 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\1_UseCases\Services\Services.csproj" />
-      <ProjectReference Include="..\..\Common\DependencyInjection\DependencyInjection.csproj" />
+      <ProjectReference Include="..\..\Shared\DependencyInjection\DependencyInjection.csproj" />
     </ItemGroup>
 
     <ItemGroup>

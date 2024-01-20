@@ -29,11 +29,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "2_Gateways\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{21423E5B-151F-4093-A3F2-88EEDCBCC861}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "Common\DependencyInjection\DependencyInjection.csproj", "{A502E984-8423-496C-ADC3-62EEA7274CBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "Shared\DependencyInjection\DependencyInjection.csproj", "{A502E984-8423-496C-ADC3-62EEA7274CBE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.Console", "2_Presenters\Presentation.Console\Presentation.Console.csproj", "{7FDBE304-24CD-45BD-B90F-FEAB64CA0533}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Common\Logging\Logging.csproj", "{F0F51212-49BF-4374-994D-E79A8C6CB3BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Shared\Logging\Logging.csproj", "{F0F51212-49BF-4374-994D-E79A8C6CB3BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2_Gateways", "2_Gateways", "{2AC9AE22-1E03-4330-98C9-180E0437650E}"
 EndProject
