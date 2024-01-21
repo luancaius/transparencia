@@ -7,8 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="DTO\" />
       <Folder Include="Mapper\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\0_Domain\Entities\Entities.csproj" />
     </ItemGroup>
 
 </Project>

@@ -2,6 +2,6 @@ namespace DeputyUseCase.Interfaces;
 
 public interface IDeputyUseCase
 {
-    Task GetDeputies(int legislatura);
-    Task GetDeputiesExpenses(int year);
+    Task GetAndStoreDeputiesDetailsInfo(int year);
+    Task GetAndStoreDeputiesExpenses(int year);
 }
