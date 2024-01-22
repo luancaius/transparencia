@@ -1,17 +1,26 @@
 using DeputyUseCase.DTO;
 using DeputyUseCase.Interfaces;
 using Entities.ValueObject;
+using Gateways.Interfaces;
 
 namespace DeputyUseCase.Implementation;
 
 public class DeputyUseCase : IDeputyUseCase
 {
-    public Task GetAndStoreDeputiesDetailsInfo(int year)
+    private readonly IDeputiesGateway _deputiesGateway;
+
+    public DeputyUseCase(IDeputiesGateway deputiesGateway)
     {
-        // TODO: get all deputies for the legislatura using new api call throw gateways
+        _deputiesGateway = deputiesGateway;
+    }
+    public async Task GetAndStoreDeputiesDetailsInfo(int year)
+    {
         var legislaturaVO = Legislatura.CriarLegislaturaPorAno(year);
-        List<DeputyListItem> deputiesListItem = await _gateway.GetDeputiesList(legislaturaVO.Numero);
-        // TODO: for each deputy, get deputy details using new api call throw gateways
+        var deputiesListItem = await _deputiesGateway.GetDeputiesList(legislaturaVO.Numero);
+        foreach (var deputyListItem in deputiesListItem)
+        {
+            
+        }
         // TODO: for each detail info, save on mongodb
         // TODO: after calling all deputies, save on relational db
         throw new NotImplementedException();
