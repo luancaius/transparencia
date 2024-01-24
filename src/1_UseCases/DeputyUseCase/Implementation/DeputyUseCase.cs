@@ -19,9 +19,9 @@ public class DeputyUseCase : IDeputyUseCase
         var deputiesListItem = await _deputiesGateway.GetDeputiesList(legislaturaVO.Numero);
         foreach (var deputyListItem in deputiesListItem)
         {
+            var deputyDetailInfo = await _deputiesGateway.GetDeputyDetailInfo(deputyListItem.Id);
             
         }
-        // TODO: for each detail info, save on mongodb
         // TODO: after calling all deputies, save on relational db
         throw new NotImplementedException();
     }

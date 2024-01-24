@@ -9,4 +9,9 @@ public class DeputiesGateway : IDeputiesGateway
     {
         throw new NotImplementedException();
     }
+
+    public Task<DeputyDetailInfo> GetDeputyDetailInfo(string id)
+    {
+        throw new NotImplementedException();
+    }
 }
