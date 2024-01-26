@@ -1,7 +1,11 @@
 using CacheDatabase.Interfaces;
 using CacheDatabase.Repositories;
+using DeputyUseCase.Implementation;
+using DeputyUseCase.Interfaces;
 using ExternalAPI.Implementation;
 using ExternalAPI.Interfaces;
+using Gateways.Implementation;
+using Gateways.Interfaces;
 using Logging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
@@ -84,6 +88,26 @@ public class ResolveDependencies
         services.AddTransient<ISearchDeputyRepository, SearchDeputyRepository>();
         #endregion
 
+        #region External API
+        
+
+        #endregion
+        
+        #region Database
+
+        #endregion
+        
+        #region Repositories
+        
+        services.AddTransient<IDeputiesGateway, DeputiesGateway>();
+        
+        #endregion
+        
+        #region UseCase
+        services.AddTransient<IDeputyUseCase, DeputyUseCaseImpl>();
+        #endregion
+        
+        
         #region Application
         services.AddTransient<IDeputyService, DeputyService>();       
         services.AddTransient<IPersonService, PersonService>();       

@@ -1,5 +1,7 @@
 ﻿using DependencyInjection;
-using Services.Interfaces;
+using DeputyUseCase.Implementation;
+using DeputyUseCase.Interfaces;
+
 
 namespace Presentation.Console
 {
@@ -10,11 +12,9 @@ namespace Presentation.Console
             try 
             {
                 var resolver = new ResolveDependencies();
-            
-                var _deputyService = resolver.Resolve<IDeputyService>();
-                var _personService = resolver.Resolve<IPersonService>();
+                var deputyUseCase = resolver.Resolve<IDeputyUseCase>();
 
-                await ExecuteConsole(_deputyService, _personService);            
+                await ExecuteConsole(deputyUseCase);            
             }
             catch (Exception ex)
             {
@@ -23,37 +23,15 @@ namespace Presentation.Console
 
         }
         
-        public static async Task ExecuteConsole(IDeputyService _deputyService, IPersonService _personService)
+        public static async Task ExecuteConsole(IDeputyUseCase deputyUseCase)
         {
-            string command = "d";
+            string command = "a";
 
             System.Console.WriteLine($"Executing command {command}");
             switch (command)
             {
                 case "a":
-                    var deputies = await _deputyService.GetDeputiesListExternalApi(57);
-                    System.Console.WriteLine(deputies);
-                    break;
-                case "b":
-                    await _deputyService.GetDeputiesDetailListExternalApi(57);
-                    break;
-                case "bb":
-                    await _deputyService.RefreshDeputyDetails(2022);
-                    break;
-                case "c":
-                    await _deputyService.RefreshAllMongoDb(2023);
-                    break;
-                case "d":
-                    await _deputyService.RefreshNewApi(2023);
-                    break;
-                case "e":
-                    await _deputyService.RefreshOldApi(2022);
-                    break;
-                case "f":
-                    await _deputyService.RefreshRelationalDbFromNonRelationalDb();
-                    break;
-                case "g":
-                    await _deputyService.RefreshDeputyDetailRelationalDb();
+                    await deputyUseCase.GetAndStoreDeputiesDetailsInfo(2023);
                     break;
                 default:
                     System.Console.WriteLine("Invalid command. Please try again.");

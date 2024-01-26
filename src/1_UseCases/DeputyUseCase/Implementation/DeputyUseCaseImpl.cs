@@ -2,14 +2,16 @@ using DeputyUseCase.DTO;
 using DeputyUseCase.Interfaces;
 using Entities.ValueObject;
 using Gateways.Interfaces;
+using Repositories.Interfaces;
 
 namespace DeputyUseCase.Implementation;
 
-public class DeputyUseCase : IDeputyUseCase
+public class DeputyUseCaseImpl : IDeputyUseCase
 {
     private readonly IDeputiesGateway _deputiesGateway;
+    private readonly IRepository _repository;
 
-    public DeputyUseCase(IDeputiesGateway deputiesGateway)
+    public DeputyUseCaseImpl(IDeputiesGateway deputiesGateway)
     {
         _deputiesGateway = deputiesGateway;
     }
