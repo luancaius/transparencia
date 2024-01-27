@@ -22,8 +22,8 @@ public class DeputyUseCaseImpl : IDeputyUseCase
         foreach (var deputyListItem in deputiesListItem)
         {
             var deputyDetailInfo = await _deputiesGateway.GetDeputyDetailInfo(deputyListItem.Id);
-            Mapper.MapToRepository
-            _repository.SaveNonRelationalData(deputyDetailInfo);
+            // Mapper.MapToRepository
+            // _repository.SaveNonRelationalData(deputyDetailInfo);
         }
     }
 
