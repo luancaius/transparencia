@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Mapper\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\..\0_Domain\Entities\Entities.csproj" />
       <ProjectReference Include="..\..\2_Gateways\Gateways\Gateways.csproj" />
       <ProjectReference Include="..\..\2_Gateways\Repositories\Repositories.csproj" />

@@ -22,10 +22,9 @@ public class DeputyUseCaseImpl : IDeputyUseCase
         foreach (var deputyListItem in deputiesListItem)
         {
             var deputyDetailInfo = await _deputiesGateway.GetDeputyDetailInfo(deputyListItem.Id);
-            
+            Mapper.MapToRepository
+            _repository.SaveNonRelationalData(deputyDetailInfo);
         }
-        // TODO: after calling all deputies, save on relational db
-        throw new NotImplementedException();
     }
 
     public Task GetAndStoreDeputiesExpenses(int year)
