@@ -22,8 +22,12 @@ jobs:
     - name: Build
       run: dotnet build --no-restore ./src/SolutionTransparencia.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal ./src/SolutionTransparencia.sln
-    - name: Upload coverage reports to Codecov
+      run: dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./lcov.info
+    - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos on GitHub Actions
+        file: ./lcov.info # or the path to wherever your coverage report is generated
+        flags: unittests # optional, and can be any string to categorize coverage reports
+        name: codecov-umbrella # optional, name of the uploader
+        fail_ci_if_error: true # optional (default = false), specify if CI should fail when Codecov runs into errors
