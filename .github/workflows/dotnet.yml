@@ -26,8 +26,8 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
-        token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos on GitHub Actions
-        file: ./lcov.info # or the path to wherever your coverage report is generated
-        flags: unittests # optional, and can be any string to categorize coverage reports
-        name: codecov-umbrella # optional, name of the uploader
-        fail_ci_if_error: true # optional (default = false), specify if CI should fail when Codecov runs into errors
+        token: ${{ secrets.CODECOV_TOKEN }} 
+        file: ./src/lcov.info 
+        flags: unittests 
+        name: codecov-umbrella 
+        fail_ci_if_error: true 
