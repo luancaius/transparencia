@@ -5,3 +5,4 @@
 
 ![build](https://github.com/luancaius/transparencia/actions/workflows/dotnet.yml/badge.svg?branch=main)
 
+[![codecov](https://codecov.io/gh/luancaius/transparencia/graph/badge.svg?token=KMCTFW5X9Z)](https://codecov.io/gh/luancaius/transparencia)

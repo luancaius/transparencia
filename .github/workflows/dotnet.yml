@@ -23,3 +23,7 @@ jobs:
       run: dotnet build --no-restore ./src/SolutionTransparencia.sln
     - name: Test
       run: dotnet test --no-build --verbosity normal ./src/SolutionTransparencia.sln
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
