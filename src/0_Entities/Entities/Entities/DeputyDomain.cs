@@ -4,6 +4,13 @@ namespace Entities.DomainEntities;
 
 public class DeputyDomain
 {
+    public string Id { get; private set; }
+    public PersonDomain Person { get; private set; }
+    public string Partido { get; private set; }
+    public Estado EstadoRepresentacao { get; private set; }
+    public string NomeEleitoral { get; private set; }
+    public Email EmailDeputado { get; private set; }
+    
     private DeputyDomain(string id, string firstName, string lastName, string fullName, DateTime dateOfBirth, String email,
         string stateBirth, string cpf, string gender, string partido, string estadoRepresentacao, string nomeEleitoral, string emailDeputado)
     {
@@ -22,11 +29,4 @@ public class DeputyDomain
         return new DeputyDomain(id, firstName, lastName, fullName, dateOfBirth, "", stateBirth, cpf, 
             gender, partido, ufRepresentacao, nomeEleitoral, emailDeputado);
     }
-    
-    public string Id { get; private set; }
-    public PersonDomain Person { get; private set; }
-    public string Partido { get; private set; }
-    public Estado EstadoRepresentacao { get; private set; }
-    public string NomeEleitoral { get; private set; }
-    public Email EmailDeputado { get; private set; }
 }
