@@ -22,7 +22,9 @@ jobs:
     - name: Build
       run: dotnet build --no-restore ./src/SolutionTransparencia.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal ./src/SolutionTransparencia.sln /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../lcov.info
+      run: dotnet test --no-build --verbosity normal ./src/SolutionTransparencia.sln /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../../lcov.info
+    - name: List files in the directory
+      run: ls -l ./src/
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
