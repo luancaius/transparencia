@@ -31,3 +31,5 @@ jobs:
         flags: unittests 
         name: codecov-umbrella 
         fail_ci_if_error: true 
+    - name: List files in the directory
+      run: ls -l ./src/
