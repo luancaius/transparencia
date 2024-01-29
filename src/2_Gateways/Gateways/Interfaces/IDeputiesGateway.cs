@@ -1,4 +1,4 @@
-using DeputyUseCase.DTO;
+using Gateways.DTO;
 
 namespace Gateways.Interfaces;
 

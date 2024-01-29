@@ -1,4 +1,4 @@
-using Entities.DomainEntities;
+using Entities.Entities;
 using Entities.ValueObject;
 using NonRelationalDatabase.Interfaces;
 using RelationalDatabase.Interfaces;

@@ -1,4 +1,4 @@
-using Entities.DomainEntities;
+using Entities.Entities;
 using RelationalDatabase.DTO;
 
 namespace Services.Mapper;

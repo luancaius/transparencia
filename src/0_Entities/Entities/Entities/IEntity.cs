@@ -1,4 +1,4 @@
-namespace Entities.DomainEntities;
+namespace Entities.Entities;
 
 public interface IEntity
 {

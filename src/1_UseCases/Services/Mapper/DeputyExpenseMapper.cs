@@ -1,4 +1,4 @@
-using Entities.DomainEntities;
+using Entities.Entities;
 using RelationalDatabase.DTO;
 using RelationalDatabase.DTO.Deputado;
 using Services.DTO.Deputy;

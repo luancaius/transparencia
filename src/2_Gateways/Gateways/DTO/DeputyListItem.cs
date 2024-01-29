@@ -1,4 +1,4 @@
-namespace DeputyUseCase.DTO;
+namespace Gateways.DTO;
 
 public class DeputyListItem
 {

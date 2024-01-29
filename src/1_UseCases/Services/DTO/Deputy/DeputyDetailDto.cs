@@ -1,4 +1,4 @@
-using Entities.DomainEntities;
+using Entities.Entities;
 using Repositories.DTO;
 using Repositories.DTO.NewApi.GetById;
 using Repositories.DTO.OldApi.GetById;

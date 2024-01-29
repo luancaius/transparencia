@@ -1,6 +1,6 @@
 using Entities.ValueObject;
 
-namespace Entities.DomainEntities;
+namespace Entities.Entities;
 
 public class CompanyDomain
 {
