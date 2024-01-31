@@ -20,8 +20,4 @@
       <ProjectReference Include="..\..\0_Entities\Entities\Entities.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="ValueObject\" />
-    </ItemGroup>
-
 </Project>
