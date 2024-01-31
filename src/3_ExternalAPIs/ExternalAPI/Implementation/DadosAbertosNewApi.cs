@@ -5,7 +5,7 @@ namespace ExternalAPI.Implementation;
 
 public class DadosAbertosNewApi : IDadosAbertosNewApi
 {
-    private IBaseApi _baseApi { get; set; }
+    private IBaseApi _baseApi { get; }
     private readonly ILogger _logger;
     public DadosAbertosNewApi(IBaseApi baseApi, ILogger logger)
     {

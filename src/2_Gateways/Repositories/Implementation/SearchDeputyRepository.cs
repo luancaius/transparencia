@@ -12,8 +12,8 @@ namespace Repositories.Implementation;
 
 public class SearchDeputyRepository : ISearchDeputyRepository
 {
-    private IDadosAbertosNewApi _DadosAbertosNewApi { get; set; }
-    private IDadosAbertosOldApi _DadosAbertosOldApi { get; set; }
+    private IDadosAbertosNewApi _DadosAbertosNewApi { get; }
+    private IDadosAbertosOldApi _DadosAbertosOldApi { get; }
     private readonly ILogger _logger;
 
     public SearchDeputyRepository(IDadosAbertosNewApi dadosAbertosNewApi, IDadosAbertosOldApi dadosAbertosOldApi, ILogger logger)

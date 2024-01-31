@@ -3,9 +3,9 @@ namespace Entities.ValueObject;
 
 public class Phone : ValueObject
 {
-    private string? CountryCode { get; set; }
-    private string? AreaCode { get; set; }
-    private string? Number { get; set; }
+    private string? CountryCode { get; }
+    private string? AreaCode { get; }
+    private string? Number { get; }
 
     public Phone(string? countryCode, string? areaCode, string? number)
     {

@@ -2,7 +2,7 @@ namespace Entities.ValueObject;
 
 public class Email
 {
-    public string Value { get; private set; }
+    public string Value { get; }
 
     public Email(string value)
     {

@@ -7,23 +7,23 @@ namespace Repositories.DTO.NewApi.Expense
     {
         public int Ano { get; private set; }
         public int Mes { get; private set; }
-        public int IdDeputy { get; private set; }
+        public int IdDeputy { get; }
         public bool HasData { get; private set; }
         public string TipoDespesa { get; private set; }
         public int CodDocumento { get; private set; }
         public string TipoDocumento { get; private set; }
         public int CodTipoDocumento { get; private set; }
-        public DateTime? DataDocumento { get; private set; }
+        public DateTime? DataDocumento { get; }
         public string NumDocumento { get; private set; }
-        public double ValorDocumento { get; private set; }
-        public string UrlDocumento { get; private set; }
-        public string NomeFornecedor { get; private set; }
+        public double ValorDocumento { get; }
+        public string UrlDocumento { get; }
+        public string NomeFornecedor { get; }
         public string CnpjCpfFornecedor { get; private set; }
-        public double ValorLiquido { get; private set; }
+        public double ValorLiquido { get; }
         public double ValorGlosa { get; private set; }
         public string NumRessarcimento { get; private set; }
-        public int CodLote { get; private set; }
-        public int Parcela { get; private set; }
+        public int CodLote { get; }
+        public int Parcela { get; }
 
         public DeputyExpense(string rawDeputyExpense, int ano, int mes, int id)
         {
