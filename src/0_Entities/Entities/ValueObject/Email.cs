@@ -14,8 +14,10 @@ public class Email
         {
             throw new ArgumentException($"Invalid email format - {value}" );
         }
-
-        Value = value;
+        else
+        {
+            Value = value;
+        }
     }
 
     private bool IsValidEmail(string email)
