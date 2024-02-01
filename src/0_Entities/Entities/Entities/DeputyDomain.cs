@@ -15,7 +15,7 @@ public class DeputyDomain
         string stateBirth, string cpf, string gender, string partido, string estadoRepresentacao, string nomeEleitoral, string emailDeputado)
     {
         Id = id;
-        Person = PersonDomain.CreatePerson(firstName, lastName, fullName, dateOfBirth, stateBirth, email, cpf, gender);
+        Person = PersonDomain.CreatePerson(firstName, lastName, fullName, dateOfBirth, email, stateBirth, cpf, gender);
         Partido = partido;
         EstadoRepresentacao = estadoRepresentacao.ConvertStringToEstado();
         NomeEleitoral = nomeEleitoral;
