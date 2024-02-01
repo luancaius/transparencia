@@ -4,8 +4,6 @@ public enum Gender
 {
     Male,
     Female,
-    NonBinary,
-    PreferNotToSay,
     Other,
     Unknown
 }
@@ -16,13 +14,16 @@ public static class GenderExtensions
     {
         if (string.IsNullOrWhiteSpace(genderString))
         {
-            throw new ArgumentException("Gender string cannot be null or whitespace.");
+            return Gender.Unknown;
         }
 
-        switch (genderString)
+        switch (genderString.ToLower())
         {
-            case "M": return Gender.Male; 
-            case "F": return Gender.Female; 
+            case "m": return Gender.Male;
+            case "male": return Gender.Male;
+            case "f": return Gender.Female; 
+            case "female": return Gender.Female; 
+
         }
         
         if (Enum.TryParse<Gender>(genderString, true, out var gender))

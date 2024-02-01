@@ -45,6 +45,6 @@ public class PersonDomain
     public static PersonDomain CreatePerson(string firstName, string lastName, string fullName,
         DateTime dateOfBirth, string email, string estadoNascimento, string cpf, string gender)
     {
-        return new PersonDomain(firstName, lastName, fullName, dateOfBirth, estadoNascimento, email, cpf, gender);
+        return new PersonDomain(firstName, lastName, fullName, dateOfBirth, email,estadoNascimento, cpf, gender);
     }
 }
