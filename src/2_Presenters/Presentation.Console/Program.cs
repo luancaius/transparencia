@@ -33,6 +33,9 @@ namespace Presentation.Console
                 case "a":
                     await deputyUseCase.GetAndStoreDeputiesDetailsInfo(2023);
                     break;
+                case "b":
+                    await deputyUseCase.GetAndStoreDeputiesExpenses(2023);
+                    break;
                 default:
                     System.Console.WriteLine("Invalid command. Please try again.");
                     break;

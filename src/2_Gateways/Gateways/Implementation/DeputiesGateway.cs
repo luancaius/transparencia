@@ -1,3 +1,4 @@
+using ExternalAPI.Interfaces;
 using Gateways.DTO;
 using Gateways.Interfaces;
 
@@ -5,13 +6,22 @@ namespace Gateways.Implementation;
 
 public class DeputiesGateway : IDeputiesGateway
 {
-    public Task<List<DeputyListItem>> GetDeputiesList(int legislatura)
+    private readonly IDadosAbertosNewApi _dadosAbertosNewApi;
+    public DeputiesGateway(IDadosAbertosNewApi dadosAbertosNewApi)
     {
-        throw new NotImplementedException();
+        _dadosAbertosNewApi = dadosAbertosNewApi;
+    }
+    public async Task<List<DeputyListItem>> GetDeputiesList(int legislatura)
+    {
+        var deputiesRaw = await _dadosAbertosNewApi.GetAllDeputiesRaw(legislatura);
+        var deputiesList = DeputyListItem.MapFromString(deputiesRaw);
+        return deputiesList;
     }
 
-    public Task<DeputyDetailInfo> GetDeputyDetailInfo(string id)
+    public async Task<DeputyDetailInfo> GetDeputyDetailInfo(int id)
     {
-        throw new NotImplementedException();
+        var deputiesRaw = await _dadosAbertosNewApi.GetDeputyRaw(id);
+        var deputyDetail = new DeputyDetailInfo(deputiesRaw);
+        return deputyDetail;    
     }
 }

@@ -21,9 +21,8 @@ public class DeputyUseCaseImpl : IDeputyUseCase
         var deputiesListItem = await _deputiesGateway.GetDeputiesList(legislaturaVO.Numero);
         foreach (var deputyListItem in deputiesListItem)
         {
-            var deputyDetailInfo = await _deputiesGateway.GetDeputyDetailInfo(deputyListItem.Id);
-            // Mapper.MapToRepository
-            // _repository.SaveNonRelationalData(deputyDetailInfo);
+            var deputyDetailInfo = await _deputiesGateway.GetDeputyDetailInfo(deputyListItem.IdDeputyAPI);
+            
         }
     }
 
