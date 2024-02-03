@@ -16,7 +16,12 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Shared\Logging\Logging.csproj" />
-      <ProjectReference Include="..\..\2_Gateways\Repositories\Repositories.csproj" />
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <Folder Include="DTO\" />
     </ItemGroup>
 
 </Project>

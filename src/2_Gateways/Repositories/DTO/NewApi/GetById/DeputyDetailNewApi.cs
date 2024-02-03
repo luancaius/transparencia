@@ -27,7 +27,7 @@ public class DeputyDetailNewApi : BaseEntityDTO
     public int IdLegislatura { get; }
     public string UrlFoto { get; }
     public string Email { get; }
-    public DateTime? Data { get; set; } // Nullable DateTime
+    public DateTime? Data { get; set; } 
     public string NomeEleitoral { get; set; }
     public string Situacao { get; set; }
     public string CondicaoEleitoral { get; set; }

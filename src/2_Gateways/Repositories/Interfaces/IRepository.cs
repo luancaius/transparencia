@@ -4,5 +4,5 @@ namespace Repositories.Interfaces;
 
 public interface IRepository
 {
-    Task SaveNonRelationalData(DeputyDetail deputyDetail);
+    Task SaveNonRelationalData(DeputyDetailRepo deputyDetail);
 }

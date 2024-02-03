@@ -1,7 +1,9 @@
 using DeputyUseCase.DTO;
 using DeputyUseCase.Interfaces;
 using Entities.ValueObject;
+using Gateways.DTO;
 using Gateways.Interfaces;
+using Repositories.DTO.NonRelational;
 using Repositories.Interfaces;
 
 namespace DeputyUseCase.Implementation;
@@ -22,7 +24,8 @@ public class DeputyUseCaseImpl : IDeputyUseCase
         foreach (var deputyListItem in deputiesListItem)
         {
             var deputyDetailInfo = await _deputiesGateway.GetDeputyDetailInfo(deputyListItem.IdDeputyAPI);
-            
+            var deputyDetailRepo = deputyDetailInfo.ConvertToRepo();
+            _repository.SaveNonRelationalData(deputyDetailRepo);
         }
     }
 

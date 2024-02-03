@@ -5,6 +5,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
+        <ProjectReference Include="..\..\3_Databases\NonRelationalDatabase\NonRelationalDatabase.csproj" />
+        <ProjectReference Include="..\..\3_Databases\RelationalDatabase\RelationalDatabase.csproj" />
         <ProjectReference Include="..\..\Shared\Logging\Logging.csproj" />
         <ProjectReference Include="..\..\3_ExternalAPIs\ExternalAPI\ExternalAPI.csproj" />
     </ItemGroup>
