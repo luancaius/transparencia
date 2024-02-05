@@ -1,21 +1,45 @@
-// using System.Linq.Expressions;
-// using MongoDB.Driver;
-// using NonRelationalDatabase.Helpers;
-// using NonRelationalDatabase.Interfaces;
-// using Serilog;
-//
-// namespace NonRelationalDatabase.Implementation;
-//
-// public class MongoDb : INonRelationalDatabase
-// {
-//     private readonly MongoDbHelper _mongoDbHelper;
-//     private readonly ILogger _logger;
-//
-//     public MongoDb(MongoDbHelper mongoDbHelper, ILogger logger)
-//     {
-//         _mongoDbHelper = mongoDbHelper;
-//         _logger = logger.ForContext<MongoDb>();
-//     }
+using System.Linq.Expressions;
+using MongoDB.Driver;
+using NonRelationalDatabase.Helpers;
+using NonRelationalDatabase.Interfaces;
+using Serilog;
+
+namespace NonRelationalDatabase.Implementation;
+
+public class MongoDb : INonRelationalDatabase
+{
+    private readonly MongoDbHelper _mongoDbHelper;
+    private readonly ILogger _logger;
+
+    public MongoDb(MongoDbHelper mongoDbHelper, ILogger logger)
+    {
+        _mongoDbHelper = mongoDbHelper;
+        _logger = logger.ForContext<MongoDb>();
+    }
+
+    public Task Insert<T>(T entity)
+    {
+         string collectionName = typeof(T).Name;
+         _mongoDbHelper.InsertData(collectionName, entity);
+         return Task.CompletedTask;
+    }
+
+    public Task Update<T>(T entity)
+    {
+        throw new NotImplementedException();
+    }
+    
+    public Task<T?> Get<T>(string id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<List<T>> GetAll<T>(Expression<Func<T, bool>>? filterExpression = null)
+    {
+        throw new NotImplementedException();
+    }
+}
+
 //
 //     public Task Insert<T>(T entity)
 //     {

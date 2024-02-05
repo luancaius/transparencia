@@ -11,8 +11,8 @@ public class Repository : IRepository
     {
         _nonRelationalDatabase = nonRelationalDatabase;
     }
-    public Task SaveNonRelationalData(DeputyDetailRepo deputyDetail)
+    public async Task SaveNonRelationalData(DeputyDetailRepo deputyDetailRepo)
     {
-        throw new NotImplementedException();
+        await _nonRelationalDatabase.Insert(deputyDetailRepo);
     }
 }

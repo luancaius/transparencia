@@ -105,12 +105,6 @@ public class ResolveDependencies
         services.AddTransient<IDeputyUseCase, DeputyUseCaseImpl>();
         #endregion
         
-        
-        #region Application
-        services.AddTransient<IDeputyService, DeputyService>();       
-        services.AddTransient<IPersonService, PersonService>();       
-        #endregion
-        
         services.AddTransient<ILogger, CustomLogger>();
     }
 
