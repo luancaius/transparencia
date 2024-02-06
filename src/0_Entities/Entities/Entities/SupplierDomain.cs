@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Entities.ValueObject;
 
 namespace Entities.Entities;
@@ -17,8 +18,10 @@ public class SupplierDomain
     
     public static SupplierDomain CreateSupplier(string name, string cnpjOrCpf)
     {
-        if (cnpjOrCpf.Length == 14)
-            return new SupplierDomain(name, new Cnpj(cnpjOrCpf), null);
-        return new SupplierDomain(name, null, new Cpf(cnpjOrCpf));
+        string pattern = @"\D"; 
+        string result = Regex.Replace(cnpjOrCpf, pattern, "");
+        if (result.Length == 14)
+            return new SupplierDomain(name, new Cnpj(result), null);
+        return new SupplierDomain(name, null, new Cpf(result));
     }
 }

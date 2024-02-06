@@ -15,4 +15,13 @@ public class Repository : IRepository
     {
         await _nonRelationalDatabase.Insert(deputyDetailRepo);
     }
+
+    public Task SaveRelationalData(DeputyDetailRepo deputyDetail)
+    {
+        // convert to person relational data
+        // convert to deputy relational data
+        // save relational data
+
+        return Task.CompletedTask; // Add return statement
+    }
 }

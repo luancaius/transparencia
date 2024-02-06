@@ -25,7 +25,8 @@ public class DeputyUseCaseImpl : IDeputyUseCase
         {
             var deputyDetailInfo = await _deputiesGateway.GetDeputyDetailInfo(deputyListItem.IdDeputyAPI);
             var deputyDetailRepo = deputyDetailInfo.ConvertToRepo();
-            _repository.SaveNonRelationalData(deputyDetailRepo);
+            await _repository.SaveNonRelationalData(deputyDetailRepo);
+            await _repository.SaveRelationalData(deputyDetailRepo);
         }
     }
 
