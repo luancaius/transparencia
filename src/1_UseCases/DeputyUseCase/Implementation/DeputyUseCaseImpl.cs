@@ -32,6 +32,10 @@ public class DeputyUseCaseImpl : IDeputyUseCase
 
     public Task GetAndStoreDeputiesExpenses(int year)
     {
+        // get all deputies 
+        // foreach deputy id, make the expense call for the month of the year
+        // save the raw value on mongo
+        // save relational data
         throw new NotImplementedException();
     }
 }
