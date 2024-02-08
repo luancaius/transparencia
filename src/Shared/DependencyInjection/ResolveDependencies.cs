@@ -18,8 +18,6 @@ using RelationalDatabase.Repositories;
 using Repositories.Implementation;
 using Repositories.Interfaces;
 using Serilog;
-using Services.Interfaces;
-using Services.Service;
 using StackExchange.Redis;
 
 namespace DependencyInjection;

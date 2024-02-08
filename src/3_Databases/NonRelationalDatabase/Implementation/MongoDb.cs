@@ -1,5 +1,4 @@
 using System.Linq.Expressions;
-using MongoDB.Driver;
 using NonRelationalDatabase.Helpers;
 using NonRelationalDatabase.Interfaces;
 using Serilog;

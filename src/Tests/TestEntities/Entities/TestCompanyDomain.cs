@@ -1,5 +1,4 @@
 using Entities.Entities;
-using Entities.ValueObject;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestEntities.Entities;

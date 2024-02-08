@@ -1,6 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Entities.Entities;
-using System;
 
 namespace Entities.Tests
 {

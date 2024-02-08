@@ -1,6 +1,5 @@
 using RelationalDatabase.DTO;
 using RelationalDatabase.DTO.Deputado;
-using RelationalDatabase.Repositories;
 
 namespace RelationalDatabase.Interfaces;
 
