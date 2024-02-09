@@ -1,3 +1,6 @@
+using RelationalDatabase.DTO;
+using RelationalDatabase.DTO.Deputado;
+
 namespace Repositories.DTO.NonRelational;
 
 public class DeputyDetailRepo
@@ -28,6 +31,23 @@ public class DeputyDetailRepo
     public string Situacao { get; set; }
     public string CondicaoEleitoral { get; set; }
     public Gabinete GabineteInfo { get; set; }
+
+    internal Deputado ConvertToDeputyRelationalData()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal Person ConvertToPersonRelationalData()
+    {
+        var personDomain = new Person
+        {
+            Cpf = Cpf,
+            Name = NomeCivil
+        };
+
+        var personDTO = 
+
+    }
 
     public class Gabinete
     {

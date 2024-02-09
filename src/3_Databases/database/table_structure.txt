@@ -1,5 +1,0 @@
-schema: geral
-tabelas: pessoa, empresa, pais, estado, cidade
-
-schema: congresso
-tabelas: partidos, deputados, legislaturas, despesas, sessoes

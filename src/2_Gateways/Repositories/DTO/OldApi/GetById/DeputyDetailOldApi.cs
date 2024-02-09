@@ -1,11 +1,8 @@
-using System;
-using System.Linq;
 using System.Xml.Linq;
-using System.Collections.Generic;
 
 namespace Repositories.DTO.OldApi.GetById;
 
-    public class DeputyDetailOldApi : BaseEntityDTO
+public class DeputyDetailOldApi : BaseEntityDTO
     {
         public int IdDeputy { get; set; }
         public string NomeCivil { get; set; }

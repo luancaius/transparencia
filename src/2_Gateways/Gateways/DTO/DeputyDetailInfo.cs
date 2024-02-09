@@ -11,13 +11,13 @@ public class DeputyDetailInfo
     public string NomeCivil { get; set; }
     public string Cpf { get; set; }
     public string Sexo { get; set; }
-    public DateTime DataNascimento { get; set; } 
-    public DateTime? DataFalecimento { get; set; } 
+    public DateTime DataNascimento { get; set; }
+    public DateTime? DataFalecimento { get; set; }
     public string UfNascimento { get; set; }
     public string MunicipioNascimento { get; set; }
     public string Escolaridade { get; set; }
     public string UrlWebsite { get; set; }
-    public List<string> RedeSocial { get; set; } 
+    public List<string> RedeSocial { get; set; }
 
     // Properties from 'ultimoStatus'
     public string Nome { get; }
@@ -27,7 +27,7 @@ public class DeputyDetailInfo
     public int IdLegislatura { get; }
     public string UrlFoto { get; }
     public string Email { get; }
-    public DateTime? Data { get; set; } 
+    public DateTime? Data { get; set; }
     public string NomeEleitoral { get; set; }
     public string Situacao { get; set; }
     public string CondicaoEleitoral { get; set; }
@@ -62,7 +62,7 @@ public class DeputyDetailInfo
             MunicipioNascimento = dados.municipioNascimento;
             Escolaridade = dados.escolaridade;
             UrlWebsite = dados.urlWebsite;
-            RedeSocial = dados.redeSocial.ToObject<List<string>>(); 
+            RedeSocial = dados.redeSocial.ToObject<List<string>>();
 
             Nome = ultimoStatus.nome;
             SiglaPartido = ultimoStatus.siglaPartido;
@@ -136,5 +136,6 @@ public class DeputyDetailInfo
                 Telefone = GabineteInfo.Telefone,
                 Email = GabineteInfo.Email
             }
-        };    }
+        };
+    }
 }
