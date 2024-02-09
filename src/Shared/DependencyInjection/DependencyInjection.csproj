@@ -21,7 +21,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\1_UseCases\DeputyUseCase\DeputyUseCase.csproj" />
-      <ProjectReference Include="..\..\1_UseCases\Services\Services.csproj" />
       <ProjectReference Include="..\..\3_Databases\CacheDatabase\CacheDatabase.csproj" />
       <ProjectReference Include="..\..\3_Databases\NonRelationalDatabase\NonRelationalDatabase.csproj" />
       <ProjectReference Include="..\Logging\Logging.csproj" />

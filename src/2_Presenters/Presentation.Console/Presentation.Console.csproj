@@ -9,7 +9,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\1_UseCases\DeputyUseCase\DeputyUseCase.csproj" />
-      <ProjectReference Include="..\..\1_UseCases\Services\Services.csproj" />
       <ProjectReference Include="..\..\Shared\DependencyInjection\DependencyInjection.csproj" />
     </ItemGroup>
 
