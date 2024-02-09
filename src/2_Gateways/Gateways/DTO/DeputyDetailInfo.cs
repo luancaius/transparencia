@@ -31,7 +31,7 @@ public class DeputyDetailInfo
     public string NomeEleitoral { get; set; }
     public string Situacao { get; set; }
     public string CondicaoEleitoral { get; set; }
-    public Gabinete GabineteInfo { get; set; }
+    public DeputyDetailInfo.Gabinete GabineteInfo { get; set; }
 
     public class Gabinete
     {

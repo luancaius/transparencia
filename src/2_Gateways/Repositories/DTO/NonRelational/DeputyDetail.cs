@@ -32,23 +32,6 @@ public class DeputyDetailRepo
     public string CondicaoEleitoral { get; set; }
     public Gabinete GabineteInfo { get; set; }
 
-    internal Deputado ConvertToDeputyRelationalData()
-    {
-        throw new NotImplementedException();
-    }
-
-    internal Person ConvertToPersonRelationalData()
-    {
-        var personDomain = new Person
-        {
-            Cpf = Cpf,
-            Name = NomeCivil
-        };
-
-        var personDTO = 
-
-    }
-
     public class Gabinete
     {
         public string Nome { get; set; }

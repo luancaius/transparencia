@@ -1,5 +1,6 @@
-public class DeputyDetail {
-     public int IdDeputy { get; }
+public class DeputyDetail
+{
+    public int IdDeputy { get; }
     public string Uri { get; }
     public string NomeCivil { get; set; }
     public string Cpf { get; set; }
@@ -35,5 +36,6 @@ public class DeputyDetail {
         public string Telefone { get; set; }
         public string Email { get; set; }
     }
+}
 
     
