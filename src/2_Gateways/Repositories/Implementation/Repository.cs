@@ -1,5 +1,6 @@
 using NonRelationalDatabase.Interfaces;
 using Repositories.DTO.NonRelational;
+using Repositories.DTO.Relational;
 using Repositories.Interfaces;
 
 namespace Repositories.Implementation;
@@ -18,7 +19,7 @@ public class Repository : IRepository
         await _nonRelationalDatabase.Insert(deputyDetailRepo);
     }
 
-    public Task SaveRelationalData(DeputyDetailRepo deputyDetail)
+    public Task SaveRelationalData(DeputyDetailRepoRelational deputyDetailRepoRelational)
     {
         // convert to person relational data
         //var personRelationalData = deputyDetail.ConvertToPersonRelationalData();

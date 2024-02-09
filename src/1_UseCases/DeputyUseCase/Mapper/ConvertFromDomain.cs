@@ -1,6 +1,6 @@
 namespace DeputyUseCase.Mapper;
 
-public class MapToRepository
+public class ConvertFromDomain
 {
     
 }

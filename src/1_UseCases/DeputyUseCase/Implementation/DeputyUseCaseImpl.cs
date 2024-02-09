@@ -1,4 +1,5 @@
 using DeputyUseCase.Interfaces;
+using DeputyUseCase.Mapper;
 using Entities.ValueObject;
 using Gateways.Interfaces;
 using Repositories.Interfaces;
@@ -21,11 +22,10 @@ public class DeputyUseCaseImpl : IDeputyUseCase
         foreach (var deputyListItem in deputiesListItem)
         {
             var deputyDetailInfo = await _deputiesGateway.GetDeputyDetailInfo(deputyListItem.IdDeputyAPI);
-            //var deputyDomain = Mapper.Mapper.ConvertRepoToDomain(deputyDetailInfo);            
-            
             var deputyDetailRepo = deputyDetailInfo.ConvertToRepo();
             await _repository.SaveNonRelationalData(deputyDetailRepo);
-            //await _repository.SaveRelationalData(deputyDomain);
+            var deputyDetailRepoRelational = deputyDetailInfo.ConvertToRepoRelational();
+            await _repository.SaveRelationalData(deputyDetailRepoRelational);
         }
     }
 
