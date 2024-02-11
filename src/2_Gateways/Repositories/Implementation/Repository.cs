@@ -2,6 +2,7 @@ using NonRelationalDatabase.Interfaces;
 using Repositories.DTO.NonRelational;
 using Repositories.DTO.Relational;
 using Repositories.Interfaces;
+using Serilog;
 
 namespace Repositories.Implementation;
 
@@ -9,14 +10,24 @@ public class Repository : IRepository
 {
     public INonRelationalDatabase _nonRelationalDatabase;
     public IRelationalDatabase _relationalDatabase;
-    public Repository(INonRelationalDatabase nonRelationalDatabase, IRelationalDatabase relationalDatabase)
+    private readonly ILogger _logger;
+
+    public Repository(INonRelationalDatabase nonRelationalDatabase, IRelationalDatabase relationalDatabase, ILogger logger)
     {
         _nonRelationalDatabase = nonRelationalDatabase;
         _relationalDatabase = relationalDatabase;
+        _logger = logger.ForContext<Repository>();
     }
     public async Task SaveNonRelationalData(DeputyDetailRepo deputyDetailRepo)
     {
-        await _nonRelationalDatabase.Insert(deputyDetailRepo);
+        try
+        {
+            await _nonRelationalDatabase.Upsert(deputyDetailRepo);
+        }
+        catch (Exception e)
+        {
+            _logger.Error("Error on saving non relational data", e);
+        }
     }
 
     public Task SaveRelationalData(DeputyDetailRepoRelational deputyDetailRepoRelational)

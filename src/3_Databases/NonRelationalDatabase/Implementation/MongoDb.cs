@@ -1,4 +1,5 @@
 using System.Linq.Expressions;
+using MongoDB.Driver;
 using NonRelationalDatabase.Helpers;
 using NonRelationalDatabase.Interfaces;
 using Serilog;
@@ -16,16 +17,18 @@ public class MongoDb : INonRelationalDatabase
         _logger = logger.ForContext<MongoDb>();
     }
 
-    public Task Insert<T>(T entity)
-    {
-         string collectionName = typeof(T).Name;
-         _mongoDbHelper.InsertData(collectionName, entity);
-         return Task.CompletedTask;
-    }
-
-    public Task Update<T>(T entity)
-    {
-        throw new NotImplementedException();
+    public Task Upsert<T>(T entity)
+    { 
+        string collectionName = typeof(T).Name;
+        var id = entity.GetType().GetProperty("Id")?.GetValue(entity);
+        FilterDefinition<T>? filter = Builders<T>.Filter.Eq("Id", id); 
+        var originalEntity = _mongoDbHelper.GetData(collectionName, filter).FirstOrDefault();
+        if (originalEntity != null)
+        {
+            _mongoDbHelper.DeleteData(collectionName, filter);
+        }
+        _mongoDbHelper.InsertData(collectionName, entity);
+        return Task.CompletedTask;
     }
     
     public Task<T?> Get<T>(string id)

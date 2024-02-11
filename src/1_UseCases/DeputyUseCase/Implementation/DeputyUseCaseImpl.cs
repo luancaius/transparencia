@@ -22,9 +22,7 @@ public class DeputyUseCaseImpl : IDeputyUseCase
         foreach (var deputyListItem in deputiesListItem)
         {
             var deputyDetailInfo = await _deputiesGateway.GetDeputyDetailInfo(deputyListItem.IdDeputyAPI);
-            // convert to deputy detail domain
             var deputyDomain = ConvertToDomain.Deputy(deputyDetailInfo);
-            // convert back to repo
             var deputyDetailRepo = ConvertFromDomain.DeputyDetailRepo(deputyDomain);
             await _repository.SaveNonRelationalData(deputyDetailRepo);
             //var deputyDetailRepoRelational = deputyDetailInfo.ConvertToRepoRelational();
