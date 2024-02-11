@@ -1,6 +1,3 @@
-using RelationalDatabase.DTO;
-using RelationalDatabase.DTO.Deputado;
-
 namespace Repositories.DTO.NonRelational;
 
 public class DeputyDetailRepo
