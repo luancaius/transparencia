@@ -12,10 +12,9 @@ public class Repository : IRepository
     public IRelationalDatabase _relationalDatabase;
     private readonly ILogger _logger;
 
-    public Repository(INonRelationalDatabase nonRelationalDatabase, IRelationalDatabase relationalDatabase, ILogger logger)
+    public Repository(INonRelationalDatabase nonRelationalDatabase,  ILogger logger)
     {
         _nonRelationalDatabase = nonRelationalDatabase;
-        _relationalDatabase = relationalDatabase;
         _logger = logger.ForContext<Repository>();
     }
     public async Task SaveNonRelationalData(DeputyDetailRepo deputyDetailRepo)

@@ -12,6 +12,8 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NonRelationalDatabase.Helpers;
+using NonRelationalDatabase.Implementation;
+using NonRelationalDatabase.Interfaces;
 using RelationalDatabase.Database;
 using RelationalDatabase.Interfaces;
 using RelationalDatabase.Repositories;
@@ -56,7 +58,7 @@ public class ResolveDependencies
             throw;
         }
         
-        //services.AddTransient<INonRelationalDatabase, MongoDb>();
+        services.AddTransient<INonRelationalDatabase, MongoDb>();
         
         string redisConnectionString = "localhost:6379";
         try
@@ -79,9 +81,6 @@ public class ResolveDependencies
         services.AddTransient<IDadosAbertosOldApi, DadosAbertosOldApi>();
         services.AddTransient<IDadosAbertosNewApi, DadosAbertosNewApi>();
         
-        
-        services.AddTransient<IUnitOfWork, UnitOfWork>();
-        services.AddTransient<ISearchDeputyRepository, SearchDeputyRepository>();
         #endregion
 
         #region External API
@@ -93,9 +92,10 @@ public class ResolveDependencies
 
         #endregion
         
-        #region Repositories
+        #region Gateways and Repositories
         
         services.AddTransient<IDeputiesGateway, DeputiesGateway>();
+        services.AddTransient<IRepository, Repository>();
         
         #endregion
         

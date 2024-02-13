@@ -11,9 +11,10 @@ public class DeputyUseCaseImpl : IDeputyUseCase
     private readonly IDeputiesGateway _deputiesGateway;
     private readonly IRepository _repository;
 
-    public DeputyUseCaseImpl(IDeputiesGateway deputiesGateway)
+    public DeputyUseCaseImpl(IDeputiesGateway deputiesGateway, IRepository repository)
     {
         _deputiesGateway = deputiesGateway;
+        _repository = repository;
     }
     public async Task GetAndStoreDeputiesDetailsInfo(int year)
     {
