@@ -1,3 +1,4 @@
+using Entities;
 using Entities.ValueObject;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -17,7 +18,7 @@ public class TestGender
     [DataRow(null, Gender.Unknown)]
     public void FromString_ValidGenderString_ReturnsExpectedGender(string genderString, Gender expectedGender)
     {
-        var result = GenderExtensions.FromString(genderString);
+        var result = Extensions.GenderFromString(genderString);
         Assert.AreEqual(expectedGender, result);
     }
     
@@ -25,6 +26,6 @@ public class TestGender
     [ExpectedException(typeof(ArgumentException))]
     public void FromString_InvalidGenderString_ThrowsArgumentException()
     {
-        GenderExtensions.FromString("InvalidGender");
+        Extensions.GenderFromString("InvalidGender");
     }
 }

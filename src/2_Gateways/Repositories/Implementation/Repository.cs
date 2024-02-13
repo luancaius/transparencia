@@ -17,7 +17,7 @@ public class Repository : IRepository
         _nonRelationalDatabase = nonRelationalDatabase;
         _logger = logger.ForContext<Repository>();
     }
-    public async Task SaveNonRelationalData(DeputyDetailRepo deputyDetailRepo)
+    public async Task SaveNonRelationalData(DeputyDetailMongo deputyDetailRepo)
     {
         try
         {

@@ -12,9 +12,10 @@ public class PersonDomain
     public Email Email { get; private set; }
     public Cpf CPF { get; private set; }
     public Gender Gender { get; private set; }
+    public Escolaridade  Escolaridade { get; private set; }
 
     private PersonDomain(string firstName, string lastName, string fullName, DateTime dateOfBirth, String email, 
-        string stateBirth, string cpf, string gender)
+        string stateBirth, string cpf, string gender, string escolaridade)
     {
         try
         {
@@ -25,7 +26,8 @@ public class PersonDomain
             EstadoNascimento = stateBirth.ConvertStringToEstado();
             Email = new Email(email);
             CPF = new Cpf(cpf); 
-            Gender = GenderExtensions.FromString(gender); 
+            Gender = Extensions.GenderFromString(gender); 
+            Escolaridade = Extensions.EscolaridadeFromString(escolaridade);
         }
         catch (ArgumentException ex)
         {
@@ -39,12 +41,12 @@ public class PersonDomain
 
     public static PersonDomain CreateSimplePerson(string name, string cpf)
     {
-        return new PersonDomain(name, "", name, DateTime.MinValue, "", "", cpf, "");
+        return new PersonDomain(name, "", name, DateTime.MinValue, "", "", cpf, "", "");
     }
     
     public static PersonDomain CreatePerson(string firstName, string lastName, string fullName,
         DateTime dateOfBirth, string email, string estadoNascimento, string cpf, string gender)
     {
-        return new PersonDomain(firstName, lastName, fullName, dateOfBirth, email,estadoNascimento, cpf, gender);
+        return new PersonDomain(firstName, lastName, fullName, dateOfBirth, email,estadoNascimento, cpf, gender, "");
     }
 }

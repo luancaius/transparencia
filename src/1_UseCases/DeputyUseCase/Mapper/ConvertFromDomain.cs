@@ -5,9 +5,9 @@ namespace DeputyUseCase.Mapper;
 
 public static class ConvertFromDomain
 {
-    public static DeputyDetailRepo DeputyDetailRepo(DeputyDomain deputyDomain)
+    public static DeputyDetailMongo DeputyDetailRepo(DeputyDomain deputyDomain)
     {
-        return new DeputyDetailRepo
+        return new DeputyDetailMongo
         {
             Id = int.Parse(deputyDomain.Id), 
             NomeCivil = deputyDomain.Person.FullName,
@@ -15,7 +15,6 @@ public static class ConvertFromDomain
             Sexo = deputyDomain.Person.Gender.ToString(),
             DataNascimento = deputyDomain.Person.DateOfBirth.Value,
             UfNascimento = deputyDomain.Person.EstadoNascimento.ToString(),
-            Nome = deputyDomain.NomeEleitoral,
             SiglaPartido = deputyDomain.Partido,
             SiglaUf = deputyDomain.EstadoRepresentacao.ToString(), 
             Email = deputyDomain.EmailDeputado.Value, 

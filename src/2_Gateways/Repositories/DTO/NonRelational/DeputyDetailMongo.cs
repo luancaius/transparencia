@@ -1,9 +1,8 @@
 namespace Repositories.DTO.NonRelational;
 
-public class DeputyDetailRepo
+public class DeputyDetailMongo
 {
     public int Id { get; set; }
-    public string Uri { get; set; }
     public string NomeCivil { get; set; }
     public string Cpf { get; set; }
     public string Sexo { get; set; }
@@ -13,17 +12,12 @@ public class DeputyDetailRepo
     public string MunicipioNascimento { get; set; }
     public string Escolaridade { get; set; }
     public string UrlWebsite { get; set; }
-    public List<string> RedeSocial { get; set; } 
-
-    // Properties from 'ultimoStatus'
-    public string Nome { get; set; }
+    public List<string> RedeSocial { get; set; }
     public string SiglaPartido { get; set; }
-    public string UriPartido { get; set; }
     public string SiglaUf { get; set; }
-    public int IdLegislatura { get; set; }
+    public int Legislatura { get; set; }
     public string UrlFoto { get; set; }
     public string Email { get; set; }
-    public DateTime? Data { get; set; } 
     public string NomeEleitoral { get; set; }
     public string Situacao { get; set; }
     public string CondicaoEleitoral { get; set; }
