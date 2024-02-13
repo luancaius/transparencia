@@ -25,7 +25,7 @@ public class BaseApi : IBaseApi
 
     public async Task<string> GetAsync(string apiUrl)
     {
-        _logger.Information($"GetAsync");
+        _logger.Information("GetAsync");
         var cacheKey = $"RestService:GET:{apiUrl}";
 
         var cachedData = await _cacheRepository.GetStringAsync(cacheKey);
@@ -55,7 +55,7 @@ public class BaseApi : IBaseApi
 
     public async Task<string> PostAsync(string apiUrl, HttpContent content)
     {
-        _logger.Information($"PostAsync");
+        _logger.Information("PostAsync");
 
         var contentHash = HashUtil.GetHash(await content.ReadAsStringAsync());
 

@@ -47,12 +47,9 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
             _dbSet.Add(entity);
             _context.SaveChanges();
         }
-        else
-        {
-            // entity.Id = item.Id;
-            // _context.Entry(item).CurrentValues.SetValues(entity);
-            // _context.SaveChanges();
-        }
+        // entity.Id = item.Id;
+        // _context.Entry(item).CurrentValues.SetValues(entity);
+        // _context.SaveChanges();
     }
 
     public void Delete(T entity)

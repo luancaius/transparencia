@@ -2,7 +2,7 @@ namespace Repositories.DTO.NonRelational;
 
 public class DeputyDetailRepo
 {
-    public int IdDeputy { get; set; }
+    public int Id { get; set; }
     public string Uri { get; set; }
     public string NomeCivil { get; set; }
     public string Cpf { get; set; }

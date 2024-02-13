@@ -1,6 +1,5 @@
 using Entities.Entities;
 using Gateways.DTO;
-using Repositories.DTO.NonRelational;
 
 namespace DeputyUseCase.Mapper;
 

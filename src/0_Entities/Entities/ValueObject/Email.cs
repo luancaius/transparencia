@@ -1,3 +1,5 @@
+using System.Net.Mail;
+
 namespace Entities.ValueObject;
 
 public class Email
@@ -24,7 +26,7 @@ public class Email
     {
         try
         {
-            var addr = new System.Net.Mail.MailAddress(email);
+            var addr = new MailAddress(email);
             return addr.Address == email;
         }
         catch

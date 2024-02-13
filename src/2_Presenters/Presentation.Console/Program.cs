@@ -1,7 +1,6 @@
 ﻿using DependencyInjection;
 using DeputyUseCase.Interfaces;
 
-
 namespace Presentation.Console
 {
     class Program

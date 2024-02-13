@@ -35,7 +35,7 @@ public class DeputyWorkPresence : BaseEntityDTO
                 Legislatura = (int)parlamentar.Element(ns + "legislatura");
                 CarteiraParlamentar = (int)parlamentar.Element(ns + "carteiraParlamentar");
                 NomeParlamentar = (string)parlamentar.Element(ns + "nomeParlamentar");
-                SiglaPartido = (string)parlamentar.Element(ns + "siglaPartido").Value.Trim();
+                SiglaPartido = parlamentar.Element(ns + "siglaPartido").Value.Trim();
                 SiglaUF = (string)parlamentar.Element(ns + "siglaUF");
 
                 DiasDeSessoes = parlamentar.Element(ns + "diasDeSessoes2").Elements(ns + "dia")

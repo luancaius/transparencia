@@ -43,7 +43,7 @@ namespace Repositories.DTO.NewApi.Expense
                     CodDocumento = dadosItem.codDocumento;
                     TipoDocumento = dadosItem.tipoDocumento;
                     CodTipoDocumento = dadosItem.codTipoDocumento;
-                    DataDocumento = DateTime.TryParse(dadosItem.dataDocumento.ToString(), out DateTime dataDocumento) ? dataDocumento : (DateTime?)null;
+                    DataDocumento = DateTime.TryParse(dadosItem.dataDocumento.ToString(), out DateTime dataDocumento) ? dataDocumento : null;
                     NumDocumento = dadosItem.numDocumento;
                     ValorDocumento = (double)dadosItem.valorDocumento;
                     UrlDocumento = dadosItem.urlDocumento;

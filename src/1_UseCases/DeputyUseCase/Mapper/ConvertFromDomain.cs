@@ -7,9 +7,9 @@ public static class ConvertFromDomain
 {
     public static DeputyDetailRepo DeputyDetailRepo(DeputyDomain deputyDomain)
     {
-        return new DeputyDetailRepo()
+        return new DeputyDetailRepo
         {
-            IdDeputy = int.Parse(deputyDomain.Id), 
+            Id = int.Parse(deputyDomain.Id), 
             NomeCivil = deputyDomain.Person.FullName,
             Cpf = deputyDomain.Person.CPF.ToString(),
             Sexo = deputyDomain.Person.Gender.ToString(),
