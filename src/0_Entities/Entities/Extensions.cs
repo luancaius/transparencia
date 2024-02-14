@@ -10,6 +10,7 @@ public static class Extensions
         {
             return Estado.SemInformacao;
         }
+
         if (Enum.TryParse(estadoString, true, out Estado estado))
         {
             return estado;
@@ -18,43 +19,41 @@ public static class Extensions
         throw new ArgumentException("Valor inválido para Estado", nameof(estadoString));
     }
     
-    
-
-        public static Gender GenderFromString(string genderString)
+    public static Gender GenderFromString(string genderString)
+    {
+        if (string.IsNullOrWhiteSpace(genderString))
         {
-            if (string.IsNullOrWhiteSpace(genderString))
-            {
-                return Gender.Unknown;
-            }
-
-            switch (genderString.ToLower())
-            {
-                case "m": return Gender.Male;
-                case "male": return Gender.Male;
-                case "f": return Gender.Female; 
-                case "female": return Gender.Female; 
-
-            }
-        
-            if (Enum.TryParse<Gender>(genderString, true, out var gender))
-            {
-                return gender;
-            }
-        
-            throw new ArgumentException($"'{genderString}' is not a valid gender.");
+            return Gender.Unknown;
         }
 
-        public static Escolaridade EscolaridadeFromString(string escolaridadeString)
+        switch (genderString.ToLower())
         {
-            if (string.IsNullOrEmpty(escolaridadeString))
-            {
-                return Escolaridade.Desconhecida;
-            }
-
-            if (Enum.TryParse<Escolaridade>(escolaridadeString, true, out var escolaridade))
-            {
-                return escolaridade;
-            }
-            throw new ArgumentException("String de escolaridade inválida.", nameof(escolaridadeString));
+            case "m": return Gender.Male;
+            case "male": return Gender.Male;
+            case "f": return Gender.Female;
+            case "female": return Gender.Female;
         }
+
+        if (Enum.TryParse<Gender>(genderString, true, out var gender))
+        {
+            return gender;
+        }
+
+        throw new ArgumentException($"'{genderString}' is not a valid gender.");
+    }
+
+    public static Escolaridade EscolaridadeFromString(string escolaridadeString)
+    {
+        if (string.IsNullOrEmpty(escolaridadeString))
+        {
+            return Escolaridade.Desconhecida;
+        }
+
+        if (Enum.TryParse<Escolaridade>(escolaridadeString, true, out var escolaridade))
+        {
+            return escolaridade;
+        }
+
+        throw new ArgumentException("String de escolaridade inválida.", nameof(escolaridadeString));
+    }
 }

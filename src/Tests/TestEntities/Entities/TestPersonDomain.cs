@@ -34,10 +34,11 @@ public class TestPersonDomain
         string estadoNascimento = "SP"; 
         string cpf = "706.362.134-39"; 
         string gender = "Female";
+        string escolaridade = "Ensino Superior";
 
         // Act
         var person = PersonDomain.CreatePerson(firstName, lastName, fullName, dateOfBirth, email, estadoNascimento, cpf,
-            gender);
+            gender, escolaridade);
 
         // Assert
         Assert.AreEqual(firstName, person.FirstName);
@@ -59,8 +60,10 @@ public class TestPersonDomain
         string estadoNascimento = "SP";
         string cpf = "706.362.134-39";
         string gender = "Male";
+        string escolaridade = "Ensino Superior";
 
         // Act
-        PersonDomain.CreatePerson(firstName, lastName, fullName, dateOfBirth, email, estadoNascimento, cpf, gender);
+        PersonDomain.CreatePerson(firstName, lastName, fullName, dateOfBirth, email, estadoNascimento, cpf, gender, 
+            escolaridade);
     }
 }

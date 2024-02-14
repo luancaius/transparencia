@@ -22,7 +22,8 @@ public static class ConvertToDomain
             deputyDetailInfo.SiglaPartido,
             deputyDetailInfo.SiglaUf,
             deputyDetailInfo.NomeEleitoral,
-            deputyDetailInfo.Email);
+            deputyDetailInfo.Email,
+            deputyDetailInfo.Escolaridade);
 
         return deputyDomain;
     }

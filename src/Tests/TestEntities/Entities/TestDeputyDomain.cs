@@ -22,9 +22,12 @@ public class TestDeputyDomain
         var ufRepresentacao = "SP";
         var nomeEleitoral = "JohnD";
         var emailDeputado = "john.d@example.com";
+        var escolaridade = "Ensino Superior";
+
 
         // Act
-        var deputy = DeputyDomain.CreateDeputy(id, firstName, lastName, fullName, dateOfBirth, stateBirth, cpf, gender, partido, ufRepresentacao, nomeEleitoral, emailDeputado);
+        var deputy = DeputyDomain.CreateDeputy(id, firstName, lastName, fullName, dateOfBirth, stateBirth, cpf, gender, 
+            partido, ufRepresentacao, nomeEleitoral, emailDeputado, escolaridade);
 
         // Assert
         Assert.IsNotNull(deputy);

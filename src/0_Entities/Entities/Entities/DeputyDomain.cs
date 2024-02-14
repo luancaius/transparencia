@@ -10,12 +10,15 @@ public class DeputyDomain
     public Estado EstadoRepresentacao { get; private set; }
     public string NomeEleitoral { get; private set; }
     public Email EmailDeputado { get; private set; }
-    
-    private DeputyDomain(string id, string firstName, string lastName, string fullName, DateTime dateOfBirth, String email,
-        string stateBirth, string cpf, string gender, string partido, string estadoRepresentacao, string nomeEleitoral, string emailDeputado)
+
+    private DeputyDomain(string id, string firstName, string lastName, string fullName, DateTime dateOfBirth,
+        String email,
+        string stateBirth, string cpf, string gender, string partido, string estadoRepresentacao, string nomeEleitoral,
+        string emailDeputado, string escolaridade)
     {
         Id = id;
-        Person = PersonDomain.CreatePerson(firstName, lastName, fullName, dateOfBirth, email, stateBirth, cpf, gender);
+        Person = PersonDomain.CreatePerson(firstName, lastName, fullName, dateOfBirth, email, stateBirth, cpf, gender,
+            escolaridade);
         Partido = partido;
         EstadoRepresentacao = estadoRepresentacao.ConvertStringToEstado();
         NomeEleitoral = nomeEleitoral;
@@ -24,9 +27,9 @@ public class DeputyDomain
 
     public static DeputyDomain CreateDeputy(string id, string firstName, string lastName, string fullName,
         DateTime dateOfBirth, string stateBirth, string cpf, string gender,
-        string partido, string ufRepresentacao, string nomeEleitoral, string emailDeputado)
+        string partido, string ufRepresentacao, string nomeEleitoral, string emailDeputado, string escolaridade)
     {
-        return new DeputyDomain(id, firstName, lastName, fullName, dateOfBirth, "", stateBirth, cpf, 
-            gender, partido, ufRepresentacao, nomeEleitoral, emailDeputado);
+        return new DeputyDomain(id, firstName, lastName, fullName, dateOfBirth, "", stateBirth, cpf,
+            gender, partido, ufRepresentacao, nomeEleitoral, emailDeputado, escolaridade);
     }
 }
