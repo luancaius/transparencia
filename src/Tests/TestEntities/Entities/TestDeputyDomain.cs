@@ -23,11 +23,11 @@ public class TestDeputyDomain
         var nomeEleitoral = "JohnD";
         var emailDeputado = "john.d@example.com";
         var escolaridade = "Ensino Superior";
-
+        var photoUrl = "https://example.com/photo.jpg";
 
         // Act
         var deputy = DeputyDomain.CreateDeputy(id, firstName, lastName, fullName, dateOfBirth, stateBirth, cpf, gender, 
-            partido, ufRepresentacao, nomeEleitoral, emailDeputado, escolaridade);
+            partido, ufRepresentacao, nomeEleitoral, emailDeputado, escolaridade, photoUrl);
 
         // Assert
         Assert.IsNotNull(deputy);

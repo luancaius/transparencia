@@ -23,7 +23,8 @@ public static class ConvertToDomain
             deputyDetailInfo.SiglaUf,
             deputyDetailInfo.NomeEleitoral,
             deputyDetailInfo.Email,
-            deputyDetailInfo.Escolaridade);
+            deputyDetailInfo.Escolaridade,
+            deputyDetailInfo.UrlFoto);
 
         return deputyDomain;
     }
