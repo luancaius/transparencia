@@ -12,9 +12,10 @@ public class DeputyDomain
     public Email EmailDeputado { get; private set; }
     public Image Photo { get; private set; }
     public Legislatura Legislatura { get; private set; }
+    public GabineteVO Gabinete { get; private set; }
 
     private DeputyDomain(string id, PersonDomain personDomain, string partido, Estado estadoRepresentacao,
-        string nomeEleitoral, Email emailDeputado, Image photoDeputy, Legislatura legislatura)
+        string nomeEleitoral, Email emailDeputado, Image photoDeputy, Legislatura legislatura, GabineteVO gabinete)
     {
         Id = id;
         Person = personDomain;
@@ -24,11 +25,13 @@ public class DeputyDomain
         EmailDeputado = emailDeputado;
         Photo = photoDeputy;
         Legislatura = legislatura;
+        Gabinete = gabinete;
     }
 
     public static DeputyDomain CreateDeputy(string id, string firstName, string lastName, string fullName,
-        DateTime dateOfBirth, string stateBirth, string cpf, string gender, string partido, string ufRepresentacao, 
-        string nomeEleitoral, string emailDeputadoString, string escolaridade, string deputyPhotoUrl, int legislatura)
+        DateTime dateOfBirth, string stateBirth, string cpf, string gender, string escolaridade, string partido, 
+        string ufRepresentacao, string nomeEleitoral, string emailDeputadoString, string deputyPhotoUrl, 
+        int legislatura, GabineteVO gabinete)
     {
         try
         {
@@ -38,7 +41,7 @@ public class DeputyDomain
             var ufRepresentacaoEnum = ufRepresentacao.ConvertStringToEstado();
             var emailDeputado = new Email(emailDeputadoString);
             var legislaturaVO = Legislatura.CriarLegislaturaPorAno(legislatura);
-            return new DeputyDomain(id, person, partido, ufRepresentacaoEnum, nomeEleitoral, emailDeputado, photo, legislaturaVO);
+            return new DeputyDomain(id, person, partido, ufRepresentacaoEnum, nomeEleitoral, emailDeputado, photo, legislaturaVO, gabinete);
         }
         catch (ArgumentException ex)
         {
