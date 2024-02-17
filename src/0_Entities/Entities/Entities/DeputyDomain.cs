@@ -11,9 +11,10 @@ public class DeputyDomain
     public string NomeEleitoral { get; private set; }
     public Email EmailDeputado { get; private set; }
     public Image Photo { get; private set; }
+    public Legislatura Legislatura { get; private set; }
 
     private DeputyDomain(string id, PersonDomain personDomain, string partido, Estado estadoRepresentacao,
-        string nomeEleitoral, Email emailDeputado, Image photoDeputy)
+        string nomeEleitoral, Email emailDeputado, Image photoDeputy, Legislatura legislatura)
     {
         Id = id;
         Person = personDomain;
@@ -22,11 +23,12 @@ public class DeputyDomain
         NomeEleitoral = nomeEleitoral;
         EmailDeputado = emailDeputado;
         Photo = photoDeputy;
+        Legislatura = legislatura;
     }
 
     public static DeputyDomain CreateDeputy(string id, string firstName, string lastName, string fullName,
         DateTime dateOfBirth, string stateBirth, string cpf, string gender, string partido, string ufRepresentacao, 
-        string nomeEleitoral, string emailDeputadoString, string escolaridade, string deputyPhotoUrl)
+        string nomeEleitoral, string emailDeputadoString, string escolaridade, string deputyPhotoUrl, int legislatura)
     {
         try
         {
@@ -35,7 +37,8 @@ public class DeputyDomain
             var photo = new Image(deputyPhotoUrl, "Foto do deputado");
             var ufRepresentacaoEnum = ufRepresentacao.ConvertStringToEstado();
             var emailDeputado = new Email(emailDeputadoString);
-            return new DeputyDomain(id, person, partido, ufRepresentacaoEnum, nomeEleitoral, emailDeputado, photo);
+            var legislaturaVO = Legislatura.CriarLegislaturaPorAno(legislatura);
+            return new DeputyDomain(id, person, partido, ufRepresentacaoEnum, nomeEleitoral, emailDeputado, photo, legislaturaVO);
         }
         catch (ArgumentException ex)
         {

@@ -10,6 +10,7 @@ public static class ConvertToDomain
         var arrayName = deputyDetailInfo.NomeCivil.Split(" ");
         var firstName = arrayName[0];
         var lastName = arrayName[arrayName.Length - 1];
+        
         var deputyDomain = DeputyDomain.CreateDeputy(
             deputyDetailInfo.IdDeputy.ToString(),
             firstName,
@@ -24,7 +25,8 @@ public static class ConvertToDomain
             deputyDetailInfo.NomeEleitoral,
             deputyDetailInfo.Email,
             deputyDetailInfo.Escolaridade,
-            deputyDetailInfo.UrlFoto);
+            deputyDetailInfo.UrlFoto,
+            deputyDetailInfo.IdLegislatura);
 
         return deputyDomain;
     }
