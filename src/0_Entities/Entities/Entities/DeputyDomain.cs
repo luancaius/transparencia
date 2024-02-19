@@ -28,19 +28,16 @@ public class DeputyDomain
         Gabinete = gabinete;
     }
 
-    public static DeputyDomain CreateDeputy(string id, string firstName, string lastName, string fullName,
-        DateTime dateOfBirth, string stateBirth, string cpf, string gender, string escolaridade, string partido, 
+    public static DeputyDomain CreateDeputy(string id, PersonDomain person, string partido, 
         string ufRepresentacao, string nomeEleitoral, string emailDeputadoString, string deputyPhotoUrl, 
         int legislatura, GabineteVO gabinete)
     {
         try
         {
-            var person = PersonDomain.CreatePerson(firstName, lastName, fullName, dateOfBirth, "",
-                stateBirth, cpf, gender, escolaridade);
             var photo = new Image(deputyPhotoUrl, "Foto do deputado");
             var ufRepresentacaoEnum = ufRepresentacao.ConvertStringToEstado();
             var emailDeputado = new Email(emailDeputadoString);
-            var legislaturaVO = Legislatura.CriarLegislaturaPorAno(legislatura);
+            var legislaturaVO = Legislatura.CriarLegislatura(legislatura);
             return new DeputyDomain(id, person, partido, ufRepresentacaoEnum, nomeEleitoral, emailDeputado, photo, legislaturaVO, gabinete);
         }
         catch (ArgumentException ex)

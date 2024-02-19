@@ -15,12 +15,15 @@ public class Legislatura
 
         Numero = numero;
     }
-
-    public static Legislatura CriarLegislaturaPorAno(int ano)
+    
+    public static Legislatura CriarLegislatura(int ano)
     {
-        if (ano < 1987)
+        switch (ano)
         {
-            throw new ArgumentException("Ano não suportado", nameof(ano));
+            case < 100:
+                return new Legislatura(ano);
+            case < 1987:
+                throw new ArgumentException("Ano não suportado", nameof(ano));
         }
 
         int baseAno = 1987; 

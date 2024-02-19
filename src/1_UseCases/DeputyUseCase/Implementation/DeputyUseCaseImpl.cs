@@ -18,7 +18,7 @@ public class DeputyUseCaseImpl : IDeputyUseCase
     }
     public async Task GetAndStoreDeputiesDetailsInfo(int year)
     {
-        var legislaturaVO = Legislatura.CriarLegislaturaPorAno(year);
+        var legislaturaVO = Legislatura.CriarLegislatura(year);
         var deputiesListItem = await _deputiesGateway.GetDeputiesList(legislaturaVO.Numero);
         foreach (var deputyListItem in deputiesListItem)
         {

@@ -49,11 +49,16 @@ public static class Extensions
             return Escolaridade.Desconhecida;
         }
 
-        if (Enum.TryParse<Escolaridade>(escolaridadeString, true, out var escolaridade))
+        switch (escolaridadeString)
         {
-            return escolaridade;
+            case "Superior": return Escolaridade.SuperiorCompleto;
+            case "Ensino Médio": return Escolaridade.EnsinoMedio;
+            case "Ensino Fundamental": return Escolaridade.Primario;
+            case "Pós-Graduação": return Escolaridade.Mestrado;
+            case "Mestrado": return Escolaridade.Mestrado;
+            case "Doutorado": return Escolaridade.Doutorado;
+            default:
+                return Escolaridade.Desconhecida;
         }
-
-        throw new ArgumentException("String de escolaridade inválida.", nameof(escolaridadeString));
     }
 }

@@ -26,11 +26,13 @@ public class TestDeputyDomain
         var escolaridade = "Ensino Superior";
         var photoUrl = "https://example.com/photo.jpg";
         var legislatura = 56;
-        var gabinete = GabineteVO.CreateGabinete("Gabinete 1", "Prédio 1", "Sala 1", "Andar 1", "123456789", "");    
-
+        var gabinete = GabineteVO.CreateGabinete("Gabinete 1", "Prédio 1", "Sala 1", "Andar 1", "123456789", "");
+        var person = PersonDomain.CreatePerson(firstName, lastName, fullName, dateOfBirth, "", 
+            stateBirth, cpf, gender, escolaridade);
+            
         // Act
-        var deputy = DeputyDomain.CreateDeputy(id, firstName, lastName, fullName, dateOfBirth, stateBirth, cpf, gender, 
-            partido, ufRepresentacao, nomeEleitoral, emailDeputado, escolaridade, photoUrl, legislatura, gabinete);
+        var deputy = DeputyDomain.CreateDeputy(id, person, partido, ufRepresentacao, nomeEleitoral, emailDeputado,
+            photoUrl, legislatura, gabinete);
 
         // Assert
         Assert.IsNotNull(deputy);
