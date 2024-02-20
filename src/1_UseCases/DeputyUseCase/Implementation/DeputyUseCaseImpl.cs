@@ -26,8 +26,8 @@ public class DeputyUseCaseImpl : IDeputyUseCase
             var deputyDomain = ConvertToDomain.Deputy(deputyDetailInfo);
             var deputyDetailRepo = ConvertFromDomain.DeputyDetailRepo(deputyDomain);
             await _repository.SaveNonRelationalData(deputyDetailRepo);
-            //var deputyDetailRepoRelational = deputyDetailInfo.ConvertToRepoRelational();
-            //await _repository.SaveRelationalData(deputyDetailRepoRelational);
+            var deputyDetailRepoRelational = ConvertFromDomain.DeputyDetailRepoRelational(deputyDomain);
+            await _repository.SaveRelationalData(deputyDetailRepoRelational);
         }
     }
 

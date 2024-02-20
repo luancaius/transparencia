@@ -32,14 +32,12 @@ public class Repository : IRepository
     public Task SaveRelationalData(DeputyDetailRepoRelational deputyDetailRepoRelational)
     {
         // convert to person relational data
-        //var personRelationalData = deputyDetail.ConvertToPersonRelationalData();
+        //var personRelationalData = deputyDetailRepoRelational.ConvertToPersonRelationalData();
         // convert to deputy relational data
-        //var deputyRelationalData = deputyDetail.ConvertToDeputyRelationalData();
+        //var deputyRelationalData = deputyDetailRepoRelational.ConvertToDeputyRelationalData();
         // save person relational data
         
         // save deputy relational data
-
-
-        return Task.CompletedTask; // Add return statement
+        return Task.CompletedTask;
     }
 }
