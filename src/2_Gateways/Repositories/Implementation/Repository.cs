@@ -31,8 +31,7 @@ public class Repository : IRepository
 
     public Task SaveRelationalData(DeputyDetailRepoRelational deputyDetailRepoRelational)
     {
-        // convert to person relational data
-        //var personRelationalData = deputyDetailRepoRelational.ConvertToPersonRelationalData();
+        var personRelationalData = PersonRepoRelational.ConvertFrom(deputyDetailRepoRelational);
         // convert to deputy relational data
         //var deputyRelationalData = deputyDetailRepoRelational.ConvertToDeputyRelationalData();
         // save person relational data

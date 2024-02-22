@@ -8,9 +8,6 @@ public static class ConvertToDomain
 {
     public static DeputyDomain Deputy(DeputyDetailInfo deputyDetailInfo)
     {
-        var arrayName = deputyDetailInfo.NomeCivil.Split(" ");
-        var firstName = arrayName[0];
-        var lastName = arrayName[arrayName.Length - 1];
         var gabinete = GabineteVO.CreateGabinete(
             deputyDetailInfo.GabineteInfo.Nome,
             deputyDetailInfo.GabineteInfo.Predio,
@@ -20,12 +17,11 @@ public static class ConvertToDomain
             deputyDetailInfo.GabineteInfo.Email);
         
         var person = PersonDomain.CreatePerson(
-            firstName,
-            lastName,
             deputyDetailInfo.NomeCivil,
             deputyDetailInfo.DataNascimento,
             "",
             deputyDetailInfo.UfNascimento,
+            deputyDetailInfo.MunicipioNascimento,
             deputyDetailInfo.Cpf,
             deputyDetailInfo.Sexo,
             deputyDetailInfo.Escolaridade

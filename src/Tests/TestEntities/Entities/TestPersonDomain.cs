@@ -18,8 +18,6 @@ public class TestPersonDomain
 
         // Assert
         Assert.AreEqual(name, person.FullName);
-        Assert.AreEqual("", person.LastName); 
-        Assert.AreEqual(name, person.FirstName);
     }
 
     [TestMethod]
@@ -32,17 +30,16 @@ public class TestPersonDomain
         DateTime dateOfBirth = new DateTime(1990, 1, 1);
         string email = "jane.doe@example.com";
         string estadoNascimento = "SP"; 
+        string municipioNascimento = "São Paulo";
         string cpf = "706.362.134-39"; 
         string gender = "Female";
         string escolaridade = "Ensino Superior";
 
         // Act
-        var person = PersonDomain.CreatePerson(firstName, lastName, fullName, dateOfBirth, email, estadoNascimento, cpf,
+        var person = PersonDomain.CreatePerson(fullName, dateOfBirth, email, estadoNascimento, municipioNascimento, cpf,
             gender, escolaridade);
 
         // Assert
-        Assert.AreEqual(firstName, person.FirstName);
-        Assert.AreEqual(lastName, person.LastName);
         Assert.AreEqual(fullName, person.FullName);
         Assert.AreEqual(dateOfBirth, person.DateOfBirth);
     }
@@ -58,12 +55,13 @@ public class TestPersonDomain
         DateTime dateOfBirth = new DateTime(2000, 1, 1);
         string email = "invalidEmail"; 
         string estadoNascimento = "SP";
+        string municipioNascimento = "São Paulo";
         string cpf = "706.362.134-39";
         string gender = "Male";
         string escolaridade = "Ensino Superior";
 
         // Act
-        PersonDomain.CreatePerson(firstName, lastName, fullName, dateOfBirth, email, estadoNascimento, cpf, gender, 
+        PersonDomain.CreatePerson(fullName, dateOfBirth, email, estadoNascimento, municipioNascimento, cpf, gender, 
             escolaridade);
     }
 }

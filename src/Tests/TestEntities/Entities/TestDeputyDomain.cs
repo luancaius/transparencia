@@ -12,11 +12,10 @@ public class TestDeputyDomain
     {
         // Arrange
         var id = "1";
-        var firstName = "John";
-        var lastName = "Doe";
         var fullName = "John Doe";
         var dateOfBirth = new DateTime(1980, 1, 1);
         var stateBirth = "SP";
+        var municipioNascimento = "São Paulo";
         var cpf = "905.277.626-10";
         var gender = "Male";
         var partido = "XYZ";
@@ -27,14 +26,14 @@ public class TestDeputyDomain
         var photoUrl = "https://example.com/photo.jpg";
         var legislatura = 56;
         var gabinete = GabineteVO.CreateGabinete("Gabinete 1", "Prédio 1", "Sala 1", "Andar 1", "123456789", "");
-        var person = PersonDomain.CreatePerson(firstName, lastName, fullName, dateOfBirth, "", 
-            stateBirth, cpf, gender, escolaridade);
+        var person = PersonDomain.CreatePerson(fullName, dateOfBirth, "", 
+            stateBirth, municipioNascimento, cpf, gender, escolaridade);
             
         // Act
         var deputy = DeputyDomain.CreateDeputy(id, person, partido, ufRepresentacao, nomeEleitoral, emailDeputado,
             photoUrl, legislatura, gabinete);
 
-        // Assert
+        // Assert   
         Assert.IsNotNull(deputy);
         Assert.AreEqual(id, deputy.Id);
         Assert.AreEqual(partido, deputy.Partido);
