@@ -1,3 +1,6 @@
+using RelationalDatabase.DTO;
+using RelationalDatabase.DTO.Deputado;
+
 namespace Repositories.DTO.Relational;
 
 public class DeputyDetailRepoRelational
@@ -32,6 +35,32 @@ public class DeputyDetailRepoRelational
         public string Telefone { get; set; }
         public string Email { get; set; }
     }
-    
-    
+
+    public Person ConvertToPersonDB()
+    {   
+        return new Person()
+        {
+            FullName = this.NomeCivil,
+            Cpf = this.Cpf,
+            Gender = this.Sexo,
+            DateOfBirth = this.DataNascimento,
+            Email = this.Email,
+            EstadoNascimento = this.UfNascimento,
+            MunicipioNascimento = this.MunicipioNascimento,
+            Escolaridade = this.Escolaridade
+        };
+    }
+
+    public Deputado ConvertToDeputyDB()
+    {
+        return new Deputado()
+        { 
+            NomeEleitoral = this.NomeEleitoral,
+            UfNascimento = this.UfNascimento,
+            Email = this.Email,
+            SiglaPartido = this.SiglaPartido,
+            UfRepresentacaoAtual = this.SiglaUf,
+            IdApi = this.IdDeputy.ToString()
+        };
+    }
 }
