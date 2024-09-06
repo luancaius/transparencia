@@ -29,16 +29,16 @@ public static class ConvertFromDomain
         };
     }
 
-    private static DeputyDetailMongo.Gabinete ConvertGabineteVO(GabineteVO gabineteVo)
+    private static DeputyDetailMongo.Gabinete ConvertGabineteVO(Gabinete gabinete)
     {
         return new DeputyDetailMongo.Gabinete()
         {
-            Nome = gabineteVo.Nome,
-            Predio = gabineteVo.Predio,
-            Sala = gabineteVo.Sala,
-            Andar = gabineteVo.Andar,
-            Telefone = gabineteVo.Telefone,
-            Email = gabineteVo.Email.Value
+            Nome = gabinete.Nome,
+            Predio = gabinete.Predio,
+            Sala = gabinete.Sala,
+            Andar = gabinete.Andar,
+            Telefone = gabinete.Telefone,
+            Email = gabinete.Email.Value
         };
     }
 

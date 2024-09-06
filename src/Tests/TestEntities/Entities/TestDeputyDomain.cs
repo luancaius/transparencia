@@ -25,7 +25,7 @@ public class TestDeputyDomain
         var escolaridade = "Ensino Superior";
         var photoUrl = "https://example.com/photo.jpg";
         var legislatura = 56;
-        var gabinete = GabineteVO.CreateGabinete("Gabinete 1", "Prédio 1", "Sala 1", "Andar 1", "123456789", "");
+        var gabinete = Gabinete.CreateGabinete("Gabinete 1", "Prédio 1", "Sala 1", "Andar 1", "123456789", "");
         var person = PersonDomain.CreatePerson(fullName, dateOfBirth, "", 
             stateBirth, municipioNascimento, cpf, gender, escolaridade);
             

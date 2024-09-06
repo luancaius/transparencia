@@ -8,7 +8,7 @@ public static class ConvertToDomain
 {
     public static DeputyDomain Deputy(DeputyDetailInfo deputyDetailInfo)
     {
-        var gabinete = GabineteVO.CreateGabinete(
+        var gabinete = Gabinete.CreateGabinete(
             deputyDetailInfo.GabineteInfo.Nome,
             deputyDetailInfo.GabineteInfo.Predio,
             deputyDetailInfo.GabineteInfo.Sala,

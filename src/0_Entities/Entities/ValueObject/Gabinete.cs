@@ -1,6 +1,6 @@
 namespace Entities.ValueObject;
 
-public class GabineteVO
+public class Gabinete
 {
     public string Nome { get; private set; }
     public string Predio { get; private set; }
@@ -9,18 +9,18 @@ public class GabineteVO
     public string Telefone { get; private set; }
     public Email Email { get; private set; }
 
-    private GabineteVO()
+    private Gabinete()
     {
     }
 
-    public static GabineteVO CreateGabinete(string nome, string predio, string sala, string andar,
+    public static Gabinete CreateGabinete(string nome, string predio, string sala, string andar,
         string telefone, string email)
     {
         if (string.IsNullOrWhiteSpace(nome))
         {
             nome = "Sem informação do gabinete";
         }
-        return new GabineteVO
+        return new Gabinete
         {
             Nome = nome,
             Predio = predio,

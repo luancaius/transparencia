@@ -12,10 +12,10 @@ public class DeputyDomain
     public Email EmailDeputado { get; private set; }
     public Image Photo { get; private set; }
     public Legislatura Legislatura { get; private set; }
-    public GabineteVO Gabinete { get; private set; }
+    public Gabinete Gabinete { get; private set; }
 
     private DeputyDomain(string id, PersonDomain personDomain, string partido, Estado estadoRepresentacao,
-        string nomeEleitoral, Email emailDeputado, Image photoDeputy, Legislatura legislatura, GabineteVO gabinete)
+        string nomeEleitoral, Email emailDeputado, Image photoDeputy, Legislatura legislatura, Gabinete gabinete)
     {
         Id = id;
         Person = personDomain;
@@ -30,7 +30,7 @@ public class DeputyDomain
 
     public static DeputyDomain CreateDeputy(string id, PersonDomain person, string partido, 
         string ufRepresentacao, string nomeEleitoral, string emailDeputadoString, string deputyPhotoUrl, 
-        int legislatura, GabineteVO gabinete)
+        int legislatura, Gabinete gabinete)
     {
         try
         {
