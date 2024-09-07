@@ -1,12 +1,15 @@
 using DeputyUseCase.DTO;
-using DeputyUseCase.Implementation;
+using DeputyUseCase.Interfaces;
 using Repositories.DTO.ExposedApi;
 using Repositories.Interfaces;
+
+namespace DeputyUseCase.Implementation;
 
 public class DeputyApiUseCaseImpl : IDeputyApiUseCase
 {
     private readonly IExpenseRepository _expenseRepository;
-
+    private const int LIMIT = 10;
+    
     public DeputyApiUseCaseImpl(IExpenseRepository expenseRepository)
     {
         _expenseRepository = expenseRepository;
@@ -18,11 +21,11 @@ public class DeputyApiUseCaseImpl : IDeputyApiUseCase
 
         if (week.HasValue)
         {
-            expenses = await _expenseRepository.GetExpensesByWeekAsync(week.Value, 10);
+            expenses = await _expenseRepository.GetExpensesByWeekAsync(week.Value, LIMIT);
         }
         else if (month.HasValue)
         {
-            expenses = await _expenseRepository.GetExpensesByMonthAsync(month.Value, 10);
+            expenses = await _expenseRepository.GetExpensesByMonthAsync(month.Value, LIMIT);
         }
 
         return expenses.Select(expenseRepo => new Expense(expenseRepo)).ToList();

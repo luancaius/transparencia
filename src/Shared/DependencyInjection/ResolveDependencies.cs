@@ -96,11 +96,13 @@ public class ResolveDependencies
         
         services.AddTransient<IDeputiesGateway, DeputiesGateway>();
         services.AddTransient<IRepository, Repository>();
+        services.AddTransient<IExpenseRepository, ExpenseRepository>();
         
         #endregion
         
         #region UseCase
         services.AddTransient<IDeputyUseCase, DeputyUseCaseImpl>();
+        services.AddTransient<IDeputyApiUseCase, DeputyApiUseCaseImpl>();
         #endregion
         
         services.AddTransient<ILogger, CustomLogger>();

@@ -1,6 +1,6 @@
 using DeputyUseCase.DTO;
 
-namespace DeputyUseCase.Implementation;
+namespace DeputyUseCase.Interfaces;
 
 public interface IDeputyApiUseCase
 {

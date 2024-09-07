@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using DeputyUseCase.Implementation;
+using DeputyUseCase.Interfaces;
 
 namespace Presentation.API.Controllers
 {
