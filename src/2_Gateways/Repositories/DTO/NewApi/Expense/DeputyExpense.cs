@@ -71,7 +71,7 @@ namespace Repositories.DTO.NewApi.Expense
 
         public override string ToString()
         {
-            return $"DeputyId {IdDeputy} Expense: {Id} - fornecedor: {NomeFornecedor} - valor: {ValorLiquido} - " +
+            return $"DeputyId {IdDeputy} ExpenseRepo: {Id} - fornecedor: {NomeFornecedor} - valor: {ValorLiquido} - " +
                    $"url: {UrlDocumento} - lote: {CodLote} - parcela: {Parcela}, data: {DataDocumento}";
         }
     }

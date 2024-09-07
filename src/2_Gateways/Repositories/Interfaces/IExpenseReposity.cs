@@ -4,6 +4,6 @@ namespace Repositories.Interfaces;
 
 public interface IExpenseRepository
 {
-    Task<List<Expense>> GetExpensesByWeekAsync(int week);
-    Task<List<Expense>> GetExpensesByMonthAsync(int month);
+    Task<List<ExpenseRepo>> GetExpensesByWeekAsync(int week, int limit);
+    Task<List<ExpenseRepo>> GetExpensesByMonthAsync(int month, int limit);
 }
