@@ -39,7 +39,7 @@ public class ResolveDependencies
         _serviceProvider = serviceCollection.BuildServiceProvider();
     }
     
-    private static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
+    public static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
     {
         #region Infrastructure
         services.AddDbContext<AppDbContext>(options =>
@@ -97,7 +97,8 @@ public class ResolveDependencies
         services.AddTransient<IDeputiesGateway, DeputiesGateway>();
         services.AddTransient<IRepository, Repository>();
         services.AddTransient<IExpenseRepository, ExpenseRepository>();
-        
+        services.AddTransient<IUnitOfWork, UnitOfWork>();
+
         #endregion
         
         #region UseCase
