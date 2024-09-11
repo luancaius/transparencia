@@ -1,6 +1,5 @@
-using DeputyUseCase.DTO;
 using DeputyUseCase.Interfaces;
-using Repositories.DTO.ExposedApi;
+using DTO.Layer_1_2;
 using Repositories.Interfaces;
 
 namespace DeputyUseCase.Implementation;
@@ -17,7 +16,7 @@ public class DeputyApiUseCaseImpl : IDeputyApiUseCase
 
     public async Task<List<Expense>> GetTop10ExpensesAsync(int? week, int? month)
     {
-        var expenses = new List<ExpenseRepo>();
+        var expenses = new List<Expense>();
 
         if (week.HasValue)
         {
@@ -28,6 +27,6 @@ public class DeputyApiUseCaseImpl : IDeputyApiUseCase
             expenses = await _expenseRepository.GetExpensesByMonthAsync(month.Value, LIMIT);
         }
 
-        return expenses.Select(expenseRepo => new Expense(expenseRepo)).ToList();
+        return expenses;
     }
 }

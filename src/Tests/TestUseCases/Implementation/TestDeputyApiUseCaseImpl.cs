@@ -1,7 +1,7 @@
 using DeputyUseCase.Implementation;
+using DTO.Layer_1_2;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Repositories.DTO.ExposedApi;
 using Repositories.Interfaces;
 
 namespace TestUseCases.Implementation
@@ -24,10 +24,10 @@ namespace TestUseCases.Implementation
         {
             // Arrange
             var week = 34;
-            var mockExpenses = new List<ExpenseRepo>
+            var mockExpenses = new List<Expense>
             {
-                new ExpenseRepo { Amount = 100 },
-                new ExpenseRepo { Amount = 200 }
+                new Expense { Amount = 100 },
+                new Expense { Amount = 200 }
             };
             _mockExpenseRepository.Setup(repo => repo.GetExpensesByWeekAsync(week, 10))
                 .ReturnsAsync(mockExpenses);
@@ -45,10 +45,10 @@ namespace TestUseCases.Implementation
         {
             // Arrange
             var month = 8;
-            var mockExpenses = new List<ExpenseRepo>
+            var mockExpenses = new List<Expense>
             {
-                new ExpenseRepo { Amount = 300 },
-                new ExpenseRepo { Amount = 400 }
+                new Expense { Amount = 300 },
+                new Expense { Amount = 400 }
             };
             _mockExpenseRepository.Setup(repo => repo.GetExpensesByMonthAsync(month, 10))
                 .ReturnsAsync(mockExpenses);

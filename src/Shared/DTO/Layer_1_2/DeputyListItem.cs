@@ -1,4 +1,4 @@
-namespace DeputyUseCase.DTO;
+namespace DTO.Layer_1_2;
 
 public class DeputyListItem
 {

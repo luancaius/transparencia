@@ -23,16 +23,16 @@ namespace Presentation.Console
         
         public static async Task ExecuteConsole(IDeputyUseCase deputyUseCase)
         {
-            string command = "a";
+            string command = "b";
 
             System.Console.WriteLine($"Executing command {command}");
             switch (command)
             {
                 case "a":
-                    await deputyUseCase.GetAndStoreDeputiesDetailsInfo(2023);
+                    await deputyUseCase.GetAndStoreDeputiesDetailsInfo(2024);
                     break;
                 case "b":
-                    await deputyUseCase.GetAndStoreDeputiesExpenses(2023);
+                    await deputyUseCase.GetAndStoreDeputiesExpenses(2024);
                     break;
                 default:
                     System.Console.WriteLine("Invalid command. Please try again.");

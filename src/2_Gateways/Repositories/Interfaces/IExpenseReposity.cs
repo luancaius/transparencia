@@ -1,9 +1,9 @@
-using Repositories.DTO.ExposedApi;
+using DTO.Layer_1_2;
 
 namespace Repositories.Interfaces;
 
 public interface IExpenseRepository
 {
-    Task<List<ExpenseRepo>> GetExpensesByWeekAsync(int week, int limit);
-    Task<List<ExpenseRepo>> GetExpensesByMonthAsync(int month, int limit);
+    Task<List<Expense>> GetExpensesByWeekAsync(int week, int limit);
+    Task<List<Expense>> GetExpensesByMonthAsync(int month, int limit);
 }

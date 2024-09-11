@@ -1,9 +1,5 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+using DTO.Layer_1_2;
 using RelationalDatabase.Interfaces;
-using Repositories.DTO.ExposedApi;
 using Repositories.Interfaces;
 
 namespace Repositories.Implementation
@@ -17,7 +13,7 @@ namespace Repositories.Implementation
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<ExpenseRepo>> GetExpensesByWeekAsync(int week, int limit)
+        public async Task<List<Expense>> GetExpensesByWeekAsync(int week, int limit)
         {
             var startDate = FirstDateOfWeekISO8601(DateTime.Now.Year, week);
             var endDate = startDate.AddDays(7);
@@ -28,14 +24,14 @@ namespace Repositories.Implementation
                 .ToList();
 
             // Map DeputyExpense to ExpenseRepo DTO
-            return deputyExpenses.Select(expense => new ExpenseRepo
+            return deputyExpenses.Select(expense => new Expense
             {
                 Amount = expense.AmountFinal,
                 Date = expense.DateTimeExpense ?? DateTime.MinValue
             }).ToList();
         }
 
-        public async Task<List<ExpenseRepo>> GetExpensesByMonthAsync(int month, int limit)
+        public async Task<List<Expense>> GetExpensesByMonthAsync(int month, int limit)
         {
             var year = DateTime.Now.Year;
             var startDate = new DateTime(year, month, 1);
@@ -47,7 +43,7 @@ namespace Repositories.Implementation
                 .ToList();
 
             // Map DeputyExpense to ExpenseRepo DTO
-            return deputyExpenses.Select(expense => new ExpenseRepo
+            return deputyExpenses.Select(expense => new Expense
             {
                 Amount = expense.AmountFinal,
                 Date = expense.DateTimeExpense ?? DateTime.MinValue

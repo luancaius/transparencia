@@ -1,4 +1,4 @@
-using DeputyUseCase.DTO;
+using DTO.Layer_1_2;
 
 namespace DeputyUseCase.Interfaces;
 

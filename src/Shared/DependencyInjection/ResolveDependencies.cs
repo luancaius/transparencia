@@ -82,15 +82,6 @@ public class ResolveDependencies
         services.AddTransient<IDadosAbertosNewApi, DadosAbertosNewApi>();
         
         #endregion
-
-        #region External API
-        
-
-        #endregion
-        
-        #region Database
-
-        #endregion
         
         #region Gateways and Repositories
         
