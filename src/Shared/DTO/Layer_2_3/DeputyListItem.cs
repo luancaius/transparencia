@@ -1,6 +1,6 @@
 using Newtonsoft.Json.Linq;
 
-namespace Gateways.DTO;
+namespace DTO.Layer_2_3;
 
 public class DeputyListItem
 {

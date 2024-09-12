@@ -1,7 +1,7 @@
 using Entities.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Entities.Tests
+namespace TestEntities.Entities
 {
     [TestClass]
     public class DeputyExpenseDomainTests

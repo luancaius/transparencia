@@ -1,7 +1,7 @@
 using System.Globalization;
 using Newtonsoft.Json;
 
-namespace Gateways.DTO;
+namespace DTO.Layer_2_3;
 
 public class DeputyDetailInfo
 {

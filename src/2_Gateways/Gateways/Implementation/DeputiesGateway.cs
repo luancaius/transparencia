@@ -1,5 +1,5 @@
+using DTO.Layer_2_3;
 using ExternalAPI.Interfaces;
-using Gateways.DTO;
 using Gateways.Interfaces;
 
 namespace Gateways.Implementation;

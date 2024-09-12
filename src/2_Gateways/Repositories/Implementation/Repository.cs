@@ -1,4 +1,5 @@
 using NonRelationalDatabase.Interfaces;
+using RelationalDatabase.Interfaces;
 using Repositories.DTO.NonRelational;
 using Repositories.DTO.Relational;
 using Repositories.Interfaces;

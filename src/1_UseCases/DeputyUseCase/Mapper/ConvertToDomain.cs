@@ -1,6 +1,6 @@
+using DTO.Layer_2_3;
 using Entities.Entities;
 using Entities.ValueObject;
-using Gateways.DTO;
 
 namespace DeputyUseCase.Mapper;
 

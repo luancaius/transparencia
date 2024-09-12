@@ -1,4 +1,4 @@
-using Gateways.DTO;
+using DTO.Layer_2_3;
 
 namespace Gateways.Interfaces;
 
