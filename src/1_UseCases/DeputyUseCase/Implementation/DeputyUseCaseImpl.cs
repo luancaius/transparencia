@@ -31,12 +31,15 @@ public class DeputyUseCaseImpl : IDeputyUseCase
         }
     }
 
-    public Task GetAndStoreDeputiesExpenses(int year)
+    public async Task GetAndStoreDeputiesExpenses(int year)
     {
-        // get all deputies from non relational repo
+        var deputies = await _repository.GetAllDeputies(year);
         // foreach deputy id, make the expense call for the month of the year
+        foreach (var deputy in deputies)
+        {
+            
+        }
         // save the raw value on mongo
         // save relational data
-        throw new NotImplementedException();
     }
 }

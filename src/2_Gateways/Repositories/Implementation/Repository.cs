@@ -33,11 +33,15 @@ public class Repository : IRepository
     public Task SaveRelationalData(DeputyDetailRepoRelational deputyDetailRepoRelational)
     {
         var personDB = deputyDetailRepoRelational.ConvertToPersonDB();
-        // convert to deputy relational data
         var deputyDetailsDB = deputyDetailRepoRelational.ConvertToDeputyDB();
         // save person relational data
-        
+        _relationalDatabase.SaveEntity(deputyDetailsDB);
         // save deputy relational data
         return Task.CompletedTask;
+    }
+
+    public Task<List<DeputyDetailRepoRelational>> GetAllDeputies(int year)
+    {
+        throw new NotImplementedException();
     }
 }

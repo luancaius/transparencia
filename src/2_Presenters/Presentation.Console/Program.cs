@@ -23,7 +23,7 @@ namespace Presentation.Console
         
         public static async Task ExecuteConsole(IDeputyUseCase deputyUseCase)
         {
-            string command = "b";
+            string command = "a";
 
             System.Console.WriteLine($"Executing command {command}");
             switch (command)
