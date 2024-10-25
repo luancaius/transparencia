@@ -20,20 +20,21 @@ namespace TestUseCases.Implementation
         }
 
         [TestMethod]
-        public async Task GetTop10ExpensesAsync_ShouldReturnExpensesByWeek()
+        public async Task GetTop10ExpensesAsync_ShouldReturnExpensesByDateRange()
         {
             // Arrange
-            var week = 34;
+            var dateStart = new DateTime(2024, 10, 1);
+            var dateEnd = new DateTime(2024, 10, 15);
             var mockExpenses = new List<Expense>
             {
-                new Expense { Amount = 100 },
-                new Expense { Amount = 200 }
+                new Expense { Amount = 100, Date = new DateTime(2024, 10, 5) },
+                new Expense { Amount = 200, Date = new DateTime(2024, 10, 10) }
             };
-            _mockExpenseRepository.Setup(repo => repo.GetExpensesByWeekAsync(week, 10))
+            _mockExpenseRepository.Setup(repo => repo.GetExpensesByDateRangeAsync(dateStart, dateEnd, 10))
                 .ReturnsAsync(mockExpenses);
 
             // Act
-            var result = await _deputyApiUseCaseImpl.GetTop10ExpensesAsync(week, null);
+            var result = await _deputyApiUseCaseImpl.GetTop10ExpensesAsync(dateStart, dateEnd);
 
             // Assert
             Assert.AreEqual(2, result.Count);
@@ -41,24 +42,19 @@ namespace TestUseCases.Implementation
         }
 
         [TestMethod]
-        public async Task GetTop10ExpensesAsync_ShouldReturnExpensesByMonth()
+        public async Task GetTop10ExpensesAsync_ShouldReturnEmpty_WhenNoExpensesInRange()
         {
             // Arrange
-            var month = 8;
-            var mockExpenses = new List<Expense>
-            {
-                new Expense { Amount = 300 },
-                new Expense { Amount = 400 }
-            };
-            _mockExpenseRepository.Setup(repo => repo.GetExpensesByMonthAsync(month, 10))
-                .ReturnsAsync(mockExpenses);
+            var dateStart = new DateTime(2024, 9, 1);
+            var dateEnd = new DateTime(2024, 9, 10);
+            _mockExpenseRepository.Setup(repo => repo.GetExpensesByDateRangeAsync(dateStart, dateEnd, 10))
+                .ReturnsAsync(new List<Expense>());
 
             // Act
-            var result = await _deputyApiUseCaseImpl.GetTop10ExpensesAsync(null, month);
+            var result = await _deputyApiUseCaseImpl.GetTop10ExpensesAsync(dateStart, dateEnd);
 
             // Assert
-            Assert.AreEqual(2, result.Count);
-            Assert.AreEqual(300, result.First().Amount);
+            Assert.AreEqual(0, result.Count);
         }
     }
 }

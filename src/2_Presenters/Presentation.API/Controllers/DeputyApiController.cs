@@ -15,15 +15,15 @@ namespace Presentation.API.Controllers
         }
 
         [HttpGet("top10")]
-        public async Task<IActionResult> GetTop10Expenses([FromQuery] int? week, [FromQuery] int? month)
+        public async Task<IActionResult> GetTop10Expenses([FromQuery] DateTime? dateStart, [FromQuery] DateTime? dateEnd)
         {
-            if (week == null && month == null)
+            if (dateStart == null || dateEnd == null)
             {
-                return BadRequest("Please provide either week or month.");
+                return BadRequest("Please provide both dateStart and dateEnd.");
             }
 
-            var expenses = await _deputyApiUseCase.GetTop10ExpensesAsync(week, month);
-            
+            var expenses = await _deputyApiUseCase.GetTop10ExpensesAsync(dateStart.Value, dateEnd.Value);
+    
             if (expenses == null || !expenses.Any())
             {
                 return NotFound("No expenses found.");
@@ -31,5 +31,6 @@ namespace Presentation.API.Controllers
 
             return Ok(expenses);
         }
+
     }
 }

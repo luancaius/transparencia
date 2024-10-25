@@ -14,19 +14,9 @@ public class DeputyApiUseCaseImpl : IDeputyApiUseCase
         _expenseRepository = expenseRepository;
     }
 
-    public async Task<List<Expense>> GetTop10ExpensesAsync(int? week, int? month)
+    public async Task<List<Expense>> GetTop10ExpensesAsync(DateTime dateStart, DateTime dateEnd)
     {
-        var expenses = new List<Expense>();
-
-        if (week.HasValue)
-        {
-            expenses = await _expenseRepository.GetExpensesByWeekAsync(week.Value, LIMIT);
-        }
-        else if (month.HasValue)
-        {
-            expenses = await _expenseRepository.GetExpensesByMonthAsync(month.Value, LIMIT);
-        }
-
+        var expenses = await _expenseRepository.GetExpensesByDateRangeAsync(dateStart, dateEnd, LIMIT);
         return expenses;
     }
 }
