@@ -27,5 +27,7 @@ namespace Repositories.Implementation
                 Date = expense.DateTimeExpense ?? DateTime.MinValue
             }).ToList();
         }
+        
+        
     }
 }

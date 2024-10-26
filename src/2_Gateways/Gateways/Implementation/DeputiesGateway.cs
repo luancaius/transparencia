@@ -24,4 +24,9 @@ public class DeputiesGateway : IDeputiesGateway
         var deputyDetail = new DeputyDetailInfo(deputiesRaw);
         return deputyDetail;    
     }
+
+    public Task<DeputyDetailInfo> GetDeputyExpenses(DateTime start, DateTime end, int id)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -35,11 +35,16 @@ public class DeputyUseCaseImpl : IDeputyUseCase
     {
         var deputies = await _repository.GetAllDeputies(year);
         // foreach deputy id, make the expense call for the month of the year
+        int limit_month = year == DateTime.Now.Year ? DateTime.Now.Month : 12;
         foreach (var deputy in deputies)
         {
-            
+
+            for (int i = 1; i < limit_month; i++)
+            {
+                // save the raw value on mongo
+                // save relational data
+            }
         }
-        // save the raw value on mongo
-        // save relational data
+
     }
 }
