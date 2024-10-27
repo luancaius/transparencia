@@ -9,10 +9,10 @@ public class DeputyDomain
     public string Partido { get; private set; }
     public Estado EstadoRepresentacao { get; private set; }
     public string NomeEleitoral { get; private set; }
-    public Email EmailDeputado { get; private set; }
-    public Image Photo { get; private set; }
+    public Email? EmailDeputado { get; private set; }
+    public Image? Photo { get; private set; }
     public Legislatura Legislatura { get; private set; }
-    public Gabinete Gabinete { get; private set; }
+    public Gabinete? Gabinete { get; private set; }
 
     private DeputyDomain(string id, PersonDomain personDomain, string partido, Estado estadoRepresentacao,
         string nomeEleitoral, Email emailDeputado, Image photoDeputy, Legislatura legislatura, Gabinete gabinete)

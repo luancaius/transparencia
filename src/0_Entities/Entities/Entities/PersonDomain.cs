@@ -1,50 +1,47 @@
 using Entities.ValueObject;
 
-namespace Entities.Entities;
-
-public class PersonDomain
+namespace Entities.Entities
 {
-    public string FullName { get; private set; }
-    public DateTime? DateOfBirth { get; private set; }
-    public Estado EstadoNascimento { get; private set; }
-    public string MunicipioNascimento { get; private set; }
-    public Email Email { get; private set; }
-    public Cpf CPF { get; private set; }
-    public Gender Gender { get; private set; }
-    public Escolaridade  Escolaridade { get; private set; }
-
-    private PersonDomain(string fullName, DateTime dateOfBirth, String email, 
-        string stateBirth, string municipioNascimento, string cpf, string gender, string escolaridade)
+    public class PersonDomain
     {
-        try
+        public Name Name { get; private set; }
+        public Cpf CPF { get; private set; }
+        public DateTime? DateOfBirth { get; private set; }
+        public Estado? EstadoNascimento { get; private set; }
+        public string? MunicipioNascimento { get; private set; }
+        public Email? Email { get; private set; }
+        public Gender? Gender { get; private set; }
+        public Escolaridade? Escolaridade { get; private set; }
+
+        private PersonDomain(Name name, DateTime? dateOfBirth, Email? email, 
+            Estado? estadoNascimento, string? municipioNascimento, Cpf cpf, Gender? gender, Escolaridade? escolaridade)
         {
-            FullName = fullName;
+            Name = name;
             DateOfBirth = dateOfBirth;
-            EstadoNascimento = stateBirth.ConvertStringToEstado();
+            Email = email;
+            EstadoNascimento = estadoNascimento;
             MunicipioNascimento = municipioNascimento;
-            Email = new Email(email);
-            CPF = new Cpf(cpf); 
-            Gender = Extensions.GenderFromString(gender); 
-            Escolaridade = Extensions.EscolaridadeFromString(escolaridade);
+            CPF = cpf;
+            Gender = gender;
+            Escolaridade = escolaridade;
         }
-        catch (ArgumentException ex)
-        {
-            throw new ArgumentException($"Erro ao processar dados de PersonDomain: {ex.Message}", ex);
-        }
-        catch (Exception ex)
-        {
-            throw new Exception($"Erro inesperado ao criar PersonDomain: {ex.Message}", ex);
-        }
-    }
 
-    public static PersonDomain CreateSimplePerson(string name, string cpf)
-    {
-        return new PersonDomain(name, DateTime.MinValue, "", "","", cpf, "", "");
-    }
-    
-    public static PersonDomain CreatePerson(string fullName,
-        DateTime dateOfBirth, string email, string estadoNascimento, string municipioNascimento, string cpf, string gender, string escolaridade)
-    {
-        return new PersonDomain(fullName, dateOfBirth, email,estadoNascimento, municipioNascimento, cpf, gender, escolaridade);
+        public static PersonDomain CreateSimplePerson(string firstName, string cpf)
+        {
+            return new PersonDomain(new Name(firstName), null, null, null, null, new Cpf(cpf), null, null);
+        }
+        
+        public static PersonDomain CreatePerson(string firstName, string? lastName, string? nickname, DateTime dateOfBirth, 
+            string email, string estadoNascimento, string municipioNascimento, string cpf, string gender, string escolaridade)
+        {
+            var name = new Name(firstName, lastName, nickname);
+            var emailObj = new Email(email);
+            var estado = estadoNascimento.ConvertStringToEstado();
+            var cpfObj = new Cpf(cpf);
+            var genderEnum = Extensions.GenderFromString(gender);
+            var escolaridadeEnum = Extensions.EscolaridadeFromString(escolaridade);
+
+            return new PersonDomain(name, dateOfBirth, emailObj, estado, municipioNascimento, cpfObj, genderEnum, escolaridadeEnum);
+        }
     }
 }
