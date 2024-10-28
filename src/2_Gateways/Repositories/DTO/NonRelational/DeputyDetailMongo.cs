@@ -3,14 +3,14 @@ namespace Repositories.DTO.NonRelational;
 public class DeputyDetailMongo
 {
     public int Id { get; set; }
-    public string NomeCivil { get; set; }
+    public string? NomeCivil { get; set; }
     public string Cpf { get; set; }
-    public string Sexo { get; set; }
-    public DateTime DataNascimento { get; set; } 
+    public string? Sexo { get; set; }
+    public DateTime? DataNascimento { get; set; } 
     public DateTime? DataFalecimento { get; set; } 
-    public string UfNascimento { get; set; }
+    public string? UfNascimento { get; set; }
     public string MunicipioNascimento { get; set; }
-    public string Escolaridade { get; set; }
+    public string? Escolaridade { get; set; }
     public string UrlWebsite { get; set; }
     public List<string> RedeSocial { get; set; }
     public string SiglaPartido { get; set; }

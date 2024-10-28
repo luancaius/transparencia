@@ -18,6 +18,8 @@ public static class ConvertToDomain
         
         var person = PersonDomain.CreatePerson(
             deputyDetailInfo.NomeCivil,
+            "",
+            "",
             deputyDetailInfo.DataNascimento,
             "",
             deputyDetailInfo.UfNascimento,

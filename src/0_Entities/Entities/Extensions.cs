@@ -51,6 +51,8 @@ public static class Extensions
 
         switch (escolaridadeString)
         {
+            case "Ensino Superior":
+            case "Superior Completo":
             case "Superior": return Escolaridade.SuperiorCompleto;
             case "Ensino Médio": return Escolaridade.EnsinoMedio;
             case "Ensino Fundamental": return Escolaridade.Primario;

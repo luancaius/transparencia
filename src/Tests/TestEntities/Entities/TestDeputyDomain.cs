@@ -26,9 +26,12 @@ public class TestDeputyDomain
         var photoUrl = "https://example.com/photo.jpg";
         var legislatura = 56;
         var gabinete = Gabinete.CreateGabinete("Gabinete 1", "Prédio 1", "Sala 1", "Andar 1", "123456789", "");
-        var person = PersonDomain.CreatePerson(fullName, dateOfBirth, "", 
-            stateBirth, municipioNascimento, cpf, gender, escolaridade);
-            
+
+        // Creating PersonDomain
+        var person = PersonDomain.CreatePerson(
+            "John", "Doe", null, dateOfBirth, emailDeputado, stateBirth, municipioNascimento, cpf, gender, escolaridade
+        );
+
         // Act
         var deputy = DeputyDomain.CreateDeputy(id, person, partido, ufRepresentacao, nomeEleitoral, emailDeputado,
             photoUrl, legislatura, gabinete);
@@ -37,5 +40,10 @@ public class TestDeputyDomain
         Assert.IsNotNull(deputy);
         Assert.AreEqual(id, deputy.Id);
         Assert.AreEqual(partido, deputy.Partido);
+        Assert.AreEqual(nomeEleitoral, deputy.NomeEleitoral);
+        Assert.AreEqual(emailDeputado, deputy.EmailDeputado.Value);
+        Assert.AreEqual(photoUrl, deputy.Photo.Url);
+        Assert.AreEqual(legislatura, deputy.Legislatura.Numero);
+        Assert.AreEqual(gabinete, deputy.Gabinete);
     }
 }
