@@ -6,7 +6,7 @@ public class Name
     public string? LastName { get; }
     public string? FullName { get; }
 
-    public Name(string? firstName, string? lastName = null, string? fullName = null, string? nickname = null)
+    public Name(string? firstName, string? lastName = null, string? fullName = null)
     {
         // Check if the provided values satisfy the rule
         if (string.IsNullOrWhiteSpace(firstName) && string.IsNullOrWhiteSpace(fullName))
