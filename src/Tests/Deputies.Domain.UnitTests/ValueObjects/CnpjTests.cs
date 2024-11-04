@@ -82,7 +82,7 @@ public class CnpjTests
     {
         // Arrange
         var cnpj1 = new Cnpj("12345678000195");
-        var cnpj2 = new Cnpj("98765432000100");
+        var cnpj2 = new Cnpj("84751455000139");
 
         // Act & Assert
         Assert.NotEqual(cnpj1, cnpj2); // Different CNPJs should not be equal
