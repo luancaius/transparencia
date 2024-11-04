@@ -34,13 +34,13 @@ jobs:
       run: dotnet build --no-restore ./src/Transparencia.sln
 
     - name: Test
-      run: dotnet test --no-build --verbosity normal ./src/Transparencia.sln /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./coverage/lcov.info
+      run: dotnet test --no-build --verbosity normal ./src/Transparencia.sln /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./src/lcov.info
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        file: ./coverage/lcov.info
+        file: ./src/lcov.info
         flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: true
