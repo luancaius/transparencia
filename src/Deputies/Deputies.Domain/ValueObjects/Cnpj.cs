@@ -1,62 +1,98 @@
-namespace Deputies.Domain.ValueObjects;
+using System;
+using System.Linq;
+using System.Text.RegularExpressions;
 
-public class Cnpj
+namespace Deputies.Domain.ValueObjects
 {
-    private readonly string _value;
-
-    public Cnpj(string cnpj)
+    public class Cnpj
     {
-        if (string.IsNullOrEmpty(cnpj))
+        private readonly string _value;
+
+        public Cnpj(string cnpj)
         {
-            throw new ArgumentException("CNPJ cannot be null or empty.");
+            if (string.IsNullOrEmpty(cnpj))
+            {
+                throw new ArgumentException("CNPJ cannot be null or empty.");
+            }
+
+            // Remove any non-numeric characters to standardize
+            cnpj = new string(cnpj.Where(char.IsDigit).ToArray());
+
+            if (!IsValidCnpj(cnpj))
+            {
+                throw new ArgumentException("Invalid CNPJ.");
+            }
+
+            _value = cnpj;
         }
 
-        if (!IsValidCnpj(cnpj))
+        // Returns the CNPJ with mask (e.g., 12.345.678/0001-95)
+        public string GetMasked()
         {
-            throw new ArgumentException($"Invalid CNPJ: {cnpj}");
+            return ConvertToMasked(_value);
         }
 
-        _value = cnpj;
-    }
+        // Returns the CNPJ without mask (e.g., 12345678000195)
+        public string GetUnmasked()
+        {
+            return _value;
+        }
 
-    public override string ToString()
-    {
-        return _value;
-    }
+        public override string ToString()
+        {
+            return GetMasked(); // Return masked CNPJ by default for display
+        }
 
-    private bool IsValidCnpj(string cnpj)
-    {
-        // Remove any non-numeric characters
-        cnpj = new string(cnpj.Where(char.IsDigit).ToArray());
-
-        // Check if the CNPJ has 14 digits
-        if (cnpj.Length != 14)
+        public override bool Equals(object obj)
+        {
+            if (obj is Cnpj other)
+            {
+                return _value == other._value;
+            }
             return false;
+        }
 
-        // Check if the CNPJ has all identical digits
-        if (new string(cnpj.Distinct().ToArray()).Length == 1)
-            return false;
+        public override int GetHashCode()
+        {
+            return _value.GetHashCode();
+        }
 
-        // Calculate and verify the first check digit
-        int[] multiplier1 = { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
-        int sum = 0;
-        for (int i = 0; i < 12; i++)
-            sum += int.Parse(cnpj[i].ToString()) * multiplier1[i];
-        int remainder = sum % 11;
-        remainder = remainder < 2 ? 0 : 11 - remainder;
-        if (remainder != int.Parse(cnpj[12].ToString()))
-            return false;
+        private static bool IsValidCnpj(string cnpj)
+        {
+            if (cnpj.Length != 14)
+                return false;
 
-        // Calculate and verify the second check digit
-        int[] multiplier2 = { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
-        sum = 0;
-        for (int i = 0; i < 13; i++)
-            sum += int.Parse(cnpj[i].ToString()) * multiplier2[i];
-        remainder = sum % 11;
-        remainder = remainder < 2 ? 0 : 11 - remainder;
-        if (remainder != int.Parse(cnpj[13].ToString()))
-            return false;
+            // Step 1: Check if all digits are the same (invalid CNPJ)
+            if (new string(cnpj.Distinct().ToArray()).Length == 1)
+                return false;
 
-        return true;
+            // Step 2: Calculate and validate the first check digit
+            int[] firstWeights = { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int firstSum = 0;
+            for (int i = 0; i < 12; i++)
+                firstSum += int.Parse(cnpj[i].ToString()) * firstWeights[i];
+            int firstRemainder = firstSum % 11;
+            int firstDigit = (firstRemainder < 2) ? 0 : 11 - firstRemainder;
+            if (firstDigit != int.Parse(cnpj[12].ToString()))
+                return false;
+
+            // Step 3: Calculate and validate the second check digit
+            int[] secondWeights = { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int secondSum = 0;
+            for (int i = 0; i < 13; i++)
+                secondSum += int.Parse(cnpj[i].ToString()) * secondWeights[i];
+            int secondRemainder = secondSum % 11;
+            int secondDigit = (secondRemainder < 2) ? 0 : 11 - secondRemainder;
+            if (secondDigit != int.Parse(cnpj[13].ToString()))
+                return false;
+
+            return true;
+        }
+
+        private static string ConvertToMasked(string cnpj)
+        {
+            // Format the CNPJ as 12.345.678/0001-95
+            return Regex.Replace(cnpj, @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})", "$1.$2.$3/$4-$5");
+        }
     }
 }
