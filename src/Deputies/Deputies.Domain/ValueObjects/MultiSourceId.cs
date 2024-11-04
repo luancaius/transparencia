@@ -1,15 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace Deputies.Domain.ValueObjects
 {
     public class MultiSourceId
     {
         private readonly Dictionary<string, string> _ids;
 
-        public MultiSourceId(Dictionary<string, string> ids)
+        public MultiSourceId(string key, string value)
         {
-            if (ids == null || ids.Count == 0 || ids.Values.All(string.IsNullOrEmpty))
-                throw new ArgumentException("A valid MultiSourceId must have at least one non-null ID.");
+            if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(value))
+                throw new ArgumentException("Key and value cannot be null or empty.");
 
-            _ids = ids;
+            _ids = new Dictionary<string, string> { { key, value } };
+        }
+
+        public void Add(string key, string value)
+        {
+            if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(value))
+                throw new ArgumentException("Key and value cannot be null or empty.");
+
+            if (_ids.ContainsKey(key))
+                throw new ArgumentException($"The key '{key}' already exists in MultiSourceId.");
+
+            _ids[key] = value;
         }
 
         public string this[string source]
@@ -19,6 +34,10 @@ namespace Deputies.Domain.ValueObjects
             {
                 if (string.IsNullOrEmpty(value))
                     throw new ArgumentException("ID value cannot be null or empty.");
+
+                if (_ids.ContainsKey(source))
+                    throw new ArgumentException($"The key '{source}' already exists in MultiSourceId.");
+
                 _ids[source] = value;
             }
         }

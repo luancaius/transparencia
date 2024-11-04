@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deputies.Domain", "Deputies\Deputies.Domain\Deputies.Domain.csproj", "{198434EA-7952-4F9E-89C1-371F3D8CD327}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{660CD27D-14EB-4F10-B1F5-65465AE07503}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deputies.Domain.UnitTests", "Tests\Deputies.Domain.UnitTests\Deputies.Domain.UnitTests.csproj", "{ECC687FF-DD38-46A2-8484-BC3B3F75F158}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,12 @@ Global
 		{198434EA-7952-4F9E-89C1-371F3D8CD327}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{198434EA-7952-4F9E-89C1-371F3D8CD327}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{198434EA-7952-4F9E-89C1-371F3D8CD327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECC687FF-DD38-46A2-8484-BC3B3F75F158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECC687FF-DD38-46A2-8484-BC3B3F75F158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECC687FF-DD38-46A2-8484-BC3B3F75F158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECC687FF-DD38-46A2-8484-BC3B3F75F158}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ECC687FF-DD38-46A2-8484-BC3B3F75F158} = {660CD27D-14EB-4F10-B1F5-65465AE07503}
 	EndGlobalSection
 EndGlobal
