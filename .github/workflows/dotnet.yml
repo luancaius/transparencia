@@ -34,7 +34,7 @@ jobs:
       run: dotnet build --no-restore ./src/Transparencia.sln
 
     - name: Test
-      run: dotnet test --no-build --verbosity normal ./src/SolutionTransparencia.sln /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../../lcov.info
+      run: dotnet test --no-build --verbosity normal ./src/Transparencia.sln /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../../lcov.info
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
