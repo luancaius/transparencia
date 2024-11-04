@@ -13,21 +13,34 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
+    - name: Cache .NET packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x
+
     - name: Restore dependencies
       run: dotnet restore ./src/Transparencia.sln
+
     - name: Build
       run: dotnet build --no-restore ./src/Transparencia.sln
+
     - name: Test
-      run: dotnet test --no-build --verbosity normal ./src/Transparencia.sln /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=../../lcov.info
+      run: dotnet test --no-build --verbosity normal ./src/Transparencia.sln /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./coverage/lcov.info
+
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
-        token: ${{ secrets.CODECOV_TOKEN }} 
-        file: ./src/lcov.info 
-        flags: unittests 
-        name: codecov-umbrella 
-        fail_ci_if_error: true 
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: ./coverage/lcov.info
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: true
