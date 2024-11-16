@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Ports\" />
+      <Folder Include="Ports\In\" />
     </ItemGroup>
 
 </Project>
