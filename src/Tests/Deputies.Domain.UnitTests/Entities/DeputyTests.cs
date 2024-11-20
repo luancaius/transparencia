@@ -1,7 +1,7 @@
-using System;
-using Xunit;
 using Deputies.Domain.Entities;
 using Deputies.Domain.ValueObjects;
+
+namespace Deputies.Domain.UnitTests.Entities;
 
 public class DeputyTests
 {
@@ -33,7 +33,7 @@ public class DeputyTests
         string party = "XYZ";
 
         // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => new Deputy(null, deputyName, party, multiSourceId));
+        Assert.Throws<ArgumentNullException>(() => new Deputy(null!, deputyName, party, multiSourceId));
     }
 
     [Fact]
@@ -69,7 +69,7 @@ public class DeputyTests
         string party = "XYZ";
 
         // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => new Deputy(person, deputyName, party, null));
+        Assert.Throws<ArgumentNullException>(() => new Deputy(person, deputyName, party, null!));
     }
 
     [Fact]

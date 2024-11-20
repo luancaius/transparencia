@@ -1,4 +1,4 @@
-namespace Deputies.Application.Service;
+namespace Deputies.Application.Services;
 
 public class GetExpensesService
 {

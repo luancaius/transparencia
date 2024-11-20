@@ -1,6 +1,6 @@
-using System;
-using Xunit;
 using Deputies.Domain.ValueObjects;
+
+namespace Deputies.Domain.UnitTests.ValueObjects;
 
 public class CnpjTests
 {
