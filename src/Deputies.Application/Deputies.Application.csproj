@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Ports\In\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\Deputies\Deputies.Domain\Deputies.Domain.csproj" />
     </ItemGroup>
 
