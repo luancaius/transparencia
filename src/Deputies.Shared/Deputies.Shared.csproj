@@ -14,7 +14,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Deputies.Application\Deputies.Application.csproj" />
-      <ProjectReference Include="..\Deputies.ExternalAPI\Deputies.ExternalAPI.csproj" />
+      <ProjectReference Include="..\Deputies.Adapter.Out.ExternalAPI\Deputies.Adapter.Out.ExternalAPI.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
-﻿using Deputies.Application.Services;
+﻿using Deputies.Application.Ports.In;
+using Deputies.Application.Services;
 using Deputies.Shared;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -27,7 +28,7 @@ public static class MainConsole
         }
 
         var serviceProvider = BuildServiceProvider();
-        var deputyService = serviceProvider.GetService<DeputyService>();
+        var deputiesUseCase = serviceProvider.GetRequiredService<IGetDeputiesUseCase>();
 
         try
         {
@@ -40,14 +41,7 @@ public static class MainConsole
                         return 1; // Return non-zero to indicate an error
                     }
 
-                    if (deputyService != null)
-                    {
-                        var deputies = await deputyService.GetDeputiesAsync(yearDeputies);
-                        foreach (var deputy in deputies)
-                        {
-                            Console.WriteLine(deputy.ToString());
-                        }
-                    }
+                    await deputiesUseCase.ProcessDeputiesAsync(yearDeputies);
 
                     break;
 

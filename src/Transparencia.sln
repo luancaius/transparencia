@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Out", "Out", "{D3488C98-8C5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deputies.Application", "Deputies.Application\Deputies.Application.csproj", "{B0DAC2D2-A37A-440B-A3FA-7F00B488AC98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deputies.API", "Deputies.API\Deputies.API.csproj", "{760A9FFB-59E7-4E97-9D08-2C109966F43A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deputies.Adapter.In.API", "Deputies.Adapter.In.API\Deputies.Adapter.In.API.csproj", "{760A9FFB-59E7-4E97-9D08-2C109966F43A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{094B9753-608E-41FB-A194-E492625091E6}"
 EndProject
@@ -26,7 +26,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deputies.Shared", "Deputies
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deputies.MainConsole", "Deputies.MainConsole\Deputies.MainConsole.csproj", "{5FFCC2F4-4F02-4FB8-8193-28874847B3D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deputies.ExternalAPI", "Deputies.ExternalAPI\Deputies.ExternalAPI.csproj", "{E0996B28-A730-42CE-86FD-858F1FE3A050}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deputies.Adapter.Out.ExternalAPI", "Deputies.Adapter.Out.ExternalAPI\Deputies.Adapter.Out.ExternalAPI.csproj", "{E0996B28-A730-42CE-86FD-858F1FE3A050}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

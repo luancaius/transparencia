@@ -12,9 +12,6 @@ namespace Deputies.Shared
         {
             services.AddLogging();
 
-            // Register application-specific services
-            services.AddHttpClient<IExternalDeputyService, ExternalDeputyService>(); // Register the HttpClient
-            services.AddTransient<DeputyService>();
             services.AddHttpClient();
             
             services.AddScoped<IGetDeputiesUseCase, GetDeputiesService>();

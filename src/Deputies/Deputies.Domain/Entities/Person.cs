@@ -1,18 +1,26 @@
+// Domain/Entities/Person.cs
 using Deputies.Domain.ValueObjects;
 
 namespace Deputies.Domain.Entities
 {
     public class Person
     {
-        public Person(Cpf cpf, Name name)
+        private Person(Cpf cpf, Name name)
         {
-            Cpf = cpf ?? throw new ArgumentNullException(nameof(cpf), "CPF cannot be null.");
-            Name = name ?? throw new ArgumentNullException(nameof(name), "Name cannot be null.");
+            Cpf = cpf;
+            Name = name;
         }
 
         public Cpf Cpf { get; }
-        
         public Name Name { get; }
+
+        public static Person Create(Cpf cpf, Name name)
+        {
+            if (cpf == null) throw new ArgumentNullException(nameof(cpf), "CPF cannot be null.");
+            if (name == null) throw new ArgumentNullException(nameof(name), "Name cannot be null.");
+            
+            return new Person(cpf, name);
+        }
         
         public override bool Equals(object obj)
         {
@@ -21,6 +29,11 @@ namespace Deputies.Domain.Entities
                 return Cpf.Equals(other.Cpf);
             }
             return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Cpf.GetHashCode();
         }
     }
 }

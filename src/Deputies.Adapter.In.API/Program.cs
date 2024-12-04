@@ -1,4 +1,4 @@
-using Deputies.API;
+using Deputies.Adapter.In.API;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,7 +40,7 @@ app.MapGet("/weatherforecast", () =>
 
 app.Run();
 
-namespace Deputies.API
+namespace Deputies.Adapter.In.API
 {
     record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
     {
