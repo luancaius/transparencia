@@ -22,7 +22,7 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
         var content = await response.Content.ReadAsStringAsync();
         var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<DeputadoListDto>>>(content);
 
-        var listDeputies = apiResponse.dados.Select(d => new DeputyListItemDto(
+        var listDeputies = apiResponse!.dados.Select(d => new DeputyListItemDto(
             d.id,
             d.nome,
             d.siglaPartido,
@@ -40,7 +40,7 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
 
         var content = await response.Content.ReadAsStringAsync();
         var apiResponse = JsonSerializer.Deserialize<ApiResponse<DeputadoDetailDto>>(content);
-        var dados = apiResponse.dados;
+        var dados = apiResponse!.dados;
         var status = dados.ultimoStatus;
 
         return new DeputyDetailDto(
