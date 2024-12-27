@@ -1,7 +1,7 @@
+using Deputies.Adapter.Out.ExternalAPI;
 using Deputies.Application.Ports.In;
 using Deputies.Application.Ports.Out;
 using Deputies.Application.Services;
-using Deputies.ExternalAPI;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Deputies.Shared

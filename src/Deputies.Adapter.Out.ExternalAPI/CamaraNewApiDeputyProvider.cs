@@ -2,7 +2,7 @@ using System.Text.Json;
 using Deputies.Application.Dtos;
 using Deputies.Application.Ports.Out;
 
-namespace Deputies.ExternalAPI;
+namespace Deputies.Adapter.Out.ExternalAPI;
 
 public class CamaraNewApiDeputyProvider : IDeputyProvider
 {
@@ -22,7 +22,7 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
         var content = await response.Content.ReadAsStringAsync();
         var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<DeputadoListDto>>>(content);
 
-        return apiResponse.dados.Select(d => new DeputyListItemDto(
+        var listDeputies = apiResponse.dados.Select(d => new DeputyListItemDto(
             d.id,
             d.nome,
             d.siglaPartido,
@@ -30,6 +30,7 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
             d.idLegislatura,
             d.email
         ));
+        return listDeputies;
     }
 
     public async Task<DeputyDetailDto> GetDeputyDetailAsync(int deputyId)
