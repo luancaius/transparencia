@@ -1,10 +1,9 @@
 using Deputies.Domain.Entities;
-using System.Threading.Tasks;
 
-namespace Deputies.Application.Ports.Out
+namespace Deputies.Application.Ports.Out;
+
+public interface IDeputyRepository
 {
-    public interface IDeputyRepository
-    {
-        Task SaveDeputyAsync(Deputy deputy);
-    }
+    Task SaveDeputyAsync(Deputy deputy);
+    Task<Deputy?> GetDeputyByIdAsync(int deputyId);
 }

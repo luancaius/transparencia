@@ -13,6 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Deputies.Adapter.Out.EFCoreSqlServer\Deputies.Adapter.Out.EFCoreSqlServer.csproj" />
       <ProjectReference Include="..\Deputies.Application\Deputies.Application.csproj" />
       <ProjectReference Include="..\Deputies.Adapter.Out.ExternalAPI\Deputies.Adapter.Out.ExternalAPI.csproj" />
     </ItemGroup>

@@ -1,10 +1,9 @@
 using Deputies.Application.Dtos;
 
-namespace Deputies.Application.Ports.Out
+namespace Deputies.Application.Ports.Out;
+
+public interface IDeputyProvider
 {
-    public interface IDeputyProvider
-    {
-        Task<IEnumerable<DeputyListItemDto>> GetDeputiesListAsync(int legislatura);
-        Task<DeputyDetailDto> GetDeputyDetailAsync(int deputyId);
-    }
+    Task<IEnumerable<DeputyListItemDto>> GetDeputiesListAsync(int legislatura);
+    Task<DeputyDetailDto> GetDeputyDetailAsync(int deputyId);
 }
