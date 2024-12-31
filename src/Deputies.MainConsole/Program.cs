@@ -1,5 +1,6 @@
 ﻿using Deputies.Application.Ports.In;
 using Deputies.Shared;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Deputies.MainConsole;
@@ -41,7 +42,6 @@ public static class MainConsole
                     }
 
                     await deputiesUseCase.ProcessDeputiesAsync(yearDeputies);
-
                     break;
 
                 default:
@@ -60,8 +60,14 @@ public static class MainConsole
 
     private static ServiceProvider BuildServiceProvider()
     {
+        var configuration = new ConfigurationBuilder()
+            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .Build();
+
         return new ServiceCollection()
-            .AddDeputiesSharedServices() // Use shared dependency injection setup
+            .AddSingleton<IConfiguration>(configuration)
+            .AddDeputiesSharedServices(configuration) 
             .BuildServiceProvider();
     }
 }
