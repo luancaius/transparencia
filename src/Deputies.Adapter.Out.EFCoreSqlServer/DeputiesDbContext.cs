@@ -7,6 +7,9 @@ namespace Deputies.Adapter.Out.EFCoreSqlServer;
 
 public class DeputiesDbContext : DbContext
 {
+    public DeputiesDbContext()
+    {
+    }
     public DeputiesDbContext(DbContextOptions<DeputiesDbContext> options)
         : base(options)
     {
