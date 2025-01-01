@@ -13,6 +13,7 @@
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         <PrivateAssets>all</PrivateAssets>
       </PackageReference>
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.1" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
       <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.1" />
       <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.1" />
@@ -22,6 +23,20 @@
       <ProjectReference Include="..\Deputies.Adapter.Out.EFCoreSqlServer\Deputies.Adapter.Out.EFCoreSqlServer.csproj" />
       <ProjectReference Include="..\Deputies.Application\Deputies.Application.csproj" />
       <ProjectReference Include="..\Deputies.Adapter.Out.ExternalAPI\Deputies.Adapter.Out.ExternalAPI.csproj" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+        <Content Update="appsettings.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

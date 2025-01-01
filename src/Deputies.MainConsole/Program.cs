@@ -27,8 +27,8 @@ public static class MainConsole
             return 1; // Return non-zero to indicate an error
         }
 
-        var serviceProvider = BuildServiceProvider();
-        var deputiesUseCase = serviceProvider.GetRequiredService<IGetDeputiesUseCase>();
+        var resolver = new ResolveDependencies();
+        var deputiesUseCase = resolver.Resolve<IGetDeputiesUseCase>();
 
         try
         {
@@ -56,18 +56,5 @@ public static class MainConsole
             Console.WriteLine($"An error occurred: {ex.Message}");
             return 1; // Return non-zero to indicate an error
         }
-    }
-
-    private static ServiceProvider BuildServiceProvider()
-    {
-        var configuration = new ConfigurationBuilder()
-            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-            .Build();
-
-        return new ServiceCollection()
-            .AddSingleton<IConfiguration>(configuration)
-            .AddDeputiesSharedServices(configuration) 
-            .BuildServiceProvider();
     }
 }
