@@ -13,9 +13,6 @@ public class DeputyEfModel
     public string DeputyName { get; set; }
     public string Party { get; set; }
 
-    /// <summary>
-    /// Stores MultiSourceId.Ids dictionary as a JSON string.
-    /// </summary>
     public string SourcesJson { get; set; }
 
     // Relationship to Person

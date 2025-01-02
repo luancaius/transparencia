@@ -1,9 +1,8 @@
-using Deputies.Adapter.Out.EFCoreSqlServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace Deputies.Shared;
+namespace Deputies.Adapter.Out.EFCoreSqlServer;
 
 public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<DeputiesDbContext>
 {

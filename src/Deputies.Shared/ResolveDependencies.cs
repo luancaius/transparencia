@@ -1,33 +1,54 @@
+using System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
+using Microsoft.EntityFrameworkCore;
 
-namespace Deputies.Shared
+using Deputies.Adapter.Out.EFCoreSqlServer;
+using Deputies.Adapter.Out.ExternalAPI;
+using Deputies.Application.Ports.In;
+using Deputies.Application.Ports.Out;
+using Deputies.Application.Services;
+
+namespace Deputies.Shared;
+
+public class ResolveDependencies
 {
-    public class ResolveDependencies
+    private readonly IServiceProvider _serviceProvider;
+
+    public ResolveDependencies()
     {
-        private readonly IServiceProvider _serviceProvider;
+        var services = new ServiceCollection();
+            
+        var configuration = new ConfigurationBuilder()
+            .SetBasePath(AppContext.BaseDirectory) 
+            .AddJsonFile("appsettings.json", optional: false)
+            .Build();
+            
+        AddDeputiesSharedServices(services, configuration);
 
-        public ResolveDependencies()
-        {
-            // Create a fresh ServiceCollection
-            var services = new ServiceCollection();
-
-            // Build IConfiguration from appsettings.json
-            var configuration = new ConfigurationBuilder()
-                .SetBasePath(AppContext.BaseDirectory)         // needs Microsoft.Extensions.Configuration.FileExtensions
-                .AddJsonFile("appsettings.json", optional: false)
-                .Build();
-
-            // Register your services via the extension method
-            services.AddDeputiesSharedServices(configuration);
-
-            // Build the final service provider
-            _serviceProvider = services.BuildServiceProvider();
-        }
-
-        // Resolve any registered service
-        public T Resolve<T>() where T : notnull
-            => _serviceProvider.GetRequiredService<T>();
+        _serviceProvider = services.BuildServiceProvider();
     }
+
+    private static void AddDeputiesSharedServices(
+        IServiceCollection services,
+        IConfiguration configuration)
+    {
+        // cross-cutting
+        services.AddLogging();
+        services.AddHttpClient();
+
+        // application
+        services.AddScoped<IGetDeputiesUseCase, GetDeputiesService>();
+
+        // adapters
+        services.AddScoped<IDeputyProvider, CamaraNewApiDeputyProvider>();
+        services.AddScoped<IDeputyRepository, DeputyRepository>();
+
+        // EF Core DbContext using SQL Server
+        services.AddDbContext<DeputiesDbContext>(options =>
+            options.UseSqlServer(configuration.GetConnectionString("DeputiesSqlServerConnection")));
+    }
+
+    public T Resolve<T>() where T : notnull
+        => _serviceProvider.GetRequiredService<T>();
 }
