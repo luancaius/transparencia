@@ -57,6 +57,22 @@ public class GetDeputiesService : IGetDeputiesUseCase
         }
     }
 
+    public Task ProcessDeputiesExpensesAsync(int year)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task ProcessDeputiesExpensesCurrentMonthAsync()
+    {
+        var deputiesList = await _deputyRepository.GetDeputiesAsync();
+
+        foreach (var deputyListItem in deputiesList)
+        {
+            var deputyId = deputyListItem.MultiSourceId.Ids.GetValueOrDefault("CamaraApi");
+            var expenses = await _deputyProvider.GetDeputyExpensesAsync(deputyId!, DateTime.Now.Year, DateTime.Now.Month);
+        }
+    }
+
     private int CalculateLegislatura(int year)
     {
         int baseYear = 2023;

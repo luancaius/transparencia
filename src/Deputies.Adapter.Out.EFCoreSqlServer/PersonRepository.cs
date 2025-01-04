@@ -1,4 +1,5 @@
 using Deputies.Adapter.Out.EFCoreSqlServer.Models;
+using Deputies.Application.Ports.Out;
 using Deputies.Domain.Entities;
 using Deputies.Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;

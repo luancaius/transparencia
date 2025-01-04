@@ -1,6 +1,8 @@
 using System.Text.Json;
+using Deputies.Adapter.Out.ExternalAPI.Dtos;
 using Deputies.Application.Dtos;
 using Deputies.Application.Ports.Out;
+using DeputyExpensesDto = Deputies.Application.Dtos.DeputyExpensesDto;
 
 namespace Deputies.Adapter.Out.ExternalAPI;
 
@@ -60,40 +62,13 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
         );
     }
 
+    public async Task<DeputyExpensesDto> GetDeputyExpensesAsync(string deputyId, int year, int month)
+    {
+        throw new NotImplementedException();
+    }
+
     private class ApiResponse<T>
     {
         public T dados { get; set; }
-    }
-
-    private class DeputadoListDto
-    {
-        public int id { get; set; }
-        public string nome { get; set; }
-        public string siglaPartido { get; set; }
-        public string siglaUf { get; set; }
-        public int idLegislatura { get; set; }
-        public string email { get; set; }
-    }
-
-    private class DeputadoDetailDto
-    {
-        public int id { get; set; }
-        public string nomeCivil { get; set; }
-        public string cpf { get; set; }
-        public string sexo { get; set; }
-        public DateTime dataNascimento { get; set; }
-        public string ufNascimento { get; set; }
-        public string municipioNascimento { get; set; }
-        public string escolaridade { get; set; }
-        public UltimoStatusDto ultimoStatus { get; set; }
-    }
-
-    private class UltimoStatusDto
-    {
-        public string nome { get; set; }
-        public string siglaPartido { get; set; }
-        public string siglaUf { get; set; }
-        public int idLegislatura { get; set; }
-        public string email { get; set; }
     }
 }

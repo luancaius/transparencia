@@ -109,4 +109,34 @@ public class DeputyRepository : IDeputyRepository
 
         return domainDeputy;
     }
+
+    public async Task<List<Deputy>> GetDeputiesAsync()
+    {
+        var deputyEf = await _dbContext.Deputies
+            .Include(d => d.Person).ToListAsync();
+        var deputies = deputyEf.Select(d =>
+        {
+            var dict = JsonSerializer.Deserialize<Dictionary<string, string>>(d.SourcesJson);
+
+            var multiSourceId = MultiSourceId.FromDictionary(dict);
+
+            var domainPerson = Person.Create(
+                new Cpf(d.Person.Cpf),
+                new Name(
+                    d.Person.FirstName,
+                    d.Person.LastName,
+                    d.Person.FullName
+                )
+            );
+
+            return Deputy.Create(
+                domainPerson,
+                d.DeputyName,
+                d.Party,
+                multiSourceId
+            );
+        }).ToList();
+        
+        return deputies;
+    }
 }

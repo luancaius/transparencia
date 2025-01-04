@@ -8,7 +8,8 @@ namespace Deputies.MainConsole;
 public enum Command
 {
     GetAllDeputiesInfo,
-    GetDeputiesExpenses
+    GetDeputiesExpensesCurrentMonth,
+    GetDeputiesExpensesYear
 }
 
 public static class MainConsole
@@ -18,13 +19,13 @@ public static class MainConsole
         if (args == null || args.Length == 0)
         {
             Console.WriteLine("No command provided. Please specify a command.");
-            return 1; // Return non-zero to indicate an error
+            return 1;
         }
 
         if (!Enum.TryParse(args[0], true, out Command command))
         {
             Console.WriteLine($"Invalid command: {args[0]}");
-            return 1; // Return non-zero to indicate an error
+            return 1;
         }
 
         var resolver = new ResolveDependencies();
@@ -38,23 +39,25 @@ public static class MainConsole
                     if (args.Length < 2 || !int.TryParse(args[1], out int yearDeputies))
                     {
                         Console.WriteLine("Please provide a valid year for GetAllDeputiesInfo.");
-                        return 1; // Return non-zero to indicate an error
+                        return 1;
                     }
 
                     await deputiesUseCase.ProcessDeputiesAsync(yearDeputies);
                     break;
-
+                case Command.GetDeputiesExpensesCurrentMonth:
+                    await deputiesUseCase.ProcessDeputiesExpensesCurrentMonthAsync();
+                    break;
                 default:
                     Console.WriteLine($"Command not implemented: {command}");
-                    return 1; // Return non-zero to indicate an error
+                    return 1; 
             }
 
-            return 0; // Return zero to indicate success
+            return 0;
         }
         catch (Exception ex)
         {
             Console.WriteLine($"An error occurred: {ex.Message}");
-            return 1; // Return non-zero to indicate an error
+            return 1;
         }
     }
 }
