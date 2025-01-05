@@ -1,12 +1,12 @@
 namespace Deputies.Domain.ValueObjects;
 
-public class Name
+public class PersonName
 {
     public string? FirstName { get; }
     public string? LastName { get; }
     public string? FullName { get; }
 
-    public Name(string? firstName, string? lastName = null, string? fullName = null)
+    public PersonName(string? firstName, string? lastName = null, string? fullName = null)
     {
         // Check if the provided values satisfy the rule
         if (string.IsNullOrWhiteSpace(firstName) && string.IsNullOrWhiteSpace(fullName))

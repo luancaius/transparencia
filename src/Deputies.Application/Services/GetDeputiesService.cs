@@ -33,7 +33,7 @@ public class GetDeputiesService : IGetDeputiesUseCase
             {
                 var details = await _deputyProvider.GetDeputyDetailAsync(deputyListItem.Id);
 
-                var name = new Name(null, null, details.NomeCivil);
+                var name = new PersonName(null, null, details.NomeCivil);
                 var cpf = new Cpf(details.Cpf);
                     
                 // Create domain entities

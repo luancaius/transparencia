@@ -34,21 +34,14 @@ public class DeputyRepository : IDeputyRepository
             existingPersonEf = new PersonEfModel
             {
                 Cpf = cpfValue,
-                FirstName = deputy.Person.Name.FirstName,
-                LastName = deputy.Person.Name.LastName,
-                FullName = deputy.Person.Name.FullName
+                FirstName = deputy.Person.PersonName.FirstName,
+                LastName = deputy.Person.PersonName.LastName,
+                FullName = deputy.Person.PersonName.FullName
             };
 
             _dbContext.Persons.Add(existingPersonEf);
         }
-        else
-        {
-            // Optionally update if needed
-            // existingPersonEf.FirstName = deputy.Person.Name.FirstName;
-            // existingPersonEf.LastName  = deputy.Person.Name.LastName;
-            // existingPersonEf.FullName  = deputy.Person.Name.FullName;
-        }
-
+        
         // Create EF deputy
         var deputyEf = new DeputyEfModel
         {
@@ -92,7 +85,7 @@ public class DeputyRepository : IDeputyRepository
         // Rebuild Person
         var domainPerson = Person.Create(
             new Cpf(deputyEf.Person.Cpf),
-            new Name(
+            new PersonName(
                 deputyEf.Person.FirstName,
                 deputyEf.Person.LastName,
                 deputyEf.Person.FullName
@@ -122,7 +115,7 @@ public class DeputyRepository : IDeputyRepository
 
             var domainPerson = Person.Create(
                 new Cpf(d.Person.Cpf),
-                new Name(
+                new PersonName(
                     d.Person.FirstName,
                     d.Person.LastName,
                     d.Person.FullName

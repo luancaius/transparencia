@@ -1,28 +1,31 @@
+using Deputies.Domain.AbstractEntities;
 using Deputies.Domain.ValueObjects;
 
 namespace Deputies.Domain.Entities;
 
-public class Person
+public class Person : Participant
 {
-    private Person(Cpf cpf, Name name)
+    private Person(Cpf cpf, PersonName personName)
     {
         Cpf = cpf;
-        Name = name;
+        PersonName = personName;
     }
 
     public Cpf Cpf { get; }
-    public Name Name { get; }
+    public PersonName PersonName { get; }
 
-    public static Person Create(Cpf cpf, Name name)
+    public static Person Create(Cpf cpf, PersonName personName)
     {
         if (cpf == null) 
             throw new ArgumentNullException(nameof(cpf), "CPF cannot be null.");
-        if (name == null) 
-            throw new ArgumentNullException(nameof(name), "Name cannot be null.");
+        if (personName == null) 
+            throw new ArgumentNullException(nameof(personName), "Name cannot be null.");
 
-        return new Person(cpf, name);
+        return new Person(cpf, personName);
     }
 
+    public override string DisplayName => PersonName.ToString();
+    
     public override bool Equals(object obj)
     {
         if (obj is Person other)

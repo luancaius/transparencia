@@ -31,9 +31,9 @@ public class PersonRepository : IPersonRepository
             existingPerson = new PersonEfModel
             {
                 Cpf = cpfValue,
-                FirstName = person.Name.FirstName,
-                LastName = person.Name.LastName,
-                FullName = person.Name.FullName
+                FirstName = person.PersonName.FirstName,
+                LastName = person.PersonName.LastName,
+                FullName = person.PersonName.FullName
             };
             _dbContext.Persons.Add(existingPerson);
         }
@@ -62,7 +62,7 @@ public class PersonRepository : IPersonRepository
 
         return Person.Create(
             new Cpf(personEf.Cpf),
-            new Name(
+            new PersonName(
                 personEf.FirstName,
                 personEf.LastName,
                 personEf.FullName
