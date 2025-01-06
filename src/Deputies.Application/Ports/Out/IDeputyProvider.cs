@@ -6,5 +6,5 @@ public interface IDeputyProvider
 {
     Task<IEnumerable<DeputyListItemDto>> GetDeputiesListAsync(int legislatura);
     Task<DeputyDetailDto> GetDeputyDetailAsync(int deputyId);
-    Task<DeputyExpensesDto> GetDeputyExpensesAsync(string deputyId, int year, int month);
+    Task<List<DeputyExpensesDto>> GetDeputyExpensesAsync(string deputyId, int year, int month);
 }

@@ -61,30 +61,38 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
         );
     }
 
-    public async Task<DeputyExpensesDto> GetDeputyExpensesAsync(string deputyId, int year, int month)
+    public async Task<List<DeputyExpensesDto>> GetDeputyExpensesAsync(string deputyId, int year, int month)
     {
         var url = $"{BaseUrl}/deputados/{deputyId}/despesas?ano={year}&mes={month}&itens=10000";
-
         var response = await _httpClient.GetAsync(url);
         response.EnsureSuccessStatusCode();
 
         var content = await response.Content.ReadAsStringAsync();
-
-        var apiResponse = JsonSerializer
-            .Deserialize<ApiResponse<List<ExpenseDto>>>(content);
+        var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<ExpenseDto>>>(content);
 
         if (apiResponse is null)
         {
             throw new Exception("Failed to deserialize API response.");
         }
 
-        var expenseItems = apiResponse.dados;
-
-        var deputyExpenses = expenseItems.Select(a =>new DeputyExpensesDto(a.tipoDespesa, a.valorLiquido));
-
+        var deputyExpenses = apiResponse.dados.Select(e => new DeputyExpensesDto(
+            e.Ano,
+            e.Mes,
+            e.TipoDespesa,
+            e.CodDocumento,
+            e.TipoDocumento,
+            e.CodTipoDocumento,
+            e.DataDocumento,
+            e.NumDocumento,
+            e.ValorDocumento,
+            e.UrlDocumento,
+            e.NomeFornecedor,
+            e.CnpjCpfFornecedor,
+            e.ValorLiquido
+        )).ToList();
+        
         return deputyExpenses;
     }
-
 
     private class ApiResponse<T>
     {
