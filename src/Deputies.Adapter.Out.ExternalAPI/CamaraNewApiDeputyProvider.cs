@@ -2,7 +2,6 @@ using System.Text.Json;
 using Deputies.Adapter.Out.ExternalAPI.Dtos;
 using Deputies.Application.Dtos;
 using Deputies.Application.Ports.Out;
-using DeputyExpensesDto = Deputies.Application.Dtos.DeputyExpensesDto;
 
 namespace Deputies.Adapter.Out.ExternalAPI;
 
@@ -64,8 +63,28 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
 
     public async Task<DeputyExpensesDto> GetDeputyExpensesAsync(string deputyId, int year, int month)
     {
-        throw new NotImplementedException();
+        var url = $"{BaseUrl}/deputados/{deputyId}/despesas?ano={year}&mes={month}&itens=10000";
+
+        var response = await _httpClient.GetAsync(url);
+        response.EnsureSuccessStatusCode();
+
+        var content = await response.Content.ReadAsStringAsync();
+
+        var apiResponse = JsonSerializer
+            .Deserialize<ApiResponse<List<ExpenseDto>>>(content);
+
+        if (apiResponse is null)
+        {
+            throw new Exception("Failed to deserialize API response.");
+        }
+
+        var expenseItems = apiResponse.dados;
+
+        var deputyExpenses = expenseItems.Select(a =>new DeputyExpensesDto(a.tipoDespesa, a.valorLiquido));
+
+        return deputyExpenses;
     }
+
 
     private class ApiResponse<T>
     {
