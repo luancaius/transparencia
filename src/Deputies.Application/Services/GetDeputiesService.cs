@@ -36,7 +36,6 @@ public class GetDeputiesService : IGetDeputiesUseCase
                 var name = new PersonName(null, null, details.NomeCivil);
                 var cpf = new Cpf(details.Cpf);
                     
-                // Create domain entities
                 var person = Person.Create(cpf, name);
 
                 var multiSourceId = new MultiSourceId("CamaraApi", details.Id.ToString());
@@ -66,10 +65,35 @@ public class GetDeputiesService : IGetDeputiesUseCase
     {
         var deputiesList = await _deputyRepository.GetDeputiesAsync();
 
-        foreach (var deputyListItem in deputiesList)
+        foreach (var deputy in deputiesList)
         {
-            var deputyId = deputyListItem.MultiSourceId.Ids.GetValueOrDefault("CamaraApi");
-            var expenses = await _deputyProvider.GetDeputyExpensesAsync(deputyId!, DateTime.Now.Year, DateTime.Now.Month);
+            var deputyId = deputy.MultiSourceId.Ids.GetValueOrDefault("CamaraApi");
+            if (string.IsNullOrWhiteSpace(deputyId))
+                continue;
+
+            var expensesDtos = await _deputyProvider.GetDeputyExpensesAsync(
+                deputyId,
+                DateTime.Now.Year,
+                DateTime.Now.Month
+            );
+
+            var buyer = deputy.Person;
+            var domainExpenses = new List<Expense>();
+
+            foreach (var dto in expensesDtos)
+            {
+                var supplier = Company.Create(new Cnpj(dto.CnpjCpfFornecedor), dto.NomeFornecedor);
+                var domainExpense = new Expense(
+                    amount: dto.ValorDocumento,
+                    date: dto.DataDocumento,
+                    description: dto.TipoDespesa,
+                    buyer: buyer,
+                    supplier: supplier
+                );
+
+                domainExpenses.Add(domainExpense);
+            }
+            await _deputyRepository.SaveExpensesAsync(deputyId, domainExpenses);
         }
     }
 

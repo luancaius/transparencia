@@ -132,4 +132,9 @@ public class DeputyRepository : IDeputyRepository
         
         return deputies;
     }
+
+    public Task SaveExpensesAsync(string deputyId, List<Expense> expenses)
+    {
+        throw new NotImplementedException();
+    }
 }
