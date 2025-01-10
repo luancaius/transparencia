@@ -41,7 +41,7 @@ public class DeputyRepository : IDeputyRepository
 
             _dbContext.Persons.Add(existingPersonEf);
         }
-        
+
         // Create EF deputy
         var deputyEf = new DeputyEfModel
         {
@@ -129,12 +129,136 @@ public class DeputyRepository : IDeputyRepository
                 multiSourceId
             );
         }).ToList();
-        
+
         return deputies;
     }
 
-    public Task SaveExpensesAsync(string deputyId, List<Expense> expenses)
+    public async Task SaveExpensesAsync(string deputyId, List<Expense> expenses)
     {
-        throw new NotImplementedException();
+        // 1. Check if the deputy exists and get it
+        var allDeputies = await _dbContext.Deputies
+            .Include(d => d.Person) // includes the Person for the deputy
+            .ToListAsync();
+
+        var deputyEf = allDeputies.FirstOrDefault(d =>
+        {
+            var dict = JsonSerializer.Deserialize<Dictionary<string, string>>(d.SourcesJson);
+            return dict?.GetValueOrDefault("CamaraApi") == deputyId;
+        });
+
+        if (deputyEf == null)
+        {
+            _logger.LogWarning("Deputy with external ID {DeputyId} not found in the database.", deputyId);
+            return; // or throw an exception
+        }
+
+        // 2. Check if expenses already exist for the deputy
+        //    We'll load them into memory to do duplicate checks.
+        var existingExpenses = await _dbContext.DeputyExpenses
+            .Where(e => e.DeputyId == deputyEf.Id)
+            .ToListAsync();
+
+        // 3. Continue the flow for the expenses that don't exist.
+        //    Define your own logic to decide what makes an expense "already exist."
+        //    Here, we assume an expense is the same if (Date, Amount, Description) match.
+        var newExpenses = new List<Expense>();
+
+        foreach (var expense in expenses)
+        {
+            bool alreadyExists = existingExpenses.Any(e =>
+                e.Date == expense.Date &&
+                e.Amount == expense.Amount &&
+                e.Description == expense.Description
+            );
+
+            if (!alreadyExists)
+            {
+                newExpenses.Add(expense);
+            }
+        }
+
+        if (!newExpenses.Any())
+        {
+            _logger.LogInformation(
+                "No new expenses to save for Deputy (dbId={DeputyDbId}, externalId={ExtId}).",
+                deputyEf.Id,
+                deputyId
+            );
+            return;
+        }
+
+        // 4. For each new expense:
+        //    - The buyer is the deputy's person
+        //    - Check if the supplier exists; create if not
+        //    - Create the EF expense and save
+        foreach (var domainExpense in newExpenses)
+        {
+            var buyerPerson = deputyEf.Person;
+
+            if (domainExpense.Supplier.GetType() == typeof(Company))
+            {
+                var supplier = domainExpense.Supplier as Company;
+                var supplierCnpj = supplier.Cnpj.GetUnmasked();
+                var existingSupplier = await _dbContext.Companies
+                    .FirstOrDefaultAsync(c => c.Cnpj == supplierCnpj);
+
+                if (existingSupplier == null)
+                {
+                    // 4B. If the supplier does not exist, create it
+                    existingSupplier = new CompanyEfModel
+                    {
+                        Cnpj = supplierCnpj,
+                        CompanyName = supplier.CompanyName
+                    };
+                    _dbContext.Companies.Add(existingSupplier);
+
+                    await _dbContext.SaveChangesAsync();
+                }
+            }
+            else
+            {
+                // 4A. If the supplier is a Person, check if it exists
+
+                var supplier = domainExpense.Supplier as Person;
+                var supplierCpf = supplier.Cpf.GetUnmasked();
+                var existingSupplier = await _dbContext.Persons
+                    .FirstOrDefaultAsync(p => p.Cpf == supplierCpf);
+
+                if (existingSupplier == null)
+                {
+                    existingSupplier = new PersonEfModel
+                    {
+                        Cpf = supplierCpf,
+                        FullName = supplierCpf // or a real name, if available
+                    };
+                    _dbContext.Persons.Add(existingSupplier);
+
+                    await _dbContext.SaveChangesAsync();
+                }
+
+                // 4D. Create the EF expense
+                var expenseEf = new DeputyExpenseEfModel
+                {
+                    DeputyId = deputyEf.Id,
+                    BuyerPersonId = buyerPerson.Id,
+                    SupplierPersonId = existingSupplier.Id,
+                    Amount = domainExpense.Amount,
+                    Description = domainExpense.Description,
+                    Date = domainExpense.Date
+                };
+
+                // 4E. Save the EF expense
+                _dbContext.DeputyExpenses.Add(expenseEf);
+            }
+
+            await _dbContext.SaveChangesAsync();
+
+            _logger.LogInformation(
+                "Saved {Count} new expenses for Deputy (dbId={DeputyDbId}, externalId={ExtId}).",
+                newExpenses.Count,
+                deputyEf.Id,
+                deputyId
+            );
+        }
     }
 }

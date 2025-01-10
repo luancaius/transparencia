@@ -2,21 +2,21 @@
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Deputies.Adapter.Out.EFCoreSqlServer.Models;
 
 [Table("Persons")]
+[Index(nameof(Cpf), IsUnique = true)]
 public class PersonEfModel
 {
     [Key]
     public int Id { get; set; }
 
-    // We want this to be unique
-    [Required] // ensures it's not null
-    [MaxLength(11)] // typical length for CPF (without punctuation)
+    [Required]
+    [MaxLength(11)] 
     public string Cpf { get; set; }
         
-    // Break out the "Name" value object
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
     public string? FullName { get; set; }

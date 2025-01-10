@@ -13,6 +13,7 @@ public class DeputiesDbContext : DbContext
     }
 
     public DbSet<PersonEfModel> Persons { get; set; }
+    public DbSet<CompanyEfModel> Companies { get; set; }
     public DbSet<DeputyEfModel> Deputies { get; set; }
     public DbSet<DeputyExpenseEfModel> DeputyExpenses { get; set; }
 
