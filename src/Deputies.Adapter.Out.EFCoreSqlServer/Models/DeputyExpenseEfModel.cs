@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -20,18 +21,17 @@ namespace Deputies.Adapter.Out.EFCoreSqlServer.Models
         public DateTime Date { get; set; }
         
         public int? DeputyId { get; set; }
-
+        
         [ForeignKey(nameof(DeputyId))]
         public DeputyEfModel? Deputy { get; set; }
-        
+
         public int BuyerPersonId { get; set; }
 
         [ForeignKey(nameof(BuyerPersonId))]
         public PersonEfModel Buyer { get; set; } = default!;
-        
-        public int SupplierPersonId { get; set; }
 
-        [ForeignKey(nameof(SupplierPersonId))]
-        public PersonEfModel Supplier { get; set; } = default!;
+        [Required]
+        [MaxLength(14)]
+        public string SupplierCpfCnpj { get; set; } = string.Empty;
     }
 }
