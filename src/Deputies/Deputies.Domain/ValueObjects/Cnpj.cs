@@ -55,7 +55,7 @@ public class Cnpj
         return _value.GetHashCode();
     }
 
-    private static bool IsValidCnpj(string cnpj)
+    public static bool IsValidCnpj(string cnpj)
     {
         if (cnpj.Length != 14)
             return false;

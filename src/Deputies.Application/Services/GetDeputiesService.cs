@@ -1,3 +1,4 @@
+using Deputies.Application.Dtos;
 using Deputies.Application.Ports.In;
 using Deputies.Application.Ports.Out;
 using Deputies.Domain.Entities;
@@ -56,9 +57,54 @@ public class GetDeputiesService : IGetDeputiesUseCase
         }
     }
 
-    public Task ProcessDeputiesExpensesAsync(int year)
+    public async Task ProcessDeputiesExpensesByYearAsync(int year)
     {
-        throw new NotImplementedException();
+        var currentExpense = string.Empty;
+        try
+        {
+            var deputiesList = await _deputyRepository.GetDeputiesAsync();
+
+            foreach (var deputy in deputiesList)
+            {
+                var deputyId = deputy.MultiSourceId.Ids.GetValueOrDefault("CamaraApi"); ;
+                if (string.IsNullOrWhiteSpace(deputyId))
+                    continue;
+                List<DeputyExpensesDto> expensesDtos = await _deputyProvider.GetDeputyExpensesAsync(
+                    deputyId,
+                    year,
+                    DateTime.Now.Month
+                );
+                
+                var buyer = deputy.Person;
+                var domainExpenses = new List<Expense>();
+
+                foreach (var dto in expensesDtos)
+                {
+                    currentExpense = $"cnpj:{dto.CnpjCpfFornecedor} - valor:{dto.ValorDocumento} - deputyId:{deputyId} {dto.UrlDocumento}";
+                    if(Cnpj.IsValidCnpj(dto.CnpjCpfFornecedor) == false)
+                    {
+                        _logger.LogWarning($"Invalid CNPJ {dto.CnpjCpfFornecedor} - {deputyId}");
+                        continue;
+                    }
+                    var supplier = Company.Create(new Cnpj(dto.CnpjCpfFornecedor), dto.NomeFornecedor);
+                    var domainExpense = new Expense(
+                        amount: dto.ValorDocumento,
+                        date: dto.DataDocumento,
+                        description: dto.TipoDespesa,
+                        buyer: buyer,
+                        supplier: supplier
+                    );
+
+                    domainExpenses.Add(domainExpense);
+                }
+
+                await _deputyRepository.SaveExpensesAsync(deputyId, domainExpenses);
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"Error processing deputies expenses for year {year}, {currentExpense}");
+        }
     }
 
     public async Task ProcessDeputiesExpensesCurrentMonthAsync()

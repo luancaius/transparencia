@@ -47,6 +47,15 @@ public static class MainConsole
                 case Command.GetDeputiesExpensesCurrentMonth:
                     await deputiesUseCase.ProcessDeputiesExpensesCurrentMonthAsync();
                     break;
+                case Command.GetDeputiesExpensesYear:
+                    if (args.Length < 2 || !int.TryParse(args[1], out int yearDeputies2))
+                    {
+                        Console.WriteLine("Please provide a valid year for GetAllDeputiesInfo.");
+                        return 1;
+                    }
+
+                    await deputiesUseCase.ProcessDeputiesExpensesByYearAsync(yearDeputies2);
+                    break;
                 default:
                     Console.WriteLine($"Command not implemented: {command}");
                     return 1; 
