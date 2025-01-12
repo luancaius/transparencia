@@ -6,6 +6,7 @@ namespace Deputies.Domain.Entities;
 public class Expense
 {
     public string Description { get; private set; }
+    public string? UrlDocument { get; private set; }
     public decimal Amount { get; private set; }
     public DateTime Date { get; private set; }
     public Participant Buyer { get; private set; }
@@ -16,7 +17,8 @@ public class Expense
         DateTime date,
         string description,
         Participant buyer,
-        Participant supplier
+        Participant supplier,
+        string? urlDocument = null
     )
     {
         if (amount < 0)
@@ -34,5 +36,6 @@ public class Expense
         Amount = amount;
         Date = date;
         Description = description;
+        UrlDocument = string.IsNullOrWhiteSpace(urlDocument) ? null : urlDocument;
     }
 }

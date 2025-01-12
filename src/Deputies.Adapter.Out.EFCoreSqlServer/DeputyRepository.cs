@@ -203,7 +203,6 @@ public class DeputyRepository : IDeputyRepository
 
                     await _dbContext.SaveChangesAsync();
                 }
-                supplierCnpj = supplierCnpj;
             }
             else
             {
@@ -232,7 +231,8 @@ public class DeputyRepository : IDeputyRepository
                 SupplierCpfCnpj = supplierCpfCnpj,
                 Amount = domainExpense.Amount,
                 Description = domainExpense.Description,
-                Date = domainExpense.Date
+                Date = domainExpense.Date,
+                
             };
 
             _dbContext.DeputyExpenses.Add(expenseEf);

@@ -60,6 +60,7 @@ public class GetDeputiesService : IGetDeputiesUseCase
     public async Task ProcessDeputiesExpensesByYearAsync(int year)
     {
         var currentExpense = string.Empty;
+        DeputyExpensesDto currentDtoExpense;
         try
         {
             var deputiesList = await _deputyRepository.GetDeputiesAsync();
@@ -75,18 +76,29 @@ public class GetDeputiesService : IGetDeputiesUseCase
                     DateTime.Now.Month
                 );
                 
+                if (expensesDtos == null || expensesDtos.Count == 0)
+                {
+                    _logger.LogWarning($"No expenses found for deputy {deputyId}");
+                    continue;
+                }
+                
                 var buyer = deputy.Person;
                 var domainExpenses = new List<Expense>();
 
                 foreach (var dto in expensesDtos)
                 {
+                    currentDtoExpense = dto;
                     currentExpense = $"cnpj:{dto.CnpjCpfFornecedor} - valor:{dto.ValorDocumento} - deputyId:{deputyId} {dto.UrlDocumento}";
+                    Company supplier;
                     if(Cnpj.IsValidCnpj(dto.CnpjCpfFornecedor) == false)
                     {
-                        _logger.LogWarning($"Invalid CNPJ {dto.CnpjCpfFornecedor} - {deputyId}");
-                        continue;
+                        _logger.LogWarning($"Invalid CNPJ {dto.CnpjCpfFornecedor} - {deputyId} - fornecedor: {dto.NomeFornecedor}");
+                        supplier = Company.Create(new Cnpj(SharedConstants.NO_CNPJ_CONSTANT), dto.NomeFornecedor);
                     }
-                    var supplier = Company.Create(new Cnpj(dto.CnpjCpfFornecedor), dto.NomeFornecedor);
+                    else
+                    {
+                        supplier = Company.Create(new Cnpj(dto.CnpjCpfFornecedor), dto.NomeFornecedor);
+                    }
                     var domainExpense = new Expense(
                         amount: dto.ValorDocumento,
                         date: dto.DataDocumento,
@@ -134,7 +146,8 @@ public class GetDeputiesService : IGetDeputiesUseCase
                     date: dto.DataDocumento,
                     description: dto.TipoDespesa,
                     buyer: buyer,
-                    supplier: supplier
+                    supplier: supplier,
+                    urlDocument: dto.UrlDocumento
                 );
 
                 domainExpenses.Add(domainExpense);
