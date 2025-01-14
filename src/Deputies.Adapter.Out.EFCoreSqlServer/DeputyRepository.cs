@@ -232,6 +232,7 @@ public class DeputyRepository : IDeputyRepository
                 Amount = domainExpense.Amount,
                 Description = domainExpense.Description,
                 Date = domainExpense.Date,
+                UrlDocument = domainExpense.UrlDocument
                 
             };
 

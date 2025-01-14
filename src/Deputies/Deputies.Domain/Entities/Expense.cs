@@ -21,9 +21,6 @@ public class Expense
         string? urlDocument = null
     )
     {
-        if (amount < 0)
-            throw new ArgumentOutOfRangeException(nameof(amount), "Amount cannot be negative.");
-
         if (date > DateTime.UtcNow)
             throw new ArgumentOutOfRangeException(nameof(date), "Date cannot be in the future.");
 

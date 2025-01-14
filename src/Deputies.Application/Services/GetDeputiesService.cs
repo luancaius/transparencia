@@ -104,12 +104,13 @@ public class GetDeputiesService : IGetDeputiesUseCase
                         date: dto.DataDocumento,
                         description: dto.TipoDespesa,
                         buyer: buyer,
-                        supplier: supplier
+                        supplier: supplier,
+                        urlDocument: dto.UrlDocumento
                     );
 
                     domainExpenses.Add(domainExpense);
                 }
-
+                _logger.LogInformation("Saving expenses for deputy {deputyId}", deputyId);
                 await _deputyRepository.SaveExpensesAsync(deputyId, domainExpenses);
             }
         }
