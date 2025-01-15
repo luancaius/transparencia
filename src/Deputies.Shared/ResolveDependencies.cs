@@ -43,7 +43,7 @@ public class ResolveDependencies
             if (environment == "Development")
             {
                 builder.AddConsole();
-                builder.SetMinimumLevel(LogLevel.Debug);
+                builder.AddConfiguration(configuration.GetSection("Logging"));
             }
         });
         services.AddHttpClient();
