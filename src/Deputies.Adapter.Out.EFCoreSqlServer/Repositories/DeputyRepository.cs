@@ -1,12 +1,12 @@
-﻿using Deputies.Adapter.Out.EFCoreSqlServer.Models;
+﻿using System.Text.Json;
+using Deputies.Adapter.Out.EFCoreSqlServer.Models;
 using Deputies.Application.Ports.Out;
 using Deputies.Domain.Entities;
 using Deputies.Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System.Text.Json;
 
-namespace Deputies.Adapter.Out.EFCoreSqlServer;
+namespace Deputies.Adapter.Out.EFCoreSqlServer.Repositories;
 
 public class DeputyRepository : IDeputyRepository
 {

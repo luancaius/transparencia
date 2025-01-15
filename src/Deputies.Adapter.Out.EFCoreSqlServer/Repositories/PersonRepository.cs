@@ -5,7 +5,7 @@ using Deputies.Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Deputies.Adapter.Out.EFCoreSqlServer;
+namespace Deputies.Adapter.Out.EFCoreSqlServer.Repositories;
 
 public class PersonRepository : IPersonRepository
 {
@@ -36,13 +36,6 @@ public class PersonRepository : IPersonRepository
                 FullName = person.PersonName.FullName
             };
             _dbContext.Persons.Add(existingPerson);
-        }
-        else
-        {
-            // Optionally update
-            // existingPerson.FirstName = person.Name.FirstName;
-            // existingPerson.LastName = person.Name.LastName;
-            // existingPerson.FullName = person.Name.FullName;
         }
 
         await _dbContext.SaveChangesAsync();

@@ -1,13 +1,16 @@
 using System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 
 using Deputies.Adapter.Out.EFCoreSqlServer;
+using Deputies.Adapter.Out.EFCoreSqlServer.Repositories;
 using Deputies.Adapter.Out.ExternalAPI;
 using Deputies.Application.Ports.In;
 using Deputies.Application.Ports.Out;
 using Deputies.Application.Services;
+using Microsoft.Extensions.Logging;
 
 namespace Deputies.Shared;
 
@@ -33,8 +36,16 @@ public class ResolveDependencies
         IServiceCollection services,
         IConfiguration configuration)
     {
-        // cross-cutting
-        services.AddLogging();
+        var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+
+        services.AddLogging(builder =>
+        {
+            if (environment == "Development")
+            {
+                builder.AddConsole();
+                builder.SetMinimumLevel(LogLevel.Debug);
+            }
+        });
         services.AddHttpClient();
 
         // application

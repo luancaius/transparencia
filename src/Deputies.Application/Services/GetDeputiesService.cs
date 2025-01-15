@@ -36,11 +36,11 @@ public class GetDeputiesService : IGetDeputiesUseCase
 
                 var name = new PersonName(null, null, details.NomeCivil);
                 var cpf = new Cpf(details.Cpf);
-                    
+
                 var person = Person.Create(cpf, name);
 
                 var multiSourceId = new MultiSourceId("CamaraApi", details.Id.ToString());
-                    
+
                 var deputy = Deputy.Create(
                     person,
                     details.Nome,
@@ -67,51 +67,64 @@ public class GetDeputiesService : IGetDeputiesUseCase
 
             foreach (var deputy in deputiesList)
             {
-                var deputyId = deputy.MultiSourceId.Ids.GetValueOrDefault("CamaraApi"); ;
+                var deputyId = deputy.MultiSourceId.Ids.GetValueOrDefault("CamaraApi");
                 if (string.IsNullOrWhiteSpace(deputyId))
                     continue;
-                List<DeputyExpensesDto> expensesDtos = await _deputyProvider.GetDeputyExpensesAsync(
-                    deputyId,
-                    year,
-                    DateTime.Now.Month
-                );
                 
-                if (expensesDtos == null || expensesDtos.Count == 0)
+                var months = Enumerable.Range(1, 12);
+                if (DateTime.Now.Year == year)
                 {
-                    _logger.LogWarning($"No expenses found for deputy {deputyId}");
-                    continue;
+                    months = Enumerable.Range(1, DateTime.Now.Month);
                 }
-                
-                var buyer = deputy.Person;
-                var domainExpenses = new List<Expense>();
-
-                foreach (var dto in expensesDtos)
+                foreach (var month in months)
                 {
-                    currentDtoExpense = dto;
-                    currentExpense = $"cnpj:{dto.CnpjCpfFornecedor} - valor:{dto.ValorDocumento} - deputyId:{deputyId} {dto.UrlDocumento}";
-                    Company supplier;
-                    if(Cnpj.IsValidCnpj(dto.CnpjCpfFornecedor) == false)
-                    {
-                        _logger.LogWarning($"Invalid CNPJ {dto.CnpjCpfFornecedor} - {deputyId} - fornecedor: {dto.NomeFornecedor}");
-                        supplier = Company.Create(new Cnpj(SharedConstants.NO_CNPJ_CONSTANT), dto.NomeFornecedor);
-                    }
-                    else
-                    {
-                        supplier = Company.Create(new Cnpj(dto.CnpjCpfFornecedor), dto.NomeFornecedor);
-                    }
-                    var domainExpense = new Expense(
-                        amount: dto.ValorDocumento,
-                        date: dto.DataDocumento,
-                        description: dto.TipoDespesa,
-                        buyer: buyer,
-                        supplier: supplier,
-                        urlDocument: dto.UrlDocumento
+                    List<DeputyExpensesDto> expensesDtos = await _deputyProvider.GetDeputyExpensesAsync(
+                        deputyId,
+                        year,
+                        month
                     );
 
-                    domainExpenses.Add(domainExpense);
+                    if (expensesDtos == null || expensesDtos.Count == 0)
+                    {
+                        _logger.LogWarning($"No expenses found for deputy {deputyId}");
+                        continue;
+                    }
+
+                    var buyer = deputy.Person;
+                    var domainExpenses = new List<Expense>();
+
+                    foreach (var dto in expensesDtos)
+                    {
+                        currentDtoExpense = dto;
+                        currentExpense =
+                            $"cnpj:{dto.CnpjCpfFornecedor} - valor:{dto.ValorDocumento} - deputyId:{deputyId} {dto.UrlDocumento}";
+                        Company supplier;
+                        if (Cnpj.IsValidCnpj(dto.CnpjCpfFornecedor) == false)
+                        {
+                            _logger.LogWarning(
+                                $"Invalid CNPJ {dto.CnpjCpfFornecedor} - {deputyId} - fornecedor: {dto.NomeFornecedor}");
+                            supplier = Company.Create(new Cnpj(SharedConstants.NO_CNPJ_CONSTANT), dto.NomeFornecedor);
+                        }
+                        else
+                        {
+                            supplier = Company.Create(new Cnpj(dto.CnpjCpfFornecedor), dto.NomeFornecedor);
+                        }
+
+                        var domainExpense = new Expense(
+                            amount: dto.ValorDocumento,
+                            date: dto.DataDocumento,
+                            description: dto.TipoDespesa,
+                            buyer: buyer,
+                            supplier: supplier,
+                            urlDocument: dto.UrlDocumento
+                        );
+
+                        domainExpenses.Add(domainExpense);
+                    }
+
+                    _logger.LogInformation("Saving expenses for deputy {deputyId}", deputyId);
+                    await _deputyRepository.SaveExpensesAsync(deputyId, domainExpenses);
                 }
-                _logger.LogInformation("Saving expenses for deputy {deputyId}", deputyId);
-                await _deputyRepository.SaveExpensesAsync(deputyId, domainExpenses);
             }
         }
         catch (Exception ex)
@@ -153,6 +166,7 @@ public class GetDeputiesService : IGetDeputiesUseCase
 
                 domainExpenses.Add(domainExpense);
             }
+            
             await _deputyRepository.SaveExpensesAsync(deputyId, domainExpenses);
         }
     }
