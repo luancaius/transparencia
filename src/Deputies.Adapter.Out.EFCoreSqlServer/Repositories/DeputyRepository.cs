@@ -203,6 +203,7 @@ public class DeputyRepository : IDeputyRepository
 
                     await _dbContext.SaveChangesAsync();
                 }
+                supplierCpfCnpj = supplierCnpj;
             }
             else
             {
