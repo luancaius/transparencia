@@ -1,4 +1,3 @@
-using System;
 using Deputies.Domain.AbstractEntities;
 using Deputies.Domain.ValueObjects;
 

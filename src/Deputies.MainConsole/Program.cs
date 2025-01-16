@@ -1,7 +1,5 @@
 ﻿using Deputies.Application.Ports.In;
 using Deputies.Shared;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Deputies.MainConsole;
 

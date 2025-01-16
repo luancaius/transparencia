@@ -1,4 +1,3 @@
-using System;
 using Deputies.Domain.AbstractEntities;
 
 namespace Deputies.Domain.Entities;

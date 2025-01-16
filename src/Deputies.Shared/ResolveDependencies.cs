@@ -1,4 +1,3 @@
-using System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -10,7 +9,6 @@ using Deputies.Adapter.Out.ExternalAPI;
 using Deputies.Application.Ports.In;
 using Deputies.Application.Ports.Out;
 using Deputies.Application.Services;
-using Microsoft.Extensions.Logging;
 
 namespace Deputies.Shared;
 
