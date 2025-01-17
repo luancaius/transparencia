@@ -49,7 +49,7 @@ public class ResolveDependencies
 
         services.AddStackExchangeRedisCache(options =>
         {
-            options.Configuration = "localhost:6379"; // Replace with your Redis server connection string
+            options.Configuration = "localhost:6379";
         });
 
         // Register RedisCacheService
