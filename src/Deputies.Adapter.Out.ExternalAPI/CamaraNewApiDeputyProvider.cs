@@ -2,28 +2,47 @@ using System.Text.Json;
 using Deputies.Adapter.Out.ExternalAPI.Dtos;
 using Deputies.Application.Dtos;
 using Deputies.Application.Ports.Out;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace Deputies.Adapter.Out.ExternalAPI;
 
 public class CamaraNewApiDeputyProvider : IDeputyProvider
 {
     private readonly HttpClient _httpClient;
+    private readonly IRedisCacheService _redisCache;
     private const string BaseUrl = "https://dadosabertos.camara.leg.br/api/v2";
+    private readonly TimeSpan _cacheDuration = TimeSpan.FromHours(1);
 
-    public CamaraNewApiDeputyProvider(HttpClient httpClient)
+    public CamaraNewApiDeputyProvider(HttpClient httpClient, IRedisCacheService redisCache)
     {
         _httpClient = httpClient;
+        _redisCache = redisCache;
     }
 
     public async Task<IEnumerable<DeputyListItemDto>> GetDeputiesListAsync(int legislatura)
     {
-        var response = await _httpClient.GetAsync($"{BaseUrl}/deputados?idLegislatura={legislatura}");
-        response.EnsureSuccessStatusCode();
+        var requestUrl = $"{BaseUrl}/deputados?idLegislatura={legislatura}";
 
-        var content = await response.Content.ReadAsStringAsync();
+        // Try to get cached JSON
+        var cachedJson = await _redisCache.GetAsync<string>(requestUrl);
+        string content;
+
+        if (!string.IsNullOrEmpty(cachedJson))
+        {
+            content = cachedJson;
+        }
+        else
+        {
+            var response = await _httpClient.GetAsync(requestUrl);
+            response.EnsureSuccessStatusCode();
+
+            content = await response.Content.ReadAsStringAsync();
+            await _redisCache.SetAsync(requestUrl, content, _cacheDuration);
+        }
+
         var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<DeputadoListDto>>>(content);
 
-        var listDeputies = apiResponse!.dados.Select(d => new DeputyListItemDto(
+        return apiResponse!.dados.Select(d => new DeputyListItemDto(
             d.id,
             d.nome,
             d.siglaPartido,
@@ -31,15 +50,28 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
             d.idLegislatura,
             d.email
         ));
-        return listDeputies;
     }
 
     public async Task<DeputyDetailDto> GetDeputyDetailAsync(int deputyId)
     {
-        var response = await _httpClient.GetAsync($"{BaseUrl}/deputados/{deputyId}");
-        response.EnsureSuccessStatusCode();
+        var requestUrl = $"{BaseUrl}/deputados/{deputyId}";
 
-        var content = await response.Content.ReadAsStringAsync();
+        var cachedJson = await _redisCache.GetAsync<string>(requestUrl);
+        string content;
+
+        if (!string.IsNullOrEmpty(cachedJson))
+        {
+            content = cachedJson;
+        }
+        else
+        {
+            var response = await _httpClient.GetAsync(requestUrl);
+            response.EnsureSuccessStatusCode();
+
+            content = await response.Content.ReadAsStringAsync();
+            await _redisCache.SetAsync(requestUrl, content, _cacheDuration);
+        }
+
         var apiResponse = JsonSerializer.Deserialize<ApiResponse<DeputadoDetailDto>>(content);
         var dados = apiResponse!.dados;
         var status = dados.ultimoStatus;
@@ -63,19 +95,28 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
 
     public async Task<List<DeputyExpensesDto>> GetDeputyExpensesAsync(string deputyId, int year, int month)
     {
-        var url = $"{BaseUrl}/deputados/{deputyId}/despesas?ano={year}&mes={month}&itens=10000";
-        var response = await _httpClient.GetAsync(url);
-        response.EnsureSuccessStatusCode();
+        var requestUrl = $"{BaseUrl}/deputados/{deputyId}/despesas?ano={year}&mes={month}&itens=10000";
 
-        var content = await response.Content.ReadAsStringAsync();
-        var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<ExpenseDto>>>(content);
+        var cachedJson = await _redisCache.GetAsync<string>(requestUrl);
+        string content;
 
-        if (apiResponse is null)
+        if (!string.IsNullOrEmpty(cachedJson))
         {
-            throw new Exception("Failed to deserialize API response.");
+            content = cachedJson;
+        }
+        else
+        {
+            var response = await _httpClient.GetAsync(requestUrl);
+            response.EnsureSuccessStatusCode();
+
+            content = await response.Content.ReadAsStringAsync();
+            await _redisCache.SetAsync(requestUrl, content, _cacheDuration);
         }
 
-        var deputyExpenses = apiResponse.dados.Select(e => new DeputyExpensesDto(
+        var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<ExpenseDto>>>(content)
+            ?? throw new Exception("Failed to deserialize API response.");
+
+        return apiResponse.dados.Select(e => new DeputyExpensesDto(
             e.Ano,
             e.Mes,
             e.TipoDespesa,
@@ -90,12 +131,46 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
             e.CnpjCpfFornecedor,
             e.ValorLiquido
         )).ToList();
-        
-        return deputyExpenses;
     }
 
     private class ApiResponse<T>
     {
         public T dados { get; set; }
+    }
+}
+
+public interface IRedisCacheService
+{
+    Task<T?> GetAsync<T>(string key);
+    Task SetAsync<T>(string key, T value, TimeSpan expiration);
+}
+
+public class RedisCacheService : IRedisCacheService
+{
+    private readonly IDistributedCache _cache;
+
+    public RedisCacheService(IDistributedCache cache)
+    {
+        _cache = cache;
+    }
+
+    public async Task<T?> GetAsync<T>(string key)
+    {
+        var cachedData = await _cache.GetAsync(key);
+        if (cachedData == null) return default;
+
+        var jsonData = System.Text.Encoding.UTF8.GetString(cachedData);
+        return JsonSerializer.Deserialize<T>(jsonData);
+    }
+
+    public async Task SetAsync<T>(string key, T value, TimeSpan expiration)
+    {
+        var jsonData = JsonSerializer.Serialize(value);
+        var data = System.Text.Encoding.UTF8.GetBytes(jsonData);
+
+        await _cache.SetAsync(key, data, new DistributedCacheEntryOptions
+        {
+            AbsoluteExpirationRelativeToNow = expiration
+        });
     }
 }

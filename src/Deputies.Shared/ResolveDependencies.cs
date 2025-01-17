@@ -9,6 +9,7 @@ using Deputies.Adapter.Out.ExternalAPI;
 using Deputies.Application.Ports.In;
 using Deputies.Application.Ports.Out;
 using Deputies.Application.Services;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
 
 namespace Deputies.Shared;
 
@@ -46,6 +47,14 @@ public class ResolveDependencies
         });
         services.AddHttpClient();
 
+        services.AddStackExchangeRedisCache(options =>
+        {
+            options.Configuration = "localhost:6379"; // Replace with your Redis server connection string
+        });
+
+        // Register RedisCacheService
+        services.AddTransient<IRedisCacheService, RedisCacheService>();
+        
         // application
         services.AddScoped<IGetDeputiesUseCase, GetDeputiesService>();
 
