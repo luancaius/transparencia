@@ -2,6 +2,7 @@ using System.Text.Json;
 using Deputies.Adapter.Out.ExternalAPI.Dtos;
 using Deputies.Application.Dtos;
 using Deputies.Application.Ports.Out;
+using Deputies.Caching;
 using Microsoft.Extensions.Caching.Distributed;
 
 namespace Deputies.Adapter.Out.ExternalAPI;
@@ -34,10 +35,16 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
         else
         {
             var response = await _httpClient.GetAsync(requestUrl);
-            response.EnsureSuccessStatusCode();
 
-            content = await response.Content.ReadAsStringAsync();
-            await _redisCache.SetAsync(requestUrl, content, _cacheDuration);
+            if (response.IsSuccessStatusCode)
+            {
+                content = await response.Content.ReadAsStringAsync();
+                await _redisCache.SetAsync(requestUrl, content, _cacheDuration);
+            }
+            else
+            {
+                throw new HttpRequestException($"Failed to fetch data from {requestUrl}. Status: {response.StatusCode}");
+            }
         }
 
         var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<DeputadoListDto>>>(content);
@@ -66,10 +73,16 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
         else
         {
             var response = await _httpClient.GetAsync(requestUrl);
-            response.EnsureSuccessStatusCode();
 
-            content = await response.Content.ReadAsStringAsync();
-            await _redisCache.SetAsync(requestUrl, content, _cacheDuration);
+            if (response.IsSuccessStatusCode)
+            {
+                content = await response.Content.ReadAsStringAsync();
+                await _redisCache.SetAsync(requestUrl, content, _cacheDuration);
+            }
+            else
+            {
+                throw new HttpRequestException($"Failed to fetch data from {requestUrl}. Status: {response.StatusCode}");
+            }
         }
 
         var apiResponse = JsonSerializer.Deserialize<ApiResponse<DeputadoDetailDto>>(content);
@@ -107,10 +120,16 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
         else
         {
             var response = await _httpClient.GetAsync(requestUrl);
-            response.EnsureSuccessStatusCode();
 
-            content = await response.Content.ReadAsStringAsync();
-            await _redisCache.SetAsync(requestUrl, content, _cacheDuration);
+            if (response.IsSuccessStatusCode)
+            {
+                content = await response.Content.ReadAsStringAsync();
+                await _redisCache.SetAsync(requestUrl, content, _cacheDuration);
+            }
+            else
+            {
+                throw new HttpRequestException($"Failed to fetch data from {requestUrl}. Status: {response.StatusCode}");
+            }
         }
 
         var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<ExpenseDto>>>(content)
@@ -136,41 +155,5 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
     private class ApiResponse<T>
     {
         public T dados { get; set; }
-    }
-}
-
-public interface IRedisCacheService
-{
-    Task<T?> GetAsync<T>(string key);
-    Task SetAsync<T>(string key, T value, TimeSpan expiration);
-}
-
-public class RedisCacheService : IRedisCacheService
-{
-    private readonly IDistributedCache _cache;
-
-    public RedisCacheService(IDistributedCache cache)
-    {
-        _cache = cache;
-    }
-
-    public async Task<T?> GetAsync<T>(string key)
-    {
-        var cachedData = await _cache.GetAsync(key);
-        if (cachedData == null) return default;
-
-        var jsonData = System.Text.Encoding.UTF8.GetString(cachedData);
-        return JsonSerializer.Deserialize<T>(jsonData);
-    }
-
-    public async Task SetAsync<T>(string key, T value, TimeSpan expiration)
-    {
-        var jsonData = JsonSerializer.Serialize(value);
-        var data = System.Text.Encoding.UTF8.GetBytes(jsonData);
-
-        await _cache.SetAsync(key, data, new DistributedCacheEntryOptions
-        {
-            AbsoluteExpirationRelativeToNow = expiration
-        });
     }
 }

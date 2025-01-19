@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Deputies.Application\Deputies.Application.csproj" />
+      <ProjectReference Include="..\Deputies.Caching\Deputies.Caching.csproj" />
     </ItemGroup>
 
     <ItemGroup>
