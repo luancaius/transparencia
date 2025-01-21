@@ -5,7 +5,7 @@ namespace Deputies.Domain.Entities;
 
 public class Person : Participant
 {
-    private Person(Cpf cpf, PersonName personName)
+    protected Person(Cpf cpf, PersonName personName)
     {
         Cpf = cpf;
         PersonName = personName;

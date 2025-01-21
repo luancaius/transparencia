@@ -1,5 +1,6 @@
 using Deputies.Domain.Entities;
 using Deputies.Domain.ValueObjects;
+using Xunit;
 
 namespace Deputies.Domain.UnitTests.Entities;
 
@@ -9,121 +10,137 @@ public class DeputyTests
     public void Should_Create_Deputy_With_Valid_Data()
     {
         // Arrange
-        var person = Person.Create(new Cpf("12345678909"), new PersonName("John", "Doe"));
+        var cpf = new Cpf("12345678909");
+        var name = new PersonName("John", "Doe");
+        var party = "XYZ";
         var multiSourceId = new MultiSourceId("API1", "12345");
-        string deputyName = "John Doe";
-        string party = "XYZ";
 
         // Act
-        var deputy = Deputy.Create(person, deputyName, party, multiSourceId);
+        var deputy = Deputy.Create(cpf, name, party, multiSourceId);
 
         // Assert
-        Assert.Equal(person, deputy.Person);
-        Assert.Equal(deputyName, deputy.DeputyName);
+        Assert.Equal("John Doe", deputy.DisplayName);
         Assert.Equal(party, deputy.Party);
         Assert.Equal(multiSourceId, deputy.MultiSourceId);
     }
 
     [Fact]
-    public void Should_Throw_Exception_When_Person_Is_Null()
+    public void Should_Throw_Exception_When_Cpf_Is_Null()
     {
         // Arrange
+        Cpf cpf = null!;
+        var name = new PersonName("John", "Doe");
+        var party = "XYZ";
         var multiSourceId = new MultiSourceId("API1", "12345");
-        string deputyName = "John Doe";
-        string party = "XYZ";
 
         // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => Deputy.Create(null!, deputyName, party, multiSourceId));
+        Assert.Throws<ArgumentNullException>(() => 
+            Deputy.Create(cpf, name, party, multiSourceId)
+        );
     }
 
     [Fact]
-    public void Should_Throw_Exception_When_DeputyName_Is_Empty()
+    public void Should_Throw_Exception_When_PersonName_Is_Null()
     {
         // Arrange
-        var person = Person.Create(new Cpf("98765432100"), new PersonName("John", "Doe"));
+        var cpf = new Cpf("12345678909");
+        PersonName personName = null!;
+        var party = "XYZ";
         var multiSourceId = new MultiSourceId("API1", "12345");
-        string party = "XYZ";
 
         // Act & Assert
-        Assert.Throws<ArgumentException>(() => Deputy.Create(person, "", party, multiSourceId));
+        Assert.Throws<ArgumentNullException>(() =>
+            Deputy.Create(cpf, personName, party, multiSourceId)
+        );
     }
 
     [Fact]
     public void Should_Throw_Exception_When_Party_Is_Empty()
     {
         // Arrange
-        var person = Person.Create(new Cpf("11144477735"), new PersonName("John", "Doe"));
+        var cpf = new Cpf("12345678909");
+        var name = new PersonName("John", "Doe");
         var multiSourceId = new MultiSourceId("API1", "12345");
-        string deputyName = "John Doe";
 
         // Act & Assert
-        Assert.Throws<ArgumentException>(() => Deputy.Create(person, deputyName, "", multiSourceId));
+        Assert.Throws<ArgumentException>(() =>
+            Deputy.Create(cpf, name, "", multiSourceId)
+        );
     }
 
     [Fact]
     public void Should_Throw_Exception_When_MultiSourceId_Is_Null()
     {
         // Arrange
-        var person = Person.Create(new Cpf("52998224725"), new PersonName("John", "Doe"));
-        string deputyName = "John Doe";
-        string party = "XYZ";
+        var cpf = new Cpf("12345678909");
+        var name = new PersonName("John", "Doe");
+        var party = "XYZ";
+        MultiSourceId multiSourceId = null!;
 
         // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => Deputy.Create(person, deputyName, party, null!));
+        Assert.Throws<ArgumentNullException>(() =>
+            Deputy.Create(cpf, name, party, multiSourceId)
+        );
     }
 
     [Fact]
-    public void Should_Return_True_For_Deputies_With_Same_Person()
+    public void Should_Return_True_For_Deputies_With_Same_Cpf()
     {
         // Arrange
-        var person = Person.Create(new Cpf("01234567890"), new PersonName("John", "Doe"));
+        var cpf = new Cpf("01234567890");
+        var name1 = new PersonName("John", "Doe");
+        var name2 = new PersonName("Another", "Name");
         var multiSourceId1 = new MultiSourceId("API1", "12345");
         var multiSourceId2 = new MultiSourceId("API2", "67890");
 
-        var deputy1 = Deputy.Create(person, "John Doe", "XYZ", multiSourceId1);
-        var deputy2 = Deputy.Create(person, "Another Name", "ABC", multiSourceId2);
+        var deputy1 = Deputy.Create(cpf, name1, "XYZ", multiSourceId1);
+        var deputy2 = Deputy.Create(cpf, name2, "ABC", multiSourceId2);
 
         // Act & Assert
-        Assert.Equal(deputy1, deputy2); // Should be equal because they share the same Person
+        Assert.Equal(deputy1, deputy2);
     }
 
     [Fact]
-    public void Should_Return_False_For_Deputies_With_Different_Person()
+    public void Should_Return_False_For_Deputies_With_Different_Cpf()
     {
         // Arrange
-        var person1 = Person.Create(new Cpf("12345678909"), new PersonName("John", "Doe"));
-        var person2 = Person.Create(new Cpf("98765432100"), new PersonName("Jane", "Smith"));
+        var cpf1 = new Cpf("12345678909");
+        var cpf2 = new Cpf("98765432100");
+        var name = new PersonName("John", "Doe");
         var multiSourceId = new MultiSourceId("API1", "12345");
 
-        var deputy1 = Deputy.Create(person1, "John Doe", "XYZ", multiSourceId);
-        var deputy2 = Deputy.Create(person2, "Jane Smith", "ABC", multiSourceId);
+        var deputy1 = Deputy.Create(cpf1, name, "XYZ", multiSourceId);
+        var deputy2 = Deputy.Create(cpf2, name, "ABC", multiSourceId);
 
         // Act & Assert
-        Assert.NotEqual(deputy1, deputy2); // Should not be equal because they have different Person instances
+        Assert.NotEqual(deputy1, deputy2);
     }
 
     [Fact]
-    public void Should_Have_Same_HashCode_For_Deputies_With_Same_Person()
+    public void Should_Have_Same_HashCode_For_Deputies_With_Same_Cpf()
     {
         // Arrange
-        var person = Person.Create(new Cpf("52998224725"), new PersonName("John", "Doe"));
+        var cpf = new Cpf("52998224725");
+        var name1 = new PersonName("John", "Doe");
+        var name2 = new PersonName("Another", "Name");
         var multiSourceId1 = new MultiSourceId("API1", "12345");
         var multiSourceId2 = new MultiSourceId("API2", "67890");
 
-        var deputy1 = Deputy.Create(person, "John Doe", "XYZ", multiSourceId1);
-        var deputy2 = Deputy.Create(person, "Another Name", "ABC", multiSourceId2);
+        var deputy1 = Deputy.Create(cpf, name1, "XYZ", multiSourceId1);
+        var deputy2 = Deputy.Create(cpf, name2, "ABC", multiSourceId2);
 
         // Act & Assert
-        Assert.Equal(deputy1.GetHashCode(), deputy2.GetHashCode()); // Should have the same hash code because they share the same Person
+        Assert.Equal(deputy1.GetHashCode(), deputy2.GetHashCode());
     }
 
     [Fact]
     public void Should_Return_Formatted_String_From_ToString()
     {
         // Arrange
-        var person = Person.Create(new Cpf("01234567890"), new PersonName("John", "Doe"));
+        var cpf = new Cpf("01234567890");
+        var name = new PersonName("John", "Doe");
         var multiSourceId = new MultiSourceId("API1", "12345");
-        var deputy = Deputy.Create(person, "John Doe", "XYZ", multiSourceId);
+        var deputy = Deputy.Create(cpf, name, "XYZ", multiSourceId);
 
         // Act
         var result = deputy.ToString();
@@ -131,15 +148,19 @@ public class DeputyTests
         // Assert
         Assert.Equal("John Doe (XYZ) - API1: 12345", result);
     }
-    
+
     [Fact]
     public void Should_Throw_Exception_For_Invalid_Cpf()
     {
         // Arrange
-        var invalidCpf = "12345678900";
+        var invalidCpf = "12345678900"; // assume it's invalid in your Cpf validation
         var name = new PersonName("John", "Doe");
+        var party = "XYZ";
+        var multiSourceId = new MultiSourceId("API1", "12345");
 
         // Act & Assert
-        Assert.Throws<ArgumentException>(() => Person.Create(new Cpf(invalidCpf), name));
+        Assert.Throws<ArgumentException>(() =>
+            Deputy.Create(new Cpf(invalidCpf), name, party, multiSourceId)
+        );
     }
 }

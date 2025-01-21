@@ -24,7 +24,7 @@ public class DeputyRepository : IDeputyRepository
     public async Task SaveDeputyAsync(Deputy deputy)
     {
         // Check if the person (by CPF) exists
-        var cpfValue = deputy.Person.Cpf.GetUnmasked();
+        var cpfValue = deputy.Cpf.GetUnmasked();
         var existingPersonEf = await _dbContext.Persons
             .FirstOrDefaultAsync(p => p.Cpf == cpfValue);
 
@@ -34,9 +34,9 @@ public class DeputyRepository : IDeputyRepository
             existingPersonEf = new PersonEfModel
             {
                 Cpf = cpfValue,
-                FirstName = deputy.Person.PersonName.FirstName,
-                LastName = deputy.Person.PersonName.LastName,
-                FullName = deputy.Person.PersonName.FullName
+                FirstName = deputy.PersonName.FirstName,
+                LastName = deputy.PersonName.LastName,
+                FullName = deputy.PersonName.FullName
             };
 
             _dbContext.Persons.Add(existingPersonEf);
@@ -94,8 +94,12 @@ public class DeputyRepository : IDeputyRepository
 
         // Rebuild domain Deputy
         var domainDeputy = Deputy.Create(
-            domainPerson,
-            deputyEf.DeputyName,
+            new Cpf(deputyEf.Person.Cpf),
+            new PersonName(
+                deputyEf.Person.FirstName,
+                deputyEf.Person.LastName,
+                deputyEf.Person.FullName
+            ),
             deputyEf.Party,
             multiSourceId
         );
@@ -113,18 +117,13 @@ public class DeputyRepository : IDeputyRepository
 
             var multiSourceId = MultiSourceId.FromDictionary(dict);
 
-            var domainPerson = Person.Create(
+            return Deputy.Create(
                 new Cpf(d.Person.Cpf),
                 new PersonName(
                     d.Person.FirstName,
                     d.Person.LastName,
                     d.Person.FullName
-                )
-            );
-
-            return Deputy.Create(
-                domainPerson,
-                d.DeputyName,
+                ),
                 d.Party,
                 multiSourceId
             );

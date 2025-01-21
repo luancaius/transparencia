@@ -2,32 +2,50 @@ using Deputies.Domain.ValueObjects;
 
 namespace Deputies.Domain.Entities;
 
-public class Deputy
+public class Deputy : Person
 {
-    private Deputy(Person person, string deputyName, string party, MultiSourceId multiSourceId)
+    private Deputy(Cpf cpf, PersonName personName, string deputyName, string party, MultiSourceId multiSourceId)
+        : base(cpf, personName)
     {
-        Person = person;
-        DeputyName = deputyName;
+        if (string.IsNullOrWhiteSpace(party))
+            throw new ArgumentException(nameof(party));
         Party = party;
-        MultiSourceId = multiSourceId;
+        MultiSourceId = multiSourceId ?? throw new ArgumentNullException(nameof(multiSourceId));
     }
 
-    public Person Person { get; }
-    public string DeputyName { get; }
+    
     public string Party { get; }
     public MultiSourceId MultiSourceId { get; }
 
-    public static Deputy Create(Person person, string deputyName, string party, MultiSourceId multiSourceId)
+    public static Deputy Create(Cpf cpf, PersonName personName, string party, MultiSourceId multiSourceId)
     {
-        if (person == null)
-            throw new ArgumentNullException(nameof(person), "Person cannot be null.");
-        if (string.IsNullOrWhiteSpace(deputyName))
-            throw new ArgumentException("Deputy name cannot be null or empty.", nameof(deputyName));
-        if (string.IsNullOrWhiteSpace(party))
-            throw new ArgumentException("Party cannot be null or empty.", nameof(party));
-        if (multiSourceId == null)
-            throw new ArgumentNullException(nameof(multiSourceId), "MultiSourceId cannot be null.");
+        if (cpf == null) 
+            throw new ArgumentNullException(nameof(cpf));
+        if (personName == null) 
+            throw new ArgumentNullException(nameof(personName));
+        if (string.IsNullOrWhiteSpace(party)) 
+            throw new ArgumentException(nameof(party));
+        if (multiSourceId == null) 
+            throw new ArgumentNullException(nameof(multiSourceId));
 
-        return new Deputy(person, deputyName, party, multiSourceId);
+        return new Deputy(cpf, personName, party, multiSourceId);
+    }
+
+    public override string DisplayName => base.DisplayName;
+
+    public override bool Equals(object obj)
+    {
+        if (obj is Deputy other)
+        {
+            return base.Equals(other)
+                   && Party == other.Party
+                   && MultiSourceId.Equals(other.MultiSourceId);
+        }
+        return false;
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(base.GetHashCode(), Party, MultiSourceId);
     }
 }

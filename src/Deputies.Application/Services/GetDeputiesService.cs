@@ -36,14 +36,12 @@ public class GetDeputiesService : IGetDeputiesUseCase
 
                 var name = new PersonName(null, null, details.NomeCivil);
                 var cpf = new Cpf(details.Cpf);
-
-                var person = Person.Create(cpf, name);
-
+                
                 var multiSourceId = new MultiSourceId("CamaraApi", details.Id.ToString());
 
                 var deputy = Deputy.Create(
-                    person,
-                    details.Nome,
+                    cpf,
+                    name,
                     details.SiglaPartido,
                     multiSourceId
                 );
@@ -90,7 +88,7 @@ public class GetDeputiesService : IGetDeputiesUseCase
                         continue;
                     }
 
-                    var buyer = deputy.Person;
+                    var buyer = deputy;
                     var domainExpenses = new List<Expense>();
 
                     foreach (var dto in expensesDtos)
@@ -149,7 +147,7 @@ public class GetDeputiesService : IGetDeputiesUseCase
                 DateTime.Now.Month
             );
 
-            var buyer = deputy.Person;
+            var buyer = deputy;
             var domainExpenses = new List<Expense>();
 
             foreach (var dto in expensesDtos)
