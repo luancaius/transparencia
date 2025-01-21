@@ -11,4 +11,9 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Deputies.Adapter.Out.ExternalAPI\Deputies.Adapter.Out.ExternalAPI.csproj" />
+      <ProjectReference Include="..\Deputies.Application\Deputies.Application.csproj" />
+    </ItemGroup>
+
 </Project>

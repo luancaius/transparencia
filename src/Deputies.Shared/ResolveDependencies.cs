@@ -10,7 +10,6 @@ using Deputies.Application.Ports.In;
 using Deputies.Application.Ports.Out;
 using Deputies.Application.Services;
 using Deputies.Caching;
-using Microsoft.Extensions.Caching.StackExchangeRedis;
 
 namespace Deputies.Shared;
 

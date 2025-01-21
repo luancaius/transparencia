@@ -154,7 +154,7 @@ public class DeputyRepository : IDeputyRepository
         var existingExpenses = await _dbContext.DeputyExpenses
             .Where(e => e.DeputyId == deputyEf.Id)
             .ToListAsync();
-        
+
         var newExpenses = new List<Expense>();
 
         foreach (var expense in expenses)
@@ -180,7 +180,7 @@ public class DeputyRepository : IDeputyRepository
             );
             return;
         }
-        
+
         foreach (var domainExpense in newExpenses)
         {
             var buyerPerson = deputyEf.Person;
@@ -203,6 +203,7 @@ public class DeputyRepository : IDeputyRepository
 
                     await _dbContext.SaveChangesAsync();
                 }
+
                 supplierCpfCnpj = supplierCnpj;
             }
             else
@@ -223,8 +224,10 @@ public class DeputyRepository : IDeputyRepository
 
                     await _dbContext.SaveChangesAsync();
                 }
+
                 supplierCpfCnpj = supplierCpf;
             }
+
             var expenseEf = new DeputyExpenseEfModel
             {
                 DeputyId = deputyEf.Id,
@@ -234,7 +237,6 @@ public class DeputyRepository : IDeputyRepository
                 Description = domainExpense.Description,
                 Date = domainExpense.Date,
                 UrlDocument = domainExpense.UrlDocument
-                
             };
 
             _dbContext.DeputyExpenses.Add(expenseEf);
@@ -248,5 +250,82 @@ public class DeputyRepository : IDeputyRepository
                 deputyId
             );
         }
+    }
+
+    public async Task<List<Expense>> GetExpensesByYearAndMonthAsync(int year, int month, int top = 10)
+    {
+        var expenseEfList = await _dbContext.DeputyExpenses
+            .Include(e => e.Buyer)
+            .Where(e => e.Date.Year == year && e.Date.Month == month)
+            .OrderByDescending(e => e.Amount)
+            .Take(top)
+            .ToListAsync();
+
+        var domainExpenses = new List<Expense>();
+
+        foreach (var expenseEf in expenseEfList)
+        {
+            var domainBuyer = Person.Create(
+                new Cpf(expenseEf.Buyer.Cpf),
+                new PersonName(
+                    expenseEf.Buyer.FirstName,
+                    expenseEf.Buyer.LastName,
+                    expenseEf.Buyer.FullName
+                )
+            );
+
+            var supplierCpfCnpj = expenseEf.SupplierCpfCnpj;
+            var supplierPersonEf = await _dbContext.Persons
+                .FirstOrDefaultAsync(p => p.Cpf == supplierCpfCnpj);
+
+            if (supplierPersonEf != null)
+            {
+                var domainSupplier = Person.Create(
+                    new Cpf(supplierPersonEf.Cpf),
+                    new PersonName(
+                        supplierPersonEf.FirstName,
+                        supplierPersonEf.LastName,
+                        supplierPersonEf.FullName
+                    )
+                );
+
+                domainExpenses.Add(new Expense(
+                    expenseEf.Amount,
+                    expenseEf.Date,
+                    expenseEf.Description,
+                    domainBuyer,
+                    domainSupplier,
+                    expenseEf.UrlDocument
+                ));
+            }
+            else
+            {
+                var supplierCompanyEf = await _dbContext.Companies
+                    .FirstOrDefaultAsync(c => c.Cnpj == supplierCpfCnpj);
+
+                if (supplierCompanyEf != null)
+                {
+                    var domainSupplier = Company.Create(
+                        new Cnpj(supplierCompanyEf.Cnpj),
+                        supplierCompanyEf.CompanyName
+                    );
+
+                    domainExpenses.Add(new Expense(
+                        expenseEf.Amount,
+                        expenseEf.Date,
+                        expenseEf.Description,
+                        domainBuyer,
+                        domainSupplier,
+                        expenseEf.UrlDocument
+                    ));
+                }
+                else
+                {
+                    _logger.LogWarning("Could not find supplier {Supplier} in Persons or Companies.", supplierCpfCnpj);
+                }
+            }
+        }
+
+        return domainExpenses;
     }
 }

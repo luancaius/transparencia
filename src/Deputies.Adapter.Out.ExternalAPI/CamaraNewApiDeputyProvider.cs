@@ -3,7 +3,6 @@ using Deputies.Adapter.Out.ExternalAPI.Dtos;
 using Deputies.Application.Dtos;
 using Deputies.Application.Ports.Out;
 using Deputies.Caching;
-using Microsoft.Extensions.Caching.Distributed;
 
 namespace Deputies.Adapter.Out.ExternalAPI;
 
@@ -12,7 +11,7 @@ public class CamaraNewApiDeputyProvider : IDeputyProvider
     private readonly HttpClient _httpClient;
     private readonly IRedisCacheService _redisCache;
     private const string BaseUrl = "https://dadosabertos.camara.leg.br/api/v2";
-    private readonly TimeSpan _cacheDuration = TimeSpan.FromHours(1);
+    private readonly TimeSpan _cacheDuration = TimeSpan.FromDays(30);
 
     public CamaraNewApiDeputyProvider(HttpClient httpClient, IRedisCacheService redisCache)
     {
