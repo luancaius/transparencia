@@ -100,6 +100,7 @@ public class DeputyRepository : IDeputyRepository
                 deputyEf.Person.LastName,
                 deputyEf.Person.FullName
             ),
+            deputyEf.DeputyName,
             deputyEf.Party,
             multiSourceId
         );
@@ -124,6 +125,7 @@ public class DeputyRepository : IDeputyRepository
                     d.Person.LastName,
                     d.Person.FullName
                 ),
+                d.DeputyName,
                 d.Party,
                 multiSourceId
             );

@@ -42,6 +42,7 @@ public class GetDeputiesService : IGetDeputiesUseCase
                 var deputy = Deputy.Create(
                     cpf,
                     name,
+                    details.Nome,
                     details.SiglaPartido,
                     multiSourceId
                 );

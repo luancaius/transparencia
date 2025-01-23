@@ -1,18 +1,26 @@
 
+using Deputies.Adapter.Out.EFCoreSqlServer;
+using Deputies.Adapter.Out.EFCoreSqlServer.Repositories;
 using Deputies.Application.Ports.In;
+using Deputies.Application.Ports.Out;
 using Deputies.Application.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IGetDeputiesExpensesQuery, DeputiesExpensesQueryService>();
+builder.Services.AddDbContext<DeputiesDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DeputiesSqlServerConnection"));
+});
+
+builder.Services.AddScoped<IGetDeputiesExpensesQuery, DeputiesExpensesQueryService>();
+builder.Services.AddScoped<IDeputyRepository, DeputyRepository>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline (Swagger, HTTPS, etc.)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

@@ -9,15 +9,16 @@ public class Deputy : Person
     {
         if (string.IsNullOrWhiteSpace(party))
             throw new ArgumentException(nameof(party));
+        DeputyName = deputyName;
         Party = party;
         MultiSourceId = multiSourceId ?? throw new ArgumentNullException(nameof(multiSourceId));
     }
 
-    
+    public string DeputyName { get; }    
     public string Party { get; }
     public MultiSourceId MultiSourceId { get; }
 
-    public static Deputy Create(Cpf cpf, PersonName personName, string party, MultiSourceId multiSourceId)
+    public static Deputy Create(Cpf cpf, PersonName personName, string deputyName, string party, MultiSourceId multiSourceId)
     {
         if (cpf == null) 
             throw new ArgumentNullException(nameof(cpf));
@@ -28,7 +29,7 @@ public class Deputy : Person
         if (multiSourceId == null) 
             throw new ArgumentNullException(nameof(multiSourceId));
 
-        return new Deputy(cpf, personName, party, multiSourceId);
+        return new Deputy(cpf, personName, deputyName, party, multiSourceId);
     }
 
     public override string DisplayName => base.DisplayName;
