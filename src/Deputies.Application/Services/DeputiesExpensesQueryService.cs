@@ -17,23 +17,22 @@ public class DeputiesExpensesQueryService : IGetDeputiesExpensesQuery
     public async Task<IEnumerable<DeputyExpenseAPIDto>> GetTop10ExpensesAsync(int year, int month)
     {
         List<Expense> expenses = await _deputiesRepository.GetExpensesByYearAndMonthAsync(year, month);
+
+        var expensesTop10 = expenses.OrderByDescending(e => e.Amount).Take(10).ToList();
+        var deputiesExpensesDto = new List<DeputyExpenseAPIDto>();
+        foreach (var expense in expensesTop10)
+        {
+            var deputy = expense.Buyer as Deputy;
+            deputiesExpensesDto.Add(new DeputyExpenseAPIDto(
+                DeputyId: deputy?.MultiSourceId.Ids.GetValueOrDefault("CamaraApi") ?? "0",  
+                DeputyName: deputy?.DeputyName ?? "Unknown Deputy",
+                ExpenseValue: expense.Amount,
+                ExpenseType: expense.Description,  
+                Year: expense.Date.Year,
+                Month: expense.Date.Month
+            ));
+        }
         
-        var expensesDto = expenses
-            .OrderByDescending(e => e.Amount)
-            .Take(10)
-            .Select(e =>
-            {
-                var deputy = e.Buyer as Deputy;
-                return new DeputyExpenseAPIDto(
-                    DeputyId: deputy?.MultiSourceId.Ids.GetValueOrDefault("CamaraApi") ?? "0",  
-                    DeputyName: deputy?.DeputyName ?? "Unknown Deputy",
-                    ExpenseValue: e.Amount,
-                    ExpenseType: e.Description,  
-                    Year: e.Date.Year,
-                    Month: e.Date.Month
-                );
-            })
-            .ToList();
-        return expensesDto;
+        return deputiesExpensesDto;
     }
 }
