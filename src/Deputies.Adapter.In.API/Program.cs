@@ -1,4 +1,3 @@
-
 using Deputies.Adapter.Out.EFCoreSqlServer;
 using Deputies.Adapter.Out.EFCoreSqlServer.Repositories;
 using Deputies.Application.Ports.In;
@@ -8,8 +7,11 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddControllers();
 
 builder.Services.AddDbContext<DeputiesDbContext>(options =>
 {
@@ -21,6 +23,7 @@ builder.Services.AddScoped<IDeputyRepository, DeputyRepository>();
 
 var app = builder.Build();
 
+// Middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -28,5 +31,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.Run();
 
+app.MapControllers();
+
+app.Run();
