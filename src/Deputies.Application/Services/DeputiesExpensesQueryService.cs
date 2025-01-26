@@ -29,7 +29,8 @@ public class DeputiesExpensesQueryService : IGetDeputiesExpensesQuery
                 ExpenseValue: expense.Amount,
                 ExpenseType: expense.Description,  
                 Year: expense.Date.Year,
-                Month: expense.Date.Month
+                Month: expense.Date.Month,
+                UrlDocumento: expense.UrlDocument ?? string.Empty
             ));
         }
         

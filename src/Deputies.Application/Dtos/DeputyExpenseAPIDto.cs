@@ -5,6 +5,7 @@ public record DeputyExpenseAPIDto(
     string DeputyName,
     decimal ExpenseValue,
     string ExpenseType,
+    string UrlDocumento,
     int Year,
     int Month
 );

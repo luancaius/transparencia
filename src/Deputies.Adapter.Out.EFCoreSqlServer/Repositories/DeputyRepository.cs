@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using Deputies.Adapter.Out.EFCoreSqlServer.Models;
 using Deputies.Application.Ports.Out;
+using Deputies.Domain.AbstractEntities;
 using Deputies.Domain.Entities;
 using Deputies.Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;
@@ -256,7 +257,9 @@ public class DeputyRepository : IDeputyRepository
     public async Task<List<Expense>> GetExpensesByYearAndMonthAsync(int year, int month, int top = 10)
     {
         var expenseEfList = await _dbContext.DeputyExpenses
-            .Include(e => e.Buyer)
+            .Include(e => e.Buyer) // If you still need it for some reason, but not strictly necessary
+            .Include(e => e.Deputy)
+            .ThenInclude(d => d.Person)
             .Where(e => e.Date.Year == year && e.Date.Month == month)
             .OrderByDescending(e => e.Amount)
             .Take(top)
@@ -266,22 +269,39 @@ public class DeputyRepository : IDeputyRepository
 
         foreach (var expenseEf in expenseEfList)
         {
-            var domainBuyer = Person.Create(
-                new Cpf(expenseEf.Buyer.Cpf),
-                new PersonName(
-                    expenseEf.Buyer.FirstName,
-                    expenseEf.Buyer.LastName,
-                    expenseEf.Buyer.FullName
-                )
-            );
+            Deputy? domainBuyer = null;
+            if (expenseEf.Deputy != null && expenseEf.Deputy.Person != null)
+            {
+                var dict = JsonSerializer.Deserialize<Dictionary<string, string>>(expenseEf.Deputy.SourcesJson);
+                var multiSourceId = MultiSourceId.FromDictionary(dict);
+
+                domainBuyer = Deputy.Create(
+                    new Cpf(expenseEf.Deputy.Person.Cpf),
+                    new PersonName(
+                        expenseEf.Deputy.Person.FirstName,
+                        expenseEf.Deputy.Person.LastName,
+                        expenseEf.Deputy.Person.FullName
+                    ),
+                    expenseEf.Deputy.DeputyName,
+                    expenseEf.Deputy.Party,
+                    multiSourceId
+                );
+            }
+            else
+            {
+                _logger.LogWarning("Expense {ExpenseId} does not have an associated Deputy or Person.", expenseEf.Id);
+                continue;
+            }
 
             var supplierCpfCnpj = expenseEf.SupplierCpfCnpj;
+
+            Participant domainSupplier = null;
             var supplierPersonEf = await _dbContext.Persons
                 .FirstOrDefaultAsync(p => p.Cpf == supplierCpfCnpj);
 
             if (supplierPersonEf != null)
             {
-                var domainSupplier = Person.Create(
+                domainSupplier = Person.Create(
                     new Cpf(supplierPersonEf.Cpf),
                     new PersonName(
                         supplierPersonEf.FirstName,
@@ -289,15 +309,6 @@ public class DeputyRepository : IDeputyRepository
                         supplierPersonEf.FullName
                     )
                 );
-
-                domainExpenses.Add(new Expense(
-                    expenseEf.Amount,
-                    expenseEf.Date,
-                    expenseEf.Description,
-                    domainBuyer,
-                    domainSupplier,
-                    expenseEf.UrlDocument
-                ));
             }
             else
             {
@@ -306,24 +317,33 @@ public class DeputyRepository : IDeputyRepository
 
                 if (supplierCompanyEf != null)
                 {
-                    var domainSupplier = Company.Create(
+                    domainSupplier = Company.Create(
                         new Cnpj(supplierCompanyEf.Cnpj),
                         supplierCompanyEf.CompanyName
                     );
+                }
+                else
+                {
+                    _logger.LogWarning(
+                        "Could not find supplier {Supplier} in Persons or Companies for Expense {ExpenseId}",
+                        supplierCpfCnpj,
+                        expenseEf.Id
+                    );
+                }
+            }
 
-                    domainExpenses.Add(new Expense(
+            if (domainSupplier != null && domainBuyer != null)
+            {
+                domainExpenses.Add(
+                    new Expense(
                         expenseEf.Amount,
                         expenseEf.Date,
                         expenseEf.Description,
                         domainBuyer,
                         domainSupplier,
                         expenseEf.UrlDocument
-                    ));
-                }
-                else
-                {
-                    _logger.LogWarning("Could not find supplier {Supplier} in Persons or Companies.", supplierCpfCnpj);
-                }
+                    )
+                );
             }
         }
 
