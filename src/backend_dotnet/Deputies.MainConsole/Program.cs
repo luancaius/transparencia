@@ -7,6 +7,7 @@ public enum Command
 {
     GetAllDeputiesInfo,
     GetDeputiesExpensesCurrentMonth,
+    GetDeputiesExpensesByYearAndMonth,
     GetDeputiesExpensesYear
 }
 
@@ -45,10 +46,18 @@ public static class MainConsole
                 case Command.GetDeputiesExpensesCurrentMonth:
                     await deputiesUseCase.ProcessDeputiesExpensesCurrentMonthAsync();
                     break;
+                case Command.GetDeputiesExpensesByYearAndMonth:
+                    if (args.Length < 3 || !int.TryParse(args[1], out int yearDeputies3) || !int.TryParse(args[1], out int month))
+                    {
+                        Console.WriteLine("Please provide a valid year/month for GetAllDeputiesExpenses");
+                        return 1;
+                    }
+                    await deputiesUseCase.ProcessDeputiesExpensesByMonthAndYearAsync(yearDeputies3, month);
+                    break;
                 case Command.GetDeputiesExpensesYear:
                     if (args.Length < 2 || !int.TryParse(args[1], out int yearDeputies2))
                     {
-                        Console.WriteLine("Please provide a valid year for GetAllDeputiesInfo.");
+                        Console.WriteLine("Please provide a valid year for GetAllDeputiesExpenses");
                         return 1;
                     }
 

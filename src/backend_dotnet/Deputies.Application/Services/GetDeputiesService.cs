@@ -32,22 +32,7 @@ public class GetDeputiesService : IGetDeputiesUseCase
         {
             try
             {
-                var details = await _deputyProvider.GetDeputyDetailAsync(deputyListItem.Id);
-
-                var name = new PersonName(null, null, details.NomeCivil);
-                var cpf = new Cpf(details.Cpf);
-                
-                var multiSourceId = new MultiSourceId("CamaraApi", details.Id.ToString());
-
-                var deputy = Deputy.Create(
-                    cpf,
-                    name,
-                    details.Nome,
-                    details.SiglaPartido,
-                    multiSourceId
-                );
-
-                await _deputyRepository.SaveDeputyAsync(deputy);
+                await CreateOrUpdateDeputyAsync(deputyListItem.Id);
             }
             catch (Exception ex)
             {
@@ -58,115 +43,109 @@ public class GetDeputiesService : IGetDeputiesUseCase
 
     public async Task ProcessDeputiesExpensesByYearAsync(int year)
     {
-        var currentExpense = string.Empty;
-        DeputyExpensesDto currentDtoExpense;
         try
         {
-            var deputiesList = await _deputyRepository.GetDeputiesAsync();
+            var months = (DateTime.Now.Year == year)
+                ? Enumerable.Range(1, DateTime.Now.Month)
+                : Enumerable.Range(1, 12);
 
-            foreach (var deputy in deputiesList)
-            {
-                var deputyId = deputy.MultiSourceId.Ids.GetValueOrDefault("CamaraApi");
-                if (string.IsNullOrWhiteSpace(deputyId))
-                    continue;
-                
-                var months = Enumerable.Range(1, 12);
-                if (DateTime.Now.Year == year)
-                {
-                    months = Enumerable.Range(1, DateTime.Now.Month);
-                }
-                foreach (var month in months)
-                {
-                    List<DeputyExpensesDto> expensesDtos = await _deputyProvider.GetDeputyExpensesAsync(
-                        deputyId,
-                        year,
-                        month
-                    );
-
-                    if (expensesDtos == null || expensesDtos.Count == 0)
-                    {
-                        _logger.LogWarning($"No expenses found for deputy {deputyId}");
-                        continue;
-                    }
-
-                    var buyer = deputy;
-                    var domainExpenses = new List<Expense>();
-
-                    foreach (var dto in expensesDtos)
-                    {
-                        currentDtoExpense = dto;
-                        currentExpense =
-                            $"cnpj:{dto.CnpjCpfFornecedor} - valor:{dto.ValorDocumento} - deputyId:{deputyId} {dto.UrlDocumento}";
-                        Company supplier;
-                        if (Cnpj.IsValidCnpj(dto.CnpjCpfFornecedor) == false)
-                        {
-                            _logger.LogWarning(
-                                $"Invalid CNPJ {dto.CnpjCpfFornecedor} - {deputyId} - fornecedor: {dto.NomeFornecedor}");
-                            supplier = Company.Create(new Cnpj(SharedConstants.NO_CNPJ_CONSTANT), dto.NomeFornecedor);
-                        }
-                        else
-                        {
-                            supplier = Company.Create(new Cnpj(dto.CnpjCpfFornecedor), dto.NomeFornecedor);
-                        }
-
-                        var domainExpense = new Expense(
-                            amount: dto.ValorDocumento,
-                            date: dto.DataDocumento,
-                            description: dto.TipoDespesa,
-                            buyer: buyer,
-                            supplier: supplier,
-                            urlDocument: dto.UrlDocumento
-                        );
-
-                        domainExpenses.Add(domainExpense);
-                    }
-
-                    _logger.LogInformation("Saving expenses for deputy {deputyId}", deputyId);
-                    await _deputyRepository.SaveExpensesAsync(deputyId, domainExpenses);
-                }
-            }
+            await ProcessDeputiesExpensesForMonthsAsync(year, months);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"Error processing deputies expenses for year {year}, {currentExpense}");
+            _logger.LogError(ex, "Error processing deputies expenses for year {year}", year);
         }
     }
 
     public async Task ProcessDeputiesExpensesCurrentMonthAsync()
+    {
+        await ProcessDeputiesExpensesForMonthsAsync(DateTime.Now.Year, new[] { DateTime.Now.Month });
+    }
+
+    public async Task ProcessDeputiesExpensesByMonthAndYearAsync(int year, int month)
+    {
+        await ProcessDeputiesExpensesForMonthsAsync(year, new[] { month });
+    }
+
+    private async Task CreateOrUpdateDeputyAsync(int deputyId)
+    {
+        var details = await _deputyProvider.GetDeputyDetailAsync(deputyId);
+        var name = new PersonName(null, null, details.NomeCivil);
+        var cpf = new Cpf(details.Cpf);
+        var multiSourceId = new MultiSourceId("CamaraApi", details.Id.ToString());
+
+        var deputy = Deputy.Create(
+            cpf,
+            name,
+            details.Nome,
+            details.SiglaPartido,
+            multiSourceId
+        );
+
+        await _deputyRepository.SaveDeputyAsync(deputy);
+    }
+
+    private async Task ProcessDeputiesExpensesForMonthsAsync(int year, IEnumerable<int> months)
     {
         var deputiesList = await _deputyRepository.GetDeputiesAsync();
 
         foreach (var deputy in deputiesList)
         {
             var deputyId = deputy.MultiSourceId.Ids.GetValueOrDefault("CamaraApi");
-            if (string.IsNullOrWhiteSpace(deputyId))
-                continue;
+            if (string.IsNullOrWhiteSpace(deputyId)) continue;
 
-            var expensesDtos = await _deputyProvider.GetDeputyExpensesAsync(
-                deputyId,
-                DateTime.Now.Year,
-                DateTime.Now.Month
-            );
-
-            var buyer = deputy;
-            var domainExpenses = new List<Expense>();
-
-            foreach (var dto in expensesDtos)
+            foreach (var month in months)
             {
-                var supplier = Company.Create(new Cnpj(dto.CnpjCpfFornecedor), dto.NomeFornecedor);
-                var domainExpense = new Expense(
-                    amount: dto.ValorDocumento,
-                    date: dto.DataDocumento,
-                    description: dto.TipoDespesa,
-                    buyer: buyer,
-                    supplier: supplier,
-                    urlDocument: dto.UrlDocumento
-                );
+                var expensesDtos = await _deputyProvider.GetDeputyExpensesAsync(deputyId, year, month);
+                if (expensesDtos == null || expensesDtos.Count == 0)
+                {
+                    _logger.LogWarning("No expenses found for deputy {deputyId} in {year}-{month}",
+                        deputyId, year, month);
+                    continue;
+                }
 
-                domainExpenses.Add(domainExpense);
+                var domainExpenses = BuildDomainExpenses(expensesDtos, deputy, deputyId);
+
+                _logger.LogInformation("Saving {count} expenses for deputy {deputyId} in {year}-{month}",
+                    domainExpenses.Count, deputyId, year, month);
+
+                await _deputyRepository.SaveExpensesAsync(deputyId, domainExpenses);
             }
-            
-            await _deputyRepository.SaveExpensesAsync(deputyId, domainExpenses);
+        }
+    }
+
+    private List<Expense> BuildDomainExpenses(IEnumerable<DeputyExpensesDto> expensesDtos, Deputy buyer, string deputyId)
+    {
+        var domainExpenses = new List<Expense>();
+
+        foreach (var dto in expensesDtos)
+        {
+            var supplier = CreateSupplier(dto.CnpjCpfFornecedor, dto.NomeFornecedor, deputyId);
+            var domainExpense = new Expense(
+                dto.ValorDocumento,
+                dto.DataDocumento,
+                dto.TipoDespesa,
+                buyer,
+                supplier,
+                dto.UrlDocumento
+            );
+            domainExpenses.Add(domainExpense);
+        }
+
+        return domainExpenses;
+    }
+
+    private Company CreateSupplier(string cnpjOrCpf, string supplierName, string deputyId)
+    {
+        if (!Cnpj.IsValidCnpj(cnpjOrCpf))
+        {
+            _logger.LogWarning("Invalid CNPJ {CNPJ} for deputy {deputyId} - supplier: {supplierName}",
+                cnpjOrCpf, deputyId, supplierName);
+            return Company.Create(new Cnpj(SharedConstants.NO_CNPJ_CONSTANT), supplierName);
+        }
+        else
+        {
+            return Company.Create(new Cnpj(cnpjOrCpf), supplierName);
         }
     }
 
