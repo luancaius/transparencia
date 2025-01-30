@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  crawler:
+    build: ./crawler-service
+    command: bundle exec rails server -p 3001 -b '0.0.0.0'
+    ports:
+      - '3001:3001'
+    depends_on:
+      - mongo
+      - redis
+
+  api:
+    build: ./api-service
+    command: bundle exec rails server -p 3000 -b '0.0.0.0'
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongo
+      - redis
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - '27017:27017'
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - '6379:6379'
