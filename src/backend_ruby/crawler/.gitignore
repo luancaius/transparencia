@@ -1,0 +1,48 @@
+# Logs and temporary files
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Application secrets
+/config/master.key
+/config/credentials.yml.enc
+
+# Uploaded files
+/storage/*
+!/storage/.keep
+
+# Dependencies and vendor files
+/vendor/bundle
+/vendor/cache
+
+# Byebug history
+.byebug_history
+
+# Environment-specific files
+.env
+.env.local
+.env.*.local
+
+# Redis cache/pid files
+*.pid
+*.pid.lock
+
+# Editor and IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.DS_Store
+
+# Coverage reports
+/coverage/
+
+# Compiled files and temporary build artifacts
+*.o
+*.rbc
+*.pyc
+*.pyo
+
+# System files
+Thumbs.db
