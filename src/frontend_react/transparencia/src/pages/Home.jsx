@@ -10,13 +10,29 @@ export default function Home() {
   const buscarDespesas = () => {
     setCarregando(true)
     setErro(null)
+    setData([])
 
-    const url = `http://localhost:5068/api/deputies/${ano}/${mes}/top-expenses`
-    fetch(url)
-      .then(res => res.json())
-      .then(result => setData(result.slice(0, 10)))
-      .catch(() => setErro('Erro ao buscar dados'))
-      .finally(() => setCarregando(false))
+    const paddedMonth = String(mes).padStart(2, '0')
+    // Example path: /data/monthly_expenses/top_expenses_2024-01.json
+    const filePath = `/data/monthly_expenses/top_expenses_${ano}-${paddedMonth}.json`
+
+    fetch(filePath)
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`Arquivo não encontrado para ano=${ano}, mês=${mes}`)
+        }
+        return res.json()
+      })
+      .then(result => {
+        // If you only want the top 10, slice here:
+        setData(result.slice(0, 10))
+      })
+      .catch(() => {
+        setErro('Erro ao buscar dados. Verifique se o arquivo JSON existe.')
+      })
+      .finally(() => {
+        setCarregando(false)
+      })
   }
 
   return (
@@ -54,7 +70,7 @@ export default function Home() {
           <table className="table table-bordered align-middle">
             <thead className="table-light">
               <tr>
-                <th>Deputado</th>
+                <th>Nome Fornecedor</th>
                 <th>Tipo de Despesa</th>
                 <th>Valor</th>
                 <th>Documento</th>
@@ -63,18 +79,18 @@ export default function Home() {
             <tbody>
               {data.map((item, i) => (
                 <tr key={i}>
-                  <td>{item.deputyName}</td>
-                  <td>{item.expenseType}</td>
+                  <td>{item.nome_fornecedor}</td>
+                  <td>{item.expense_type}</td>
                   <td>
-                    {item.expenseValue?.toLocaleString('pt-BR', {
+                    {item.valor_documento?.toLocaleString('pt-BR', {
                       style: 'currency',
                       currency: 'BRL'
                     })}
                   </td>
                   <td>
-                    {item.urlDocumento ? (
-                      <a href={item.urlDocumento} target="_blank" rel="noreferrer">
-                        {item.urlDocumento}
+                    {item.url_documento ? (
+                      <a href={item.url_documento} target="_blank" rel="noreferrer">
+                        {item.url_documento}
                       </a>
                     ) : (
                       'N/A'
