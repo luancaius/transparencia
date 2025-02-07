@@ -19,7 +19,7 @@ class Crawler::DeputyExpensesCrawlerService
           body: api_response.body,
           parsed_response: api_response.parsed_response
         }
-        Rails.cache.write(cache_key, response_data, expires_in: 5.days)
+        Rails.cache.write(cache_key, response_data, expires_in: 30.days)
       else
         response_data = {
           code: api_response.code,
