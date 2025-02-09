@@ -42,6 +42,9 @@ class Crawler::DeputyExpensesCrawlerService
     data = response_data[:parsed_response]['dados']
     data.each do |item|
       Expense.find_or_create_by(cod_documento: item['codDocumento']) do |expense|
+        # Associate the expense with the deputy using the new field.
+        expense.deputy_external_id = deputy_id
+
         expense.year                = item['ano']
         expense.month               = item['mes']
         expense.expense_type        = item['tipoDespesa']
@@ -49,12 +52,12 @@ class Crawler::DeputyExpensesCrawlerService
         expense.cod_tipo_documento  = item['codTipoDocumento']
         expense.data_documento      = item['dataDocumento']
         expense.num_documento       = item['numDocumento']
-        expense.valor_documento     = item['valorDocumento']
+        expense.valor_documento     = item['valorDocumento'].to_f  # Ensure numeric conversion
         expense.url_documento       = item['urlDocumento']
         expense.nome_fornecedor     = item['nomeFornecedor']
         expense.cnpj_cpf_fornecedor = item['cnpjCpfFornecedor']
-        expense.valor_liquido       = item['valorLiquido']
-        expense.valor_glosa         = item['valorGlosa']
+        expense.valor_liquido       = item['valorLiquido'].to_f
+        expense.valor_glosa         = item['valorGlosa'].to_f
         expense.num_ressarcimento   = item['numRessarcimento']
         expense.cod_lote            = item['codLote']
         expense.parcela             = item['parcela']

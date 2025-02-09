@@ -1,6 +1,7 @@
 class Expense
     include Mongoid::Document
-  
+
+    field :deputy_external_id, type: Integer  # New field to store the deputy's external ID
     field :year,                type: Integer
     field :month,               type: Integer
     field :expense_type,        type: String
@@ -18,5 +19,4 @@ class Expense
     field :num_ressarcimento,   type: String
     field :cod_lote,            type: Integer
     field :parcela,             type: Integer
-  end
-  
+end

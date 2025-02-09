@@ -1,0 +1,62 @@
+[
+  {
+    "total_spent": 75701.07,
+    "deputy_id": 141391,
+    "deputy_name": "Arnaldo Jardim",
+    "party": "CIDADANIA"
+  },
+  {
+    "total_spent": 74709.89,
+    "deputy_id": 220675,
+    "deputy_name": "Antônio Doido",
+    "party": "MDB"
+  },
+  {
+    "total_spent": 66767.43000000001,
+    "deputy_id": 74057,
+    "deputy_name": "Alice Portugal",
+    "party": "PCdoB"
+  },
+  {
+    "total_spent": 60298.71,
+    "deputy_id": 178835,
+    "deputy_name": "Afonso Motta",
+    "party": "PDT"
+  },
+  {
+    "total_spent": 56250.79,
+    "deputy_id": 220638,
+    "deputy_name": "Antonio Carlos Rodrigues",
+    "party": "PL"
+  },
+  {
+    "total_spent": 53852.62,
+    "deputy_id": 121948,
+    "deputy_name": "Adriano do Baldy",
+    "party": "PP"
+  },
+  {
+    "total_spent": 50444.17,
+    "deputy_id": 220538,
+    "deputy_name": "Albuquerque",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 48759.24,
+    "deputy_id": 160553,
+    "deputy_name": "Antonio Brito",
+    "party": "PSD"
+  },
+  {
+    "total_spent": 48281.02,
+    "deputy_id": 220632,
+    "deputy_name": "Ana Pimentel",
+    "party": "PT"
+  },
+  {
+    "total_spent": 46685.84,
+    "deputy_id": 204423,
+    "deputy_name": "André Ferreira",
+    "party": "PL"
+  }
+]
