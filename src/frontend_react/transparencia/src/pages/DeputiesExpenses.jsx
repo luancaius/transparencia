@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function DeputiesExpenses({ ano, mes }) {
+export default function DeputiesExpenses({ ano, mes, fetchTrigger }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (fetchTrigger === 0) return;
+    fetchData();
+  }, [fetchTrigger]);
 
   const fetchData = () => {
     setLoading(true);
@@ -16,9 +21,7 @@ export default function DeputiesExpenses({ ano, mes }) {
     fetch(filePath)
       .then((res) => {
         if (!res.ok) {
-          throw new Error(
-            `Arquivo não encontrado para ano=${ano} e mês=${mes}`
-          );
+          throw new Error(`Arquivo não encontrado para ano=${ano} e mês=${mes}`);
         }
         return res.json();
       })
@@ -26,9 +29,7 @@ export default function DeputiesExpenses({ ano, mes }) {
         setData(result);
       })
       .catch(() => {
-        setError(
-          "Erro ao buscar dados dos deputados."
-        );
+        setError("Erro ao buscar dados dos deputados.");
       })
       .finally(() => {
         setLoading(false);
@@ -38,12 +39,7 @@ export default function DeputiesExpenses({ ano, mes }) {
   return (
     <div>
       <h2>Despesas dos Deputados</h2>
-      <button onClick={fetchData} className="btn btn-primary mb-3">
-        Buscar Deputados
-      </button>
-      {loading && (
-        <div className="alert alert-info">Carregando deputados...</div>
-      )}
+      {loading && <div className="alert alert-info">Carregando deputados...</div>}
       {error && <div className="alert alert-danger">{error}</div>}
       {data.length > 0 && !error && (
         <div className="table-responsive">

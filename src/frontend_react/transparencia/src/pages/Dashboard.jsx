@@ -5,6 +5,11 @@ import DeputiesExpenses from "./DeputiesExpenses";
 export default function Dashboard() {
   const [ano, setAno] = useState("2024");
   const [mes, setMes] = useState("1");
+  const [fetchTrigger, setFetchTrigger] = useState(0);
+
+  const handleFetchData = () => {
+    setFetchTrigger((prev) => prev + 1);
+  };
 
   return (
     <div className="container py-4">
@@ -30,8 +35,12 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <TopExpenses ano={ano} mes={mes} />
-      <DeputiesExpenses ano={ano} mes={mes} />
+      <button onClick={handleFetchData} className="btn btn-primary mb-3">
+        Buscar Dados
+      </button>
+
+      <TopExpenses ano={ano} mes={mes} fetchTrigger={fetchTrigger} />
+      <DeputiesExpenses ano={ano} mes={mes} fetchTrigger={fetchTrigger} />
     </div>
   );
 }

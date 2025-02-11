@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function TopExpenses({ ano, mes }) {
+export default function TopExpenses({ ano, mes, fetchTrigger }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    // Optionally, skip the initial render (fetchTrigger starts at 0)
+    if (fetchTrigger === 0) return;
+    fetchData();
+  }, [fetchTrigger]);
 
   const fetchData = () => {
     setLoading(true);
@@ -16,9 +22,7 @@ export default function TopExpenses({ ano, mes }) {
     fetch(filePath)
       .then((res) => {
         if (!res.ok) {
-          throw new Error(
-            `Arquivo não encontrado para ano=${ano} e mês=${mes}`
-          );
+          throw new Error(`Arquivo não encontrado para ano=${ano} e mês=${mes}`);
         }
         return res.json();
       })
@@ -26,9 +30,7 @@ export default function TopExpenses({ ano, mes }) {
         setData(result.slice(0, 10));
       })
       .catch(() => {
-        setError(
-          "Erro ao buscar dados de despesas."
-        );
+        setError("Erro ao buscar dados de despesas.");
       })
       .finally(() => {
         setLoading(false);
@@ -38,12 +40,7 @@ export default function TopExpenses({ ano, mes }) {
   return (
     <div className="mb-5">
       <h2>Top 10 Despesas</h2>
-      <button onClick={fetchData} className="btn btn-primary mb-3">
-        Buscar Top 10 Despesas
-      </button>
-      {loading && (
-        <div className="alert alert-info">Carregando despesas...</div>
-      )}
+      {loading && <div className="alert alert-info">Carregando despesas...</div>}
       {error && <div className="alert alert-danger">{error}</div>}
       {data.length > 0 && !error && (
         <div className="table-responsive">
@@ -69,11 +66,7 @@ export default function TopExpenses({ ano, mes }) {
                   </td>
                   <td>
                     {item.url_documento ? (
-                      <a
-                        href={item.url_documento}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
+                      <a href={item.url_documento} target="_blank" rel="noreferrer">
                         {item.url_documento}
                       </a>
                     ) : (
