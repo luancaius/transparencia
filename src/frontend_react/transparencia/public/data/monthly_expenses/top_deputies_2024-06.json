@@ -1,0 +1,62 @@
+[
+  {
+    "total_spent": 70456.23,
+    "deputy_id": 221328,
+    "deputy_name": "Adilson Barroso",
+    "party": "PL"
+  },
+  {
+    "total_spent": 61693.39,
+    "deputy_id": 141391,
+    "deputy_name": "Arnaldo Jardim",
+    "party": "CIDADANIA"
+  },
+  {
+    "total_spent": 58164.229999999996,
+    "deputy_id": 204379,
+    "deputy_name": "Acácio Favacho",
+    "party": "MDB"
+  },
+  {
+    "total_spent": 57687.77,
+    "deputy_id": 204560,
+    "deputy_name": "Adolfo Viana",
+    "party": "PSDB"
+  },
+  {
+    "total_spent": 53179.14,
+    "deputy_id": 74057,
+    "deputy_name": "Alice Portugal",
+    "party": "PCdoB"
+  },
+  {
+    "total_spent": 50725.18,
+    "deputy_id": 204423,
+    "deputy_name": "André Ferreira",
+    "party": "PL"
+  },
+  {
+    "total_spent": 50037.44,
+    "deputy_id": 220542,
+    "deputy_name": "Alexandre Guimarães",
+    "party": "MDB"
+  },
+  {
+    "total_spent": 49856.97,
+    "deputy_id": 220538,
+    "deputy_name": "Albuquerque",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 47371.71,
+    "deputy_id": 204356,
+    "deputy_name": "Amaro Neto",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 47249.35,
+    "deputy_id": 123756,
+    "deputy_name": "Antônia Lúcia",
+    "party": "REPUBLICANOS"
+  }
+]

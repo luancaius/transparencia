@@ -23,12 +23,11 @@ export default function TopExpenses({ ano, mes }) {
         return res.json();
       })
       .then((result) => {
-        // If you only want the top 10, slice here:
         setData(result.slice(0, 10));
       })
       .catch(() => {
         setError(
-          "Erro ao buscar dados de despesas. Verifique se o arquivo JSON existe."
+          "Erro ao buscar dados de despesas."
         );
       })
       .finally(() => {

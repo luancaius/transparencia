@@ -1,0 +1,62 @@
+[
+  {
+    "total_spent": 141002.82,
+    "deputy_id": 178881,
+    "deputy_name": "Aluisio Mendes",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 120921.04,
+    "deputy_id": 220707,
+    "deputy_name": "Amanda Gentil",
+    "party": "PP"
+  },
+  {
+    "total_spent": 98677.46,
+    "deputy_id": 204501,
+    "deputy_name": "Alencar Santana",
+    "party": "PT"
+  },
+  {
+    "total_spent": 88880.18,
+    "deputy_id": 220714,
+    "deputy_name": "Adail Filho",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 79105.94,
+    "deputy_id": 107970,
+    "deputy_name": "Ana Paula Leão",
+    "party": "PP"
+  },
+  {
+    "total_spent": 76916.31,
+    "deputy_id": 204515,
+    "deputy_name": "André Janones",
+    "party": "AVANTE"
+  },
+  {
+    "total_spent": 67391.03,
+    "deputy_id": 220556,
+    "deputy_name": "Ana Paula Lima",
+    "party": "PT"
+  },
+  {
+    "total_spent": 67316.46,
+    "deputy_id": 160559,
+    "deputy_name": "Alceu Moreira",
+    "party": "MDB"
+  },
+  {
+    "total_spent": 62422.38,
+    "deputy_id": 74057,
+    "deputy_name": "Alice Portugal",
+    "party": "PCdoB"
+  },
+  {
+    "total_spent": 49782.43,
+    "deputy_id": 204423,
+    "deputy_name": "André Ferreira",
+    "party": "PL"
+  }
+]

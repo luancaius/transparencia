@@ -27,7 +27,7 @@ export default function DeputiesExpenses({ ano, mes }) {
       })
       .catch(() => {
         setError(
-          "Erro ao buscar dados dos deputados. Verifique se o arquivo JSON existe."
+          "Erro ao buscar dados dos deputados."
         );
       })
       .finally(() => {
@@ -38,7 +38,7 @@ export default function DeputiesExpenses({ ano, mes }) {
   return (
     <div>
       <h2>Despesas dos Deputados</h2>
-      <button onClick={fetchData} className="btn btn-secondary mb-3">
+      <button onClick={fetchData} className="btn btn-primary mb-3">
         Buscar Deputados
       </button>
       {loading && (

@@ -1,0 +1,62 @@
+[
+  {
+    "total_spent": 87622.8,
+    "deputy_id": 220675,
+    "deputy_name": "Antônio Doido",
+    "party": "MDB"
+  },
+  {
+    "total_spent": 54009.08,
+    "deputy_id": 204495,
+    "deputy_name": "Airton Faleiro",
+    "party": "PT"
+  },
+  {
+    "total_spent": 52380.39,
+    "deputy_id": 141391,
+    "deputy_name": "Arnaldo Jardim",
+    "party": "CIDADANIA"
+  },
+  {
+    "total_spent": 51449.0,
+    "deputy_id": 73579,
+    "deputy_name": "Alberto Fraga",
+    "party": "PL"
+  },
+  {
+    "total_spent": 48373.36,
+    "deputy_id": 121948,
+    "deputy_name": "Adriano do Baldy",
+    "party": "PP"
+  },
+  {
+    "total_spent": 47954.61,
+    "deputy_id": 74646,
+    "deputy_name": "Aécio Neves",
+    "party": "PSDB"
+  },
+  {
+    "total_spent": 47404.75,
+    "deputy_id": 204423,
+    "deputy_name": "André Ferreira",
+    "party": "PL"
+  },
+  {
+    "total_spent": 44497.46,
+    "deputy_id": 160527,
+    "deputy_name": "Aguinaldo Ribeiro",
+    "party": "PP"
+  },
+  {
+    "total_spent": 43514.54,
+    "deputy_id": 204571,
+    "deputy_name": "Alex Santana",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 42243.27,
+    "deputy_id": 136811,
+    "deputy_name": "Afonso Hamm",
+    "party": "PP"
+  }
+]
