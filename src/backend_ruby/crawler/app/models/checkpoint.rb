@@ -3,9 +3,9 @@ class Checkpoint
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  # A field to distinguish this checkpoint from others (if needed)
   field :checkpoint_type, type: String, default: 'expenses'
+  field :year,            type: Integer
 
-  # An array of deputy external IDs that have been processed
+  # An array of deputy external IDs that have been processed for this year
   field :deputies_completed, type: Array, default: []
 end
