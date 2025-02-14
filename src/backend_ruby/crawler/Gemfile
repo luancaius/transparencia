@@ -8,6 +8,7 @@ gem "puma", ">= 5.0"          # Web server (Puma)
 gem "bootsnap", require: false
 gem "ostruct"
 gem "warning"
+gem 'neo4j-ruby-driver'
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows], require: "debug/prelude" # Debugging support
