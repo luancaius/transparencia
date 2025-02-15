@@ -3,7 +3,7 @@ require 'neo4j_ruby_driver'
 
 NEO4J_URI      = 'bolt://localhost:7687'
 NEO4J_USER     = 'neo4j'
-NEO4J_PASSWORD = 'test'
+NEO4J_PASSWORD = 'test@123'
 
 Neo4jDriver = Neo4j::Driver::GraphDatabase.driver(
   NEO4J_URI,

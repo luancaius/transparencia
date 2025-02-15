@@ -402,3 +402,10 @@ FodyWeavers.xsd
 .DS_Store
 # Local Netlify folder
 .netlify
+
+
+**/neo4j/data/
+**/neo4j/logs/
+**/neo4j/import/
+**/neo4j/plugins/
+**/neo4j/transactions/
