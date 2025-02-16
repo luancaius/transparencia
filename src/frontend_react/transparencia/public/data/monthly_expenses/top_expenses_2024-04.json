@@ -18,7 +18,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2053132,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Luiz Carlos Busato"
   },
   {
     "_id": "67b0e1dd85b7286f7725fa70",
@@ -39,7 +40,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2039986,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Cleber Verde"
   },
   {
     "_id": "67b03a4f85b7286f7725a627",
@@ -60,7 +62,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2036508,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Antônio Doido"
   },
   {
     "_id": "67b11ec685b7286f77267210",
@@ -81,7 +84,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2028175,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Eunício Oliveira"
   },
   {
     "_id": "67b1252685b7286f7726ac4c",
@@ -102,7 +106,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2027264,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Glaustin da Fokus"
   },
   {
     "_id": "67b10ba985b7286f772659a0",
@@ -123,7 +128,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2035951,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Dra. Alessandra Haber"
   },
   {
     "_id": "67b1382885b7286f7727479f",
@@ -144,7 +150,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2043109,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Marcelo Queiroz"
   },
   {
     "_id": "67b0399185b7286f7725970d",
@@ -165,7 +172,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2036808,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Ana Paula Lima"
   },
   {
     "_id": "67b1252685b7286f7726ac4b",
@@ -186,7 +194,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2029955,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Glaustin da Fokus"
   },
   {
     "_id": "67b130dc85b7286f77270e19",
@@ -207,6 +216,7 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2036245,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Lázaro Botelho"
   }
 ]

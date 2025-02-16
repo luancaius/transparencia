@@ -18,7 +18,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2100968,
-    "parcela": 1
+    "parcela": 1,
+    "deputy_name": "Duda Ramos"
   },
   {
     "_id": "67b15a0e85b7286f7727c5f2",
@@ -39,7 +40,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2100891,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Professor Alcides"
   },
   {
     "_id": "67b1682f85b7286f77280682",
@@ -60,7 +62,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2100719,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Sargento Gonçalves"
   },
   {
     "_id": "67b125f685b7286f7726b3b5",
@@ -81,7 +84,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2101084,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Guilherme Uchoa"
   },
   {
     "_id": "67b12d8b85b7286f7726f31e",
@@ -102,7 +106,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2100410,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "José Rocha"
   },
   {
     "_id": "67b1264785b7286f7726b669",
@@ -123,7 +128,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2101055,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Gustinho Ribeiro"
   },
   {
     "_id": "67b0395285b7286f772592fa",
@@ -144,7 +150,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2098333,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Aluisio Mendes"
   },
   {
     "_id": "67b11d8885b7286f77266663",
@@ -165,7 +172,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2095515,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Ely Santos"
   },
   {
     "_id": "67b1537385b7286f77279b66",
@@ -186,7 +194,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2102417,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Pastor Eurico"
   },
   {
     "_id": "67b0e36585b7286f77260eca",
@@ -207,6 +216,7 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2100416,
-    "parcela": 1
+    "parcela": 1,
+    "deputy_name": "Dal Barreto"
   }
 ]

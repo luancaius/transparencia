@@ -18,7 +18,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2020638,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Duda Ramos"
   },
   {
     "_id": "67b11ec485b7286f77267201",
@@ -39,7 +40,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2021196,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Eunício Oliveira"
   },
   {
     "_id": "67b1718885b7286f77283c89",
@@ -60,7 +62,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2030839,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Weliton Prado"
   },
   {
     "_id": "67b1382585b7286f7727478a",
@@ -81,7 +84,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2031495,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Marcelo Queiroz"
   },
   {
     "_id": "67b130da85b7286f77270e0e",
@@ -102,7 +106,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2026043,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Lázaro Botelho"
   },
   {
     "_id": "67b0e6d785b7286f77262ac3",
@@ -123,7 +128,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2020417,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Delegado Caveira"
   },
   {
     "_id": "67b038ac85b7286f772583fd",
@@ -144,7 +150,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2027005,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Alexandre Guimarães"
   },
   {
     "_id": "67b1552185b7286f7727a5ed",
@@ -165,7 +172,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2019185,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Paulo Abi-Ackel"
   },
   {
     "_id": "67b1094a85b7286f77264c64",
@@ -186,7 +194,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2029098,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Dorinaldo Malafaia"
   },
   {
     "_id": "67b12a0685b7286f7726d255",
@@ -207,6 +216,7 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2022035,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Jack Rocha"
   }
 ]

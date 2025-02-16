@@ -23,20 +23,27 @@ class MonthlyFileGeneratorService
 
   def top_10_expenses_by_month(month, year)
     query = { "year" => year, "month" => month }
+    expenses = @db[:expenses].aggregate([
+                                          { "$match": query },
+                                          { "$sort": { "valor_documento": -1 } },
+                                          { "$limit": 10 }
+                                        ]).to_a
 
-    puts "-----"
-    puts "DEBUG: Checking documents with query: #{query}"
-    total_count = @db[:expenses].count_documents(query)
-    puts "DEBUG: Found #{total_count} documents matching year=#{year}, month=#{month}"
+    # Fetch all deputy IDs
+    deputy_ids = expenses.map { |e| e["deputy_external_id"] }.compact.uniq
 
-    result = @db[:expenses].aggregate([
-                                        { "$match": query },
-                                        { "$sort": { "valor_documento" => -1 } },
-                                        { "$limit": 10 }
-                                      ]).to_a
+    # Get all deputy docs at once (minimizes round trips)
+    deputies_map = @db[:deputies]
+                     .find({ "external_id" => { "$in" => deputy_ids } })
+                     .map { |d| [d["external_id"], d] }
+                     .to_h
 
-    puts "DEBUG: Aggregation result size = #{result.size}"
-    puts "-----"
-    result
+    # Merge deputy name into the expense hash
+    expenses.each do |exp|
+      deputy = deputies_map[exp["deputy_external_id"]]
+      exp["deputy_name"] = deputy["name"] if deputy
+    end
+
+    expenses
   end
 end

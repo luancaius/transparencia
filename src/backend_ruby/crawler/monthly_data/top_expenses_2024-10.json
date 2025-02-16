@@ -18,7 +18,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2081588,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Silas Câmara"
   },
   {
     "_id": "67b03a1f85b7286f7725a270",
@@ -39,7 +40,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2082994,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Antonio Andrade"
   },
   {
     "_id": "67b03a5585b7286f7725a676",
@@ -60,7 +62,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2099883,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Antônio Doido"
   },
   {
     "_id": "67b0e3f785b7286f772614ce",
@@ -81,7 +84,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2085313,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Daniel Barbosa"
   },
   {
     "_id": "67b159ca85b7286f7727c472",
@@ -102,7 +106,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2091910,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Pr. Marco Feliciano"
   },
   {
     "_id": "67b123c185b7286f77269f98",
@@ -123,7 +128,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2083851,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Gilberto Abramo"
   },
   {
     "_id": "67b1289885b7286f7726c9d3",
@@ -144,7 +150,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2097888,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Igor Timo"
   },
   {
     "_id": "67b0e3f785b7286f772614cd",
@@ -165,7 +172,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2092652,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Daniel Barbosa"
   },
   {
     "_id": "67b11ebc85b7286f772671d9",
@@ -186,7 +194,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2079288,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Euclydes Pettersen"
   },
   {
     "_id": "67b127c485b7286f7726c373",
@@ -207,6 +216,7 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2098516,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Hercílio Coelho Diniz"
   }
 ]

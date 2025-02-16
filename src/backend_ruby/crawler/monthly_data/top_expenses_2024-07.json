@@ -18,7 +18,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2061896,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Hercílio Coelho Diniz"
   },
   {
     "_id": "67b03a5285b7286f7725a65f",
@@ -39,7 +40,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2061364,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Antônio Doido"
   },
   {
     "_id": "67b152d285b7286f77279788",
@@ -60,7 +62,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2054466,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Padre João"
   },
   {
     "_id": "67b1565e85b7286f7727ad54",
@@ -81,7 +84,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2059635,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Paulo Litro"
   },
   {
     "_id": "67b0df8885b7286f7725ec5e",
@@ -102,7 +106,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2057070,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Célio Silveira"
   },
   {
     "_id": "67b0390a85b7286f77258d60",
@@ -123,7 +128,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2062545,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Alice Portugal"
   },
   {
     "_id": "67b1252985b7286f7726ac51",
@@ -144,7 +150,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2059161,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Glaustin da Fokus"
   },
   {
     "_id": "67b11eca85b7286f77267229",
@@ -165,7 +172,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2057145,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Eunício Oliveira"
   },
   {
     "_id": "67b1239e85b7286f77269ec2",
@@ -186,7 +194,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2053451,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Giacobo"
   },
   {
     "_id": "67b1437485b7286f77276d8f",
@@ -207,6 +216,7 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2058767,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Meire Serafim"
   }
 ]

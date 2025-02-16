@@ -18,7 +18,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2092470,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Elcione Barbalho"
   },
   {
     "_id": "67b1289b85b7286f7726c9f0",
@@ -39,7 +40,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2097890,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Igor Timo"
   },
   {
     "_id": "67b0e3f985b7286f772614e9",
@@ -60,7 +62,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2097256,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Daniel Barbosa"
   },
   {
     "_id": "67b159cb85b7286f7727c479",
@@ -81,7 +84,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2091912,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Pr. Marco Feliciano"
   },
   {
     "_id": "67b123a585b7286f77269edb",
@@ -102,7 +106,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2085843,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Giacobo"
   },
   {
     "_id": "67b127c685b7286f7726c384",
@@ -123,7 +128,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2102734,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Hercílio Coelho Diniz"
   },
   {
     "_id": "67b14b2385b7286f77277ae6",
@@ -144,7 +150,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2090377,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Murilo Galdino"
   },
   {
     "_id": "67b14b2385b7286f77277ae9",
@@ -165,7 +172,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2088230,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Murilo Galdino"
   },
   {
     "_id": "67b14b2385b7286f77277aea",
@@ -186,7 +194,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2090374,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Murilo Galdino"
   },
   {
     "_id": "67b03a0485b7286f7725a102",
@@ -207,6 +216,7 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2092539,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Andreia Siqueira"
   }
 ]

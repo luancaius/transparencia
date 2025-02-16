@@ -18,7 +18,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2073026,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Antônio Doido"
   },
   {
     "_id": "67b0e1e385b7286f7725fa9f",
@@ -39,7 +40,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2071312,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Cleber Verde"
   },
   {
     "_id": "67b10be185b7286f77265b3f",
@@ -60,7 +62,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2068300,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Duda Ramos"
   },
   {
     "_id": "67b12ad885b7286f7726d92d",
@@ -81,7 +84,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2077655,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "João Carlos Bacelar"
   },
   {
     "_id": "67b1598785b7286f7727c2c4",
@@ -102,7 +106,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2073614,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Pompeo de Mattos"
   },
   {
     "_id": "67b0e37185b7286f77260f14",
@@ -123,7 +128,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2069195,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Damião Feliciano"
   },
   {
     "_id": "67b12fc585b7286f772705b5",
@@ -144,7 +150,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2074070,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Júnior Ferrari"
   },
   {
     "_id": "67b123a085b7286f77269ece",
@@ -165,7 +172,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2063116,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Giacobo"
   },
   {
     "_id": "67b0385985b7286f77257d20",
@@ -186,7 +194,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2072673,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Alberto Fraga"
   },
   {
     "_id": "67b1252a85b7286f7726ac53",
@@ -207,6 +216,7 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2068881,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Glaustin da Fokus"
   }
 ]

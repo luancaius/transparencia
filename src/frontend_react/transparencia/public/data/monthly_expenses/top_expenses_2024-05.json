@@ -18,7 +18,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2041536,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Félix Mendonça Júnior"
   },
   {
     "_id": "67b11ec885b7286f7726721a",
@@ -39,7 +40,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2039136,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Eunício Oliveira"
   },
   {
     "_id": "67b1565685b7286f7727ad1d",
@@ -60,7 +62,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2035330,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Paulo Litro"
   },
   {
     "_id": "67b14b1385b7286f77277a8c",
@@ -81,7 +84,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2035884,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Murilo Galdino"
   },
   {
     "_id": "67b1239a85b7286f77269eb3",
@@ -102,7 +106,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2036931,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Giacobo"
   },
   {
     "_id": "67b1252785b7286f7726ac4e",
@@ -123,7 +128,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2038650,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Glaustin da Fokus"
   },
   {
     "_id": "67b03c2885b7286f7725cb4a",
@@ -144,7 +150,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2044115,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Bruno Ganem"
   },
   {
     "_id": "67b1094f85b7286f77264c91",
@@ -165,7 +172,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2043516,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Dorinaldo Malafaia"
   },
   {
     "_id": "67b157c685b7286f7727b6c9",
@@ -186,7 +194,8 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2038663,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Pedro Lupion"
   },
   {
     "_id": "67b141c685b7286f77276863",
@@ -207,6 +216,7 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2045819,
-    "parcela": 0
+    "parcela": 0,
+    "deputy_name": "Mauricio do Vôlei"
   }
 ]
