@@ -1,7 +1,8 @@
 [
   {
-    "_id": "67a37b1f6ac8f44711583861",
+    "_id": "67b1201185b7286f77267da0",
     "cod_documento": 7739542,
+    "deputy_external_id": 160666,
     "year": 2024,
     "month": 5,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -20,8 +21,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a379a36ac8f44711582d07",
+    "_id": "67b11ec885b7286f7726721a",
     "cod_documento": 7734721,
+    "deputy_external_id": 74454,
     "year": 2024,
     "month": 5,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -40,8 +42,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a3ddd44b19912abff5c983",
+    "_id": "67b1565685b7286f7727ad1d",
     "cod_documento": 7728613,
+    "deputy_external_id": 220685,
     "year": 2024,
     "month": 5,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -60,8 +63,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a3e7db4b19912abff5f9df",
+    "_id": "67b14b1385b7286f77277a8c",
     "cod_documento": 7729504,
+    "deputy_external_id": 220584,
     "year": 2024,
     "month": 5,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -80,8 +84,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a37f276ac8f44711585933",
+    "_id": "67b1239a85b7286f77269eb3",
     "cod_documento": 7731467,
+    "deputy_external_id": 74383,
     "year": 2024,
     "month": 5,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -100,8 +105,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a380e76ac8f447115866b0",
+    "_id": "67b1252785b7286f7726ac4e",
     "cod_documento": 7733745,
+    "deputy_external_id": 204419,
     "year": 2024,
     "month": 5,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -120,8 +126,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a05afc881c4cbf3a15dda2",
+    "_id": "67b03c2885b7286f7725cb4a",
     "cod_documento": 7744705,
+    "deputy_external_id": 220635,
     "year": 2024,
     "month": 5,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -140,8 +147,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a3751e6ac8f447115807f9",
+    "_id": "67b1094f85b7286f77264c91",
     "cod_documento": 7743600,
+    "deputy_external_id": 220573,
     "year": 2024,
     "month": 5,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -160,8 +168,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a3dbee4b19912abff5c00a",
+    "_id": "67b157c685b7286f7727b6c9",
     "cod_documento": 7733591,
+    "deputy_external_id": 204395,
     "year": 2024,
     "month": 5,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -180,23 +189,24 @@
     "parcela": 0
   },
   {
-    "_id": "67a301af3decd06966aebc97",
-    "cod_documento": 7745794,
+    "_id": "67b141c685b7286f77276863",
+    "cod_documento": 7747784,
+    "deputy_external_id": 220628,
     "year": 2024,
     "month": 5,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
     "document_type": "Nota Fiscal",
     "cod_tipo_documento": 0,
     "data_documento": "2024-06-03 00:00:00 UTC",
-    "num_documento": "86",
+    "num_documento": "16",
     "valor_documento": 30000.0,
-    "url_documento": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/2972/2024/7745794.pdf",
-    "nome_fornecedor": "A.C. OLIVEIRA DA COSTA - ME",
-    "cnpj_cpf_fornecedor": "08840678000194",
+    "url_documento": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3566/2024/7747784.pdf",
+    "nome_fornecedor": "DIAMOND COMERCIO E SERVICOS LTDA - DIAMOND",
+    "cnpj_cpf_fornecedor": "39619161000101",
     "valor_liquido": 30000.0,
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
-    "cod_lote": 2044722,
+    "cod_lote": 2045819,
     "parcela": 0
   }
 ]

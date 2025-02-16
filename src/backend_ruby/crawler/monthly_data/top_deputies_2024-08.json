@@ -1,62 +1,62 @@
 [
   {
+    "total_spent": 119546.53,
+    "deputy_id": 141458,
+    "deputy_name": "João Carlos Bacelar",
+    "party": "PL"
+  },
+  {
+    "total_spent": 104853.89,
+    "deputy_id": 73486,
+    "deputy_name": "Pompeo de Mattos",
+    "party": "PDT"
+  },
+  {
+    "total_spent": 92606.93,
+    "deputy_id": 160600,
+    "deputy_name": "Arthur Oliveira Maia",
+    "party": "UNIÃO"
+  },
+  {
+    "total_spent": 91677.73,
+    "deputy_id": 220540,
+    "deputy_name": "Duda Ramos",
+    "party": "MDB"
+  },
+  {
     "total_spent": 87622.8,
     "deputy_id": 220675,
     "deputy_name": "Antônio Doido",
     "party": "MDB"
   },
   {
-    "total_spent": 54009.08,
-    "deputy_id": 204495,
-    "deputy_name": "Airton Faleiro",
+    "total_spent": 85175.82,
+    "deputy_id": 141408,
+    "deputy_name": "Cleber Verde",
+    "party": "MDB"
+  },
+  {
+    "total_spent": 78644.12,
+    "deputy_id": 74467,
+    "deputy_name": "Damião Feliciano",
+    "party": "UNIÃO"
+  },
+  {
+    "total_spent": 68055.77,
+    "deputy_id": 141464,
+    "deputy_name": "José Airton Félix Cirilo",
     "party": "PT"
   },
   {
-    "total_spent": 52380.39,
-    "deputy_id": 141391,
-    "deputy_name": "Arnaldo Jardim",
-    "party": "CIDADANIA"
+    "total_spent": 67183.23,
+    "deputy_id": 220667,
+    "deputy_name": "Pedro Campos",
+    "party": "PSB"
   },
   {
-    "total_spent": 51449.0,
-    "deputy_id": 73579,
-    "deputy_name": "Alberto Fraga",
-    "party": "PL"
-  },
-  {
-    "total_spent": 48373.36,
-    "deputy_id": 121948,
-    "deputy_name": "Adriano do Baldy",
-    "party": "PP"
-  },
-  {
-    "total_spent": 47954.61,
-    "deputy_id": 74646,
-    "deputy_name": "Aécio Neves",
-    "party": "PSDB"
-  },
-  {
-    "total_spent": 47404.75,
-    "deputy_id": 204423,
-    "deputy_name": "André Ferreira",
-    "party": "PL"
-  },
-  {
-    "total_spent": 44497.46,
-    "deputy_id": 160527,
-    "deputy_name": "Aguinaldo Ribeiro",
-    "party": "PP"
-  },
-  {
-    "total_spent": 43514.54,
-    "deputy_id": 204571,
-    "deputy_name": "Alex Santana",
-    "party": "REPUBLICANOS"
-  },
-  {
-    "total_spent": 42243.27,
-    "deputy_id": 136811,
-    "deputy_name": "Afonso Hamm",
-    "party": "PP"
+    "total_spent": 65172.48,
+    "deputy_id": 160518,
+    "deputy_name": "Weliton Prado",
+    "party": "SOLIDARIEDADE"
   }
 ]

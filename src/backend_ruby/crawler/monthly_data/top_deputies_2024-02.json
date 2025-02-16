@@ -1,62 +1,62 @@
 [
   {
+    "total_spent": 114457.0,
+    "deputy_id": 204408,
+    "deputy_name": "Gustinho Ribeiro",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 87453.22,
+    "deputy_id": 74090,
+    "deputy_name": "Átila Lins",
+    "party": "PSD"
+  },
+  {
+    "total_spent": 82237.64,
+    "deputy_id": 62881,
+    "deputy_name": "Danilo Forte",
+    "party": "UNIÃO"
+  },
+  {
+    "total_spent": 79552.9,
+    "deputy_id": 141459,
+    "deputy_name": "João Maia",
+    "party": "PP"
+  },
+  {
+    "total_spent": 79192.23,
+    "deputy_id": 160598,
+    "deputy_name": "Flávia Morais",
+    "party": "PDT"
+  },
+  {
+    "total_spent": 75358.41,
+    "deputy_id": 153423,
+    "deputy_name": "Renilce Nicodemos",
+    "party": "MDB"
+  },
+  {
     "total_spent": 69425.75,
     "deputy_id": 204495,
     "deputy_name": "Airton Faleiro",
     "party": "PT"
   },
   {
-    "total_spent": 60877.89,
-    "deputy_id": 74057,
-    "deputy_name": "Alice Portugal",
-    "party": "PCdoB"
-  },
-  {
-    "total_spent": 59000.64,
-    "deputy_id": 204560,
-    "deputy_name": "Adolfo Viana",
-    "party": "PSDB"
-  },
-  {
-    "total_spent": 53875.34,
-    "deputy_id": 204423,
-    "deputy_name": "André Ferreira",
+    "total_spent": 67521.55,
+    "deputy_id": 220666,
+    "deputy_name": "Coronel Meira",
     "party": "PL"
   },
   {
-    "total_spent": 53724.43,
-    "deputy_id": 160559,
-    "deputy_name": "Alceu Moreira",
-    "party": "MDB"
+    "total_spent": 64939.67,
+    "deputy_id": 204559,
+    "deputy_name": "Zé Neto",
+    "party": "PT"
   },
   {
-    "total_spent": 53526.02,
-    "deputy_id": 220542,
-    "deputy_name": "Alexandre Guimarães",
-    "party": "MDB"
-  },
-  {
-    "total_spent": 52346.85,
-    "deputy_id": 220714,
-    "deputy_name": "Adail Filho",
-    "party": "REPUBLICANOS"
-  },
-  {
-    "total_spent": 50866.79,
-    "deputy_id": 204356,
-    "deputy_name": "Amaro Neto",
-    "party": "REPUBLICANOS"
-  },
-  {
-    "total_spent": 49886.79,
-    "deputy_id": 178927,
-    "deputy_name": "Aliel Machado",
-    "party": "PV"
-  },
-  {
-    "total_spent": 46495.91,
-    "deputy_id": 136811,
-    "deputy_name": "Afonso Hamm",
-    "party": "PP"
+    "total_spent": 64921.88,
+    "deputy_id": 220704,
+    "deputy_name": "Carol Dartora",
+    "party": "PT"
   }
 ]

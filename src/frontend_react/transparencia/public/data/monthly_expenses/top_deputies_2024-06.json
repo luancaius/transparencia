@@ -1,62 +1,62 @@
 [
   {
+    "total_spent": 138109.82,
+    "deputy_id": 204557,
+    "deputy_name": "Sidney Leite",
+    "party": "PSD"
+  },
+  {
+    "total_spent": 100386.72,
+    "deputy_id": 204368,
+    "deputy_name": "Fabio Schiochet",
+    "party": "UNIÃO"
+  },
+  {
+    "total_spent": 99892.33,
+    "deputy_id": 220662,
+    "deputy_name": "Lucas Ramos",
+    "party": "PSB"
+  },
+  {
+    "total_spent": 95101.75,
+    "deputy_id": 73486,
+    "deputy_name": "Pompeo de Mattos",
+    "party": "PDT"
+  },
+  {
+    "total_spent": 88945.08,
+    "deputy_id": 74356,
+    "deputy_name": "Silas Câmara",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 87514.39,
+    "deputy_id": 220600,
+    "deputy_name": "Lebrão",
+    "party": "UNIÃO"
+  },
+  {
+    "total_spent": 78910.81,
+    "deputy_id": 153423,
+    "deputy_name": "Renilce Nicodemos",
+    "party": "MDB"
+  },
+  {
     "total_spent": 70456.23,
     "deputy_id": 221328,
     "deputy_name": "Adilson Barroso",
     "party": "PL"
   },
   {
-    "total_spent": 61693.39,
-    "deputy_id": 141391,
-    "deputy_name": "Arnaldo Jardim",
-    "party": "CIDADANIA"
+    "total_spent": 69433.62,
+    "deputy_id": 162332,
+    "deputy_name": "Luiz Nishimori",
+    "party": "PSD"
   },
   {
-    "total_spent": 58164.229999999996,
-    "deputy_id": 204379,
-    "deputy_name": "Acácio Favacho",
-    "party": "MDB"
-  },
-  {
-    "total_spent": 57687.77,
-    "deputy_id": 204560,
-    "deputy_name": "Adolfo Viana",
-    "party": "PSDB"
-  },
-  {
-    "total_spent": 53179.14,
-    "deputy_id": 74057,
-    "deputy_name": "Alice Portugal",
-    "party": "PCdoB"
-  },
-  {
-    "total_spent": 50725.18,
-    "deputy_id": 204423,
-    "deputy_name": "André Ferreira",
-    "party": "PL"
-  },
-  {
-    "total_spent": 50037.44,
-    "deputy_id": 220542,
-    "deputy_name": "Alexandre Guimarães",
-    "party": "MDB"
-  },
-  {
-    "total_spent": 49856.97,
-    "deputy_id": 220538,
-    "deputy_name": "Albuquerque",
-    "party": "REPUBLICANOS"
-  },
-  {
-    "total_spent": 47371.71,
-    "deputy_id": 204356,
-    "deputy_name": "Amaro Neto",
-    "party": "REPUBLICANOS"
-  },
-  {
-    "total_spent": 47249.35,
-    "deputy_id": 123756,
-    "deputy_name": "Antônia Lúcia",
-    "party": "REPUBLICANOS"
+    "total_spent": 67845.9,
+    "deputy_id": 220609,
+    "deputy_name": "Maurício Carvalho",
+    "party": "UNIÃO"
   }
 ]

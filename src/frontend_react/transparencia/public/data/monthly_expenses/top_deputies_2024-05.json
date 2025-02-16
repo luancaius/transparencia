@@ -1,62 +1,62 @@
 [
   {
+    "total_spent": 111554.92,
+    "deputy_id": 160666,
+    "deputy_name": "Félix Mendonça Júnior",
+    "party": "PDT"
+  },
+  {
     "total_spent": 81214.16,
     "deputy_id": 178927,
     "deputy_name": "Aliel Machado",
     "party": "PV"
   },
   {
-    "total_spent": 59676.75,
-    "deputy_id": 178835,
-    "deputy_name": "Afonso Motta",
-    "party": "PDT"
-  },
-  {
-    "total_spent": 55871.84,
-    "deputy_id": 136811,
-    "deputy_name": "Afonso Hamm",
-    "party": "PP"
-  },
-  {
-    "total_spent": 53893.99,
-    "deputy_id": 220714,
-    "deputy_name": "Adail Filho",
+    "total_spent": 76066.49,
+    "deputy_id": 220584,
+    "deputy_name": "Murilo Galdino",
     "party": "REPUBLICANOS"
   },
   {
-    "total_spent": 51852.47,
-    "deputy_id": 121948,
-    "deputy_name": "Adriano do Baldy",
-    "party": "PP"
+    "total_spent": 75282.37,
+    "deputy_id": 204534,
+    "deputy_name": "Tabata Amaral",
+    "party": "PSB"
   },
   {
-    "total_spent": 51298.69,
-    "deputy_id": 204501,
-    "deputy_name": "Alencar Santana",
-    "party": "PT"
+    "total_spent": 74257.95,
+    "deputy_id": 74090,
+    "deputy_name": "Átila Lins",
+    "party": "PSD"
   },
   {
-    "total_spent": 51208.15,
-    "deputy_id": 221328,
-    "deputy_name": "Adilson Barroso",
+    "total_spent": 71865.41,
+    "deputy_id": 178929,
+    "deputy_name": "Diego Garcia",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 71034.12,
+    "deputy_id": 178966,
+    "deputy_name": "Geovania de Sá",
+    "party": "PSDB"
+  },
+  {
+    "total_spent": 70950.56,
+    "deputy_id": 220595,
+    "deputy_name": "Coronel Fernanda",
     "party": "PL"
   },
   {
-    "total_spent": 50544.28,
-    "deputy_id": 220538,
-    "deputy_name": "Albuquerque",
-    "party": "REPUBLICANOS"
+    "total_spent": 70579.59,
+    "deputy_id": 178908,
+    "deputy_name": "Delegado Éder Mauro",
+    "party": "PL"
   },
   {
-    "total_spent": 48105.91,
-    "deputy_id": 220544,
-    "deputy_name": "Antonio Andrade",
-    "party": "REPUBLICANOS"
-  },
-  {
-    "total_spent": 47908.14,
-    "deputy_id": 204515,
-    "deputy_name": "André Janones",
-    "party": "AVANTE"
+    "total_spent": 69380.41,
+    "deputy_id": 220572,
+    "deputy_name": "Marussa Boldrin",
+    "party": "MDB"
   }
 ]

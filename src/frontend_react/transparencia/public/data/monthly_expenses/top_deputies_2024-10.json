@@ -1,8 +1,44 @@
 [
   {
+    "total_spent": 149845.12,
+    "deputy_id": 220582,
+    "deputy_name": "Daniel Barbosa",
+    "party": "PP"
+  },
+  {
     "total_spent": 148889.81,
     "deputy_id": 220544,
     "deputy_name": "Antonio Andrade",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 132840.01,
+    "deputy_id": 74356,
+    "deputy_name": "Silas Câmara",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 123414.99,
+    "deputy_id": 204491,
+    "deputy_name": "Gilberto Abramo",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 98972.95,
+    "deputy_id": 204508,
+    "deputy_name": "Igor Timo",
+    "party": "PSD"
+  },
+  {
+    "total_spent": 89643.42,
+    "deputy_id": 160601,
+    "deputy_name": "Pr. Marco Feliciano",
+    "party": "PL"
+  },
+  {
+    "total_spent": 86090.16,
+    "deputy_id": 204482,
+    "deputy_name": "Euclydes Pettersen",
     "party": "REPUBLICANOS"
   },
   {
@@ -12,51 +48,15 @@
     "party": "REPUBLICANOS"
   },
   {
-    "total_spent": 65469.03,
-    "deputy_id": 220676,
-    "deputy_name": "Andreia Siqueira",
-    "party": "MDB"
+    "total_spent": 72420.7,
+    "deputy_id": 204398,
+    "deputy_name": "Felipe Francischini",
+    "party": "UNIÃO"
   },
   {
-    "total_spent": 64931.2,
-    "deputy_id": 220675,
-    "deputy_name": "Antônio Doido",
-    "party": "MDB"
-  },
-  {
-    "total_spent": 58299.0,
-    "deputy_id": 73579,
-    "deputy_name": "Alberto Fraga",
-    "party": "PL"
-  },
-  {
-    "total_spent": 57742.25,
-    "deputy_id": 121948,
-    "deputy_name": "Adriano do Baldy",
+    "total_spent": 71721.53,
+    "deputy_id": 141459,
+    "deputy_name": "João Maia",
     "party": "PP"
-  },
-  {
-    "total_spent": 57371.159999999996,
-    "deputy_id": 221328,
-    "deputy_name": "Adilson Barroso",
-    "party": "PL"
-  },
-  {
-    "total_spent": 51871.95,
-    "deputy_id": 204423,
-    "deputy_name": "André Ferreira",
-    "party": "PL"
-  },
-  {
-    "total_spent": 50244.08,
-    "deputy_id": 220538,
-    "deputy_name": "Albuquerque",
-    "party": "REPUBLICANOS"
-  },
-  {
-    "total_spent": 50225.09,
-    "deputy_id": 220714,
-    "deputy_name": "Adail Filho",
-    "party": "REPUBLICANOS"
   }
 ]

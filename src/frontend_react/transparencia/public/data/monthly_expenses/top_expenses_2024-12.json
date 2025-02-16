@@ -1,7 +1,8 @@
 [
   {
-    "_id": "67a376f16ac8f447115816ca",
+    "_id": "67b10be985b7286f77265b7c",
     "cod_documento": 7852403,
+    "deputy_external_id": 220540,
     "year": 2024,
     "month": 12,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -20,8 +21,9 @@
     "parcela": 1
   },
   {
-    "_id": "67a3d9274b19912abff5b160",
+    "_id": "67b15a0e85b7286f7727c5f2",
     "cod_documento": 7852268,
+    "deputy_external_id": 204390,
     "year": 2024,
     "month": 12,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -40,8 +42,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a3cd4e4b19912abff57252",
+    "_id": "67b1682f85b7286f77280682",
     "cod_documento": 7852005,
+    "deputy_external_id": 220621,
     "year": 2024,
     "month": 12,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -60,8 +63,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a381d56ac8f44711586e0f",
+    "_id": "67b125f685b7286f7726b3b5",
     "cod_documento": 7852603,
+    "deputy_external_id": 220664,
     "year": 2024,
     "month": 12,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -80,8 +84,30 @@
     "parcela": 0
   },
   {
-    "_id": "67a3822d6ac8f447115870bb",
+    "_id": "67b12d8b85b7286f7726f31e",
+    "cod_documento": 7851445,
+    "deputy_external_id": 74554,
+    "year": 2024,
+    "month": 12,
+    "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
+    "document_type": "Nota Fiscal",
+    "cod_tipo_documento": 0,
+    "data_documento": "2024-12-26 00:00:00 UTC",
+    "num_documento": "202421",
+    "valor_documento": 129876.0,
+    "url_documento": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/1071/2024/7851445.pdf",
+    "nome_fornecedor": "Mota Filmes",
+    "cnpj_cpf_fornecedor": "52531642000110",
+    "valor_liquido": 129876.0,
+    "valor_glosa": 0.0,
+    "num_ressarcimento": "",
+    "cod_lote": 2100410,
+    "parcela": 0
+  },
+  {
+    "_id": "67b1264785b7286f7726b669",
     "cod_documento": 7852552,
+    "deputy_external_id": 204408,
     "year": 2024,
     "month": 12,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -100,8 +126,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a046b75e7452205871194b",
+    "_id": "67b0395285b7286f772592fa",
     "cod_documento": 7847221,
+    "deputy_external_id": 178881,
     "year": 2024,
     "month": 12,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -120,8 +147,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a378376ac8f4471158216a",
+    "_id": "67b11d8885b7286f77266663",
     "cod_documento": 7841789,
+    "deputy_external_id": 218086,
     "year": 2024,
     "month": 12,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -140,8 +168,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a3e1f14b19912abff5dd29",
+    "_id": "67b1537385b7286f77279b66",
     "cod_documento": 7854766,
+    "deputy_external_id": 160642,
     "year": 2024,
     "month": 12,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -160,43 +189,24 @@
     "parcela": 0
   },
   {
-    "_id": "67a3d9854b19912abff5b321",
-    "cod_documento": 7850688,
+    "_id": "67b0e36585b7286f77260eca",
+    "cod_documento": 7851459,
+    "deputy_external_id": 220692,
     "year": 2024,
     "month": 12,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
     "document_type": "Nota Fiscal",
     "cod_tipo_documento": 0,
-    "data_documento": "2024-12-20 00:00:00 UTC",
-    "num_documento": "00001778",
-    "valor_documento": 99870.0,
-    "url_documento": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/2248/2024/7850688.pdf",
-    "nome_fornecedor": "STUDIO AB - CRIATIVIDADE VISUAL EIRELI - EPP",
-    "cnpj_cpf_fornecedor": "35029938000119",
-    "valor_liquido": 99870.0,
+    "data_documento": "2024-12-26 00:00:00 UTC",
+    "num_documento": "202400000003465",
+    "valor_documento": 100000.0,
+    "url_documento": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3682/2024/7851459.pdf",
+    "nome_fornecedor": "IDEIA ATIVA SUPRIMENTOS PARA IMPRESSÃO LTDA ME",
+    "cnpj_cpf_fornecedor": "16625708000178",
+    "valor_liquido": 99922.2,
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
-    "cod_lote": 2099989,
-    "parcela": 0
-  },
-  {
-    "_id": "67a3e3ad4b19912abff5e5a7",
-    "cod_documento": 7841050,
-    "year": 2024,
-    "month": 12,
-    "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "document_type": "Nota Fiscal",
-    "cod_tipo_documento": 0,
-    "data_documento": "2024-12-05 00:00:00 UTC",
-    "num_documento": "00000004",
-    "valor_documento": 99680.0,
-    "url_documento": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3246/2024/7841050.pdf",
-    "nome_fornecedor": "SPEEDGRAF EDITORA LTDA",
-    "cnpj_cpf_fornecedor": "15424660000177",
-    "valor_liquido": 99680.0,
-    "valor_glosa": 0.0,
-    "num_ressarcimento": "",
-    "cod_lote": 2094843,
-    "parcela": 0
+    "cod_lote": 2100416,
+    "parcela": 1
   }
 ]

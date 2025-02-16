@@ -1,7 +1,8 @@
 [
   {
-    "_id": "67a383c46ac8f44711587d2b",
+    "_id": "67b127b885b7286f7726c305",
     "cod_documento": 7779042,
+    "deputy_external_id": 204539,
     "year": 2024,
     "month": 7,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -20,8 +21,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a047ad5e74522058712c85",
+    "_id": "67b03a5285b7286f7725a65f",
     "cod_documento": 7777838,
+    "deputy_external_id": 220675,
     "year": 2024,
     "month": 7,
     "expense_type": "LOCAÇÃO OU FRETAMENTO DE AERONAVES",
@@ -40,8 +42,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a3e26f4b19912abff5df66",
+    "_id": "67b152d285b7286f77279788",
     "cod_documento": 7764329,
+    "deputy_external_id": 160556,
     "year": 2024,
     "month": 7,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -60,8 +63,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a3dddf4b19912abff5c9ba",
+    "_id": "67b1565e85b7286f7727ad54",
     "cod_documento": 7774377,
+    "deputy_external_id": 220685,
     "year": 2024,
     "month": 7,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -80,8 +84,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a05cc3881c4cbf3a15fe3c",
+    "_id": "67b0df8885b7286f7725ec5e",
     "cod_documento": 7769315,
+    "deputy_external_id": 178876,
     "year": 2024,
     "month": 7,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -100,8 +105,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a046855e74522058711506",
+    "_id": "67b0390a85b7286f77258d60",
     "cod_documento": 7780276,
+    "deputy_external_id": 74057,
     "year": 2024,
     "month": 7,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -120,8 +126,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a380e96ac8f447115866b3",
+    "_id": "67b1252985b7286f7726ac51",
     "cod_documento": 7773472,
+    "deputy_external_id": 204419,
     "year": 2024,
     "month": 7,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -140,8 +147,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a379a76ac8f44711582d16",
+    "_id": "67b11eca85b7286f77267229",
     "cod_documento": 7769433,
+    "deputy_external_id": 74454,
     "year": 2024,
     "month": 7,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -160,8 +168,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a37f2b6ac8f44711585942",
+    "_id": "67b1239e85b7286f77269ec2",
     "cod_documento": 7762297,
+    "deputy_external_id": 74383,
     "year": 2024,
     "month": 7,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -180,8 +189,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a3eac54b19912abff606fb",
+    "_id": "67b1437485b7286f77276d8f",
     "cod_documento": 7772717,
+    "deputy_external_id": 220591,
     "year": 2024,
     "month": 7,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",

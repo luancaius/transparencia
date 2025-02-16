@@ -1,5 +1,17 @@
 [
   {
+    "total_spent": 151162.94,
+    "deputy_id": 141485,
+    "deputy_name": "Luiz Carlos Busato",
+    "party": "UNIÃO"
+  },
+  {
+    "total_spent": 100960.3,
+    "deputy_id": 141408,
+    "deputy_name": "Cleber Verde",
+    "party": "MDB"
+  },
+  {
     "total_spent": 93355.96,
     "deputy_id": 220675,
     "deputy_name": "Antônio Doido",
@@ -12,51 +24,39 @@
     "party": "PT"
   },
   {
+    "total_spent": 81511.63,
+    "deputy_id": 204550,
+    "deputy_name": "Júnior Mano",
+    "party": "PSB"
+  },
+  {
+    "total_spent": 80310.0,
+    "deputy_id": 204419,
+    "deputy_name": "Glaustin da Fokus",
+    "party": "PODE"
+  },
+  {
+    "total_spent": 77082.07,
+    "deputy_id": 220674,
+    "deputy_name": "Dra. Alessandra Haber",
+    "party": "MDB"
+  },
+  {
     "total_spent": 75354.21,
     "deputy_id": 204495,
     "deputy_name": "Airton Faleiro",
     "party": "PT"
   },
   {
-    "total_spent": 60382.53,
-    "deputy_id": 123756,
-    "deputy_name": "Antônia Lúcia",
-    "party": "REPUBLICANOS"
-  },
-  {
-    "total_spent": 54128.76,
-    "deputy_id": 160553,
-    "deputy_name": "Antonio Brito",
-    "party": "PSD"
-  },
-  {
-    "total_spent": 54066.31,
-    "deputy_id": 136811,
-    "deputy_name": "Afonso Hamm",
-    "party": "PP"
-  },
-  {
-    "total_spent": 53598.4,
-    "deputy_id": 107970,
-    "deputy_name": "Ana Paula Leão",
-    "party": "PP"
-  },
-  {
-    "total_spent": 52901.78,
-    "deputy_id": 220632,
-    "deputy_name": "Ana Pimentel",
-    "party": "PT"
-  },
-  {
-    "total_spent": 52626.24,
-    "deputy_id": 178937,
-    "deputy_name": "Altineu Côrtes",
+    "total_spent": 75212.12,
+    "deputy_id": 204364,
+    "deputy_name": "Eli Borges",
     "party": "PL"
   },
   {
-    "total_spent": 50558.0,
-    "deputy_id": 73579,
-    "deputy_name": "Alberto Fraga",
-    "party": "PL"
+    "total_spent": 74315.18,
+    "deputy_id": 204479,
+    "deputy_name": "Nicoletti",
+    "party": "UNIÃO"
   }
 ]

@@ -1,7 +1,8 @@
 [
   {
-    "_id": "67a3821c6ac8f44711587066",
+    "_id": "67b1263785b7286f7726b611",
     "cod_documento": 7710403,
+    "deputy_external_id": 204408,
     "year": 2024,
     "month": 2,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -20,8 +21,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a37f216ac8f44711585916",
+    "_id": "67b1239485b7286f77269e96",
     "cod_documento": 7678752,
+    "deputy_external_id": 74383,
     "year": 2024,
     "month": 2,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -40,8 +42,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a37cc66ac8f4471158461c",
+    "_id": "67b1218085b7286f77268b81",
     "cod_documento": 7704545,
+    "deputy_external_id": 160598,
     "year": 2024,
     "month": 2,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -60,8 +63,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a046805e7452205871147d",
+    "_id": "67b0390485b7286f77258cd7",
     "cod_documento": 7703208,
+    "deputy_external_id": 74057,
     "year": 2024,
     "month": 2,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -80,8 +84,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a3c4434b19912abff53d55",
+    "_id": "67b1718585b7286f77283c7e",
     "cod_documento": 7706626,
+    "deputy_external_id": 160518,
     "year": 2024,
     "month": 2,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -100,8 +105,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a2f9cd3decd06966ae9fe2",
+    "_id": "67b0e37b85b7286f77260f5d",
     "cod_documento": 7688894,
+    "deputy_external_id": 220629,
     "year": 2024,
     "month": 2,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -120,8 +126,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a3799e6ac8f44711582ce9",
+    "_id": "67b11ec385b7286f772671fc",
     "cod_documento": 7691481,
+    "deputy_external_id": 74454,
     "year": 2024,
     "month": 2,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -140,8 +147,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a2fca03decd06966aeae5e",
+    "_id": "67b0e4a985b7286f77261de6",
     "cod_documento": 7693434,
+    "deputy_external_id": 62881,
     "year": 2024,
     "month": 2,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -160,8 +168,30 @@
     "parcela": 0
   },
   {
-    "_id": "67a380e46ac8f447115866ab",
+    "_id": "67b130d885b7286f77270e02",
+    "cod_documento": 7691933,
+    "deputy_external_id": 141480,
+    "year": 2024,
+    "month": 2,
+    "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
+    "document_type": "Nota Fiscal",
+    "cod_tipo_documento": 0,
+    "data_documento": "2024-02-26 00:00:00 UTC",
+    "num_documento": "202400000000019",
+    "valor_documento": 35000.0,
+    "url_documento": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/1869/2024/7691933.pdf",
+    "nome_fornecedor": "Centro de Treinamento Digital AZ Mais Eireli",
+    "cnpj_cpf_fornecedor": "27385349000145",
+    "valor_liquido": 35000.0,
+    "valor_glosa": 0.0,
+    "num_ressarcimento": "",
+    "cod_lote": 2015778,
+    "parcela": 0
+  },
+  {
+    "_id": "67b1252485b7286f7726ac49",
     "cod_documento": 7691660,
+    "deputy_external_id": 204419,
     "year": 2024,
     "month": 2,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -177,26 +207,6 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2015601,
-    "parcela": 0
-  },
-  {
-    "_id": "67a375166ac8f447115807bb",
-    "cod_documento": 7703745,
-    "year": 2024,
-    "month": 2,
-    "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "document_type": "Nota Fiscal",
-    "cod_tipo_documento": 0,
-    "data_documento": "2024-03-18 00:00:00 UTC",
-    "num_documento": "27",
-    "valor_documento": 33000.0,
-    "url_documento": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3576/2024/7703745.pdf",
-    "nome_fornecedor": "ORBE PRODUTORA & SERVIÇOS LTDA",
-    "cnpj_cpf_fornecedor": "49494655000152",
-    "valor_liquido": 33000.0,
-    "valor_glosa": 0.0,
-    "num_ressarcimento": "",
-    "cod_lote": 2022189,
     "parcela": 0
   }
 ]

@@ -1,7 +1,8 @@
 [
   {
-    "_id": "67a3cbfb4b19912abff56b14",
+    "_id": "67b1694b85b7286f77280ce6",
     "cod_documento": 7745721,
+    "deputy_external_id": 74356,
     "year": 2024,
     "month": 6,
     "expense_type": "LOCAÇÃO OU FRETAMENTO DE AERONAVES",
@@ -20,8 +21,30 @@
     "parcela": 0
   },
   {
-    "_id": "67a3cc234b19912abff56bd0",
+    "_id": "67b1310285b7286f77270f22",
+    "cod_documento": 7753074,
+    "deputy_external_id": 220600,
+    "year": 2024,
+    "month": 6,
+    "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
+    "document_type": "Nota Fiscal",
+    "cod_tipo_documento": 0,
+    "data_documento": "2024-06-13 00:00:00 UTC",
+    "num_documento": "23",
+    "valor_documento": 48000.0,
+    "url_documento": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3701/2024/7753074.pdf",
+    "nome_fornecedor": "IHPEC INSTITUTO HAVERROTH DE POLITICA",
+    "cnpj_cpf_fornecedor": "40434443000105",
+    "valor_liquido": 48000.0,
+    "valor_glosa": 0.0,
+    "num_ressarcimento": "",
+    "cod_lote": 2048767,
+    "parcela": 0
+  },
+  {
+    "_id": "67b1691a85b7286f77280c00",
     "cod_documento": 7794292,
+    "deputy_external_id": 204557,
     "year": 2024,
     "month": 6,
     "expense_type": "LOCAÇÃO OU FRETAMENTO DE AERONAVES",
@@ -40,8 +63,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a37a076ac8f44711582fd8",
+    "_id": "67b11f1d85b7286f772674ed",
     "cod_documento": 7758579,
+    "deputy_external_id": 204368,
     "year": 2024,
     "month": 6,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -60,8 +84,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a379a56ac8f44711582d0c",
+    "_id": "67b11ec985b7286f7726721f",
     "cod_documento": 7754689,
+    "deputy_external_id": 74454,
     "year": 2024,
     "month": 6,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -80,8 +105,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a3d9c34b19912abff5b48b",
+    "_id": "67b1597085b7286f7727c217",
     "cod_documento": 7760642,
+    "deputy_external_id": 73486,
     "year": 2024,
     "month": 6,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -100,8 +126,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a2fa3d3decd06966aea4e8",
+    "_id": "67b0e3ee85b7286f7726146b",
     "cod_documento": 7775689,
+    "deputy_external_id": 220582,
     "year": 2024,
     "month": 6,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -120,8 +147,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a3d61a4b19912abff5a202",
+    "_id": "67b15c8185b7286f7727d560",
     "cod_documento": 7751440,
+    "deputy_external_id": 153423,
     "year": 2024,
     "month": 6,
     "expense_type": "LOCAÇÃO OU FRETAMENTO DE AERONAVES",
@@ -140,8 +168,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a046845e745220587114ed",
+    "_id": "67b0390985b7286f77258d47",
     "cod_documento": 7764760,
+    "deputy_external_id": 74057,
     "year": 2024,
     "month": 6,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -160,8 +189,9 @@
     "parcela": 0
   },
   {
-    "_id": "67a380e86ac8f447115866b1",
+    "_id": "67b1252885b7286f7726ac4f",
     "cod_documento": 7757580,
+    "deputy_external_id": 204419,
     "year": 2024,
     "month": 6,
     "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
@@ -177,26 +207,6 @@
     "valor_glosa": 0.0,
     "num_ressarcimento": "",
     "cod_lote": 2051009,
-    "parcela": 0
-  },
-  {
-    "_id": "67a3cc234b19912abff56bce",
-    "cod_documento": 7754492,
-    "year": 2024,
-    "month": 6,
-    "expense_type": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "document_type": "Nota Fiscal",
-    "cod_tipo_documento": 0,
-    "data_documento": "2024-06-17 00:00:00 UTC",
-    "num_documento": "152",
-    "valor_documento": 37000.0,
-    "url_documento": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3293/2024/7754492.pdf",
-    "nome_fornecedor": "AA DIGITAL STRATEGY CONSULTORIA LTDA",
-    "cnpj_cpf_fornecedor": "41732139000107",
-    "valor_liquido": 37000.0,
-    "valor_glosa": 0.0,
-    "num_ressarcimento": "",
-    "cod_lote": 2049507,
     "parcela": 0
   }
 ]

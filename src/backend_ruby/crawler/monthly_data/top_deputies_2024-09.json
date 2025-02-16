@@ -1,62 +1,62 @@
 [
   {
-    "total_spent": 56155.36,
-    "deputy_id": 220676,
-    "deputy_name": "Andreia Siqueira",
-    "party": "MDB"
-  },
-  {
-    "total_spent": 53679.270000000004,
-    "deputy_id": 220542,
-    "deputy_name": "Alexandre Guimarães",
-    "party": "MDB"
-  },
-  {
-    "total_spent": 52866.76,
-    "deputy_id": 204495,
-    "deputy_name": "Airton Faleiro",
-    "party": "PT"
-  },
-  {
-    "total_spent": 49736.66,
-    "deputy_id": 220538,
-    "deputy_name": "Albuquerque",
+    "total_spent": 183795.38,
+    "deputy_id": 150418,
+    "deputy_name": "Márcio Marinho",
     "party": "REPUBLICANOS"
   },
   {
-    "total_spent": 47741.81,
-    "deputy_id": 178937,
-    "deputy_name": "Altineu Côrtes",
-    "party": "PL"
+    "total_spent": 101347.97,
+    "deputy_id": 220591,
+    "deputy_name": "Meire Serafim",
+    "party": "UNIÃO"
   },
   {
-    "total_spent": 45517.95,
-    "deputy_id": 160527,
-    "deputy_name": "Aguinaldo Ribeiro",
-    "party": "PP"
+    "total_spent": 97321.09,
+    "deputy_id": 160518,
+    "deputy_name": "Weliton Prado",
+    "party": "SOLIDARIEDADE"
   },
   {
-    "total_spent": 45178.93,
-    "deputy_id": 204379,
-    "deputy_name": "Acácio Favacho",
+    "total_spent": 89619.82,
+    "deputy_id": 141411,
+    "deputy_name": "Dagoberto Nogueira",
+    "party": "PSDB"
+  },
+  {
+    "total_spent": 82369.72,
+    "deputy_id": 74090,
+    "deputy_name": "Átila Lins",
+    "party": "PSD"
+  },
+  {
+    "total_spent": 74748.79,
+    "deputy_id": 204539,
+    "deputy_name": "Hercílio Coelho Diniz",
     "party": "MDB"
   },
   {
-    "total_spent": 44884.64,
-    "deputy_id": 136811,
-    "deputy_name": "Afonso Hamm",
-    "party": "PP"
-  },
-  {
-    "total_spent": 43297.76,
-    "deputy_id": 204423,
-    "deputy_name": "André Ferreira",
+    "total_spent": 74404.06,
+    "deputy_id": 141458,
+    "deputy_name": "João Carlos Bacelar",
     "party": "PL"
   },
   {
-    "total_spent": 43026.59,
-    "deputy_id": 121948,
-    "deputy_name": "Adriano do Baldy",
+    "total_spent": 71511.58,
+    "deputy_id": 220671,
+    "deputy_name": "Dilvanda Faro",
+    "party": "PT"
+  },
+  {
+    "total_spent": 71168.16,
+    "deputy_id": 220590,
+    "deputy_name": "Coronel Ulysses",
+    "party": "UNIÃO"
+  },
+  {
+    "total_spent": 65156.96,
+    "deputy_id": 178934,
+    "deputy_name": "Toninho Wandscheer",
     "party": "PP"
   }
 ]
