@@ -42,6 +42,7 @@ class MonthlyFileGeneratorService
     expenses.each do |exp|
       deputy = deputies_map[exp["deputy_external_id"]]
       exp["deputy_name"] = deputy["name"] if deputy
+      exp["deputy_party"] = deputy["sigla_partido"] if deputy
     end
 
     expenses

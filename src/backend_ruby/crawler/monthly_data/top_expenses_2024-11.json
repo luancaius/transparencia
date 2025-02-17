@@ -19,7 +19,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2092470,
     "parcela": 0,
-    "deputy_name": "Elcione Barbalho"
+    "deputy_name": "Elcione Barbalho",
+    "deputy_party": "MDB"
   },
   {
     "_id": "67b1289b85b7286f7726c9f0",
@@ -41,7 +42,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2097890,
     "parcela": 0,
-    "deputy_name": "Igor Timo"
+    "deputy_name": "Igor Timo",
+    "deputy_party": "PSD"
   },
   {
     "_id": "67b0e3f985b7286f772614e9",
@@ -63,7 +65,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2097256,
     "parcela": 0,
-    "deputy_name": "Daniel Barbosa"
+    "deputy_name": "Daniel Barbosa",
+    "deputy_party": "PP"
   },
   {
     "_id": "67b159cb85b7286f7727c479",
@@ -85,7 +88,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2091912,
     "parcela": 0,
-    "deputy_name": "Pr. Marco Feliciano"
+    "deputy_name": "Pr. Marco Feliciano",
+    "deputy_party": "PL"
   },
   {
     "_id": "67b123a585b7286f77269edb",
@@ -107,7 +111,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2085843,
     "parcela": 0,
-    "deputy_name": "Giacobo"
+    "deputy_name": "Giacobo",
+    "deputy_party": "PL"
   },
   {
     "_id": "67b127c685b7286f7726c384",
@@ -129,7 +134,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2102734,
     "parcela": 0,
-    "deputy_name": "Hercílio Coelho Diniz"
+    "deputy_name": "Hercílio Coelho Diniz",
+    "deputy_party": "MDB"
   },
   {
     "_id": "67b14b2385b7286f77277ae6",
@@ -151,7 +157,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2090377,
     "parcela": 0,
-    "deputy_name": "Murilo Galdino"
+    "deputy_name": "Murilo Galdino",
+    "deputy_party": "REPUBLICANOS"
   },
   {
     "_id": "67b14b2385b7286f77277ae9",
@@ -173,7 +180,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2088230,
     "parcela": 0,
-    "deputy_name": "Murilo Galdino"
+    "deputy_name": "Murilo Galdino",
+    "deputy_party": "REPUBLICANOS"
   },
   {
     "_id": "67b14b2385b7286f77277aea",
@@ -195,7 +203,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2090374,
     "parcela": 0,
-    "deputy_name": "Murilo Galdino"
+    "deputy_name": "Murilo Galdino",
+    "deputy_party": "REPUBLICANOS"
   },
   {
     "_id": "67b03a0485b7286f7725a102",
@@ -217,6 +226,7 @@
     "num_ressarcimento": "",
     "cod_lote": 2092539,
     "parcela": 0,
-    "deputy_name": "Andreia Siqueira"
+    "deputy_name": "Andreia Siqueira",
+    "deputy_party": "MDB"
   }
 ]

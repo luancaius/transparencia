@@ -47,6 +47,8 @@ export default function TopExpenses({ ano, mes, fetchTrigger }) {
           <table className="table table-bordered align-middle">
             <thead className="table-light">
               <tr>
+                <th>Deputado</th>
+                <th>Partido</th>
                 <th>Nome Fornecedor</th>
                 <th>Tipo de Despesa</th>
                 <th>Valor</th>
@@ -56,6 +58,8 @@ export default function TopExpenses({ ano, mes, fetchTrigger }) {
             <tbody>
               {data.map((item, i) => (
                 <tr key={i}>
+                  <td>{item.deputy_name}</td>
+                  <td>{item.deputy_party}</td>
                   <td>{item.nome_fornecedor}</td>
                   <td>{item.expense_type}</td>
                   <td>

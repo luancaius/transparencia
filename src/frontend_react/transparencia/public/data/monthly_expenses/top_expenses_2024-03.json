@@ -19,7 +19,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2020638,
     "parcela": 0,
-    "deputy_name": "Duda Ramos"
+    "deputy_name": "Duda Ramos",
+    "deputy_party": "MDB"
   },
   {
     "_id": "67b11ec485b7286f77267201",
@@ -41,7 +42,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2021196,
     "parcela": 0,
-    "deputy_name": "Eunício Oliveira"
+    "deputy_name": "Eunício Oliveira",
+    "deputy_party": "MDB"
   },
   {
     "_id": "67b1718885b7286f77283c89",
@@ -63,7 +65,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2030839,
     "parcela": 0,
-    "deputy_name": "Weliton Prado"
+    "deputy_name": "Weliton Prado",
+    "deputy_party": "SOLIDARIEDADE"
   },
   {
     "_id": "67b1382585b7286f7727478a",
@@ -85,7 +88,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2031495,
     "parcela": 0,
-    "deputy_name": "Marcelo Queiroz"
+    "deputy_name": "Marcelo Queiroz",
+    "deputy_party": "PP"
   },
   {
     "_id": "67b130da85b7286f77270e0e",
@@ -107,7 +111,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2026043,
     "parcela": 0,
-    "deputy_name": "Lázaro Botelho"
+    "deputy_name": "Lázaro Botelho",
+    "deputy_party": "PP"
   },
   {
     "_id": "67b0e6d785b7286f77262ac3",
@@ -129,7 +134,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2020417,
     "parcela": 0,
-    "deputy_name": "Delegado Caveira"
+    "deputy_name": "Delegado Caveira",
+    "deputy_party": "PL"
   },
   {
     "_id": "67b038ac85b7286f772583fd",
@@ -151,7 +157,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2027005,
     "parcela": 0,
-    "deputy_name": "Alexandre Guimarães"
+    "deputy_name": "Alexandre Guimarães",
+    "deputy_party": "MDB"
   },
   {
     "_id": "67b1552185b7286f7727a5ed",
@@ -173,7 +180,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2019185,
     "parcela": 0,
-    "deputy_name": "Paulo Abi-Ackel"
+    "deputy_name": "Paulo Abi-Ackel",
+    "deputy_party": "PSDB"
   },
   {
     "_id": "67b1094a85b7286f77264c64",
@@ -195,7 +203,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2029098,
     "parcela": 0,
-    "deputy_name": "Dorinaldo Malafaia"
+    "deputy_name": "Dorinaldo Malafaia",
+    "deputy_party": "PDT"
   },
   {
     "_id": "67b12a0685b7286f7726d255",
@@ -217,6 +226,7 @@
     "num_ressarcimento": "",
     "cod_lote": 2022035,
     "parcela": 0,
-    "deputy_name": "Jack Rocha"
+    "deputy_name": "Jack Rocha",
+    "deputy_party": "PT"
   }
 ]

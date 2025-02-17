@@ -19,7 +19,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2075149,
     "parcela": 0,
-    "deputy_name": "Márcio Marinho"
+    "deputy_name": "Márcio Marinho",
+    "deputy_party": "REPUBLICANOS"
   },
   {
     "_id": "67b1437d85b7286f77276dc7",
@@ -41,7 +42,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2072850,
     "parcela": 0,
-    "deputy_name": "Meire Serafim"
+    "deputy_name": "Meire Serafim",
+    "deputy_party": "UNIÃO"
   },
   {
     "_id": "67b1391485b7286f77274e31",
@@ -63,7 +65,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2077418,
     "parcela": 0,
-    "deputy_name": "Márcio Marinho"
+    "deputy_name": "Márcio Marinho",
+    "deputy_party": "REPUBLICANOS"
   },
   {
     "_id": "67b11ece85b7286f7726723f",
@@ -85,7 +88,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2073995,
     "parcela": 0,
-    "deputy_name": "Eunício Oliveira"
+    "deputy_name": "Eunício Oliveira",
+    "deputy_party": "MDB"
   },
   {
     "_id": "67b127c085b7286f7726c34d",
@@ -107,7 +111,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2089686,
     "parcela": 0,
-    "deputy_name": "Hercílio Coelho Diniz"
+    "deputy_name": "Hercílio Coelho Diniz",
+    "deputy_party": "MDB"
   },
   {
     "_id": "67b123a285b7286f77269ed3",
@@ -129,7 +134,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2069838,
     "parcela": 0,
-    "deputy_name": "Giacobo"
+    "deputy_name": "Giacobo",
+    "deputy_party": "PL"
   },
   {
     "_id": "67b123bf85b7286f77269f87",
@@ -151,7 +157,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2089975,
     "parcela": 0,
-    "deputy_name": "Gilberto Abramo"
+    "deputy_name": "Gilberto Abramo",
+    "deputy_party": "REPUBLICANOS"
   },
   {
     "_id": "67b0e33085b7286f77260c56",
@@ -173,7 +180,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2074201,
     "parcela": 0,
-    "deputy_name": "Dagoberto Nogueira"
+    "deputy_name": "Dagoberto Nogueira",
+    "deputy_party": "PSDB"
   },
   {
     "_id": "67b1252b85b7286f7726ac54",
@@ -195,7 +203,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2075611,
     "parcela": 0,
-    "deputy_name": "Glaustin da Fokus"
+    "deputy_name": "Glaustin da Fokus",
+    "deputy_party": "PODE"
   },
   {
     "_id": "67b1719a85b7286f77283ce7",
@@ -217,6 +226,7 @@
     "num_ressarcimento": "",
     "cod_lote": 2082758,
     "parcela": 0,
-    "deputy_name": "Weliton Prado"
+    "deputy_name": "Weliton Prado",
+    "deputy_party": "SOLIDARIEDADE"
   }
 ]

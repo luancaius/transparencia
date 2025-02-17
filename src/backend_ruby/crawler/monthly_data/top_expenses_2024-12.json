@@ -19,7 +19,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2100968,
     "parcela": 1,
-    "deputy_name": "Duda Ramos"
+    "deputy_name": "Duda Ramos",
+    "deputy_party": "MDB"
   },
   {
     "_id": "67b15a0e85b7286f7727c5f2",
@@ -41,7 +42,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2100891,
     "parcela": 0,
-    "deputy_name": "Professor Alcides"
+    "deputy_name": "Professor Alcides",
+    "deputy_party": "PL"
   },
   {
     "_id": "67b1682f85b7286f77280682",
@@ -63,7 +65,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2100719,
     "parcela": 0,
-    "deputy_name": "Sargento Gonçalves"
+    "deputy_name": "Sargento Gonçalves",
+    "deputy_party": "PL"
   },
   {
     "_id": "67b125f685b7286f7726b3b5",
@@ -85,7 +88,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2101084,
     "parcela": 0,
-    "deputy_name": "Guilherme Uchoa"
+    "deputy_name": "Guilherme Uchoa",
+    "deputy_party": "PSB"
   },
   {
     "_id": "67b12d8b85b7286f7726f31e",
@@ -107,7 +111,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2100410,
     "parcela": 0,
-    "deputy_name": "José Rocha"
+    "deputy_name": "José Rocha",
+    "deputy_party": "UNIÃO"
   },
   {
     "_id": "67b1264785b7286f7726b669",
@@ -129,7 +134,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2101055,
     "parcela": 0,
-    "deputy_name": "Gustinho Ribeiro"
+    "deputy_name": "Gustinho Ribeiro",
+    "deputy_party": "REPUBLICANOS"
   },
   {
     "_id": "67b0395285b7286f772592fa",
@@ -151,7 +157,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2098333,
     "parcela": 0,
-    "deputy_name": "Aluisio Mendes"
+    "deputy_name": "Aluisio Mendes",
+    "deputy_party": "REPUBLICANOS"
   },
   {
     "_id": "67b11d8885b7286f77266663",
@@ -173,7 +180,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2095515,
     "parcela": 0,
-    "deputy_name": "Ely Santos"
+    "deputy_name": "Ely Santos",
+    "deputy_party": "REPUBLICANOS"
   },
   {
     "_id": "67b1537385b7286f77279b66",
@@ -195,7 +203,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2102417,
     "parcela": 0,
-    "deputy_name": "Pastor Eurico"
+    "deputy_name": "Pastor Eurico",
+    "deputy_party": "PL"
   },
   {
     "_id": "67b0e36585b7286f77260eca",
@@ -217,6 +226,7 @@
     "num_ressarcimento": "",
     "cod_lote": 2100416,
     "parcela": 1,
-    "deputy_name": "Dal Barreto"
+    "deputy_name": "Dal Barreto",
+    "deputy_party": "UNIÃO"
   }
 ]

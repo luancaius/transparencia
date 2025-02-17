@@ -19,7 +19,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2025732,
     "parcela": 0,
-    "deputy_name": "Gustinho Ribeiro"
+    "deputy_name": "Gustinho Ribeiro",
+    "deputy_party": "REPUBLICANOS"
   },
   {
     "_id": "67b1239485b7286f77269e96",
@@ -41,7 +42,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2007998,
     "parcela": 0,
-    "deputy_name": "Giacobo"
+    "deputy_name": "Giacobo",
+    "deputy_party": "PL"
   },
   {
     "_id": "67b1218085b7286f77268b81",
@@ -63,7 +65,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2022563,
     "parcela": 0,
-    "deputy_name": "Flávia Morais"
+    "deputy_name": "Flávia Morais",
+    "deputy_party": "PDT"
   },
   {
     "_id": "67b0390485b7286f77258cd7",
@@ -85,7 +88,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2021957,
     "parcela": 0,
-    "deputy_name": "Alice Portugal"
+    "deputy_name": "Alice Portugal",
+    "deputy_party": "PCdoB"
   },
   {
     "_id": "67b1718585b7286f77283c7e",
@@ -107,7 +111,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2023717,
     "parcela": 0,
-    "deputy_name": "Weliton Prado"
+    "deputy_name": "Weliton Prado",
+    "deputy_party": "SOLIDARIEDADE"
   },
   {
     "_id": "67b0e37b85b7286f77260f5d",
@@ -129,7 +134,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2018583,
     "parcela": 0,
-    "deputy_name": "Dandara"
+    "deputy_name": "Dandara",
+    "deputy_party": "PT"
   },
   {
     "_id": "67b11ec385b7286f772671fc",
@@ -151,7 +157,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2015502,
     "parcela": 0,
-    "deputy_name": "Eunício Oliveira"
+    "deputy_name": "Eunício Oliveira",
+    "deputy_party": "MDB"
   },
   {
     "_id": "67b0e4a985b7286f77261de6",
@@ -173,7 +180,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2016513,
     "parcela": 0,
-    "deputy_name": "Danilo Forte"
+    "deputy_name": "Danilo Forte",
+    "deputy_party": "UNIÃO"
   },
   {
     "_id": "67b130d885b7286f77270e02",
@@ -195,7 +203,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2015778,
     "parcela": 0,
-    "deputy_name": "Lázaro Botelho"
+    "deputy_name": "Lázaro Botelho",
+    "deputy_party": "PP"
   },
   {
     "_id": "67b1252485b7286f7726ac49",
@@ -217,6 +226,7 @@
     "num_ressarcimento": "",
     "cod_lote": 2015601,
     "parcela": 0,
-    "deputy_name": "Glaustin da Fokus"
+    "deputy_name": "Glaustin da Fokus",
+    "deputy_party": "PODE"
   }
 ]

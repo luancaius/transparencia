@@ -46,7 +46,7 @@ export default function DeputiesExpenses({ ano, mes, fetchTrigger }) {
           <table className="table table-bordered align-middle">
             <thead className="table-light">
               <tr>
-                <th>Nome do Deputado</th>
+                <th>Deputado</th>
                 <th>Partido</th>
                 <th>Total Gasto</th>
               </tr>

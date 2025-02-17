@@ -19,7 +19,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2005346,
     "parcela": 0,
-    "deputy_name": "Eunício Oliveira"
+    "deputy_name": "Eunício Oliveira",
+    "deputy_party": "MDB"
   },
   {
     "_id": "67b1252385b7286f7726ac48",
@@ -41,7 +42,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2006507,
     "parcela": 0,
-    "deputy_name": "Glaustin da Fokus"
+    "deputy_name": "Glaustin da Fokus",
+    "deputy_party": "PODE"
   },
   {
     "_id": "67b12e3d85b7286f7726f94a",
@@ -63,7 +65,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2030463,
     "parcela": 0,
-    "deputy_name": "Josivaldo JP"
+    "deputy_name": "Josivaldo JP",
+    "deputy_party": "PSD"
   },
   {
     "_id": "67b130d685b7286f77270dfa",
@@ -85,7 +88,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2007513,
     "parcela": 0,
-    "deputy_name": "Lázaro Botelho"
+    "deputy_name": "Lázaro Botelho",
+    "deputy_party": "PP"
   },
   {
     "_id": "67b1094685b7286f77264c44",
@@ -107,7 +111,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2007408,
     "parcela": 0,
-    "deputy_name": "Dorinaldo Malafaia"
+    "deputy_name": "Dorinaldo Malafaia",
+    "deputy_party": "PDT"
   },
   {
     "_id": "67b1704c85b7286f7728356d",
@@ -129,7 +134,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2015187,
     "parcela": 0,
-    "deputy_name": "Vinicius Gurgel"
+    "deputy_name": "Vinicius Gurgel",
+    "deputy_party": "PL"
   },
   {
     "_id": "67b11e5685b7286f77266e29",
@@ -151,7 +157,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2007733,
     "parcela": 0,
-    "deputy_name": "Erika Kokay"
+    "deputy_name": "Erika Kokay",
+    "deputy_party": "PT"
   },
   {
     "_id": "67b141b585b7286f772767dc",
@@ -173,7 +180,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2009309,
     "parcela": 0,
-    "deputy_name": "Mauricio do Vôlei"
+    "deputy_name": "Mauricio do Vôlei",
+    "deputy_party": "PL"
   },
   {
     "_id": "67b137b885b7286f772744b5",
@@ -195,7 +203,8 @@
     "num_ressarcimento": "",
     "cod_lote": 2011078,
     "parcela": 0,
-    "deputy_name": "Marcelo Crivella"
+    "deputy_name": "Marcelo Crivella",
+    "deputy_party": "REPUBLICANOS"
   },
   {
     "_id": "67b0e2a585b7286f77260556",
@@ -217,6 +226,7 @@
     "num_ressarcimento": "",
     "cod_lote": 2006354,
     "parcela": 0,
-    "deputy_name": "Coronel Ulysses"
+    "deputy_name": "Coronel Ulysses",
+    "deputy_party": "UNIÃO"
   }
 ]
