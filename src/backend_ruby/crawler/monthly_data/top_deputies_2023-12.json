@@ -1,0 +1,62 @@
+[
+  {
+    "total_spent": 250087.59,
+    "deputy_id": 220707,
+    "deputy_name": "Amanda Gentil",
+    "party": "PP"
+  },
+  {
+    "total_spent": 232697.18,
+    "deputy_id": 178972,
+    "deputy_name": "Alex Manente",
+    "party": "CIDADANIA"
+  },
+  {
+    "total_spent": 185211.36,
+    "deputy_id": 204408,
+    "deputy_name": "Gustinho Ribeiro",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 185019.82,
+    "deputy_id": 220556,
+    "deputy_name": "Ana Paula Lima",
+    "party": "PT"
+  },
+  {
+    "total_spent": 182717.66,
+    "deputy_id": 220591,
+    "deputy_name": "Meire Serafim",
+    "party": "UNIÃO"
+  },
+  {
+    "total_spent": 181873.25,
+    "deputy_id": 220542,
+    "deputy_name": "Alexandre Guimarães",
+    "party": "MDB"
+  },
+  {
+    "total_spent": 173013.05,
+    "deputy_id": 204482,
+    "deputy_name": "Euclydes Pettersen",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 167072.69,
+    "deputy_id": 220528,
+    "deputy_name": "Dr. Victor Linhalis",
+    "party": "PODE"
+  },
+  {
+    "total_spent": 165359.48,
+    "deputy_id": 204445,
+    "deputy_name": "Fernando Mineiro",
+    "party": "PT"
+  },
+  {
+    "total_spent": 162214.98,
+    "deputy_id": 204426,
+    "deputy_name": "Carlos Veras",
+    "party": "PT"
+  }
+]

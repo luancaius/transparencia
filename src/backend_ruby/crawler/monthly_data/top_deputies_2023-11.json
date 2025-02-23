@@ -1,0 +1,62 @@
+[
+  {
+    "total_spent": 178478.99,
+    "deputy_id": 178881,
+    "deputy_name": "Aluisio Mendes",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 126321.1,
+    "deputy_id": 160666,
+    "deputy_name": "Félix Mendonça Júnior",
+    "party": "PDT"
+  },
+  {
+    "total_spent": 111629.95,
+    "deputy_id": 220589,
+    "deputy_name": "Eduardo Velloso",
+    "party": "UNIÃO"
+  },
+  {
+    "total_spent": 109936.43,
+    "deputy_id": 220658,
+    "deputy_name": "Luiz Gastão",
+    "party": "PSD"
+  },
+  {
+    "total_spent": 105941.56,
+    "deputy_id": 220675,
+    "deputy_name": "Antônio Doido",
+    "party": "MDB"
+  },
+  {
+    "total_spent": 97083.70999999999,
+    "deputy_id": 160548,
+    "deputy_name": "Jonas Donizette",
+    "party": "PSB"
+  },
+  {
+    "total_spent": 94702.07,
+    "deputy_id": 204570,
+    "deputy_name": "Pastor Gil",
+    "party": "PL"
+  },
+  {
+    "total_spent": 91812.43,
+    "deputy_id": 73486,
+    "deputy_name": "Pompeo de Mattos",
+    "party": "PDT"
+  },
+  {
+    "total_spent": 91155.0,
+    "deputy_id": 204410,
+    "deputy_name": "Luisa Canziani",
+    "party": "PSD"
+  },
+  {
+    "total_spent": 90567.58,
+    "deputy_id": 220687,
+    "deputy_name": "Márcio Honaiser",
+    "party": "PDT"
+  }
+]

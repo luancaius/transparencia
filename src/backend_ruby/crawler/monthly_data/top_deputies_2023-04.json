@@ -1,0 +1,62 @@
+[
+  {
+    "total_spent": 119542.94,
+    "deputy_id": 123756,
+    "deputy_name": "Antônia Lúcia",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 85978.37,
+    "deputy_id": 141408,
+    "deputy_name": "Cleber Verde",
+    "party": "MDB"
+  },
+  {
+    "total_spent": 84999.99,
+    "deputy_id": 220595,
+    "deputy_name": "Coronel Fernanda",
+    "party": "PL"
+  },
+  {
+    "total_spent": 77381.29,
+    "deputy_id": 220590,
+    "deputy_name": "Coronel Ulysses",
+    "party": "UNIÃO"
+  },
+  {
+    "total_spent": 75711.59,
+    "deputy_id": 220574,
+    "deputy_name": "Cabo Gilberto Silva",
+    "party": "PL"
+  },
+  {
+    "total_spent": 70106.62,
+    "deputy_id": 204570,
+    "deputy_name": "Pastor Gil",
+    "party": "PL"
+  },
+  {
+    "total_spent": 69686.67,
+    "deputy_id": 220572,
+    "deputy_name": "Marussa Boldrin",
+    "party": "MDB"
+  },
+  {
+    "total_spent": 68937.47,
+    "deputy_id": 220540,
+    "deputy_name": "Duda Ramos",
+    "party": "MDB"
+  },
+  {
+    "total_spent": 68596.86,
+    "deputy_id": 74383,
+    "deputy_name": "Giacobo",
+    "party": "PL"
+  },
+  {
+    "total_spent": 64745.98,
+    "deputy_id": 178954,
+    "deputy_name": "Lucio Mosquini",
+    "party": "MDB"
+  }
+]
