@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 
-export default function TopExpenses({ ano, mes, fetchTrigger }) {
+export default function AverageSpentByParty({ ano, mes, fetchTrigger }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Optionally, skip the initial render (fetchTrigger starts at 0)
     if (fetchTrigger === 0) return;
     fetchData();
-  }, [fetchTrigger]);
+    // Optionally, include ano and mes in the dependency array if they can change
+  }, [fetchTrigger, ano, mes]);
 
   const fetchData = () => {
     setLoading(true);
@@ -17,7 +17,7 @@ export default function TopExpenses({ ano, mes, fetchTrigger }) {
     setData([]);
 
     const paddedMonth = String(mes).padStart(2, "0");
-    const filePath = `/data/monthly_expenses/top_expenses_${ano}-${paddedMonth}.json`;
+    const filePath = `/data/monthly_expenses/average_costs_by_party_${ano}-${paddedMonth}.json`;
 
     fetch(filePath)
       .then((res) => {
@@ -27,10 +27,10 @@ export default function TopExpenses({ ano, mes, fetchTrigger }) {
         return res.json();
       })
       .then((result) => {
-        setData(result.slice(0, 10));
+        setData(result);
       })
       .catch(() => {
-        setError("Erro ao buscar dados de despesas.");
+        setError("Erro ao buscar dados de gastos médios por partido.");
       })
       .finally(() => {
         setLoading(false);
@@ -39,43 +39,27 @@ export default function TopExpenses({ ano, mes, fetchTrigger }) {
 
   return (
     <div className="mb-5">
-      <h2>Top 10 Despesas</h2>
-      {loading && <div className="alert alert-info">Carregando despesas...</div>}
+      <h2>Gastos Médios por Partido</h2>
+      {loading && <div className="alert alert-info">Carregando dados...</div>}
       {error && <div className="alert alert-danger">{error}</div>}
       {data.length > 0 && !error && (
         <div className="table-responsive">
           <table className="table table-bordered align-middle">
             <thead className="table-light">
               <tr>
-                <th>Deputado</th>
                 <th>Partido</th>
-                <th>Fornecedor</th>
-                <th>Tipo de Despesa</th>
-                <th>Valor</th>
-                <th>Documento</th>
+                <th>Média Gasta</th>
               </tr>
             </thead>
             <tbody>
               {data.map((item, i) => (
                 <tr key={i}>
-                  <td>{item.deputy_name}</td>
-                  <td>{item.deputy_party}</td>
-                  <td>{item.nome_fornecedor}</td>
-                  <td>{item.expense_type}</td>
+                  <td>{item.party}</td>
                   <td>
-                    {item.valor_documento?.toLocaleString("pt-BR", {
+                    {item.average_spent.toLocaleString("pt-BR", {
                       style: "currency",
                       currency: "BRL",
                     })}
-                  </td>
-                  <td>
-                    {item.url_documento ? (
-                      <a href={item.url_documento} target="_blank" rel="noreferrer">
-                        {item.url_documento}
-                      </a>
-                    ) : (
-                      "N/A"
-                    )}
                   </td>
                 </tr>
               ))}

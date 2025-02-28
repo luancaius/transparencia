@@ -1,14 +1,13 @@
 import { useState } from "react";
 import TopExpenses from "./TopExpenses";
 import DeputiesExpenses from "./DeputiesExpenses";
+import AverageSpentByParty from "./AverageSpentByParty";
 import YearMonthSelector from "../components/YearMonthComponent";
 
 export default function Dashboard() {
-  // The parent still owns these states
   const [ano, setAno] = useState("2024");
   const [mes, setMes] = useState("1");
   const [fetchTrigger, setFetchTrigger] = useState(0);
-
 
   const handleFetchData = () => {
     setFetchTrigger((prev) => prev + 1);
@@ -18,7 +17,6 @@ export default function Dashboard() {
     <div className="container py-4">
       <h1 className="mb-4">Dashboard de Despesas</h1>
       
-      {/* Replace old numeric inputs with YearMonthSelector */}
       <div className="row mb-3">
         <YearMonthSelector 
           ano={ano}
@@ -32,9 +30,9 @@ export default function Dashboard() {
         Buscar Dados
       </button>
 
-      {/* The child components that consume the chosen ano/mes */}
       <TopExpenses ano={ano} mes={mes} fetchTrigger={fetchTrigger} />
       <DeputiesExpenses ano={ano} mes={mes} fetchTrigger={fetchTrigger} />
+      <AverageSpentByParty ano={ano} mes={mes} fetchTrigger={fetchTrigger} />
     </div>
   );
 }

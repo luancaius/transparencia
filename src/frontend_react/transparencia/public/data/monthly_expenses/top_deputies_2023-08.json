@@ -1,0 +1,62 @@
+[
+  {
+    "total_spent": 159880.22,
+    "deputy_id": 160601,
+    "deputy_name": "Pr. Marco Feliciano",
+    "party": "PL"
+  },
+  {
+    "total_spent": 143430.14,
+    "deputy_id": 73579,
+    "deputy_name": "Alberto Fraga",
+    "party": "PL"
+  },
+  {
+    "total_spent": 110734.76,
+    "deputy_id": 160518,
+    "deputy_name": "Weliton Prado",
+    "party": "SOLIDARIEDADE"
+  },
+  {
+    "total_spent": 101536.0,
+    "deputy_id": 220600,
+    "deputy_name": "Lebrão",
+    "party": "UNIÃO"
+  },
+  {
+    "total_spent": 99605.24,
+    "deputy_id": 141408,
+    "deputy_name": "Cleber Verde",
+    "party": "MDB"
+  },
+  {
+    "total_spent": 95758.34,
+    "deputy_id": 204570,
+    "deputy_name": "Pastor Gil",
+    "party": "PL"
+  },
+  {
+    "total_spent": 88608.36,
+    "deputy_id": 220538,
+    "deputy_name": "Albuquerque",
+    "party": "REPUBLICANOS"
+  },
+  {
+    "total_spent": 88457.81,
+    "deputy_id": 73486,
+    "deputy_name": "Pompeo de Mattos",
+    "party": "PDT"
+  },
+  {
+    "total_spent": 81755.25,
+    "deputy_id": 220574,
+    "deputy_name": "Cabo Gilberto Silva",
+    "party": "PL"
+  },
+  {
+    "total_spent": 81585.28,
+    "deputy_id": 204379,
+    "deputy_name": "Acácio Favacho",
+    "party": "MDB"
+  }
+]
