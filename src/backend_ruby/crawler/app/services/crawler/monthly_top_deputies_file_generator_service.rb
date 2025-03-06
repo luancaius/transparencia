@@ -36,12 +36,19 @@ class MonthlyTopDeputiesFileGeneratorService
     pipeline = [
       { "$match" => query },
       { "$group" => {
-        "_id"        => "$deputy_external_id",    # Group by deputy identifier
-        "total_spent" => { "$sum" => "$valor_documento" }
+        "_id"        => "$deputy_external_id",
+        "total_spent" => { "$sum" => "$valor_documento" },
+        # Push each expense’s details into an array.
+        "expenses"   => { "$push" => {
+          "year"  => "$year",
+          "month"  => "$month",
+          "total" => "$valor_documento",
+          "type"  => "$document_type",
+          "url"   => "$url_documento"
+        } }
       }},
       { "$sort"  => { "total_spent" => -1 } },
       { "$limit" => 10 },
-      # Look up additional deputy info from the deputies collection.
       { "$lookup" => {
         "from"         => "deputies",
         "localField"   => "_id",
@@ -51,9 +58,10 @@ class MonthlyTopDeputiesFileGeneratorService
       { "$unwind" => "$deputy_info" },
       { "$project" => {
         "deputy_id"   => "$_id",
-        "deputy_name" => "$deputy_info.name",         # Complete name from deputy record
-        "party"       => "$deputy_info.sigla_partido",  # Party abbreviation (or change as needed)
+        "deputy_name" => "$deputy_info.name",
+        "party"       => "$deputy_info.sigla_partido",
         "total_spent" => 1,
+        "expenses"    => 1,
         "_id"         => 0
       }}
     ]
@@ -64,4 +72,5 @@ class MonthlyTopDeputiesFileGeneratorService
     puts "-----"
     result
   end
+
 end
