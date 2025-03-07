@@ -1,60 +1,1340 @@
 [
   {
     "total_spent": 119542.94,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 5600.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/2258/2023/7533620.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 2500.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/2258/2023/7555705.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1212.62,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 62000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/2258/2023/7524529.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 46250.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/2258/2023/7546770.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1946.32,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1388.21,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": -1366.37,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": -1366.37,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": -1377.93,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1367.63,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1388.83,
+        "type": "Nota Fiscal",
+        "url": null
+      }
+    ],
     "deputy_id": 123756,
     "deputy_name": "Antônia Lúcia",
     "party": "REPUBLICANOS"
   },
   {
     "total_spent": 85978.37,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 4000.0,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/1804/2023/7543630.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 221.4,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7527941"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 63000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/1804/2023/7533615.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 15000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/1804/2023/7528976.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1009.31,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1381.29,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1366.37,
+        "type": "Nota Fiscal",
+        "url": null
+      }
+    ],
     "deputy_id": 141408,
     "deputy_name": "Cleber Verde",
     "party": "MDB"
   },
   {
     "total_spent": 84999.99,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 373.7,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3551/2023/7550047.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1734.1,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7550034"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 8000.0,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3551/2023/7550040.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1194.4,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7528761"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 7050.0,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7531116"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 16000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3551/2023/7532719.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 250.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3551/2023/7531256.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 400.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3551/2023/7531124.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 15800.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3551/2023/7560128.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 20000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3551/2023/7550048.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 9900.0,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3551/2023/7550036.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 447.3,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1565.22,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": -84.56,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 447.3,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 55.0,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 447.3,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 447.3,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": -275.41,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": -1452.45,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 447.3,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 727.56,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1377.93,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 69.0,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 79.0,
+        "type": "Nota Fiscal",
+        "url": null
+      }
+    ],
     "deputy_id": 220595,
     "deputy_name": "Coronel Fernanda",
     "party": "PL"
   },
   {
     "total_spent": 77381.29,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 100.0,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7531487"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 100.0,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7532585"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 5000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3662/2023/7535780.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 2000.0,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3662/2023/7538081.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1500.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3662/2023/7534618.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 2700.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3662/2023/7534813.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1500.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3662/2023/7538070.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 500.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3662/2023/7538058.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 49980.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3662/2023/7532176.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1383.92,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 151.32,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1388.21,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1366.37,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1388.21,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 663.62,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1366.37,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 55.0,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1288.59,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 75.0,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1287.33,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 75.0,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1366.37,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 790.22,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1305.76,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 50.0,
+        "type": "Nota Fiscal",
+        "url": null
+      }
+    ],
     "deputy_id": 220590,
     "deputy_name": "Coronel Ulysses",
     "party": "UNIÃO"
   },
   {
     "total_spent": 75711.59,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 6350.0,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7549229"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 188.94,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7530631"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 224.39,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7530621"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 201.06,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7530644"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 233.87,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7530636"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 86.41,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7530662"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 207.86,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7530627"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 254.97,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7534802"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 258.8,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7530647"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 42600.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3586/2023/7530597.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 9000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3586/2023/7546509.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 9000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3586/2023/7533650.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 240.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3586/2023/7532127.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1366.37,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1383.09,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1383.09,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1366.37,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1366.37,
+        "type": "Nota Fiscal",
+        "url": null
+      }
+    ],
     "deputy_id": 220574,
     "deputy_name": "Cabo Gilberto Silva",
     "party": "PL"
   },
   {
     "total_spent": 70106.62,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 63000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3398/2023/7527736.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 655.0,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3398/2023/7542953.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 3300.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3398/2023/7542853.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1823.29,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1187.79,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 55.0,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 30.54,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 55.0,
+        "type": "Nota Fiscal",
+        "url": null
+      }
+    ],
     "deputy_id": 204570,
     "deputy_name": "Pastor Gil",
     "party": "PL"
   },
   {
     "total_spent": 69686.67,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 156.48,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7521146"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 315.01,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7535459"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 336.38,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7531083"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 256.38,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7535429"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 339.85,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7527948"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 380.02,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7527860"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 346.1,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7531019"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 355.23,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7527889"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 209.44,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7531103"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 212.46,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7521181"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 275.45,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7520997"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 267.03,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7527932"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 332.01,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7535409"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 345.45,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7531064"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 196.68,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7521152"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 260.03,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7527811"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 17000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7530835.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 12500.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7530795.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 19900.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7530760.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 15000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7536247.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 12.48,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7527873"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 27.5,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7527867"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 14.19,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7527961"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 43.0,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7525058"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 150.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7525067.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 350.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7527763.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 5.1,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7527679.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 5.1,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7531012.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 5.1,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7527664.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 5.1,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7535279.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 6.9,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7527596.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 5.1,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7527646.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 5.1,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7527703.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 6.9,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7521195.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 6.9,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7530985.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 9.0,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7521173.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 6.9,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7527498.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 7.4,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7521023.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 5.1,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7530962.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 6.9,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7527717.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 6.9,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7530972.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 6.9,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7535253.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 5.1,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3638/2023/7527508.pdf"
+      }
+    ],
     "deputy_id": 220572,
     "deputy_name": "Marussa Boldrin",
     "party": "MDB"
   },
   {
     "total_spent": 68937.47,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 8000.0,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3648/2023/7575711.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 6146.87,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7541098"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 359.6,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7556349"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 3593.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3648/2023/7542494.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3648/2023/7543667.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 29125.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3648/2023/7535818.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 5500.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3648/2023/7541140.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 2500.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3648/2023/7548183.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 6356.5,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3648/2023/7548061.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 6356.5,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3648/2023/7552477.pdf"
+      }
+    ],
     "deputy_id": 220540,
     "deputy_name": "Duda Ramos",
     "party": "MDB"
   },
   {
     "total_spent": 68596.86,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 39800.3,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7520283"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 611.8,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/1651/2023/7533990.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 2205.2,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/1651/2023/7533974.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 19000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/1651/2023/7524528.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1496.52,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1366.37,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1388.83,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1293.15,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1361.47,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 73.22,
+        "type": "Nota Fiscal",
+        "url": null
+      }
+    ],
     "deputy_id": 74383,
     "deputy_name": "Giacobo",
     "party": "PL"
   },
   {
     "total_spent": 64745.98,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 392.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3065/2023/7534183.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 8072.38,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7525073"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1300.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3065/2023/7532175.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3065/2023/7530187.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1427.03,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 75.0,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7528795"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 27.95,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7532054"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 68.67,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7540874"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 31500.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3065/2023/7540931.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 12700.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3065/2023/7534810.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 448.48,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3065/2023/7538729.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1932.71,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 576.42,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": -21.84,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": -1388.21,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1366.37,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 917.08,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1366.37,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1388.21,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1366.37,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": 1597.36,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 4,
+        "total": -1366.37,
+        "type": "Nota Fiscal",
+        "url": null
+      }
+    ],
     "deputy_id": 178954,
     "deputy_name": "Lucio Mosquini",
     "party": "MDB"

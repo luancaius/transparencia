@@ -1,60 +1,290 @@
 [
   {
     "total_spent": 55402.94,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 3802.94,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3238/2023/7501135.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 39600.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3238/2023/7511330.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 12000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3238/2023/7494643.pdf"
+      }
+    ],
     "deputy_id": 204419,
     "deputy_name": "Glaustin da Fokus",
     "party": "PODE"
   },
   {
     "total_spent": 35000.0,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 20000.0,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3363/2023/7499215.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 15000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3363/2023/7495385.pdf"
+      }
+    ],
+    "deputy_id": 204390,
+    "deputy_name": "Professor Alcides",
+    "party": "PL"
+  },
+  {
+    "total_spent": 35000.0,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 30000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3059/2023/7499125.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 5000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3059/2023/7492620.pdf"
+      }
+    ],
     "deputy_id": 137070,
     "deputy_name": "Vicentinho Júnior",
     "party": "PP"
   },
   {
     "total_spent": 35000.0,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 25000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3308/2023/7509529.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 10000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3308/2023/7506338.pdf"
+      }
+    ],
     "deputy_id": 204379,
     "deputy_name": "Acácio Favacho",
     "party": "MDB"
   },
   {
-    "total_spent": 35000.0,
-    "deputy_id": 204390,
-    "deputy_name": "Professor Alcides",
-    "party": "PL"
-  },
-  {
     "total_spent": 34320.0,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 18220.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3084/2023/7494832.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 16100.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3084/2023/7495728.pdf"
+      }
+    ],
     "deputy_id": 178843,
     "deputy_name": "Marx Beltrão",
     "party": "PP"
   },
   {
     "total_spent": 31500.0,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 1500.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/2271/2023/7499782.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 15000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/2271/2023/7497235.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 8000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/2271/2023/7498526.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 7000.0,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/2271/2023/7499646.pdf"
+      }
+    ],
     "deputy_id": 160674,
     "deputy_name": "Hugo Motta",
     "party": "REPUBLICANOS"
   },
   {
     "total_spent": 30000.0,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 10000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3319/2023/7493982.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 20000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3319/2023/7493979.pdf"
+      }
+    ],
     "deputy_id": 204498,
     "deputy_name": "Olival Marques",
     "party": "MDB"
   },
   {
     "total_spent": 28463.5,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 14073.5,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3090/2023/7532352.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 9500.0,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3090/2023/7503066.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 4890.0,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3090/2023/7518464.pdf"
+      }
+    ],
     "deputy_id": 92699,
     "deputy_name": "Fernando Monteiro",
     "party": "PP"
   },
   {
     "total_spent": 27548.0,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 10000.0,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/1786/2023/7496111.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 1049.88,
+        "type": "Recibos/Outros",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/1786/2023/7498186.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 16000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/1786/2023/7499589.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 236.62,
+        "type": "Nota Fiscal",
+        "url": null
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 261.5,
+        "type": "Nota Fiscal",
+        "url": null
+      }
+    ],
     "deputy_id": 141391,
     "deputy_name": "Arnaldo Jardim",
     "party": "CIDADANIA"
   },
   {
     "total_spent": 26200.32,
+    "expenses": [
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 6105.16,
+        "type": "Nota Fiscal Eletrônica",
+        "url": "http://www.camara.leg.br/cota-parlamentar/nota-fiscal-eletronica?ideDocumentoFiscal=7494107"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 10400.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3261/2023/7496281.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 249.33,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3261/2023/7528059.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 9000.0,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3261/2023/7496410.pdf"
+      },
+      {
+        "year": 2023,
+        "month": 1,
+        "total": 445.83,
+        "type": "Nota Fiscal",
+        "url": "https://www.camara.leg.br/cota-parlamentar/documentos/publ/3261/2023/7499507.pdf"
+      }
+    ],
     "deputy_id": 204559,
     "deputy_name": "Zé Neto",
     "party": "PT"
