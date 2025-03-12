@@ -117,7 +117,8 @@
     ],
     "deputy_id": 160666,
     "deputy_name": "Félix Mendonça Júnior",
-    "party": "PDT"
+    "party": "PDT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160666.jpg"
   },
   {
     "total_spent": 81214.16,
@@ -545,7 +546,8 @@
     ],
     "deputy_id": 178927,
     "deputy_name": "Aliel Machado",
-    "party": "PV"
+    "party": "PV",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178927.jpg"
   },
   {
     "total_spent": 76066.49,
@@ -707,7 +709,8 @@
     ],
     "deputy_id": 220584,
     "deputy_name": "Murilo Galdino",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220584.jpg"
   },
   {
     "total_spent": 75282.37,
@@ -1219,7 +1222,8 @@
     ],
     "deputy_id": 204534,
     "deputy_name": "Tabata Amaral",
-    "party": "PSB"
+    "party": "PSB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204534.jpg"
   },
   {
     "total_spent": 74257.95,
@@ -1346,7 +1350,8 @@
     ],
     "deputy_id": 74090,
     "deputy_name": "Átila Lins",
-    "party": "PSD"
+    "party": "PSD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/74090.jpg"
   },
   {
     "total_spent": 71865.41,
@@ -2054,7 +2059,8 @@
     ],
     "deputy_id": 178929,
     "deputy_name": "Diego Garcia",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178929.jpg"
   },
   {
     "total_spent": 71034.12,
@@ -2440,7 +2446,8 @@
     ],
     "deputy_id": 178966,
     "deputy_name": "Geovania de Sá",
-    "party": "PSDB"
+    "party": "PSDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178966.jpg"
   },
   {
     "total_spent": 70950.56,
@@ -2812,7 +2819,8 @@
     ],
     "deputy_id": 220595,
     "deputy_name": "Coronel Fernanda",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220595.jpg"
   },
   {
     "total_spent": 70579.59,
@@ -2890,7 +2898,8 @@
     ],
     "deputy_id": 178908,
     "deputy_name": "Delegado Éder Mauro",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178908.jpg"
   },
   {
     "total_spent": 69380.41,
@@ -3164,6 +3173,7 @@
     ],
     "deputy_id": 220572,
     "deputy_name": "Marussa Boldrin",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220572.jpg"
   }
 ]

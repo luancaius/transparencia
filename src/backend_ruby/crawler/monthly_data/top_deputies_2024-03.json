@@ -278,7 +278,8 @@
     ],
     "deputy_id": 204549,
     "deputy_name": "AJ Albuquerque",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204549.jpg"
   },
   {
     "total_spent": 69770.16,
@@ -580,7 +581,8 @@
     ],
     "deputy_id": 220609,
     "deputy_name": "Maurício Carvalho",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220609.jpg"
   },
   {
     "total_spent": 68373.13,
@@ -896,7 +898,8 @@
     ],
     "deputy_id": 220527,
     "deputy_name": "Jack Rocha",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220527.jpg"
   },
   {
     "total_spent": 67763.62,
@@ -1191,7 +1194,8 @@
     ],
     "deputy_id": 141459,
     "deputy_name": "João Maia",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141459.jpg"
   },
   {
     "total_spent": 67353.98,
@@ -1633,7 +1637,8 @@
     ],
     "deputy_id": 204479,
     "deputy_name": "Nicoletti",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204479.jpg"
   },
   {
     "total_spent": 67219.4,
@@ -1998,7 +2003,8 @@
     ],
     "deputy_id": 220529,
     "deputy_name": "Gilson Daniel",
-    "party": "PODE"
+    "party": "PODE",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220529.jpg"
   },
   {
     "total_spent": 66898.71,
@@ -2090,7 +2096,8 @@
     ],
     "deputy_id": 160591,
     "deputy_name": "Vinicius Gurgel",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160591.jpg"
   },
   {
     "total_spent": 66579.64,
@@ -2252,7 +2259,8 @@
     ],
     "deputy_id": 220697,
     "deputy_name": "Jadyel Alencar",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220697.jpg"
   },
   {
     "total_spent": 66555.45,
@@ -2330,7 +2338,8 @@
     ],
     "deputy_id": 220540,
     "deputy_name": "Duda Ramos",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg"
   },
   {
     "total_spent": 66506.46,
@@ -2709,6 +2718,7 @@
     ],
     "deputy_id": 220666,
     "deputy_name": "Coronel Meira",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220666.jpg"
   }
 ]

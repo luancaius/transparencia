@@ -257,7 +257,8 @@
     ],
     "deputy_id": 141458,
     "deputy_name": "João Carlos Bacelar",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141458.jpg"
   },
   {
     "total_spent": 104853.89,
@@ -867,7 +868,8 @@
     ],
     "deputy_id": 73486,
     "deputy_name": "Pompeo de Mattos",
-    "party": "PDT"
+    "party": "PDT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/73486.jpg"
   },
   {
     "total_spent": 92606.93,
@@ -1288,7 +1290,8 @@
     ],
     "deputy_id": 160600,
     "deputy_name": "Arthur Oliveira Maia",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160600.jpg"
   },
   {
     "total_spent": 91677.73,
@@ -1429,7 +1432,8 @@
     ],
     "deputy_id": 220540,
     "deputy_name": "Duda Ramos",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg"
   },
   {
     "total_spent": 87622.8,
@@ -1507,7 +1511,8 @@
     ],
     "deputy_id": 220675,
     "deputy_name": "Antônio Doido",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220675.jpg"
   },
   {
     "total_spent": 85175.82,
@@ -1564,7 +1569,8 @@
     ],
     "deputy_id": 141408,
     "deputy_name": "Cleber Verde",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141408.jpg"
   },
   {
     "total_spent": 78644.12,
@@ -1670,7 +1676,8 @@
     ],
     "deputy_id": 74467,
     "deputy_name": "Damião Feliciano",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/74467.jpg"
   },
   {
     "total_spent": 68055.77,
@@ -1755,7 +1762,8 @@
     ],
     "deputy_id": 141464,
     "deputy_name": "José Airton Félix Cirilo",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141464.jpg"
   },
   {
     "total_spent": 67183.23,
@@ -2176,7 +2184,8 @@
     ],
     "deputy_id": 220667,
     "deputy_name": "Pedro Campos",
-    "party": "PSB"
+    "party": "PSB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220667.jpg"
   },
   {
     "total_spent": 65172.48,
@@ -2331,6 +2340,7 @@
     ],
     "deputy_id": 160518,
     "deputy_name": "Weliton Prado",
-    "party": "SOLIDARIEDADE"
+    "party": "SOLIDARIEDADE",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160518.jpg"
   }
 ]

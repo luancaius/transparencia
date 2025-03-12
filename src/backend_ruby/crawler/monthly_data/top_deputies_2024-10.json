@@ -187,7 +187,8 @@
     ],
     "deputy_id": 220582,
     "deputy_name": "Daniel Barbosa",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220582.jpg"
   },
   {
     "total_spent": 148889.81,
@@ -328,7 +329,8 @@
     ],
     "deputy_id": 220544,
     "deputy_name": "Antonio Andrade",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220544.jpg"
   },
   {
     "total_spent": 132840.01,
@@ -385,7 +387,8 @@
     ],
     "deputy_id": 74356,
     "deputy_name": "Silas Câmara",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/74356.jpg"
   },
   {
     "total_spent": 123414.99,
@@ -561,7 +564,8 @@
     ],
     "deputy_id": 204491,
     "deputy_name": "Gilberto Abramo",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204491.jpg"
   },
   {
     "total_spent": 98972.95,
@@ -898,7 +902,8 @@
     ],
     "deputy_id": 204508,
     "deputy_name": "Igor Timo",
-    "party": "PSD"
+    "party": "PSD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204508.jpg"
   },
   {
     "total_spent": 89643.42,
@@ -962,7 +967,8 @@
     ],
     "deputy_id": 160601,
     "deputy_name": "Pr. Marco Feliciano",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160601.jpg"
   },
   {
     "total_spent": 86090.16,
@@ -1061,7 +1067,8 @@
     ],
     "deputy_id": 204482,
     "deputy_name": "Euclydes Pettersen",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204482.jpg"
   },
   {
     "total_spent": 79482.2,
@@ -1139,7 +1146,8 @@
     ],
     "deputy_id": 123756,
     "deputy_name": "Antônia Lúcia",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/123756.jpg"
   },
   {
     "total_spent": 72420.7,
@@ -1364,7 +1372,8 @@
     ],
     "deputy_id": 204398,
     "deputy_name": "Felipe Francischini",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204398.jpg"
   },
   {
     "total_spent": 71721.53,
@@ -1673,6 +1682,7 @@
     ],
     "deputy_id": 141459,
     "deputy_name": "João Maia",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141459.jpg"
   }
 ]

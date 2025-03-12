@@ -208,7 +208,8 @@
     ],
     "deputy_id": 220664,
     "deputy_name": "Guilherme Uchoa",
-    "party": "PSB"
+    "party": "PSB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220664.jpg"
   },
   {
     "total_spent": 226959.35,
@@ -321,7 +322,8 @@
     ],
     "deputy_id": 220540,
     "deputy_name": "Duda Ramos",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg"
   },
   {
     "total_spent": 175193.36,
@@ -392,7 +394,8 @@
     ],
     "deputy_id": 220647,
     "deputy_name": "Mauricio Neves",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220647.jpg"
   },
   {
     "total_spent": 161038.78,
@@ -498,7 +501,8 @@
     ],
     "deputy_id": 220621,
     "deputy_name": "Sargento Gonçalves",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220621.jpg"
   },
   {
     "total_spent": 156960.13,
@@ -520,7 +524,8 @@
     ],
     "deputy_id": 204390,
     "deputy_name": "Professor Alcides",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204390.jpg"
   },
   {
     "total_spent": 156527.54,
@@ -731,7 +736,8 @@
     ],
     "deputy_id": 74554,
     "deputy_name": "José Rocha",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/74554.jpg"
   },
   {
     "total_spent": 155597.58,
@@ -879,7 +885,8 @@
     ],
     "deputy_id": 215043,
     "deputy_name": "Josivaldo JP",
-    "party": "PSD"
+    "party": "PSD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/215043.jpg"
   },
   {
     "total_spent": 152231.55,
@@ -1006,7 +1013,8 @@
     ],
     "deputy_id": 204408,
     "deputy_name": "Gustinho Ribeiro",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204408.jpg"
   },
   {
     "total_spent": 150960.28,
@@ -1301,7 +1309,8 @@
     ],
     "deputy_id": 178881,
     "deputy_name": "Aluisio Mendes",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178881.jpg"
   },
   {
     "total_spent": 150321.25,
@@ -1400,6 +1409,7 @@
     ],
     "deputy_id": 141408,
     "deputy_name": "Cleber Verde",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141408.jpg"
   }
 ]

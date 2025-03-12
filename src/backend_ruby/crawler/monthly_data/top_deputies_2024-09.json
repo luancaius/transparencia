@@ -96,7 +96,8 @@
     ],
     "deputy_id": 150418,
     "deputy_name": "Márcio Marinho",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/150418.jpg"
   },
   {
     "total_spent": 101347.97,
@@ -146,7 +147,8 @@
     ],
     "deputy_id": 220591,
     "deputy_name": "Meire Serafim",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220591.jpg"
   },
   {
     "total_spent": 97321.09,
@@ -245,7 +247,8 @@
     ],
     "deputy_id": 160518,
     "deputy_name": "Weliton Prado",
-    "party": "SOLIDARIEDADE"
+    "party": "SOLIDARIEDADE",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160518.jpg"
   },
   {
     "total_spent": 89619.82,
@@ -470,7 +473,8 @@
     ],
     "deputy_id": 141411,
     "deputy_name": "Dagoberto Nogueira",
-    "party": "PSDB"
+    "party": "PSDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141411.jpg"
   },
   {
     "total_spent": 82369.72,
@@ -597,7 +601,8 @@
     ],
     "deputy_id": 74090,
     "deputy_name": "Átila Lins",
-    "party": "PSD"
+    "party": "PSD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/74090.jpg"
   },
   {
     "total_spent": 74748.79,
@@ -906,7 +911,8 @@
     ],
     "deputy_id": 204539,
     "deputy_name": "Hercílio Coelho Diniz",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204539.jpg"
   },
   {
     "total_spent": 74404.06,
@@ -1103,7 +1109,8 @@
     ],
     "deputy_id": 141458,
     "deputy_name": "João Carlos Bacelar",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141458.jpg"
   },
   {
     "total_spent": 71511.58,
@@ -1181,7 +1188,8 @@
     ],
     "deputy_id": 220671,
     "deputy_name": "Dilvanda Faro",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220671.jpg"
   },
   {
     "total_spent": 71168.16,
@@ -1371,7 +1379,8 @@
     ],
     "deputy_id": 220590,
     "deputy_name": "Coronel Ulysses",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220590.jpg"
   },
   {
     "total_spent": 65156.96,
@@ -1568,6 +1577,7 @@
     ],
     "deputy_id": 178934,
     "deputy_name": "Toninho Wandscheer",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178934.jpg"
   }
 ]

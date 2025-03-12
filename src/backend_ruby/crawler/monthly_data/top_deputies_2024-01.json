@@ -75,7 +75,8 @@
     ],
     "deputy_id": 160591,
     "deputy_name": "Vinicius Gurgel",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160591.jpg"
   },
   {
     "total_spent": 82849.1,
@@ -209,7 +210,8 @@
     ],
     "deputy_id": 143632,
     "deputy_name": "Domingos Neto",
-    "party": "PSD"
+    "party": "PSD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/143632.jpg"
   },
   {
     "total_spent": 72000.74,
@@ -364,7 +366,8 @@
     ],
     "deputy_id": 178895,
     "deputy_name": "Misael Varella",
-    "party": "PSD"
+    "party": "PSD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178895.jpg"
   },
   {
     "total_spent": 71477.49,
@@ -708,7 +711,8 @@
     ],
     "deputy_id": 220695,
     "deputy_name": "Rogéria Santos",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220695.jpg"
   },
   {
     "total_spent": 70616.14,
@@ -954,7 +958,8 @@
     ],
     "deputy_id": 220610,
     "deputy_name": "Dr. Fernando Máximo",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220610.jpg"
   },
   {
     "total_spent": 69198.71,
@@ -1242,7 +1247,8 @@
     ],
     "deputy_id": 220599,
     "deputy_name": "Marcelo Crivella",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220599.jpg"
   },
   {
     "total_spent": 68153.81,
@@ -1334,7 +1340,8 @@
     ],
     "deputy_id": 215043,
     "deputy_name": "Josivaldo JP",
-    "party": "PSD"
+    "party": "PSD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/215043.jpg"
   },
   {
     "total_spent": 67191.46,
@@ -1685,7 +1692,8 @@
     ],
     "deputy_id": 226708,
     "deputy_name": "Allan Garcês",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/226708.jpg"
   },
   {
     "total_spent": 66461.58,
@@ -1896,7 +1904,8 @@
     ],
     "deputy_id": 220590,
     "deputy_name": "Coronel Ulysses",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220590.jpg"
   },
   {
     "total_spent": 64793.62,
@@ -2198,6 +2207,7 @@
     ],
     "deputy_id": 220651,
     "deputy_name": "Simone Marquetto",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220651.jpg"
   }
 ]

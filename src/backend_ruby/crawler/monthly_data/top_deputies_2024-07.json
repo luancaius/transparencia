@@ -271,7 +271,8 @@
     ],
     "deputy_id": 204539,
     "deputy_name": "Hercílio Coelho Diniz",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204539.jpg"
   },
   {
     "total_spent": 85037.21,
@@ -762,7 +763,8 @@
     ],
     "deputy_id": 160556,
     "deputy_name": "Padre João",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160556.jpg"
   },
   {
     "total_spent": 82045.84,
@@ -966,7 +968,8 @@
     ],
     "deputy_id": 178876,
     "deputy_name": "Célio Silveira",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178876.jpg"
   },
   {
     "total_spent": 76278.97,
@@ -1261,7 +1264,8 @@
     ],
     "deputy_id": 204398,
     "deputy_name": "Felipe Francischini",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204398.jpg"
   },
   {
     "total_spent": 75701.07,
@@ -1913,7 +1917,8 @@
     ],
     "deputy_id": 141391,
     "deputy_name": "Arnaldo Jardim",
-    "party": "CIDADANIA"
+    "party": "CIDADANIA",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141391.jpg"
   },
   {
     "total_spent": 75199.58,
@@ -2061,7 +2066,8 @@
     ],
     "deputy_id": 141464,
     "deputy_name": "José Airton Félix Cirilo",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141464.jpg"
   },
   {
     "total_spent": 74709.89,
@@ -2167,7 +2173,8 @@
     ],
     "deputy_id": 220675,
     "deputy_name": "Antônio Doido",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220675.jpg"
   },
   {
     "total_spent": 74122.46,
@@ -2560,7 +2567,8 @@
     ],
     "deputy_id": 220579,
     "deputy_name": "Silvia Waiãpi",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220579.jpg"
   },
   {
     "total_spent": 73786.25,
@@ -2701,7 +2709,8 @@
     ],
     "deputy_id": 220592,
     "deputy_name": "Zezinho Barbary",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220592.jpg"
   },
   {
     "total_spent": 71466.3,
@@ -2877,6 +2886,7 @@
     ],
     "deputy_id": 92776,
     "deputy_name": "Stefano Aguiar",
-    "party": "PSD"
+    "party": "PSD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/92776.jpg"
   }
 ]

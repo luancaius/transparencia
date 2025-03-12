@@ -60,6 +60,7 @@ class MonthlyTopDeputiesFileGeneratorService
         "deputy_id"   => "$_id",
         "deputy_name" => "$deputy_info.name",
         "party"       => "$deputy_info.sigla_partido",
+        "avatar"      => "$deputy_info.url_foto",
         "total_spent" => 1,
         "expenses"    => 1,
         "_id"         => 0

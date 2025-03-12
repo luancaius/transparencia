@@ -229,7 +229,8 @@
     ],
     "deputy_id": 220584,
     "deputy_name": "Murilo Galdino",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220584.jpg"
   },
   {
     "total_spent": 135054.22,
@@ -517,7 +518,8 @@
     ],
     "deputy_id": 74075,
     "deputy_name": "Elcione Barbalho",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/74075.jpg"
   },
   {
     "total_spent": 117231.06,
@@ -833,7 +835,8 @@
     ],
     "deputy_id": 204534,
     "deputy_name": "Tabata Amaral",
-    "party": "PSB"
+    "party": "PSB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204534.jpg"
   },
   {
     "total_spent": 106997.4,
@@ -1093,7 +1096,8 @@
     ],
     "deputy_id": 160635,
     "deputy_name": "Ruy Carneiro",
-    "party": "PODE"
+    "party": "PODE",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160635.jpg"
   },
   {
     "total_spent": 99474.6,
@@ -1255,7 +1259,8 @@
     ],
     "deputy_id": 204497,
     "deputy_name": "Júnior Ferrari",
-    "party": "PSD"
+    "party": "PSD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204497.jpg"
   },
   {
     "total_spent": 97909.99,
@@ -1396,7 +1401,8 @@
     ],
     "deputy_id": 220629,
     "deputy_name": "Dandara",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220629.jpg"
   },
   {
     "total_spent": 95645.05,
@@ -1488,7 +1494,8 @@
     ],
     "deputy_id": 220602,
     "deputy_name": "Dimas Gadelha",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220602.jpg"
   },
   {
     "total_spent": 91131.02,
@@ -1692,7 +1699,8 @@
     ],
     "deputy_id": 178954,
     "deputy_name": "Lucio Mosquini",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178954.jpg"
   },
   {
     "total_spent": 87993.01,
@@ -2092,7 +2100,8 @@
     ],
     "deputy_id": 220548,
     "deputy_name": "Camila Jara",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220548.jpg"
   },
   {
     "total_spent": 87124.65,
@@ -2261,6 +2270,7 @@
     ],
     "deputy_id": 160512,
     "deputy_name": "Aureo Ribeiro",
-    "party": "SOLIDARIEDADE"
+    "party": "SOLIDARIEDADE",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160512.jpg"
   }
 ]

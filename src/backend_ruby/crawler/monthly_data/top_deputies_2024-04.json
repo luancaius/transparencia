@@ -418,7 +418,8 @@
     ],
     "deputy_id": 141485,
     "deputy_name": "Luiz Carlos Busato",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141485.jpg"
   },
   {
     "total_spent": 100960.3,
@@ -503,7 +504,8 @@
     ],
     "deputy_id": 141408,
     "deputy_name": "Cleber Verde",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141408.jpg"
   },
   {
     "total_spent": 93355.96,
@@ -637,7 +639,8 @@
     ],
     "deputy_id": 220675,
     "deputy_name": "Antônio Doido",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220675.jpg"
   },
   {
     "total_spent": 86303.06,
@@ -967,7 +970,8 @@
     ],
     "deputy_id": 220556,
     "deputy_name": "Ana Paula Lima",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220556.jpg"
   },
   {
     "total_spent": 81511.63,
@@ -1129,7 +1133,8 @@
     ],
     "deputy_id": 204550,
     "deputy_name": "Júnior Mano",
-    "party": "PSB"
+    "party": "PSB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204550.jpg"
   },
   {
     "total_spent": 80310.0,
@@ -1151,7 +1156,8 @@
     ],
     "deputy_id": 204419,
     "deputy_name": "Glaustin da Fokus",
-    "party": "PODE"
+    "party": "PODE",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204419.jpg"
   },
   {
     "total_spent": 77082.07,
@@ -1292,7 +1298,8 @@
     ],
     "deputy_id": 220674,
     "deputy_name": "Dra. Alessandra Haber",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220674.jpg"
   },
   {
     "total_spent": 75354.21,
@@ -1440,7 +1447,8 @@
     ],
     "deputy_id": 204495,
     "deputy_name": "Airton Faleiro",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204495.jpg"
   },
   {
     "total_spent": 75212.12,
@@ -1812,7 +1820,8 @@
     ],
     "deputy_id": 204364,
     "deputy_name": "Eli Borges",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204364.jpg"
   },
   {
     "total_spent": 74315.18,
@@ -2366,6 +2375,7 @@
     ],
     "deputy_id": 204479,
     "deputy_name": "Nicoletti",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204479.jpg"
   }
 ]
