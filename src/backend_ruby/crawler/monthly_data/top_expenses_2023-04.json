@@ -20,7 +20,8 @@
     "cod_lote": 1924889,
     "parcela": 0,
     "deputy_name": "Pastor Gil",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204570.jpg"
   },
   {
     "_id": "67b192480acc9fc1f97316bd",
@@ -43,7 +44,8 @@
     "cod_lote": 1927901,
     "parcela": 0,
     "deputy_name": "Cleber Verde",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/141408.jpg"
   },
   {
     "_id": "67b182200acc9fc1f972c51b",
@@ -66,7 +68,8 @@
     "cod_lote": 1923088,
     "parcela": 0,
     "deputy_name": "Antônia Lúcia",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/123756.jpg"
   },
   {
     "_id": "67b260680acc9fc1f973214b",
@@ -89,7 +92,8 @@
     "cod_lote": 1927147,
     "parcela": 0,
     "deputy_name": "Coronel Ulysses",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220590.jpg"
   },
   {
     "_id": "67b182200acc9fc1f972c51c",
@@ -112,7 +116,8 @@
     "cod_lote": 1935599,
     "parcela": 0,
     "deputy_name": "Antônia Lúcia",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/123756.jpg"
   },
   {
     "_id": "67b189b90acc9fc1f972ebc0",
@@ -135,7 +140,8 @@
     "cod_lote": 1926318,
     "parcela": 0,
     "deputy_name": "Cabo Gilberto Silva",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220574.jpg"
   },
   {
     "_id": "67b276d20acc9fc1f973863e",
@@ -158,7 +164,8 @@
     "cod_lote": 1927496,
     "parcela": 0,
     "deputy_name": "Eunício Oliveira",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74454.jpg"
   },
   {
     "_id": "67b283f80acc9fc1f973b3ea",
@@ -181,7 +188,8 @@
     "cod_lote": 1920738,
     "parcela": 0,
     "deputy_name": "Giacobo",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74383.jpg"
   },
   {
     "_id": "67b374000acc9fc1f974b5ac",
@@ -204,7 +212,8 @@
     "cod_lote": 1927682,
     "parcela": 0,
     "deputy_name": "Paulo Litro",
-    "deputy_party": "PSD"
+    "deputy_party": "PSD",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220685.jpg"
   },
   {
     "_id": "67b263760acc9fc1f9732f6b",
@@ -227,6 +236,7 @@
     "cod_lote": 1928815,
     "parcela": 0,
     "deputy_name": "Daniel Barbosa",
-    "deputy_party": "PP"
+    "deputy_party": "PP",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220582.jpg"
   }
 ]

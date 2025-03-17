@@ -257,7 +257,8 @@
     ],
     "deputy_id": 141459,
     "deputy_name": "João Maia",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141459.jpg"
   },
   {
     "total_spent": 68269.97,
@@ -517,7 +518,8 @@
     ],
     "deputy_id": 74044,
     "deputy_name": "Wilson Santiago",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/74044.jpg"
   },
   {
     "total_spent": 63980.69,
@@ -721,7 +723,8 @@
     ],
     "deputy_id": 204498,
     "deputy_name": "Olival Marques",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204498.jpg"
   },
   {
     "total_spent": 59023.52,
@@ -974,7 +977,8 @@
     ],
     "deputy_id": 220586,
     "deputy_name": "Rafael Brito",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220586.jpg"
   },
   {
     "total_spent": 56955.0,
@@ -996,7 +1000,8 @@
     ],
     "deputy_id": 204419,
     "deputy_name": "Glaustin da Fokus",
-    "party": "PODE"
+    "party": "PODE",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204419.jpg"
   },
   {
     "total_spent": 55326.47,
@@ -1067,7 +1072,8 @@
     ],
     "deputy_id": 178908,
     "deputy_name": "Delegado Éder Mauro",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178908.jpg"
   },
   {
     "total_spent": 53315.23,
@@ -1313,7 +1319,8 @@
     ],
     "deputy_id": 204473,
     "deputy_name": "General Girão",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204473.jpg"
   },
   {
     "total_spent": 53077.61,
@@ -1461,7 +1468,8 @@
     ],
     "deputy_id": 220696,
     "deputy_name": "Ivoneide Caetano",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220696.jpg"
   },
   {
     "total_spent": 52590.15,
@@ -1609,7 +1617,8 @@
     ],
     "deputy_id": 178843,
     "deputy_name": "Marx Beltrão",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178843.jpg"
   },
   {
     "total_spent": 51808.57,
@@ -1659,6 +1668,7 @@
     ],
     "deputy_id": 204390,
     "deputy_name": "Professor Alcides",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204390.jpg"
   }
 ]

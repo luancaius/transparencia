@@ -145,7 +145,8 @@
     ],
     "deputy_id": 160601,
     "deputy_name": "Pr. Marco Feliciano",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160601.jpg"
   },
   {
     "total_spent": 143430.14,
@@ -209,7 +210,8 @@
     ],
     "deputy_id": 73579,
     "deputy_name": "Alberto Fraga",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/73579.jpg"
   },
   {
     "total_spent": 110734.76,
@@ -329,7 +331,8 @@
     ],
     "deputy_id": 160518,
     "deputy_name": "Weliton Prado",
-    "party": "SOLIDARIEDADE"
+    "party": "SOLIDARIEDADE",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160518.jpg"
   },
   {
     "total_spent": 101536.0,
@@ -582,7 +585,8 @@
     ],
     "deputy_id": 220600,
     "deputy_name": "Lebrão",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220600.jpg"
   },
   {
     "total_spent": 99605.24,
@@ -660,7 +664,8 @@
     ],
     "deputy_id": 141408,
     "deputy_name": "Cleber Verde",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141408.jpg"
   },
   {
     "total_spent": 95758.34,
@@ -745,7 +750,8 @@
     ],
     "deputy_id": 204570,
     "deputy_name": "Pastor Gil",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204570.jpg"
   },
   {
     "total_spent": 88608.36,
@@ -1026,7 +1032,8 @@
     ],
     "deputy_id": 220538,
     "deputy_name": "Albuquerque",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220538.jpg"
   },
   {
     "total_spent": 88457.81,
@@ -1377,7 +1384,8 @@
     ],
     "deputy_id": 73486,
     "deputy_name": "Pompeo de Mattos",
-    "party": "PDT"
+    "party": "PDT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/73486.jpg"
   },
   {
     "total_spent": 81755.25,
@@ -1532,7 +1540,8 @@
     ],
     "deputy_id": 220574,
     "deputy_name": "Cabo Gilberto Silva",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220574.jpg"
   },
   {
     "total_spent": 81585.28,
@@ -1743,6 +1752,7 @@
     ],
     "deputy_id": 204379,
     "deputy_name": "Acácio Favacho",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204379.jpg"
   }
 ]

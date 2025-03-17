@@ -20,7 +20,8 @@
     "cod_lote": 2073026,
     "parcela": 0,
     "deputy_name": "Antônio Doido",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220675.jpg"
   },
   {
     "_id": "67b0e1e385b7286f7725fa9f",
@@ -43,7 +44,8 @@
     "cod_lote": 2071312,
     "parcela": 0,
     "deputy_name": "Cleber Verde",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/141408.jpg"
   },
   {
     "_id": "67b10be185b7286f77265b3f",
@@ -66,7 +68,8 @@
     "cod_lote": 2068300,
     "parcela": 0,
     "deputy_name": "Duda Ramos",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg"
   },
   {
     "_id": "67b12ad885b7286f7726d92d",
@@ -89,7 +92,8 @@
     "cod_lote": 2077655,
     "parcela": 0,
     "deputy_name": "João Carlos Bacelar",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/141458.jpg"
   },
   {
     "_id": "67b1598785b7286f7727c2c4",
@@ -112,7 +116,8 @@
     "cod_lote": 2073614,
     "parcela": 0,
     "deputy_name": "Pompeo de Mattos",
-    "deputy_party": "PDT"
+    "deputy_party": "PDT",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/73486.jpg"
   },
   {
     "_id": "67b0e37185b7286f77260f14",
@@ -135,7 +140,8 @@
     "cod_lote": 2069195,
     "parcela": 0,
     "deputy_name": "Damião Feliciano",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74467.jpg"
   },
   {
     "_id": "67b12fc585b7286f772705b5",
@@ -158,7 +164,8 @@
     "cod_lote": 2074070,
     "parcela": 0,
     "deputy_name": "Júnior Ferrari",
-    "deputy_party": "PSD"
+    "deputy_party": "PSD",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204497.jpg"
   },
   {
     "_id": "67b123a085b7286f77269ece",
@@ -181,7 +188,8 @@
     "cod_lote": 2063116,
     "parcela": 0,
     "deputy_name": "Giacobo",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74383.jpg"
   },
   {
     "_id": "67b0385985b7286f77257d20",
@@ -204,7 +212,8 @@
     "cod_lote": 2072673,
     "parcela": 0,
     "deputy_name": "Alberto Fraga",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/73579.jpg"
   },
   {
     "_id": "67b1252a85b7286f7726ac53",
@@ -227,6 +236,7 @@
     "cod_lote": 2068881,
     "parcela": 0,
     "deputy_name": "Glaustin da Fokus",
-    "deputy_party": "PODE"
+    "deputy_party": "PODE",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204419.jpg"
   }
 ]

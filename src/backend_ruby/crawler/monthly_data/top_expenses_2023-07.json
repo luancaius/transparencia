@@ -20,7 +20,8 @@
     "cod_lote": 1951434,
     "parcela": 0,
     "deputy_name": "Coronel Ulysses",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220590.jpg"
   },
   {
     "_id": "67b284000acc9fc1f973b401",
@@ -43,7 +44,8 @@
     "cod_lote": 1948179,
     "parcela": 0,
     "deputy_name": "Giacobo",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74383.jpg"
   },
   {
     "_id": "67b290ad0acc9fc1f973e759",
@@ -66,7 +68,8 @@
     "cod_lote": 1949674,
     "parcela": 0,
     "deputy_name": "João Carlos Bacelar",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/141458.jpg"
   },
   {
     "_id": "67b265f50acc9fc1f9733af7",
@@ -89,7 +92,8 @@
     "cod_lote": 1959792,
     "parcela": 0,
     "deputy_name": "Dayany Bittencourt",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220659.jpg"
   },
   {
     "_id": "67b27cab0acc9fc1f9739f3e",
@@ -112,7 +116,8 @@
     "cod_lote": 1980516,
     "parcela": 0,
     "deputy_name": "Flávia Morais",
-    "deputy_party": "PDT"
+    "deputy_party": "PDT",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/160598.jpg"
   },
   {
     "_id": "67b376410acc9fc1f974be06",
@@ -135,7 +140,8 @@
     "cod_lote": 1951987,
     "parcela": 0,
     "deputy_name": "Pedro Lucas Fernandes",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/122974.jpg"
   },
   {
     "_id": "67b271220acc9fc1f9736d85",
@@ -158,7 +164,8 @@
     "cod_lote": 1954108,
     "parcela": 0,
     "deputy_name": "Dra. Alessandra Haber",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220674.jpg"
   },
   {
     "_id": "67b263810acc9fc1f9732fa0",
@@ -181,7 +188,8 @@
     "cod_lote": 1955882,
     "parcela": 0,
     "deputy_name": "Daniel Barbosa",
-    "deputy_party": "PP"
+    "deputy_party": "PP",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220582.jpg"
   },
   {
     "_id": "67b17e530acc9fc1f972b206",
@@ -204,7 +212,8 @@
     "cod_lote": 1949396,
     "parcela": 0,
     "deputy_name": "Alice Portugal",
-    "deputy_party": "PCdoB"
+    "deputy_party": "PCdoB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74057.jpg"
   },
   {
     "_id": "67b287420acc9fc1f973c132",
@@ -227,6 +236,7 @@
     "cod_lote": 1952510,
     "parcela": 0,
     "deputy_name": "Glaustin da Fokus",
-    "deputy_party": "PODE"
+    "deputy_party": "PODE",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204419.jpg"
   }
 ]

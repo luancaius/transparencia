@@ -43,6 +43,7 @@ class MonthlyFileGeneratorService
       deputy = deputies_map[exp["deputy_external_id"]]
       exp["deputy_name"] = deputy["name"] if deputy
       exp["deputy_party"] = deputy["sigla_partido"] if deputy
+      exp["deputy_avatar"] = deputy["url_foto"] if deputy
     end
 
     expenses

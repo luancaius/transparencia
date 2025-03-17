@@ -26,7 +26,8 @@
     ],
     "deputy_id": 204419,
     "deputy_name": "Glaustin da Fokus",
-    "party": "PODE"
+    "party": "PODE",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204419.jpg"
   },
   {
     "total_spent": 35000.0,
@@ -48,7 +49,8 @@
     ],
     "deputy_id": 204390,
     "deputy_name": "Professor Alcides",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204390.jpg"
   },
   {
     "total_spent": 35000.0,
@@ -70,7 +72,8 @@
     ],
     "deputy_id": 137070,
     "deputy_name": "Vicentinho Júnior",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/137070.jpg"
   },
   {
     "total_spent": 35000.0,
@@ -92,7 +95,8 @@
     ],
     "deputy_id": 204379,
     "deputy_name": "Acácio Favacho",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204379.jpg"
   },
   {
     "total_spent": 34320.0,
@@ -114,7 +118,8 @@
     ],
     "deputy_id": 178843,
     "deputy_name": "Marx Beltrão",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178843.jpg"
   },
   {
     "total_spent": 31500.0,
@@ -150,7 +155,8 @@
     ],
     "deputy_id": 160674,
     "deputy_name": "Hugo Motta",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160674.jpg"
   },
   {
     "total_spent": 30000.0,
@@ -172,7 +178,8 @@
     ],
     "deputy_id": 204498,
     "deputy_name": "Olival Marques",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204498.jpg"
   },
   {
     "total_spent": 28463.5,
@@ -201,7 +208,8 @@
     ],
     "deputy_id": 92699,
     "deputy_name": "Fernando Monteiro",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/92699.jpg"
   },
   {
     "total_spent": 27548.0,
@@ -244,7 +252,8 @@
     ],
     "deputy_id": 141391,
     "deputy_name": "Arnaldo Jardim",
-    "party": "CIDADANIA"
+    "party": "CIDADANIA",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141391.jpg"
   },
   {
     "total_spent": 26200.32,
@@ -287,6 +296,7 @@
     ],
     "deputy_id": 204559,
     "deputy_name": "Zé Neto",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204559.jpg"
   }
 ]

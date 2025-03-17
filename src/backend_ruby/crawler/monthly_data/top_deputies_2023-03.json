@@ -89,7 +89,8 @@
     ],
     "deputy_id": 74090,
     "deputy_name": "Átila Lins",
-    "party": "PSD"
+    "party": "PSD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/74090.jpg"
   },
   {
     "total_spent": 82453.31,
@@ -405,7 +406,8 @@
     ],
     "deputy_id": 74574,
     "deputy_name": "Paulo Magalhães",
-    "party": "PSD"
+    "party": "PSD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/74574.jpg"
   },
   {
     "total_spent": 81074.2,
@@ -672,7 +674,8 @@
     ],
     "deputy_id": 204360,
     "deputy_name": "Silvia Cristina",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204360.jpg"
   },
   {
     "total_spent": 73556.17,
@@ -1247,7 +1250,8 @@
     ],
     "deputy_id": 160673,
     "deputy_name": "Giovani Cherini",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160673.jpg"
   },
   {
     "total_spent": 66255.6,
@@ -1360,7 +1364,8 @@
     ],
     "deputy_id": 204550,
     "deputy_name": "Júnior Mano",
-    "party": "PSB"
+    "party": "PSB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204550.jpg"
   },
   {
     "total_spent": 64933.76,
@@ -1487,7 +1492,8 @@
     ],
     "deputy_id": 180214,
     "deputy_name": "Pastor Diniz",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/180214.jpg"
   },
   {
     "total_spent": 64755.48,
@@ -1740,7 +1746,8 @@
     ],
     "deputy_id": 220697,
     "deputy_name": "Jadyel Alencar",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220697.jpg"
   },
   {
     "total_spent": 63871.32,
@@ -1958,7 +1965,8 @@
     ],
     "deputy_id": 160635,
     "deputy_name": "Ruy Carneiro",
-    "party": "PODE"
+    "party": "PODE",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160635.jpg"
   },
   {
     "total_spent": 62721.57,
@@ -2211,7 +2219,8 @@
     ],
     "deputy_id": 160976,
     "deputy_name": "Tiririca",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160976.jpg"
   },
   {
     "total_spent": 62488.42,
@@ -2779,6 +2788,7 @@
     ],
     "deputy_id": 141398,
     "deputy_name": "Carlos Zarattini",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141398.jpg"
   }
 ]

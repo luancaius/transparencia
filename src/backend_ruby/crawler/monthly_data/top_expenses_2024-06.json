@@ -20,7 +20,8 @@
     "cod_lote": 2044677,
     "parcela": 0,
     "deputy_name": "Silas Câmara",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74356.jpg"
   },
   {
     "_id": "67b1310285b7286f77270f22",
@@ -43,7 +44,8 @@
     "cod_lote": 2048767,
     "parcela": 0,
     "deputy_name": "Lebrão",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220600.jpg"
   },
   {
     "_id": "67b1691a85b7286f77280c00",
@@ -66,7 +68,8 @@
     "cod_lote": 2069432,
     "parcela": 0,
     "deputy_name": "Sidney Leite",
-    "deputy_party": "PSD"
+    "deputy_party": "PSD",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204557.jpg"
   },
   {
     "_id": "67b11f1d85b7286f772674ed",
@@ -89,7 +92,8 @@
     "cod_lote": 2051523,
     "parcela": 0,
     "deputy_name": "Fabio Schiochet",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204368.jpg"
   },
   {
     "_id": "67b11ec985b7286f7726721f",
@@ -112,7 +116,8 @@
     "cod_lote": 2049588,
     "parcela": 0,
     "deputy_name": "Eunício Oliveira",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74454.jpg"
   },
   {
     "_id": "67b1597085b7286f7727c217",
@@ -135,7 +140,8 @@
     "cod_lote": 2052742,
     "parcela": 0,
     "deputy_name": "Pompeo de Mattos",
-    "deputy_party": "PDT"
+    "deputy_party": "PDT",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/73486.jpg"
   },
   {
     "_id": "67b0e3ee85b7286f7726146b",
@@ -158,7 +164,8 @@
     "cod_lote": 2060237,
     "parcela": 0,
     "deputy_name": "Daniel Barbosa",
-    "deputy_party": "PP"
+    "deputy_party": "PP",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220582.jpg"
   },
   {
     "_id": "67b15c8185b7286f7727d560",
@@ -181,7 +188,8 @@
     "cod_lote": 2047858,
     "parcela": 0,
     "deputy_name": "Renilce Nicodemos",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/153423.jpg"
   },
   {
     "_id": "67b0390985b7286f77258d47",
@@ -204,7 +212,8 @@
     "cod_lote": 2054653,
     "parcela": 0,
     "deputy_name": "Alice Portugal",
-    "deputy_party": "PCdoB"
+    "deputy_party": "PCdoB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74057.jpg"
   },
   {
     "_id": "67b1252885b7286f7726ac4f",
@@ -227,6 +236,7 @@
     "cod_lote": 2051009,
     "parcela": 0,
     "deputy_name": "Glaustin da Fokus",
-    "deputy_party": "PODE"
+    "deputy_party": "PODE",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204419.jpg"
   }
 ]

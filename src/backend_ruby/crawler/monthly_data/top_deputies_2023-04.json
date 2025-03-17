@@ -89,7 +89,8 @@
     ],
     "deputy_id": 123756,
     "deputy_name": "Antônia Lúcia",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/123756.jpg"
   },
   {
     "total_spent": 85978.37,
@@ -146,7 +147,8 @@
     ],
     "deputy_id": 141408,
     "deputy_name": "Cleber Verde",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141408.jpg"
   },
   {
     "total_spent": 84999.99,
@@ -329,7 +331,8 @@
     ],
     "deputy_id": 220595,
     "deputy_name": "Coronel Fernanda",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220595.jpg"
   },
   {
     "total_spent": 77381.29,
@@ -512,7 +515,8 @@
     ],
     "deputy_id": 220590,
     "deputy_name": "Coronel Ulysses",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220590.jpg"
   },
   {
     "total_spent": 75711.59,
@@ -646,7 +650,8 @@
     ],
     "deputy_id": 220574,
     "deputy_name": "Cabo Gilberto Silva",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220574.jpg"
   },
   {
     "total_spent": 70106.62,
@@ -710,7 +715,8 @@
     ],
     "deputy_id": 204570,
     "deputy_name": "Pastor Gil",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204570.jpg"
   },
   {
     "total_spent": 69686.67,
@@ -1019,7 +1025,8 @@
     ],
     "deputy_id": 220572,
     "deputy_name": "Marussa Boldrin",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220572.jpg"
   },
   {
     "total_spent": 68937.47,
@@ -1097,7 +1104,8 @@
     ],
     "deputy_id": 220540,
     "deputy_name": "Duda Ramos",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg"
   },
   {
     "total_spent": 68596.86,
@@ -1175,7 +1183,8 @@
     ],
     "deputy_id": 74383,
     "deputy_name": "Giacobo",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/74383.jpg"
   },
   {
     "total_spent": 64745.98,
@@ -1337,6 +1346,7 @@
     ],
     "deputy_id": 178954,
     "deputy_name": "Lucio Mosquini",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178954.jpg"
   }
 ]

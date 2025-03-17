@@ -20,7 +20,8 @@
     "cod_lote": 1934343,
     "parcela": 0,
     "deputy_name": "Paulo Magalhães",
-    "deputy_party": "PSD"
+    "deputy_party": "PSD",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74574.jpg"
   },
   {
     "_id": "67b276d10acc9fc1f973863b",
@@ -43,7 +44,8 @@
     "cod_lote": 1927492,
     "parcela": 0,
     "deputy_name": "Eunício Oliveira",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74454.jpg"
   },
   {
     "_id": "67b3a5cf8eb955aaa2819f78",
@@ -66,7 +68,8 @@
     "cod_lote": 1921623,
     "parcela": 0,
     "deputy_name": "Silvia Cristina",
-    "deputy_party": "PP"
+    "deputy_party": "PP",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204360.jpg"
   },
   {
     "_id": "67b3ab528eb955aaa281b1d4",
@@ -89,7 +92,8 @@
     "cod_lote": 1920799,
     "parcela": 0,
     "deputy_name": "Vicentinho Júnior",
-    "deputy_party": "PP"
+    "deputy_party": "PP",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/137070.jpg"
   },
   {
     "_id": "67b1846c0acc9fc1f972d062",
@@ -112,7 +116,8 @@
     "cod_lote": 1920656,
     "parcela": 0,
     "deputy_name": "Átila Lins",
-    "deputy_party": "PSD"
+    "deputy_party": "PSD",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74090.jpg"
   },
   {
     "_id": "67b1846c0acc9fc1f972d05f",
@@ -135,7 +140,8 @@
     "cod_lote": 1994326,
     "parcela": 0,
     "deputy_name": "Átila Lins",
-    "deputy_party": "PSD"
+    "deputy_party": "PSD",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74090.jpg"
   },
   {
     "_id": "67b263700acc9fc1f9732f52",
@@ -158,7 +164,8 @@
     "cod_lote": 1922415,
     "parcela": 0,
     "deputy_name": "Daniel Barbosa",
-    "deputy_party": "PP"
+    "deputy_party": "PP",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220582.jpg"
   },
   {
     "_id": "67b2de420acc9fc1f974a57e",
@@ -181,7 +188,8 @@
     "cod_lote": 1913444,
     "parcela": 0,
     "deputy_name": "Pastor Diniz",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/180214.jpg"
   },
   {
     "_id": "67b178c80acc9fc1f972934e",
@@ -204,7 +212,8 @@
     "cod_lote": 1923332,
     "parcela": 0,
     "deputy_name": "Adolfo Viana",
-    "deputy_party": "PSDB"
+    "deputy_party": "PSDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204560.jpg"
   },
   {
     "_id": "67b1846c0acc9fc1f972d063",
@@ -227,6 +236,7 @@
     "cod_lote": 1912637,
     "parcela": 0,
     "deputy_name": "Átila Lins",
-    "deputy_party": "PSD"
+    "deputy_party": "PSD",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74090.jpg"
   }
 ]

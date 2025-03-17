@@ -20,7 +20,8 @@
     "cod_lote": 2075149,
     "parcela": 0,
     "deputy_name": "Márcio Marinho",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/150418.jpg"
   },
   {
     "_id": "67b1437d85b7286f77276dc7",
@@ -43,7 +44,8 @@
     "cod_lote": 2072850,
     "parcela": 0,
     "deputy_name": "Meire Serafim",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220591.jpg"
   },
   {
     "_id": "67b1391485b7286f77274e31",
@@ -66,7 +68,8 @@
     "cod_lote": 2077418,
     "parcela": 0,
     "deputy_name": "Márcio Marinho",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/150418.jpg"
   },
   {
     "_id": "67b11ece85b7286f7726723f",
@@ -89,7 +92,8 @@
     "cod_lote": 2073995,
     "parcela": 0,
     "deputy_name": "Eunício Oliveira",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74454.jpg"
   },
   {
     "_id": "67b127c085b7286f7726c34d",
@@ -112,7 +116,8 @@
     "cod_lote": 2089686,
     "parcela": 0,
     "deputy_name": "Hercílio Coelho Diniz",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204539.jpg"
   },
   {
     "_id": "67b123a285b7286f77269ed3",
@@ -135,7 +140,8 @@
     "cod_lote": 2069838,
     "parcela": 0,
     "deputy_name": "Giacobo",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74383.jpg"
   },
   {
     "_id": "67b123bf85b7286f77269f87",
@@ -158,7 +164,8 @@
     "cod_lote": 2089975,
     "parcela": 0,
     "deputy_name": "Gilberto Abramo",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204491.jpg"
   },
   {
     "_id": "67b0e33085b7286f77260c56",
@@ -181,7 +188,8 @@
     "cod_lote": 2074201,
     "parcela": 0,
     "deputy_name": "Dagoberto Nogueira",
-    "deputy_party": "PSDB"
+    "deputy_party": "PSDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/141411.jpg"
   },
   {
     "_id": "67b1252b85b7286f7726ac54",
@@ -204,7 +212,8 @@
     "cod_lote": 2075611,
     "parcela": 0,
     "deputy_name": "Glaustin da Fokus",
-    "deputy_party": "PODE"
+    "deputy_party": "PODE",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204419.jpg"
   },
   {
     "_id": "67b1719a85b7286f77283ce7",
@@ -227,6 +236,7 @@
     "cod_lote": 2082758,
     "parcela": 0,
     "deputy_name": "Weliton Prado",
-    "deputy_party": "SOLIDARIEDADE"
+    "deputy_party": "SOLIDARIEDADE",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/160518.jpg"
   }
 ]

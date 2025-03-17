@@ -20,7 +20,8 @@
     "cod_lote": 2092470,
     "parcela": 0,
     "deputy_name": "Elcione Barbalho",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74075.jpg"
   },
   {
     "_id": "67b1289b85b7286f7726c9f0",
@@ -43,7 +44,8 @@
     "cod_lote": 2097890,
     "parcela": 0,
     "deputy_name": "Igor Timo",
-    "deputy_party": "PSD"
+    "deputy_party": "PSD",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204508.jpg"
   },
   {
     "_id": "67b0e3f985b7286f772614e9",
@@ -66,7 +68,8 @@
     "cod_lote": 2097256,
     "parcela": 0,
     "deputy_name": "Daniel Barbosa",
-    "deputy_party": "PP"
+    "deputy_party": "PP",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220582.jpg"
   },
   {
     "_id": "67b159cb85b7286f7727c479",
@@ -89,7 +92,8 @@
     "cod_lote": 2091912,
     "parcela": 0,
     "deputy_name": "Pr. Marco Feliciano",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/160601.jpg"
   },
   {
     "_id": "67b123a585b7286f77269edb",
@@ -112,7 +116,8 @@
     "cod_lote": 2085843,
     "parcela": 0,
     "deputy_name": "Giacobo",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74383.jpg"
   },
   {
     "_id": "67b127c685b7286f7726c384",
@@ -135,7 +140,8 @@
     "cod_lote": 2102734,
     "parcela": 0,
     "deputy_name": "Hercílio Coelho Diniz",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204539.jpg"
   },
   {
     "_id": "67b14b2385b7286f77277ae6",
@@ -158,7 +164,8 @@
     "cod_lote": 2090377,
     "parcela": 0,
     "deputy_name": "Murilo Galdino",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220584.jpg"
   },
   {
     "_id": "67b14b2385b7286f77277ae9",
@@ -181,7 +188,8 @@
     "cod_lote": 2088230,
     "parcela": 0,
     "deputy_name": "Murilo Galdino",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220584.jpg"
   },
   {
     "_id": "67b14b2385b7286f77277aea",
@@ -204,7 +212,8 @@
     "cod_lote": 2090374,
     "parcela": 0,
     "deputy_name": "Murilo Galdino",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220584.jpg"
   },
   {
     "_id": "67b03a0485b7286f7725a102",
@@ -227,6 +236,7 @@
     "cod_lote": 2092539,
     "parcela": 0,
     "deputy_name": "Andreia Siqueira",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220676.jpg"
   }
 ]

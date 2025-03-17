@@ -20,7 +20,8 @@
     "cod_lote": 1915628,
     "parcela": 0,
     "deputy_name": "Glaustin da Fokus",
-    "deputy_party": "PODE"
+    "deputy_party": "PODE",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204419.jpg"
   },
   {
     "_id": "67b276d00acc9fc1f973863a",
@@ -43,7 +44,8 @@
     "cod_lote": 1927490,
     "parcela": 0,
     "deputy_name": "Eunício Oliveira",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74454.jpg"
   },
   {
     "_id": "67b283f50acc9fc1f973b3df",
@@ -66,7 +68,8 @@
     "cod_lote": 1907296,
     "parcela": 0,
     "deputy_name": "Giacobo",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74383.jpg"
   },
   {
     "_id": "67b3ab4f8eb955aaa281b1cb",
@@ -89,7 +92,8 @@
     "cod_lote": 1912823,
     "parcela": 0,
     "deputy_name": "Vicentinho Júnior",
-    "deputy_party": "PP"
+    "deputy_party": "PP",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/137070.jpg"
   },
   {
     "_id": "67b28c0b0acc9fc1f973d5a8",
@@ -112,7 +116,8 @@
     "cod_lote": 1936823,
     "parcela": 0,
     "deputy_name": "Hercílio Coelho Diniz",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204539.jpg"
   },
   {
     "_id": "67b2db030acc9fc1f9749a18",
@@ -135,7 +140,8 @@
     "cod_lote": 1912034,
     "parcela": 0,
     "deputy_name": "Olival Marques",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204498.jpg"
   },
   {
     "_id": "67b276150acc9fc1f9738330",
@@ -158,7 +164,8 @@
     "cod_lote": 1911577,
     "parcela": 0,
     "deputy_name": "Erika Kokay",
-    "deputy_party": "PT"
+    "deputy_party": "PT",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/160575.jpg"
   },
   {
     "_id": "67b295bb0acc9fc1f973fc54",
@@ -181,7 +188,8 @@
     "cod_lote": 1910679,
     "parcela": 0,
     "deputy_name": "José Nelto",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204391.jpg"
   },
   {
     "_id": "67b178260acc9fc1f9728fe4",
@@ -204,7 +212,8 @@
     "cod_lote": 1921015,
     "parcela": 0,
     "deputy_name": "Acácio Favacho",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204379.jpg"
   },
   {
     "_id": "67b267ae0acc9fc1f97342d3",
@@ -227,6 +236,7 @@
     "cod_lote": 1915227,
     "parcela": 0,
     "deputy_name": "Delegado da Cunha",
-    "deputy_party": "PP"
+    "deputy_party": "PP",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220649.jpg"
   }
 ]

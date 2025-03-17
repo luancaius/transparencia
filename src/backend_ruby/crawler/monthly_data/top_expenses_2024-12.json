@@ -20,7 +20,8 @@
     "cod_lote": 2100968,
     "parcela": 1,
     "deputy_name": "Duda Ramos",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220540.jpg"
   },
   {
     "_id": "67b15a0e85b7286f7727c5f2",
@@ -43,7 +44,8 @@
     "cod_lote": 2100891,
     "parcela": 0,
     "deputy_name": "Professor Alcides",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204390.jpg"
   },
   {
     "_id": "67b1682f85b7286f77280682",
@@ -66,7 +68,8 @@
     "cod_lote": 2100719,
     "parcela": 0,
     "deputy_name": "Sargento Gonçalves",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220621.jpg"
   },
   {
     "_id": "67b125f685b7286f7726b3b5",
@@ -89,7 +92,8 @@
     "cod_lote": 2101084,
     "parcela": 0,
     "deputy_name": "Guilherme Uchoa",
-    "deputy_party": "PSB"
+    "deputy_party": "PSB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220664.jpg"
   },
   {
     "_id": "67b12d8b85b7286f7726f31e",
@@ -112,7 +116,8 @@
     "cod_lote": 2100410,
     "parcela": 0,
     "deputy_name": "José Rocha",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74554.jpg"
   },
   {
     "_id": "67b1264785b7286f7726b669",
@@ -135,7 +140,8 @@
     "cod_lote": 2101055,
     "parcela": 0,
     "deputy_name": "Gustinho Ribeiro",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204408.jpg"
   },
   {
     "_id": "67b0395285b7286f772592fa",
@@ -158,7 +164,8 @@
     "cod_lote": 2098333,
     "parcela": 0,
     "deputy_name": "Aluisio Mendes",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/178881.jpg"
   },
   {
     "_id": "67b11d8885b7286f77266663",
@@ -181,7 +188,8 @@
     "cod_lote": 2095515,
     "parcela": 0,
     "deputy_name": "Ely Santos",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/218086.jpg"
   },
   {
     "_id": "67b1537385b7286f77279b66",
@@ -204,7 +212,8 @@
     "cod_lote": 2102417,
     "parcela": 0,
     "deputy_name": "Pastor Eurico",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/160642.jpg"
   },
   {
     "_id": "67b0e36585b7286f77260eca",
@@ -227,6 +236,7 @@
     "cod_lote": 2100416,
     "parcela": 1,
     "deputy_name": "Dal Barreto",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220692.jpg"
   }
 ]

@@ -20,7 +20,8 @@
     "cod_lote": 1955717,
     "parcela": 0,
     "deputy_name": "Josivaldo JP",
-    "deputy_party": "PSD"
+    "deputy_party": "PSD",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/215043.jpg"
   },
   {
     "_id": "67b2dc460acc9fc1f9749e3f",
@@ -43,7 +44,8 @@
     "cod_lote": 1944416,
     "parcela": 0,
     "deputy_name": "Otoni de Paula",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204441.jpg"
   },
   {
     "_id": "67b18fb60acc9fc1f9730aa3",
@@ -66,7 +68,8 @@
     "cod_lote": 1946069,
     "parcela": 0,
     "deputy_name": "Célio Silveira",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/178876.jpg"
   },
   {
     "_id": "67b27ca80acc9fc1f9739f34",
@@ -89,7 +92,8 @@
     "cod_lote": 1976464,
     "parcela": 0,
     "deputy_name": "Flávia Morais",
-    "deputy_party": "PDT"
+    "deputy_party": "PDT",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/160598.jpg"
   },
   {
     "_id": "67b2637d0acc9fc1f9732f8f",
@@ -112,7 +116,8 @@
     "cod_lote": 1948138,
     "parcela": 0,
     "deputy_name": "Daniel Barbosa",
-    "deputy_party": "PP"
+    "deputy_party": "PP",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220582.jpg"
   },
   {
     "_id": "67b3879206bc867884ccaf3b",
@@ -135,7 +140,8 @@
     "cod_lote": 1946315,
     "parcela": 0,
     "deputy_name": "Rogério Correia",
-    "deputy_party": "PT"
+    "deputy_party": "PT",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204480.jpg"
   },
   {
     "_id": "67b2c9700acc9fc1f9745a7f",
@@ -158,7 +164,8 @@
     "cod_lote": 1944456,
     "parcela": 0,
     "deputy_name": "Márcio Marinho",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/150418.jpg"
   },
   {
     "_id": "67b181ca0acc9fc1f972c384",
@@ -181,7 +188,8 @@
     "cod_lote": 1941179,
     "parcela": 0,
     "deputy_name": "André Janones",
-    "deputy_party": "AVANTE"
+    "deputy_party": "AVANTE",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204515.jpg"
   },
   {
     "_id": "67b271210acc9fc1f9736d82",
@@ -204,7 +212,8 @@
     "cod_lote": 1944736,
     "parcela": 0,
     "deputy_name": "Dra. Alessandra Haber",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220674.jpg"
   },
   {
     "_id": "67b283fe0acc9fc1f973b3fd",
@@ -227,6 +236,7 @@
     "cod_lote": 1938555,
     "parcela": 0,
     "deputy_name": "Giacobo",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74383.jpg"
   }
 ]

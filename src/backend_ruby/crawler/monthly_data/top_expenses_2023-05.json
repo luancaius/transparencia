@@ -20,7 +20,8 @@
     "cod_lote": 1936621,
     "parcela": 0,
     "deputy_name": "Dayany Bittencourt",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220659.jpg"
   },
   {
     "_id": "67b267e70acc9fc1f97343a2",
@@ -43,7 +44,8 @@
     "cod_lote": 1938037,
     "parcela": 0,
     "deputy_name": "Delegado Éder Mauro",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/178908.jpg"
   },
   {
     "_id": "67b185510acc9fc1f972d4c7",
@@ -66,7 +68,8 @@
     "cod_lote": 1932716,
     "parcela": 0,
     "deputy_name": "Aureo Ribeiro",
-    "deputy_party": "SOLIDARIEDADE"
+    "deputy_party": "SOLIDARIEDADE",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/160512.jpg"
   },
   {
     "_id": "67b2711f0acc9fc1f9736d7d",
@@ -89,7 +92,8 @@
     "cod_lote": 1935127,
     "parcela": 0,
     "deputy_name": "Dra. Alessandra Haber",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220674.jpg"
   },
   {
     "_id": "67b283fb0acc9fc1f973b3f4",
@@ -112,7 +116,8 @@
     "cod_lote": 1928643,
     "parcela": 0,
     "deputy_name": "Giacobo",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74383.jpg"
   },
   {
     "_id": "67b28b3e0acc9fc1f973d290",
@@ -135,7 +140,8 @@
     "cod_lote": 1934338,
     "parcela": 0,
     "deputy_name": "Helena Lima",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220537.jpg"
   },
   {
     "_id": "67b2637b0acc9fc1f9732f84",
@@ -158,7 +164,8 @@
     "cod_lote": 1939333,
     "parcela": 0,
     "deputy_name": "Daniel Barbosa",
-    "deputy_party": "PP"
+    "deputy_party": "PP",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220582.jpg"
   },
   {
     "_id": "67b291df0acc9fc1f973ebe1",
@@ -181,7 +188,8 @@
     "cod_lote": 1937802,
     "parcela": 0,
     "deputy_name": "Joaquim Passarinho",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/178910.jpg"
   },
   {
     "_id": "67b276d40acc9fc1f9738642",
@@ -204,7 +212,8 @@
     "cod_lote": 1932764,
     "parcela": 0,
     "deputy_name": "Eunício Oliveira",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74454.jpg"
   },
   {
     "_id": "67b3af4c8eb955aaa281bfd4",
@@ -227,6 +236,7 @@
     "cod_lote": 1937119,
     "parcela": 0,
     "deputy_name": "Zé Vitor",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204517.jpg"
   }
 ]

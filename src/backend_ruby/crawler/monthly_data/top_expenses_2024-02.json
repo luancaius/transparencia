@@ -20,7 +20,8 @@
     "cod_lote": 2025732,
     "parcela": 0,
     "deputy_name": "Gustinho Ribeiro",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204408.jpg"
   },
   {
     "_id": "67b1239485b7286f77269e96",
@@ -43,7 +44,8 @@
     "cod_lote": 2007998,
     "parcela": 0,
     "deputy_name": "Giacobo",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74383.jpg"
   },
   {
     "_id": "67b1218085b7286f77268b81",
@@ -66,7 +68,8 @@
     "cod_lote": 2022563,
     "parcela": 0,
     "deputy_name": "Flávia Morais",
-    "deputy_party": "PDT"
+    "deputy_party": "PDT",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/160598.jpg"
   },
   {
     "_id": "67b0390485b7286f77258cd7",
@@ -89,7 +92,8 @@
     "cod_lote": 2021957,
     "parcela": 0,
     "deputy_name": "Alice Portugal",
-    "deputy_party": "PCdoB"
+    "deputy_party": "PCdoB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74057.jpg"
   },
   {
     "_id": "67b1718585b7286f77283c7e",
@@ -112,7 +116,8 @@
     "cod_lote": 2023717,
     "parcela": 0,
     "deputy_name": "Weliton Prado",
-    "deputy_party": "SOLIDARIEDADE"
+    "deputy_party": "SOLIDARIEDADE",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/160518.jpg"
   },
   {
     "_id": "67b0e37b85b7286f77260f5d",
@@ -135,7 +140,8 @@
     "cod_lote": 2018583,
     "parcela": 0,
     "deputy_name": "Dandara",
-    "deputy_party": "PT"
+    "deputy_party": "PT",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220629.jpg"
   },
   {
     "_id": "67b11ec385b7286f772671fc",
@@ -158,7 +164,8 @@
     "cod_lote": 2015502,
     "parcela": 0,
     "deputy_name": "Eunício Oliveira",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74454.jpg"
   },
   {
     "_id": "67b0e4a985b7286f77261de6",
@@ -181,7 +188,8 @@
     "cod_lote": 2016513,
     "parcela": 0,
     "deputy_name": "Danilo Forte",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/62881.jpg"
   },
   {
     "_id": "67b130d885b7286f77270e02",
@@ -204,7 +212,8 @@
     "cod_lote": 2015778,
     "parcela": 0,
     "deputy_name": "Lázaro Botelho",
-    "deputy_party": "PP"
+    "deputy_party": "PP",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/141480.jpg"
   },
   {
     "_id": "67b1252485b7286f7726ac49",
@@ -227,6 +236,7 @@
     "cod_lote": 2015601,
     "parcela": 0,
     "deputy_name": "Glaustin da Fokus",
-    "deputy_party": "PODE"
+    "deputy_party": "PODE",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204419.jpg"
   }
 ]

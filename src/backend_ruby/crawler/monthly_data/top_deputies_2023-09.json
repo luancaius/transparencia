@@ -96,7 +96,8 @@
     ],
     "deputy_id": 204570,
     "deputy_name": "Pastor Gil",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204570.jpg"
   },
   {
     "total_spent": 94242.31,
@@ -321,7 +322,8 @@
     ],
     "deputy_id": 220547,
     "deputy_name": "Marcos Pollon",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220547.jpg"
   },
   {
     "total_spent": 82540.84,
@@ -567,7 +569,8 @@
     ],
     "deputy_id": 204515,
     "deputy_name": "André Janones",
-    "party": "AVANTE"
+    "party": "AVANTE",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204515.jpg"
   },
   {
     "total_spent": 81818.75,
@@ -729,7 +732,8 @@
     ],
     "deputy_id": 220573,
     "deputy_name": "Dorinaldo Malafaia",
-    "party": "PDT"
+    "party": "PDT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220573.jpg"
   },
   {
     "total_spent": 78671.6,
@@ -1164,7 +1168,8 @@
     ],
     "deputy_id": 220526,
     "deputy_name": "Gilvan da Federal",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220526.jpg"
   },
   {
     "total_spent": 74283.53,
@@ -1445,7 +1450,8 @@
     ],
     "deputy_id": 141485,
     "deputy_name": "Luiz Carlos Busato",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/141485.jpg"
   },
   {
     "total_spent": 72781.63,
@@ -1768,7 +1774,8 @@
     ],
     "deputy_id": 220677,
     "deputy_name": "Keniston Braga",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220677.jpg"
   },
   {
     "total_spent": 72693.62,
@@ -1895,7 +1902,8 @@
     ],
     "deputy_id": 178987,
     "deputy_name": "Orlando Silva",
-    "party": "PCdoB"
+    "party": "PCdoB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178987.jpg"
   },
   {
     "total_spent": 70433.0,
@@ -2050,7 +2058,8 @@
     ],
     "deputy_id": 220694,
     "deputy_name": "Ricardo Maia",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220694.jpg"
   },
   {
     "total_spent": 70352.38,
@@ -2142,6 +2151,7 @@
     ],
     "deputy_id": 220674,
     "deputy_name": "Dra. Alessandra Haber",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220674.jpg"
   }
 ]

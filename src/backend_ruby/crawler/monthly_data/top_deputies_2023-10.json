@@ -152,7 +152,8 @@
     ],
     "deputy_id": 220692,
     "deputy_name": "Dal Barreto",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220692.jpg"
   },
   {
     "total_spent": 132197.7,
@@ -412,7 +413,8 @@
     ],
     "deputy_id": 220589,
     "deputy_name": "Eduardo Velloso",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220589.jpg"
   },
   {
     "total_spent": 127027.71,
@@ -819,7 +821,8 @@
     ],
     "deputy_id": 220527,
     "deputy_name": "Jack Rocha",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220527.jpg"
   },
   {
     "total_spent": 108564.16,
@@ -1121,7 +1124,8 @@
     ],
     "deputy_id": 204368,
     "deputy_name": "Fabio Schiochet",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204368.jpg"
   },
   {
     "total_spent": 104059.91,
@@ -1248,7 +1252,8 @@
     ],
     "deputy_id": 74467,
     "deputy_name": "Damião Feliciano",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/74467.jpg"
   },
   {
     "total_spent": 89095.14,
@@ -1536,7 +1541,8 @@
     ],
     "deputy_id": 220675,
     "deputy_name": "Antônio Doido",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220675.jpg"
   },
   {
     "total_spent": 87634.71,
@@ -1817,7 +1823,8 @@
     ],
     "deputy_id": 74044,
     "deputy_name": "Wilson Santiago",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/74044.jpg"
   },
   {
     "total_spent": 86328.38,
@@ -2035,7 +2042,8 @@
     ],
     "deputy_id": 204566,
     "deputy_name": "Marreca Filho",
-    "party": "PRD"
+    "party": "PRD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204566.jpg"
   },
   {
     "total_spent": 84384.09,
@@ -2232,7 +2240,8 @@
     ],
     "deputy_id": 150418,
     "deputy_name": "Márcio Marinho",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/150418.jpg"
   },
   {
     "total_spent": 83653.74,
@@ -2457,6 +2466,7 @@
     ],
     "deputy_id": 220658,
     "deputy_name": "Luiz Gastão",
-    "party": "PSD"
+    "party": "PSD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220658.jpg"
   }
 ]

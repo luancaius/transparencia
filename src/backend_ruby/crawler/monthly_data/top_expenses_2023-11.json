@@ -20,7 +20,8 @@
     "cod_lote": 1984731,
     "parcela": 0,
     "deputy_name": "Aluisio Mendes",
-    "deputy_party": "REPUBLICANOS"
+    "deputy_party": "REPUBLICANOS",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/178881.jpg"
   },
   {
     "_id": "67b279a10acc9fc1f97391c7",
@@ -43,7 +44,8 @@
     "cod_lote": 1985779,
     "parcela": 0,
     "deputy_name": "Félix Mendonça Júnior",
-    "deputy_party": "PDT"
+    "deputy_party": "PDT",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/160666.jpg"
   },
   {
     "_id": "67b2df160acc9fc1f974a859",
@@ -66,7 +68,8 @@
     "cod_lote": 1983405,
     "parcela": 0,
     "deputy_name": "Pastor Gil",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204570.jpg"
   },
   {
     "_id": "67b26e6e0acc9fc1f97361fd",
@@ -89,7 +92,8 @@
     "cod_lote": 1989339,
     "parcela": 0,
     "deputy_name": "Dorinaldo Malafaia",
-    "deputy_party": "PDT"
+    "deputy_party": "PDT",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220573.jpg"
   },
   {
     "_id": "67b2733a0acc9fc1f97376a0",
@@ -112,7 +116,8 @@
     "cod_lote": 1992237,
     "parcela": 0,
     "deputy_name": "Eduardo Velloso",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220589.jpg"
   },
   {
     "_id": "67b2aa3d0acc9fc1f974132d",
@@ -135,7 +140,8 @@
     "cod_lote": 2000337,
     "parcela": 0,
     "deputy_name": "Júnior Ferrari",
-    "deputy_party": "PSD"
+    "deputy_party": "PSD",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204497.jpg"
   },
   {
     "_id": "67b290cc0acc9fc1f973e7d8",
@@ -158,7 +164,8 @@
     "cod_lote": 2000612,
     "parcela": 0,
     "deputy_name": "João Carlos Bacelar",
-    "deputy_party": "PL"
+    "deputy_party": "PL",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/141458.jpg"
   },
   {
     "_id": "67b2c2160acc9fc1f9743da4",
@@ -181,7 +188,8 @@
     "cod_lote": 1990964,
     "parcela": 0,
     "deputy_name": "Luiz Gastão",
-    "deputy_party": "PSD"
+    "deputy_party": "PSD",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220658.jpg"
   },
   {
     "_id": "67b2c8980acc9fc1f974571a",
@@ -204,7 +212,8 @@
     "cod_lote": 1989117,
     "parcela": 0,
     "deputy_name": "Márcio Honaiser",
-    "deputy_party": "PDT"
+    "deputy_party": "PDT",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220687.jpg"
   },
   {
     "_id": "67b183360acc9fc1f972ca5d",
@@ -227,6 +236,7 @@
     "cod_lote": 2000478,
     "parcela": 0,
     "deputy_name": "Antônio Doido",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220675.jpg"
   }
 ]

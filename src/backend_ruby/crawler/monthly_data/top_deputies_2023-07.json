@@ -47,7 +47,8 @@
     ],
     "deputy_id": 220681,
     "deputy_name": "Fábio Macedo",
-    "party": "PODE"
+    "party": "PODE",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220681.jpg"
   },
   {
     "total_spent": 99141.24,
@@ -286,7 +287,8 @@
     ],
     "deputy_id": 220590,
     "deputy_name": "Coronel Ulysses",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220590.jpg"
   },
   {
     "total_spent": 91445.36,
@@ -574,7 +576,8 @@
     ],
     "deputy_id": 122974,
     "deputy_name": "Pedro Lucas Fernandes",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/122974.jpg"
   },
   {
     "total_spent": 88486.42,
@@ -925,7 +928,8 @@
     ],
     "deputy_id": 220659,
     "deputy_name": "Dayany Bittencourt",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220659.jpg"
   },
   {
     "total_spent": 88280.03,
@@ -1080,7 +1084,8 @@
     ],
     "deputy_id": 220662,
     "deputy_name": "Lucas Ramos",
-    "party": "PSB"
+    "party": "PSB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220662.jpg"
   },
   {
     "total_spent": 84433.38,
@@ -1277,7 +1282,8 @@
     ],
     "deputy_id": 220538,
     "deputy_name": "Albuquerque",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220538.jpg"
   },
   {
     "total_spent": 81045.6,
@@ -1383,7 +1389,8 @@
     ],
     "deputy_id": 123756,
     "deputy_name": "Antônia Lúcia",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/123756.jpg"
   },
   {
     "total_spent": 74742.62,
@@ -1580,7 +1587,8 @@
     ],
     "deputy_id": 178866,
     "deputy_name": "Luizianne Lins",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178866.jpg"
   },
   {
     "total_spent": 74142.83,
@@ -1700,7 +1708,8 @@
     ],
     "deputy_id": 204491,
     "deputy_name": "Gilberto Abramo",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204491.jpg"
   },
   {
     "total_spent": 72960.93,
@@ -1904,6 +1913,7 @@
     ],
     "deputy_id": 204398,
     "deputy_name": "Felipe Francischini",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204398.jpg"
   }
 ]

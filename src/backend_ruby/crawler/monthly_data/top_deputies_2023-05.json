@@ -362,7 +362,8 @@
     ],
     "deputy_id": 220659,
     "deputy_name": "Dayany Bittencourt",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220659.jpg"
   },
   {
     "total_spent": 111745.18,
@@ -496,7 +497,8 @@
     ],
     "deputy_id": 220700,
     "deputy_name": "Florentino Neto",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220700.jpg"
   },
   {
     "total_spent": 91043.53,
@@ -588,7 +590,8 @@
     ],
     "deputy_id": 178908,
     "deputy_name": "Delegado Éder Mauro",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178908.jpg"
   },
   {
     "total_spent": 81832.63,
@@ -1023,7 +1026,8 @@
     ],
     "deputy_id": 220640,
     "deputy_name": "Juliana Cardoso",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220640.jpg"
   },
   {
     "total_spent": 78234.66,
@@ -1220,7 +1224,8 @@
     ],
     "deputy_id": 160512,
     "deputy_name": "Aureo Ribeiro",
-    "party": "SOLIDARIEDADE"
+    "party": "SOLIDARIEDADE",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/160512.jpg"
   },
   {
     "total_spent": 76923.73,
@@ -1417,7 +1422,8 @@
     ],
     "deputy_id": 220537,
     "deputy_name": "Helena Lima",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220537.jpg"
   },
   {
     "total_spent": 76121.35,
@@ -1852,7 +1858,8 @@
     ],
     "deputy_id": 220699,
     "deputy_name": "Castro Neto",
-    "party": "PSD"
+    "party": "PSD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220699.jpg"
   },
   {
     "total_spent": 73705.19,
@@ -2007,7 +2014,8 @@
     ],
     "deputy_id": 153423,
     "deputy_name": "Renilce Nicodemos",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/153423.jpg"
   },
   {
     "total_spent": 73004.41,
@@ -2561,7 +2569,8 @@
     ],
     "deputy_id": 220666,
     "deputy_name": "Coronel Meira",
-    "party": "PL"
+    "party": "PL",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220666.jpg"
   },
   {
     "total_spent": 72441.03,
@@ -2688,6 +2697,7 @@
     ],
     "deputy_id": 74090,
     "deputy_name": "Átila Lins",
-    "party": "PSD"
+    "party": "PSD",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/74090.jpg"
   }
 ]

@@ -20,7 +20,8 @@
     "cod_lote": 2053132,
     "parcela": 0,
     "deputy_name": "Luiz Carlos Busato",
-    "deputy_party": "UNIÃO"
+    "deputy_party": "UNIÃO",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/141485.jpg"
   },
   {
     "_id": "67b0e1dd85b7286f7725fa70",
@@ -43,7 +44,8 @@
     "cod_lote": 2039986,
     "parcela": 0,
     "deputy_name": "Cleber Verde",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/141408.jpg"
   },
   {
     "_id": "67b03a4f85b7286f7725a627",
@@ -66,7 +68,8 @@
     "cod_lote": 2036508,
     "parcela": 0,
     "deputy_name": "Antônio Doido",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220675.jpg"
   },
   {
     "_id": "67b11ec685b7286f77267210",
@@ -89,7 +92,8 @@
     "cod_lote": 2028175,
     "parcela": 0,
     "deputy_name": "Eunício Oliveira",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/74454.jpg"
   },
   {
     "_id": "67b1252685b7286f7726ac4c",
@@ -112,7 +116,8 @@
     "cod_lote": 2027264,
     "parcela": 0,
     "deputy_name": "Glaustin da Fokus",
-    "deputy_party": "PODE"
+    "deputy_party": "PODE",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204419.jpg"
   },
   {
     "_id": "67b10ba985b7286f772659a0",
@@ -135,7 +140,8 @@
     "cod_lote": 2035951,
     "parcela": 0,
     "deputy_name": "Dra. Alessandra Haber",
-    "deputy_party": "MDB"
+    "deputy_party": "MDB",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220674.jpg"
   },
   {
     "_id": "67b1382885b7286f7727479f",
@@ -158,7 +164,8 @@
     "cod_lote": 2043109,
     "parcela": 0,
     "deputy_name": "Marcelo Queiroz",
-    "deputy_party": "PP"
+    "deputy_party": "PP",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/160161.jpg"
   },
   {
     "_id": "67b0399185b7286f7725970d",
@@ -181,7 +188,8 @@
     "cod_lote": 2036808,
     "parcela": 0,
     "deputy_name": "Ana Paula Lima",
-    "deputy_party": "PT"
+    "deputy_party": "PT",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/220556.jpg"
   },
   {
     "_id": "67b1252685b7286f7726ac4b",
@@ -204,7 +212,8 @@
     "cod_lote": 2029955,
     "parcela": 0,
     "deputy_name": "Glaustin da Fokus",
-    "deputy_party": "PODE"
+    "deputy_party": "PODE",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/204419.jpg"
   },
   {
     "_id": "67b130dc85b7286f77270e19",
@@ -227,6 +236,7 @@
     "cod_lote": 2036245,
     "parcela": 0,
     "deputy_name": "Lázaro Botelho",
-    "deputy_party": "PP"
+    "deputy_party": "PP",
+    "deputy_avatar": "https://www.camara.leg.br/internet/deputado/bandep/141480.jpg"
   }
 ]

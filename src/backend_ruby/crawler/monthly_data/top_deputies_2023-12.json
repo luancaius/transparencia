@@ -124,7 +124,8 @@
     ],
     "deputy_id": 220707,
     "deputy_name": "Amanda Gentil",
-    "party": "PP"
+    "party": "PP",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220707.jpg"
   },
   {
     "total_spent": 232697.18,
@@ -258,7 +259,8 @@
     ],
     "deputy_id": 178972,
     "deputy_name": "Alex Manente",
-    "party": "CIDADANIA"
+    "party": "CIDADANIA",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/178972.jpg"
   },
   {
     "total_spent": 185211.36,
@@ -357,7 +359,8 @@
     ],
     "deputy_id": 204408,
     "deputy_name": "Gustinho Ribeiro",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204408.jpg"
   },
   {
     "total_spent": 185019.82,
@@ -666,7 +669,8 @@
     ],
     "deputy_id": 220556,
     "deputy_name": "Ana Paula Lima",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220556.jpg"
   },
   {
     "total_spent": 182717.66,
@@ -891,7 +895,8 @@
     ],
     "deputy_id": 220591,
     "deputy_name": "Meire Serafim",
-    "party": "UNIÃO"
+    "party": "UNIÃO",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220591.jpg"
   },
   {
     "total_spent": 181873.25,
@@ -927,7 +932,8 @@
     ],
     "deputy_id": 220542,
     "deputy_name": "Alexandre Guimarães",
-    "party": "MDB"
+    "party": "MDB",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220542.jpg"
   },
   {
     "total_spent": 173013.05,
@@ -998,7 +1004,8 @@
     ],
     "deputy_id": 204482,
     "deputy_name": "Euclydes Pettersen",
-    "party": "REPUBLICANOS"
+    "party": "REPUBLICANOS",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204482.jpg"
   },
   {
     "total_spent": 167072.69,
@@ -1167,7 +1174,8 @@
     ],
     "deputy_id": 220528,
     "deputy_name": "Dr. Victor Linhalis",
-    "party": "PODE"
+    "party": "PODE",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/220528.jpg"
   },
   {
     "total_spent": 165359.48,
@@ -1434,7 +1442,8 @@
     ],
     "deputy_id": 204445,
     "deputy_name": "Fernando Mineiro",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204445.jpg"
   },
   {
     "total_spent": 162214.98,
@@ -2142,6 +2151,7 @@
     ],
     "deputy_id": 204426,
     "deputy_name": "Carlos Veras",
-    "party": "PT"
+    "party": "PT",
+    "avatar": "https://www.camara.leg.br/internet/deputado/bandep/204426.jpg"
   }
 ]
